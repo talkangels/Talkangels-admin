@@ -4,6 +4,7 @@ import use_image from "../../assets/dashboard/user_image.png";
 import {
   ChangeCharges,
   GetMostRatedList,
+  SendNotificationUser,
   UpdateWithdrawRequestStatus,
   allWithdrawRequest,
 } from "../../services/dashboard";
@@ -12,6 +13,7 @@ import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { GetOneAdmin } from "../../services/auth";
+import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -117,6 +119,25 @@ const Dashboard = () => {
       setLoading(false);
     }
   };
+
+  const HeandleSendNotification = async () => {
+    setLoading(true);
+    const body = {
+      title: "Hello",
+      body: "Heloo this is test Notification",
+      userIds: "",
+      angel_id: "",
+    };
+    const result = await SendNotificationUser(body);
+    if (result.status === 200) {
+      toast.success(result.message);
+      setLoading(false);
+    } else {
+      toast.error(result.message);
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       {loading && <Spinner />}
@@ -226,66 +247,105 @@ const Dashboard = () => {
                 ))}
             </div>
           </div>
-          <div className="w-full bg-darkBlack mt-5 rounded-2xl p-8 min-h-[123px]">
-            <h2 className="text-white text-[30px] leading-[28px]">
-              Change the Charges
-            </h2>
-            <div className="mt-7 flex items-center justify-between">
-              <h4 className="text-Sky text-[20px]">
-                Current Charges
-                <span class="text-white font-semibold text-[20px] leading-[27.6px] ml-3">
-                  ₹ {adminDetail.charges} Per min
-                </span>
-              </h4>
-              <div>
-                <button
-                  onClick={() => setShowCharge(!showCharge)}
-                  className="bg-Sky text-white font-Popins font-normal w-[150px] h-[40px] rounded"
-                >
-                  Change Charges
-                </button>
-              </div>
+          <div className="w-full bg-darkBlack mt-5 rounded-2xl p-8 min-h-[123px] grid grid-cols-1 items-center">
+            <div className="flex items-center gap-4 md:flex-nowrap flex-wrap">
+              <button
+                onClick={() => setShowCharge(!showCharge)}
+                className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded"
+              >
+                Change Charges
+              </button>
+              <button
+                onClick={HeandleSendNotification}
+                className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded"
+              >
+                Send Notification
+              </button>
             </div>
-            {showCharge && (
-              <div className="flex items-center mt-5">
-                <div className="relative w-full">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="#fff"
-                    class="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-6"
+
+            <div className="flex items-center mt-5 md:flex-nowrap flex-wrap md:justify-start justify-center">
+              <div className="w-full">
+                <div className="grid grid-cols-1 items-center">
+                  <label
+                    htmlFor="title"
+                    className="font-Popins capitalize mr-2 text-white mb-2 w-10"
                   >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                    ></path>
-                  </svg>
+                    title
+                  </label>
                   <input
-                    type="number"
-                    name="Amount"
-                    value={charge}
-                    onChange={(e) => setCharge(e.target.value)}
-                    class="text-white/50 bg-Blue w-10/12 h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+                    type="text"
+                    name="title"
+                    id="title"
+                    class="text-white/50 bg-Blue  w-full h-[40px] rounded-md focus:outline-none pl-[10px] placeholder:text-white/50"
                     placeholder="Enter Your New Charge"
                   />
                 </div>
-                <button
-                  onClick={heandleCharges}
-                  className="bg-Sky text-white font-Popins font-normal min-w-[150px] h-[40px] rounded"
-                >
-                  Confirm
-                </button>
+                <div className="grid grid-cols-1 items-center mt-7">
+                  <label
+                    htmlFor="body"
+                    className="font-Popins capitalize mr-2 text-white mb-2 w-10"
+                  >
+                    Body
+                  </label>
+                  <textarea
+                    name="body"
+                    id="body"
+                    class="text-white/50 bg-Blue  w-full h-[40px] rounded-md focus:outline-none pl-[10px] placeholder:text-white/50"
+                    placeholder="Enter Your New Charge"
+                  ></textarea>
+                </div>
               </div>
+            </div>
+            {showCharge && (
+              <>
+                <div className="items-center justify-between mt-7">
+                  <h4 className="text-Sky text-[20px]">
+                    Current Charges
+                    <span class="text-white font-semibold text-[20px] leading-[27.6px] ml-3">
+                      ₹ {adminDetail.charges} Per min
+                    </span>
+                  </h4>
+                </div>
+                <div className="flex items-center mt-5 md:flex-nowrap flex-wrap md:justify-start justify-center">
+                  <div className="relative w-full">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#fff"
+                      class="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      ></path>
+                    </svg>
+                    <input
+                      type="number"
+                      name="Amount"
+                      value={charge}
+                      onChange={(e) => setCharge(e.target.value)}
+                      class="text-white/50 bg-Blue md:w-10/12 w-full h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+                      placeholder="Enter Your New Charge"
+                    />
+                  </div>
+                  <button
+                    onClick={heandleCharges}
+                    className="bg-Sky text-white font-Popins font-normal md:mt-0 mt-4 md:min-w-[150px] md:w-auto w-full h-[40px] rounded"
+                  >
+                    Confirm
+                  </button>
+                </div>
+              </>
             )}
           </div>
         </div>
         <div className="w-full bg-darkBlack rounded-3xl p-4 xl:col-span-1 lg:col-span-2 min-h-[815px] overflow-auto">
           <div className="w-full flex items-center justify-between">
             <h4 className="text-Sky text-[20px]">
-              Transaction
+              Transaction&nbsp;
               <span className="text-white font-semibold text-[30px] leading-[27.6px]">
                 History
               </span>
@@ -311,6 +371,18 @@ const Dashboard = () => {
             </button>
           </div>
           <div className="flex flex-col gap-3 mt-6">
+            {!loading && Withdraw.length === 0 && (
+              <div className="h-[63vh] flex items-center justify-center">
+                <div className="">
+                  <div className="max-w-[318px] mx-auto flex items-center justify-center">
+                    <img src={nodatagif} alt="" className="object-contain" />
+                  </div>
+                  <h2 className="text-white text-[32px] font-semibold mt-10 text-center font-Popins">
+                    No Data right now!
+                  </h2>
+                </div>
+              </div>
+            )}
             {Withdraw?.length > 0 &&
               Withdraw.filter((item) => item.request_status === "pending").map(
                 (withdraw, i) => (
@@ -392,86 +464,6 @@ const Dashboard = () => {
                   </>
                 )
               )}
-            {/* {Withdraw.accept?.length > 0 &&
-              Withdraw.accept.map((withdraw, i) => (
-                <>
-                  <div
-                    className="bg-Blue rounded-xl py-3 flex items-center justify-center"
-                    key={i}
-                  >
-                    <div className="w-full flex items-center justify-between">
-                      <div className="xl:grid xl:grid-cols-2  items-center px-4 gap-1 gap-y-4 w-full">
-                        <div>
-                          <h2 className="text-white text-[16px] font-Popins ">
-                            {withdraw.staff_name}
-                          </h2>
-                        </div>
-                        <div className="text-right">
-                          <h2 className="text-white text-[16px] font-Popins ">
-                            {withdraw.staff_number}
-                          </h2>
-                        </div>
-                        <div>
-                          <h2 className="text-Sky text-[16px] font-Popins ">
-                            Request Amount
-                          </h2>
-                          <h2 className="text-white text-[16px] font-Popins ">
-                            {withdraw.request_amount}
-                          </h2>
-                        </div>
-                        <h2 className="text-white text-[16px] font-Popins text-right">
-                          {dayjs(withdraw.date).format("DD/MM/YYYY")}
-                        </h2>
-                        <div className="xl:col-span-2 ">
-                          <button className="bg-green text-white font-Popins font-normal w-full h-[40px] rounded ml-auto md:mt-0 mt-3 cursor-default">
-                            Accepted
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              ))}
-            {Withdraw.reject?.length > 0 &&
-              Withdraw.reject.map((withdraw, i) => (
-                <>
-                  <div
-                    className="bg-Blue rounded-xl py-3 flex items-center justify-center"
-                    key={i}
-                  >
-                    <div className="w-full flex items-center justify-between">
-                      <div className="xl:grid xl:grid-cols-2  items-center px-4 gap-1 gap-y-4 w-full">
-                        <div>
-                          <h2 className="text-white text-[16px] font-Popins ">
-                            {withdraw.staff_name}
-                          </h2>
-                        </div>
-                        <div className="text-right">
-                          <h2 className="text-white text-[16px] font-Popins ">
-                            {withdraw.staff_number}
-                          </h2>
-                        </div>
-                        <div>
-                          <h2 className="text-Sky text-[16px] font-Popins ">
-                            Request Amount
-                          </h2>
-                          <h2 className="text-white text-[16px] font-Popins ">
-                            {withdraw.request_amount}
-                          </h2>
-                        </div>
-                        <h2 className="text-white text-[16px] font-Popins text-right">
-                          {dayjs(withdraw.date).format("DD/MM/YYYY")}
-                        </h2>
-                        <div className="xl:col-span-2 ">
-                          <button className="bg-red text-white font-Popins font-normal w-full h-[40px] rounded ml-auto md:mt-0 mt-3">
-                            reject
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              ))} */}
           </div>
         </div>
       </div>

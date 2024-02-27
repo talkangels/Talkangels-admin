@@ -49,7 +49,7 @@ const Login = () => {
             <div className="flex flex-col gap-3 max-w-[500px] items-center">
               {/* <img src={Logo} alt="Logo" className="mb-10" /> */}
               <h3 className="text-3xl text-white font-Popins font-semibold">
-                Welcome to Talk AngELs Portal
+                Welcome to TALK ANGELS Portal
               </h3>
               <h3 className="text-3xl text-white font-Popins font-semibold w-full my-3 text-left">
                 SignIn to Portal

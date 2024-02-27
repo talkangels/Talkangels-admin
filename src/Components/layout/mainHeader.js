@@ -6,6 +6,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { Menu } from "@headlessui/react";
 import { HaderName } from "../../utils/helper";
+import AddNotificationicon from "../assets/dashboard/AddNotificationicon.png";
 
 const Header = ({ setSidebarOpen }) => {
   const location = window.location.pathname.replace(/^\/+/g, "");
@@ -27,16 +28,13 @@ const Header = ({ setSidebarOpen }) => {
             {HaderName(location)}
           </h2>
           <div className="flex items-center gap-x-4 lg:gap-x-6">
-            <button>
-              <MagnifyingGlassIcon
-                className="pointer-events-none h-full w-5 text-white"
-                aria-hidden="true"
+            {/* <button className=" text-white font-Popins font-normal w-[20px] h-[20px] rounded">
+              <img
+                src={AddNotificationicon}
+                alt=""
+                className="w-full h-full object-contain"
               />
-            </button>
-            <button type="button" className="-m-2.5 p-2.5 text-white">
-              <span className="sr-only">View notifications</span>
-              <BellIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
+            </button> */}
             <div
               className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10"
               aria-hidden="true"

@@ -14,4 +14,5 @@ export const Routing = {
   Recharge: "/recharge",
   TransactionHistory: "/transactionHistory",
   ReportAndProblem: "/report-and-problem",
+  Sendnotification: "/sendnotification",
 };

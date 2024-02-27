@@ -26,7 +26,7 @@ const FeedbackList = () => {
     <>
       {loading && <Spinner />}
       <div className="mt-16 w-full overflow-x-auto">
-        {ratingList.length === 0 ? (
+        {!loading && ratingList.length === 0 ? (
           <div className="h-[63vh] flex items-center justify-center">
             <div className="">
               <div className="max-w-[318px] mx-auto">

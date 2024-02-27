@@ -62,3 +62,19 @@ export const allWithdrawRequest = async () => {
     return error?.response?.data;
   }
 };
+
+export const SendNotificationUser = async (body) => {
+  try {
+    let response = await axios({
+      method: "POST",
+      url: `${baseURL}admin/send-notification/user`,
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};

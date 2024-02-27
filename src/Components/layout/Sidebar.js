@@ -46,7 +46,7 @@ const navigation = [
     icon: FeedbackList,
   },
   {
-    name: "WithdrawRequest",
+    name: "Withdraw Request",
     href: Routing.TransactionHistory,
     icon: TransactionHistorys,
   },
@@ -133,8 +133,8 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                         src={Logo}
                         alt="Your Company"
                       />
-                      <h2 className="text-2xl font-Allerta text-white ml-4">
-                        Talk AngELS
+                      <h2 className="text-2xl font-Allerta text-white ml-4 uppercase">
+                        Talk Angels
                       </h2>
                     </div>
                     <nav className="flex flex-1 flex-col">
@@ -187,8 +187,8 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
             onClick={() => navigate(Routing.Dashboard)}
           >
             <img className="h-[61px] w-auto" src={Logo} alt="Your Company" />
-            <h2 className="text-2xl font-Allerta text-white ml-4">
-              Talk AngELS
+            <h2 className="text-2xl font-Allerta text-white ml-4 uppercase">
+              Talk Angels
             </h2>
           </div>
           <nav className="flex flex-1 flex-col">

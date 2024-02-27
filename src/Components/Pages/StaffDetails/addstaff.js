@@ -29,13 +29,22 @@ const Addstaff = ({ setStaff }) => {
   const [loading, setLoading] = useState(false);
 
   const [staffDetail, setStaffDetail] = useState({
-    image: null,
     name: "",
     mobile_number: "",
     bio: "",
     user_name: "",
-    image_url: null,
   });
+  const [image, SetImage] = useState({
+    image: null,
+    image_url: "",
+  });
+
+  function processImage(event) {
+    const imageFile = event.target.files[0];
+    const imageUrl = URL.createObjectURL(imageFile);
+
+    SetImage({ image: imageFile, image_url: imageUrl });
+  }
 
   const handleStaffdata = (e) => {
     setStaffDetail({ ...staffDetail, [e.target.name]: e.target.value });
@@ -49,7 +58,7 @@ const Addstaff = ({ setStaff }) => {
     formData.append("gender", selected.name);
     formData.append("bio", staffDetail.bio);
     formData.append("user_name", staffDetail.user_name);
-    formData.append("image", staffDetail.image);
+    formData.append("image", image.image);
 
     const result = await AddStaffDetail(formData);
     if (result?.status === 201) {
@@ -84,23 +93,18 @@ const Addstaff = ({ setStaff }) => {
 
           <button className="h-[138px] w-[138px] bg-darkBlack rounded-full flex items-center justify-center relative">
             <img
-              src={staffDetail.image_url ? staffDetail.image_url : userselect}
+              src={image.image_url ? image.image_url : userselect}
               alt=""
               className={`${
-                staffDetail.image_url
+                image.image_url
                   ? "h-[138px] w-[138px] bg-darkBlack rounded-full flex items-center justify-center relative"
                   : null
               }`}
             />
             <input
-              onChange={(event) => {
-                setStaffDetail((prevOption) => ({
-                  ...prevOption,
-                  image: event.currentTarget.files[0],
-                  image_url: URL.createObjectURL(event.currentTarget.files[0]),
-                }));
-              }}
               type="file"
+              accept="image/*"
+              onChange={processImage}
               className="h-[138px] w-[138px] rounded-full opacity-0 absolute top-0 left-0 cursor-pointer"
             />
           </button>
