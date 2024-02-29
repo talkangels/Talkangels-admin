@@ -14,7 +14,6 @@ const TransactionHistory = () => {
     accept: [],
     reject: [],
   });
-  console.log("🚀 ~ TransactionHistory ~ Withdraw:", Withdraw);
   const [loading, setLoading] = useState(false);
   const [selectedList, setSelectedList] = useState({
     requestId: "",

@@ -212,16 +212,6 @@ const Addstaff = ({ setStaff }) => {
                   </>
                 )}
               </Listbox>
-              {/* <img
-                src={Gender}
-                alt=""
-                className="absolute top-1/2 -translate-y-1/2 left-6"
-              />
-              <input
-                type="text"
-                className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
-                placeholder="Gender"
-              /> */}
             </div>
             <div className="w-full relative col-span-2">
               <img src={Bio} alt="" className="absolute top-[27px] left-6" />

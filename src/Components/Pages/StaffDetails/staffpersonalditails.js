@@ -8,7 +8,6 @@ import Age from "../../assets/StaffDetails/age.png";
 import Gender from "../../assets/StaffDetails/gender.png";
 import Language from "../../assets/StaffDetails/language.png";
 import Bio from "../../assets/StaffDetails/addBio.png";
-import User from "../../assets/StaffDetails/Ellipse 46.png";
 import { DeleteStaff, SingleStaff } from "../../services/staff";
 import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
@@ -22,7 +21,6 @@ const Staffpersonalditails = () => {
   };
 
   const [staffDetail, setStaffList] = useState([]);
-  console.log("🚀 ~ Staffpersonalditails ~ staffDetail:", staffDetail);
   const [loading, setLoading] = useState(false);
 
   const getSingleStaff = async () => {
@@ -270,9 +268,13 @@ const Staffpersonalditails = () => {
                 </div>
               </div>
             </div>
-            <div className="min-w-[255px] min-h-[255px] rounded-full">
+            <div className="min-w-[255px] min-h-[255px] rounded-full bg-[#75879b] border-2 border-white">
               <img
-                src={staffDetail.image ? staffDetail.image : User}
+                src={
+                  staffDetail.image
+                    ? staffDetail.image
+                    : "https://t4.ftcdn.net/jpg/02/51/95/53/360_F_251955356_FAQH0U1y1TZw3ZcdPGybwUkH90a3VAhb.jpg"
+                }
                 alt=""
                 className="rounded-full w-[255px] h-[255px] object-cover"
               />

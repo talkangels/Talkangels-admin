@@ -6,6 +6,9 @@ import PrivateRoute from "./utils/PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Login = lazy(() => import("./Components/Pages/Login/login"));
+const PrivacyPolicy = lazy(() =>
+  import("./Components/Pages/Privacy-Policy/PrivacyPolicy")
+);
 const Dashboard = lazy(() => import("./Components/Pages/Dashboard/dashboard"));
 const StaffDetails = lazy(() =>
   import("./Components/Pages/StaffDetails/StaffDetails")
@@ -30,6 +33,11 @@ const App = () => {
     {
       path: Routing.Initial,
       component: Login,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.PrivacyPolicy,
+      component: PrivacyPolicy,
       isPrivateRoute: false,
     },
     {
