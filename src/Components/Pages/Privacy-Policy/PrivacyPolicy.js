@@ -77,7 +77,7 @@ const PrivacyPolicy = () => {
 
   return (
     <>
-      <div className="bg-darkBlue py-7 text-white">
+      <div className="bg-darkBlue py-7 text-white sticky top-0 left-0">
         <h1 className="text-center font-semibold text-5xl">Privacy Policy</h1>
       </div>
       <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4">
@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
       </div>
       <div className="bg-darkBlue py-5 mt-10">
         <p className="mt-10 text-lg capitalize leading-[35px] text-center font-semibold text-white">
-          Date: This privacy policy updated on 29th Feb 2024
+          This privacy policy updated on 29th Feb 2024
         </p>
         <Link
           className="text-lg leading-[35px] text-center font-semibold text-Sky w-full block"

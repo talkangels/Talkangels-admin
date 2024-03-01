@@ -1,7 +1,9 @@
 export const Routing = {
   Initial: "/",
   Login: "/login",
+  Register: "/admin/register",
   PrivacyPolicy: "/privacy",
+  TermsConditions: "/tnc",
 
   // admin
 

@@ -84,6 +84,10 @@ const Login = () => {
                 <Link className="text-Sky" to="/privacy">
                   Privacy & Policy
                 </Link>
+                <p className="text-white">&nbsp;|&nbsp;</p>
+                <Link className="text-Sky" to="/tnc">
+                  Terms & conditions
+                </Link>
               </p>
             </div>
           </div>

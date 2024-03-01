@@ -5,9 +5,15 @@ import MainLayout from "./Components/layout/mainLayout";
 import PrivateRoute from "./utils/PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Spinner from "./Components/layout/spinner";
+
 const Login = lazy(() => import("./Components/Pages/Login/login"));
+const Register = lazy(() => import("./Components/Pages/Login/ragisterAdmin"));
 const PrivacyPolicy = lazy(() =>
   import("./Components/Pages/Privacy-Policy/PrivacyPolicy")
+);
+const TermsConditions = lazy(() =>
+  import("./Components/Pages/Privacy-Policy/TermsConditions")
 );
 const Dashboard = lazy(() => import("./Components/Pages/Dashboard/dashboard"));
 const StaffDetails = lazy(() =>
@@ -41,8 +47,18 @@ const App = () => {
       isPrivateRoute: false,
     },
     {
+      path: Routing.TermsConditions,
+      component: TermsConditions,
+      isPrivateRoute: false,
+    },
+    {
       path: Routing.Login,
       component: Login,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.Register,
+      component: Register,
       isPrivateRoute: false,
     },
     {
@@ -90,7 +106,7 @@ const App = () => {
   return (
     <>
       <ToastContainer />
-      <Suspense>
+      <Suspense fallback={<Spinner />}>
         <Router>
           <Routes>
             {routes.map((route, index) => (

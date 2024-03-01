@@ -14,6 +14,19 @@ export const userLogin = async (body) => {
   }
 };
 
+export const userRegister = async (body) => {
+  try {
+    let response = await axios({
+      method: "POST",
+      url: `${baseURL}auth/admin/register`,
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};
+
 export const GetOneAdmin = async (id) => {
   try {
     let response = await axios({

@@ -25,7 +25,7 @@ const Dashboard = () => {
   const [adminDetail, setAdminDetail] = useState({});
 
   const [charge, setCharge] = useState("");
-  const [showCharge, setShowCharge] = useState(false);
+  const [showCharge, setShowCharge] = useState(true);
   const [showNotification, setShowNotification] = useState(false);
 
   const getWithdraws = async () => {
@@ -261,7 +261,7 @@ const Dashboard = () => {
             <div className="flex items-center gap-4 md:flex-nowrap flex-wrap">
               <button
                 onClick={() => {
-                  setShowCharge(!showCharge);
+                  setShowCharge(true);
                   setShowNotification(false);
                 }}
                 className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded"
@@ -273,7 +273,6 @@ const Dashboard = () => {
                   setShowNotification(!showNotification);
                   setShowCharge(false);
                 }}
-                // onClick={HeandleSendNotification}
                 className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded"
               >
                 Send Notification

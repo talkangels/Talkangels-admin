@@ -14,15 +14,14 @@ function classNames(...classes) {
 
 const SendNotification = () => {
   const Typeoption = [
-    { id: 1, name: "Message" },
-    { id: 2, name: "Offer" },
-    { id: 3, name: "Other" },
+    { id: '1', name: "Message" },
+    { id: '2', name: "Offer" },
+    { id: '3', name: "Other" },
   ];
   const [staffList, setStaffList] = useState([]);
   const [userList, setUserList] = useState([]);
-  const [selectedType, setSelectedType] = useState([]);
+  const [selectedType, setSelectedType] = useState("")
   const [selectedAngel, setSelectedAngel] = useState("");
-  const [selectedUser, setSelectedUser] = useState([]);
 
   const getStaff = async () => {
     const body = {
@@ -173,24 +172,24 @@ const SendNotification = () => {
                             }
                             value={person}
                           >
-                            {({ selectedAngel, active }) => (
+                            {({ selected, active }) => (
                               <>
-                                <span
+                                <label
+                                  htmlFor={person.id}
                                   className={classNames(
-                                    selectedAngel
-                                      ? "font-semibold"
-                                      : "font-normal",
+                                    selected ? "font-semibold" : "font-normal",
                                     " truncate flex items-center justify-between"
                                   )}
                                 >
                                   {person.name}
                                   <input
+                                    id={person.id}
                                     name="plan"
                                     type="radio"
-                                    defaultChecked={selectedAngel}
+                                    defaultChecked={selected}
                                     className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                   />
-                                </span>
+                                </label>
                               </>
                             )}
                           </Listbox.Option>
@@ -316,24 +315,24 @@ const SendNotification = () => {
                             }
                             value={person}
                           >
-                            {({ selectedType, active }) => (
+                            {({ selected, active }) => (
                               <>
-                                <span
+                                <label
+                                  htmlFor={person.id}
                                   className={classNames(
-                                    selectedType
-                                      ? "font-semibold"
-                                      : "font-normal",
+                                    selected ? "font-semibold" : "font-normal",
                                     " truncate flex items-center justify-between"
                                   )}
                                 >
                                   {person.name}
                                   <input
+                                    id={person.id}
                                     name="plan"
                                     type="radio"
-                                    defaultChecked={selectedType}
+                                    defaultChecked={selected}
                                     className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                                   />
-                                </span>
+                                </label>
                               </>
                             )}
                           </Listbox.Option>
