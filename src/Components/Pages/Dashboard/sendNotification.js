@@ -13,7 +13,7 @@ function classNames(...classes) {
 }
 
 const SendNotification = () => {
-  const Genderoption = [
+  const Typeoption = [
     { id: 1, name: "Message" },
     { id: 2, name: "Offer" },
     { id: 3, name: "Other" },
@@ -127,7 +127,7 @@ const SendNotification = () => {
             name="bio"
           ></textarea>
         </div>
-        <div className="w-full flex justify-between items-center mt-5 gap-5">
+        <div className="w-full flex md:flex-nowrap flex-wrap justify-between items-center mt-5 gap-5">
           <div className="w-full border-2 border-white rounded-md">
             <Listbox value={selectedAngel} onChange={setSelectedAngel}>
               {({ open }) => (
@@ -212,7 +212,10 @@ const SendNotification = () => {
                         <img src={Gender} alt="" />
                       </span>
                       <span className="block truncate text-left">
-                        Select Type
+                        {userList
+                          .filter((person) => person.select)
+                          .map((person) => person.name)
+                          .join(", ") || "Select Type"}
                       </span>
                       <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                         <ChevronDownIcon
@@ -300,7 +303,7 @@ const SendNotification = () => {
                       leaveTo="opacity-0"
                     >
                       <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                        {Genderoption.map((person) => (
+                        {Typeoption.map((person) => (
                           <Listbox.Option
                             key={person.id}
                             className={({ active }) =>
@@ -342,6 +345,11 @@ const SendNotification = () => {
               )}
             </Listbox>
           </div>
+        </div>
+        <div className="w-full flex items-center justify-end mt-5">
+          <button className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded">
+            Send
+          </button>
         </div>
       </div>
     </div>

@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
       <div className="bg-darkBlue py-7 text-white">
         <h1 className="text-center font-semibold text-5xl">Privacy Policy</h1>
       </div>
-      <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10">
+      <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4">
         {data.map((item, i) => (
           <>
             <div>
