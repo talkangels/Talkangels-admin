@@ -240,12 +240,8 @@ const TransactionHistory = () => {
                   <img src={nodatagif} alt="" className="object-contain" />
                 </div>
                 <h2 className="text-white text-[32px] font-semibold mt-10 text-center font-Popins">
-                  No User to show right now!
+                  No Transection History to show right now!
                 </h2>
-                <p className="text-Gray max-w-[539px] mx-auto text-center text-lg font-Popins">
-                  We don’t have any staff’s info to show here. please add staff
-                  info first and then check their details here.
-                </p>
               </div>
             </div>
           </>

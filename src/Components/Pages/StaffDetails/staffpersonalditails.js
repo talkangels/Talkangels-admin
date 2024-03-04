@@ -146,7 +146,6 @@ const Staffpersonalditails = () => {
               </div>
               <div className="flex items-center">
                 <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
-                  {/* <img src={Language} alt="Username" /> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -182,7 +181,6 @@ const Staffpersonalditails = () => {
               </div>
               <div className="flex items-center">
                 <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
-                  {/* <img src={Language} alt="Username" /> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -209,7 +207,6 @@ const Staffpersonalditails = () => {
               </div>
               <div className="flex items-center">
                 <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
-                  {/* <img src={Language} alt="Username" /> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -242,7 +239,6 @@ const Staffpersonalditails = () => {
               </div>
               <div className="flex items-center">
                 <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
-                  {/* <img src={Language} alt="Username" /> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

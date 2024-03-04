@@ -15,11 +15,13 @@ import { GetOneAdmin } from "../../services/auth";
 import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
 import SendNotification from "./sendNotification";
 import Charges from "./charges";
+import TransactionDashboard from "./transactionHistory";
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
   const [Withdraw, setWithdraw] = useState([]);
+  console.log("🚀 ~ Dashboard ~ Withdraw:", Withdraw);
   const [loading, setLoading] = useState(false);
   const [mostRated, setMostRated] = useState([]);
   const [adminDetail, setAdminDetail] = useState({});
@@ -116,24 +118,6 @@ const Dashboard = () => {
       setShowCharge(!showCharge);
       getAdminDetail();
       setCharge("");
-    } else {
-      toast.error(result.message);
-      setLoading(false);
-    }
-  };
-
-  const HeandleSendNotification = async () => {
-    setLoading(true);
-    const body = {
-      title: "Hello",
-      body: "Heloo this is test Notification",
-      userIds: "",
-      angel_id: "",
-    };
-    const result = await SendNotificationUser(body);
-    if (result.status === 200) {
-      toast.success(result.message);
-      setLoading(false);
     } else {
       toast.error(result.message);
       setLoading(false);
@@ -264,22 +248,31 @@ const Dashboard = () => {
                   setShowCharge(true);
                   setShowNotification(false);
                 }}
-                className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded"
+                className={`${
+                  showCharge ? "bg-red" : "bg-Sky"
+                } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
               >
-                Change Charges
+                Change Charges 
               </button>
               <button
                 onClick={() => {
                   setShowNotification(!showNotification);
                   setShowCharge(false);
                 }}
-                className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded"
+                className={`${
+                  showNotification ? "bg-red" : "bg-Sky"
+                } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
               >
                 Send Notification
               </button>
             </div>
 
-            {showNotification && <SendNotification />}
+            {showNotification && (
+              <SendNotification
+                setLoading={setLoading}
+                setShowNotification={setShowNotification}
+              />
+            )}
 
             {showCharge && (
               <Charges
@@ -320,99 +313,28 @@ const Dashboard = () => {
             </button>
           </div>
           <div className="flex flex-col gap-3 mt-6">
-            {!loading && Withdraw.length === 0 && (
-              <div className="h-[63vh] flex items-center justify-center">
-                <div className="">
-                  <div className="max-w-[318px] mx-auto flex items-center justify-center">
-                    <img src={nodatagif} alt="" className="object-contain" />
-                  </div>
-                  <h2 className="text-white text-[32px] font-semibold mt-10 text-center font-Popins">
-                    No Data right now!
-                  </h2>
-                </div>
-              </div>
-            )}
-            {Withdraw?.length > 0 &&
-              Withdraw.filter((item) => item.request_status === "pending").map(
-                (withdraw, i) => (
-                  <>
-                    <div
-                      className="bg-Blue rounded-xl py-3 flex items-center justify-center"
-                      key={i}
-                    >
-                      <div className="w-full flex items-center justify-between">
-                        <div className="xl:grid xl:grid-cols-2  items-center px-4 gap-1 gap-y-4 w-full">
-                          <div>
-                            <h2 className="text-white text-[16px] font-Popins ">
-                              {withdraw.staff_name}
-                            </h2>
-                          </div>
-                          <div className="text-right">
-                            <h2 className="text-white text-[16px] font-Popins ">
-                              {withdraw.staff_number}
-                            </h2>
-                          </div>
-                          <div>
-                            <h2 className="text-Sky text-[16px] font-Popins ">
-                              Request Amount
-                            </h2>
-                            <h2 className="text-white text-[16px] font-Popins ">
-                              {withdraw.request_amount}
-                            </h2>
-                          </div>
-                          <h2 className="text-white text-[16px] font-Popins text-right">
-                            {dayjs(withdraw.date).format("DD/MM/YYYY")}
-                          </h2>
-                          <div className="xl:col-span-2 ">
-                            <div className="md:grid grid-cols-2 items-center justify-between w-full flex-wrap gap-y-3">
-                              <select
-                                name=""
-                                id=""
-                                className=" w-full h-[40px] rounded-lg bg-darkBlack text-white focus-visible:outline-none px-1"
-                                defaultValue={withdraw.request_status}
-                                onChange={(e) =>
-                                  setSelectedList({
-                                    requestId: withdraw._id,
-                                    status: e.target.value,
-                                  })
-                                }
-                              >
-                                <option
-                                  value="pending"
-                                  className="bg-Sky text-white"
-                                >
-                                  Pendding
-                                </option>
-                                <option
-                                  value="accept"
-                                  className="bg-Sky text-white"
-                                >
-                                  Accept
-                                </option>
-                                <option
-                                  value="reject"
-                                  className="bg-Sky text-white"
-                                >
-                                  Reject
-                                </option>
-                              </select>
-                              {selectedList.requestId === withdraw._id &&
-                                selectedList.status !== "pending" && (
-                                  <button
-                                    onClick={handleUpdateStatus}
-                                    className="bg-Sky text-white font-Popins font-normal md:max-w-[144px] w-full h-[40px] rounded ml-auto md:mt-0 mt-3"
-                                  >
-                                    {selectedList.status}
-                                  </button>
-                                )}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+            {!loading &&
+              Withdraw.filter((item) => item.request_status === "pending")
+                .length === 0 && (
+                <div className="h-[65vh] flex items-center justify-center">
+                  <div className="">
+                    <div className="max-w-[318px] mx-auto flex items-center justify-center">
+                      <img src={nodatagif} alt="" className="object-contain" />
                     </div>
-                  </>
-                )
+                    <h2 className="text-white text-[32px] font-semibold mt-10 text-center font-Popins">
+                      No Data right now!
+                    </h2>
+                  </div>
+                </div>
               )}
+            {Withdraw?.length > 0 && (
+              <TransactionDashboard
+                Withdraw={Withdraw}
+                setSelectedList={setSelectedList}
+                handleUpdateStatus={handleUpdateStatus}
+                selectedList={selectedList}
+              />
+            )}
           </div>
         </div>
       </div>

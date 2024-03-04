@@ -69,10 +69,6 @@ const ReportAndProblem = () => {
                 <h2 className="text-white text-[32px] font-semibold mt-10 text-center font-Popins">
                   No Report to show right now!
                 </h2>
-                <p className="text-Gray max-w-[539px] mx-auto text-center text-lg font-Popins">
-                  We don’t have any report’s info to show here. please add
-                  report info first and then check their details here.
-                </p>
               </div>
             </div>
           </>

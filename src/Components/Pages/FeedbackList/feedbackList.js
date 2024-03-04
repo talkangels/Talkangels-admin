@@ -33,12 +33,8 @@ const FeedbackList = () => {
                 <img src={nodatagif} alt="" className="w-full" />
               </div>
               <h2 className="text-white text-[32px] font-semibold mt-14 text-center font-Popins">
-                No Staffs to show right now!
+                No FeedBack to show right now!
               </h2>
-              <p className="text-Gray max-w-[539px] mx-auto text-center text-lg font-Popins">
-                We don’t have any staff’s info to show here. please add staff
-                info first and then check their details here.
-              </p>
             </div>
           </div>
         ) : (
