@@ -37,6 +37,7 @@ const Webpage = lazy(() => import("./Components/Pages/webpage/index"));
 const ResetPassword = lazy(() =>
   import("./Components/Pages/Login/resetPassword")
 );
+const Setting = lazy(() => import("./Components/Pages/setting/Setting"));
 
 const App = () => {
   const routes = [
@@ -113,6 +114,11 @@ const App = () => {
     {
       path: Routing.ReportAndProblem,
       component: ReportAndProblem,
+      isPrivateRoute: true,
+    },
+    {
+      path: Routing.Settings,
+      component: Setting,
       isPrivateRoute: true,
     },
   ];

@@ -1,20 +1,22 @@
 export const HaderName = (number) => {
   switch (number) {
-    case "dashboard":
+    case "admin/dashboard":
       return "";
-    case "staffdetail":
+    case "admin/staffdetail":
       return "Staff Details";
-    case "feedback":
+    case "admin/feedback":
       return "Feed back";
-    case "userdetail":
+    case "admin/userdetail":
       return "User Detail";
-    case "staffdetail/id":
+    case "admin/staffdetail/id":
       return "Staff Details";
-    case "recharge":
+    case "admin/recharge":
       return "Recharges";
-    case "report-and-problem":
+    case "admin/report-and-problem":
       return "Report And Problem";
-    case "transactionHistory":
+    case "admin/transactionHistory":
+      return "Transaction History";
+    case "admin/transactionHistory":
       return "Transaction History";
     default:
       return "";

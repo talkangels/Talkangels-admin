@@ -60,7 +60,7 @@ function classNames(...classes) {
 const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
   const current = window.location.pathname;
   const navigate = useNavigate();
-  
+
   const heandleLogOut = () => {
     localStorage.clear();
     navigate(Routing.Login);

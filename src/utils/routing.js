@@ -13,7 +13,6 @@ export const Routing = {
   StaffDetails: "/admin/staffdetail",
   FeedbackList: "/admin/feedback",
   UserDetails: "/admin/userdetail",
-  Reports: "/admin",
   Settings: "/admin/setting",
   Staffpersonalditails: "/admin/staffdetail/:id",
   Recharge: "/admin/recharge",

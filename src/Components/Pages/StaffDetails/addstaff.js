@@ -239,7 +239,7 @@ const Addstaff = ({ setStaff }) => {
             </div>
             <div className="w-full relative col-span-2 flex items-center justify-end">
               <button
-                className="sm:w-[290px] w-full h-[60px] bg-Sky rounded-md text-white ml-auto"
+                className="sm:w-[200px] text-xl w-full h-[60px] bg-Sky rounded-md text-white ml-auto"
                 onClick={() => handleSubmit()}
               >
                 Create a Staff

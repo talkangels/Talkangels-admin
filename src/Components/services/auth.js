@@ -67,3 +67,19 @@ export const ResetadminPassword = async (body) => {
     return error?.response?.data;
   }
 };
+
+export const UpdateAdminDetail = async (body, id) => {
+  try {
+    let response = await axios({
+      method: "PUT",
+      url: `${baseURL}admin/update/${id}`,
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};
