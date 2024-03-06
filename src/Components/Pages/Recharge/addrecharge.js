@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useState } from "react";
 import { AddRecharge } from "../../services/recharge";
 import { toast } from "react-toastify";
@@ -7,7 +6,6 @@ import Spinner from "../../layout/spinner";
 
 const AddRecharges = ({ setStaff }) => {
   const [loading, setLoading] = useState(false);
-
   const [staffDetail, setStaffDetail] = useState({
     Amount: "",
     Discounted_amout: "",

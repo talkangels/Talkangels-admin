@@ -15,7 +15,6 @@ function classNames(...classes) {
 const Listofrecharge = () => {
   const [rechargList, setRechargList] = useState([]);
   const [loading, setLoading] = useState(false);
-
   const getRecharg = async () => {
     setLoading(true);
     const body = {
@@ -32,7 +31,7 @@ const Listofrecharge = () => {
       setLoading(false);
     }
   };
-
+  
   const handleSwitchChange = async (index) => {
     if (index) {
       const body = {

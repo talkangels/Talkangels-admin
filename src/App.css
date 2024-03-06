@@ -29,7 +29,6 @@
   margin: 8px;
   border: 5px solid transparent;
   border-radius: 50%;
-  /* animation: lds-ring 1.9s cubic-bezier(.13,1.14,.83,.67) infinite; */
   animation: lds-ring 1.5s cubic-bezier(0.24, 1.2, 0.83, 0.67) infinite;
   border-color: #8182ee transparent transparent transparent;
 }
@@ -55,15 +54,11 @@
     transform: rotate(360deg);
   }
 }
-
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }

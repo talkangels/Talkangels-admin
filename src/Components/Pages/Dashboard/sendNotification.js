@@ -4,7 +4,6 @@ import User from "../../assets/StaffDetails/user.png";
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Gender from "../../assets/StaffDetails/gender.png";
 import { GetAllStaffList } from "../../services/staff";
 import { GetAllUser } from "../../services/user";
 import { SendNotificationUser } from "../../services/dashboard";
@@ -62,6 +61,13 @@ const SendNotification = ({ setLoading, setShowNotification }) => {
     const UserList = [];
     if (result?.status === 200) {
       for (var j in result.data) {
+        if (j === "0") {
+          UserList.push({
+            id: 1,
+            name: "Selected All",
+            select: false,
+          });
+        }
         UserList.push({
           id: result.data[j]._id,
           name: result.data[j].name,
@@ -81,13 +87,25 @@ const SendNotification = ({ setLoading, setShowNotification }) => {
 
   const handelChangeUser = (e, id) => {
     const checked = e.target.checked;
-    if (e) {
+    if (id === 1) {
       setUserList(
-        userList.map((item, index) =>
+        userList.map((item) => ({
+          ...item,
+          select: checked,
+        }))
+      );
+    } else if (e) {
+      setUserList(
+        userList.map((item) =>
           item.id === id
             ? {
                 ...item,
                 select: checked,
+              }
+            : item.id === 1
+            ? {
+                ...item,
+                select: false,
               }
             : item
         )
@@ -276,10 +294,16 @@ const SendNotification = ({ setLoading, setShowNotification }) => {
                         </svg>
                       </span>
                       <span className="block truncate text-left">
-                        {userList
-                          .filter((person) => person.select)
-                          .map((person) => person.name)
-                          .join(", ") || "Select User"}
+                        {userList.filter((person) => person.select).length ===
+                        userList.length
+                          ? "Select All"
+                          : userList.filter((person) => person.select).length >
+                            0
+                          ? userList
+                              .filter((person) => person.select)
+                              .map((person) => person.name)
+                              .join(", ")
+                          : "Select User"}
                       </span>
                       <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                         <ChevronDownIcon

@@ -3,11 +3,9 @@ import ClockIcon from "../../assets/dashboard/clock.png";
 import {
   ChangeCharges,
   GetMostRatedList,
-  SendNotificationUser,
   UpdateWithdrawRequestStatus,
   allWithdrawRequest,
 } from "../../services/dashboard";
-import dayjs from "dayjs";
 import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -19,13 +17,10 @@ import TransactionDashboard from "./transactionHistory";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-
   const [Withdraw, setWithdraw] = useState([]);
-  console.log("🚀 ~ Dashboard ~ Withdraw:", Withdraw);
   const [loading, setLoading] = useState(false);
   const [mostRated, setMostRated] = useState([]);
   const [adminDetail, setAdminDetail] = useState({});
-
   const [charge, setCharge] = useState("");
   const [showCharge, setShowCharge] = useState(true);
   const [showNotification, setShowNotification] = useState(false);
@@ -102,7 +97,7 @@ const Dashboard = () => {
   };
 
   const Staffpersonal = (id) => {
-    navigate(`/staffdetail/${id}`);
+    navigate(`/admin/staffdetail/${id}`);
   };
 
   const heandleCharges = async () => {
@@ -252,7 +247,7 @@ const Dashboard = () => {
                   showCharge ? "bg-red" : "bg-Sky"
                 } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
               >
-                Change Charges 
+                Change Charges
               </button>
               <button
                 onClick={() => {

@@ -1,12 +1,8 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Routing } from "../../../utils/routing";
-import { userLogin } from "../../services/auth";
 import Spinner from "../../layout/spinner";
 import LoginIllustation from "../../assets/Login/Login-amico.png";
 
 const Register = () => {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [userdata, setUserdata] = useState({
     name: "",
@@ -15,10 +11,12 @@ const Register = () => {
     password: "",
   });
   const handleUserdata = (e) => {
+    setLoading(true);
     setUserdata({
       ...userdata,
       [e.target.name]: e.target.value,
     });
+    setLoading(false);
   };
 
   return (
@@ -35,7 +33,6 @@ const Register = () => {
           </div>
           <div className="flex items-center justify-center bg-Background_login h-full px-4">
             <div className="flex flex-col gap-3 max-w-[500px] items-center">
-              {/* <img src={Logo} alt="Logo" className="mb-10" /> */}
               <h3 className="text-3xl text-white font-Popins font-semibold">
                 Welcome to TALK ANGELS Portal
               </h3>

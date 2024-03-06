@@ -170,7 +170,7 @@ const TermsConditions = () => {
       body: "If you download the Software from the app marketplaces, you acknowledge and agree that the app marketplaces are third party beneficiaries of this License Agreement and that after you accept the terms and conditions of these Terms of Use, the app marketplaces will have a three-way beneficiary enforces these Terms of Use (and will be deemed to have accepted the right). You agree to abide that you are using the Software and Services.",
     },
   ];
-
+  
   return (
     <>
       <div className="bg-darkBlue py-7 text-white sticky top-0 left-0">

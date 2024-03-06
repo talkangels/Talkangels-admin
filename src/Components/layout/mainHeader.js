@@ -1,12 +1,9 @@
 import React from "react";
 import {
   Bars3Icon,
-  BellIcon,
-  MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import { Menu } from "@headlessui/react";
 import { HaderName } from "../../utils/helper";
-import AddNotificationicon from "../assets/dashboard/AddNotificationicon.png";
 
 const Header = ({ setSidebarOpen }) => {
   const location = window.location.pathname.replace(/^\/+/g, "");
@@ -28,18 +25,10 @@ const Header = ({ setSidebarOpen }) => {
             {HaderName(location)}
           </h2>
           <div className="flex items-center gap-x-4 lg:gap-x-6">
-            {/* <button className=" text-white font-Popins font-normal w-[20px] h-[20px] rounded">
-              <img
-                src={AddNotificationicon}
-                alt=""
-                className="w-full h-full object-contain"
-              />
-            </button> */}
             <div
               className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10"
               aria-hidden="true"
             />
-
             {/* Profile dropdown */}
             <Menu as="div" className="relative">
               <Menu.Button className="-m-1.5 flex items-center p-1.5 cursor-default">

@@ -41,3 +41,29 @@ export const GetOneAdmin = async (id) => {
     return error?.response?.data;
   }
 };
+
+export const ForgotPassword = async (body) => {
+  try {
+    let response = await axios({
+      method: "POST",
+      url: `${baseURL}admin/forgot-password`,
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};
+
+export const ResetadminPassword = async (body) => {
+  try {
+    let response = await axios({
+      method: "POST",
+      url: `${baseURL}admin/reset-password`,
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};

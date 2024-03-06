@@ -42,7 +42,6 @@ const Addstaff = ({ setStaff }) => {
   function processImage(event) {
     const imageFile = event.target.files[0];
     const imageUrl = URL.createObjectURL(imageFile);
-
     SetImage({ image: imageFile, image_url: imageUrl });
   }
 

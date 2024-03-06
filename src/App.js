@@ -33,12 +33,26 @@ const ReportAndProblem = lazy(() =>
 const TransactionHistory = lazy(() =>
   import("./Components/Pages/TransactionHistory/TransactionHistory")
 );
+const Webpage = lazy(() => import("./Components/Pages/webpage/index"));
+const ResetPassword = lazy(() =>
+  import("./Components/Pages/Login/resetPassword")
+);
 
 const App = () => {
   const routes = [
     {
       path: Routing.Initial,
+      component: Webpage,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.Admin,
       component: Login,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.ResetPassword,
+      component: ResetPassword,
       isPrivateRoute: false,
     },
     {
@@ -59,7 +73,7 @@ const App = () => {
     {
       path: Routing.Register,
       component: Register,
-      isPrivateRoute: false,
+      isPrivateRoute: true,
     },
     {
       path: Routing.Dashboard,

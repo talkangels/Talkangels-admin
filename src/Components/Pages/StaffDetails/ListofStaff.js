@@ -54,7 +54,7 @@ const ListofStaff = () => {
   }, []);
 
   const Staffpersonal = (id) => {
-    navigate(`/staffdetail/${id}`);
+    navigate(`/admin/staffdetail/${id}`);
   };
 
   return (

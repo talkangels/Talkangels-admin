@@ -2,7 +2,6 @@ import React from "react";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-
 import Logo from "../assets/Group 1.png";
 import Dashboard from "../assets/dashboard/dashboard.png";
 import StaffDetails from "../assets/dashboard/staffDetails.png";
@@ -14,6 +13,7 @@ import Logout from "../assets/dashboard/logOut.png";
 import TransactionHistorys from "../assets/dashboard/Vector.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Routing } from "../../utils/routing";
+
 const navigation = [
   {
     name: "Dashboard",
@@ -59,9 +59,8 @@ function classNames(...classes) {
 
 const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
   const current = window.location.pathname;
-
   const navigate = useNavigate();
-
+  
   const heandleLogOut = () => {
     localStorage.clear();
     navigate(Routing.Login);
@@ -179,7 +178,6 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
           </div>
         </Dialog>
       </Transition.Root>
-
       <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-[393px] lg:flex-col">
         <div className="flex grow flex-col overflow-y-auto bg-sidbar_gradint pb-4">
           <div

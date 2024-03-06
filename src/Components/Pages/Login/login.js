@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Routing } from "../../../utils/routing";
-import { userLogin } from "../../services/auth";
+import { ForgotPassword, userLogin } from "../../services/auth";
 import Spinner from "../../layout/spinner";
 import LoginIllustation from "../../assets/Login/Login-amico.png";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,12 +13,14 @@ const Login = () => {
     user_id: "",
     password: "",
   });
+
   const handleUserdata = (e) => {
     setUserdata({
       ...userdata,
       [e.target.name]: e.target.value,
     });
   };
+
   const handleSubmit = async () => {
     setLoading(true);
     const data = {
@@ -32,8 +35,29 @@ const Login = () => {
       localStorage.setItem("charges", result?.charges);
       localStorage.setItem("is_login", true);
       navigate(Routing.Dashboard);
+      toast.success(result?.message);
     } else {
       setLoading(false);
+      toast.error(result?.message);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    if (userdata.user_id) {
+      setLoading(true);
+      const data = {
+        email: userdata.user_id,
+      };
+      const result = await ForgotPassword(data);
+      if (result?.status === 200) {
+        setLoading(false);
+        toast.success(result?.message);
+      } else {
+        setLoading(false);
+        toast.error(result?.message);
+      }
+    } else {
+      toast.info("If you forgot your password, please add a mail address");
     }
   };
 
@@ -51,19 +75,17 @@ const Login = () => {
           </div>
           <div className="flex items-center justify-center bg-Background_login h-full px-4">
             <div className="flex flex-col gap-3 max-w-[500px] items-center">
-              {/* <img src={Logo} alt="Logo" className="mb-10" /> */}
               <h3 className="text-3xl text-white font-Popins font-semibold">
                 Welcome to TALK ANGELS Portal
               </h3>
-              <h3 className="text-3xl text-white font-Popins font-semibold w-full my-3 text-left">
+              <h3 className="text-3xl text-white font-Popins font-semibold w-full my-3 text-center">
                 SignIn to Portal
               </h3>
-
               <input
                 type="text"
                 name="user_id"
                 className=" w-full bg-darkBlack text-white p-2 text-lg rounded-md placeholder:text-white focus:outline-none"
-                placeholder="Enter your id"
+                placeholder="Enter your email id"
                 onChange={handleUserdata}
               />
               <input
@@ -73,13 +95,19 @@ const Login = () => {
                 className=" w-full bg-darkBlack text-white p-2 text-lg rounded-md placeholder:text-white focus:outline-none"
                 placeholder="Enter your password"
               />
+              <p
+                className="text-Sky w-full text-end cursor-pointer"
+                onClick={handleForgotPassword}
+              >
+                forgot password
+              </p>
               <button
                 className="w-full h-[50px] bg-Sky rounded-md text-white mx-auto text-xl"
                 onClick={handleSubmit}
               >
                 Login
               </button>
-              <p className="flex items-center">
+              <p className="flex items-center mt-3">
                 <p className="text-white">You agree with our |&nbsp;</p>
                 <Link className="text-Sky" to="/privacy">
                   Privacy & Policy
