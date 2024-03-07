@@ -38,6 +38,7 @@ module.exports = {
         TableCell: "#1D1C39",
         green: "#00BD79",
         lightgreen: "#144C4C",
+        Homegreen: "#15B37E",
       },
       boxShadow: {
         dashboardBox: "0px 6px 16.1px -8px rgba(0, 0, 0, 0.25)",
