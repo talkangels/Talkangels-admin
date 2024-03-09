@@ -24,6 +24,8 @@ module.exports = {
           " linear-gradient(180deg, #28274C 0%, #181831 47.22%, #10101C 99.58%);",
         Background_login:
           "linear-gradient(227deg, #10101C 0%, #181831 51.67%, #28274C 100%);",
+        HOmepage:
+          "linear-gradient(335deg, #201F3E 20.16%, #16152A 45.96%, #111026 87.27%);",
       },
       colors: {
         Sky: "#5686DE",

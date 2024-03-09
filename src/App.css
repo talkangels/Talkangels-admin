@@ -70,3 +70,32 @@ input[type=number] {
   background-size: cover;
   /* mix-blend-mode: difference; */
 }
+
+.listener::after {
+  content: "";
+  height: 237px;
+  width: 237px;
+  background-color: #2A294D;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 99999px;
+  z-index: -1;
+}
+
+#Slider-1 .slick-slide {
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#Slider-1 .slick-list {
+  padding: 0 5% 0 10% !important;
+}
+
+@media (max-width:1255px) {
+  .Speciality {
+    display: none;
+  }
+}
