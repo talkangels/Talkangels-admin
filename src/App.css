@@ -99,3 +99,27 @@ input[type=number] {
     display: none;
   }
 }
+
+.BottomShape {
+  background-image: url("./Components/assets/homepage/BottomShape.png");
+  width: 100%;
+  height: 704px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.with::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 13%;
+  transform: translateX(-50%);
+  background: url("./Components/assets/homepage/with.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100%;
+  width: 134px;
+
+}

@@ -2,7 +2,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Logo from "../../assets/Webpagelogo.png";
-import { Arrow_Right, DoorShape, Smileyemoji } from "./Shape";
+import { Arrow_Right, DoorShape, Smileyemoji, Star } from "./Shape";
 import User_1 from "../../assets/homepage/Herosection.png";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -36,6 +36,7 @@ const Index = () => {
       link: "",
     },
   ];
+
   const settings = {
     dots: false,
     infinite: true,
@@ -87,6 +88,7 @@ const Index = () => {
     arrows: false,
     centerMode: true,
   };
+
   const Slider2 = {
     dots: false,
     infinite: true,
@@ -99,6 +101,7 @@ const Index = () => {
     cssEase: "linear",
     arrows: false,
   };
+
   return (
     <>
       <div className="bg-Mainbackground_gradint">
@@ -401,27 +404,103 @@ const Index = () => {
             </div>
           </Slider>
         </div>
-        <div className="md:w-[70%] md:ml-[180px] md:mt-0">
-          <Slider {...Slider2}>
+        <div className="md:w-[70%] mx-auto md:mt-0">
+          <Slider {...Slider2} className="">
             <div>
               <h3 className="text-Homegreen text-[215px] text-center">”</h3>
-              <p className="text-center text-[32px] font-light text-white -mt-[150px]">
+              <p className="text-center text-[32px] font-extralight text-white -mt-[150px]">
                 “During Product Discovery, Startup House helped me to understand
                 the lean start-up way of product development with initial
                 research, discovery workshops and many hours of discussion and
                 iteration.”
               </p>
+              <div className="flex items-center justify-center gap-x-3 mt-7">
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+              </div>
+              <div className="flex items-center justify-center mt-7">
+                <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
+                  <img
+                    src={Listenersimg_1}
+                    alt=""
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="ml-4">
+                  <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
+                    meera v.
+                  </h3>
+                  <p className="font-thin tracking-[0.5px] text-white/70 text-xs font-league">
+                    CEO @codewidget
+                  </p>
+                </div>
+              </div>
             </div>
             <div>
               <h3 className="text-Homegreen text-[215px] text-center">”</h3>
-              <p className="text-center text-[32px] font-light text-white -mt-[150px]">
+              <p className="text-center text-[32px] font-extralight text-white -mt-[150px]">
                 “During Product Discovery, Startup House helped me to understand
                 the lean start-up way of product development with initial
                 research, discovery workshops and many hours of discussion and
                 iteration.”
               </p>
+              <div className="flex items-center justify-center gap-x-3 mt-7">
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+              </div>
+              <div className="flex items-center justify-center mt-7">
+                <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
+                  <img
+                    src={Listenersimg_1}
+                    alt=""
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="ml-4">
+                  <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
+                    meera v.
+                  </h3>
+                  <p className="font-thin tracking-[0.5px] text-white/70 text-xs font-league">
+                    CEO @codewidget
+                  </p>
+                </div>
+              </div>
             </div>
           </Slider>
+        </div>
+        <div className="BottomShape mt-24 pt-[111px] pb-[190px] relative">
+          <div className="xl:max-w-[80%] mx-auto px-7">
+            <div>
+              <h2 className="text-[50px] font-semibold text-white">
+                Your happily
+                <span className="uppercase ml-2">ever after</span>
+              </h2>
+              <h2 className="text-[68px] font-semibold text-white uppercase max-w-[556px] text-end with relative">
+                Talkangel!
+              </h2>
+              <p className="text-[30px] text-white font-thin max-w-[630px] mt-2">
+                Join the exciting journey of meeting new friends within our
+                vibrant community of over one million users!
+              </p>
+              <div className="flex items-center flex-wrap gap-x-4 mt-6">
+                <button className="px-[35px]  py-[15px] bg-white text-[28px] text-Homegreen rounded-full flex items-center justify-center gap-[34px]">
+                  Get Started <Arrow_Right />
+                </button>
+                <button className="px-[35px]  py-[15px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
+                  Download the app <Arrow_Right />
+                </button>
+              </div>
+            </div>
+          </div>
+          <img
+            src={Phone}
+            alt=""
+            className="absolute top-[79px] right-[150px]"
+          />
         </div>
       </div>
     </>
