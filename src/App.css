@@ -109,6 +109,12 @@ input[type=number] {
   background-position: bottom;
 }
 
+@media (max-width:1024px) {
+  .BottomShape {
+    height: fit-content;
+  }
+}
+
 .with::after {
   content: "";
   position: absolute;
@@ -121,5 +127,4 @@ input[type=number] {
   background-size: contain;
   height: 100%;
   width: 134px;
-
 }

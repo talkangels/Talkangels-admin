@@ -6,7 +6,7 @@ const Charges = ({ setCharge, adminDetail, charge, heandleCharges }) => {
       <div className="items-center justify-between mt-7">
         <h4 className="text-Sky text-[20px]">
           Current Charges
-          <span class="text-white font-semibold text-[20px] leading-[27.6px] ml-3">
+          <span className="text-white font-semibold text-[20px] leading-[27.6px] ml-3">
             ₹ {adminDetail.charges} Per min
           </span>
         </h4>
@@ -17,9 +17,9 @@ const Charges = ({ setCharge, adminDetail, charge, heandleCharges }) => {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="#fff"
-            class="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-6"
+            className="w-6 h-6 absolute top-1/2 -translate-y-1/2 left-6"
           >
             <path
               stroke-linecap="round"
@@ -32,7 +32,7 @@ const Charges = ({ setCharge, adminDetail, charge, heandleCharges }) => {
             name="Amount"
             value={charge}
             onChange={(e) => setCharge(e.target.value)}
-            class="text-white/50 bg-Blue md:w-10/12 w-full h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+            className="text-white/50 bg-Blue md:w-10/12 w-full h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
             placeholder="Enter Your New Charge"
           />
         </div>
