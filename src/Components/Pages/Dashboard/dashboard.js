@@ -14,6 +14,7 @@ import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
 import SendNotification from "./sendNotification";
 import Charges from "./charges";
 import TransactionDashboard from "./transactionHistory";
+import { Routing } from "../../../utils/routing";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -243,9 +244,8 @@ const Dashboard = () => {
                   setShowCharge(true);
                   setShowNotification(false);
                 }}
-                className={`${
-                  showCharge ? "bg-red" : "bg-Sky"
-                } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
+                className={`${showCharge ? "bg-red" : "bg-Sky"
+                  } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
               >
                 Change Charges
               </button>
@@ -254,11 +254,17 @@ const Dashboard = () => {
                   setShowNotification(!showNotification);
                   setShowCharge(false);
                 }}
-                className={`${
-                  showNotification ? "bg-red" : "bg-Sky"
-                } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
+                className={`${showNotification ? "bg-red" : "bg-Sky"
+                  } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
               >
                 Send Notification
+              </button>
+
+              <button
+                onClick={() => navigate(Routing.WebPageAdmin)}
+                className="bg-Sky text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded"
+              >
+                Web Page
               </button>
             </div>
 

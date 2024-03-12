@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [forgotPassword, setForgotPassword] = useState(false);
   const [userdata, setUserdata] = useState({
     user_id: "",
     password: "",
@@ -52,6 +53,7 @@ const Login = () => {
       if (result?.status === 200) {
         setLoading(false);
         toast.success(result?.message);
+        setForgotPassword(false)
       } else {
         setLoading(false);
         toast.error(result?.message);
@@ -79,7 +81,10 @@ const Login = () => {
                 Welcome to TALK ANGELS Portal
               </h3>
               <h3 className="text-3xl text-white font-Popins font-semibold w-full my-3 text-center">
-                SignIn to Portal
+                {
+                  !forgotPassword ?
+                    "SignIn to Portal" : "Forgot Password"
+                }
               </h3>
               <input
                 type="text"
@@ -88,26 +93,48 @@ const Login = () => {
                 placeholder="Enter your email id"
                 onChange={handleUserdata}
               />
-              <input
-                type="password"
-                name="password"
-                onChange={handleUserdata}
-                className=" w-full bg-darkBlack text-white p-2 text-lg rounded-md placeholder:text-white focus:outline-none"
-                placeholder="Enter your password"
-              />
-              <p
-                className="text-Sky w-full text-end cursor-pointer"
-                onClick={handleForgotPassword}
-              >
-                forgot password
-              </p>
-              <button
-                className="w-full h-[50px] bg-Sky rounded-md text-white mx-auto text-xl"
-                onClick={handleSubmit}
-              >
-                Login
-              </button>
-              <p className="flex items-center mt-3">
+              {
+                forgotPassword &&
+                <div className="flex gap-[50px] my-5 w-full">
+                  <button
+                    className="w-full h-[50px] bg-red rounded-md text-white mx-auto text-xl"
+                    onClick={() => setForgotPassword(false)}
+                  >
+                    Cancle
+                  </button>
+                  <button
+                    className="w-full h-[50px] bg-Sky rounded-md text-white mx-auto text-xl"
+                    onClick={handleForgotPassword}
+                  >
+                    Forgot password
+                  </button>
+                </div>
+              }
+              {
+                !forgotPassword &&
+                <>
+                  <input
+                    type="password"
+                    name="password"
+                    onChange={handleUserdata}
+                    className=" w-full bg-darkBlack text-white p-2 text-lg rounded-md placeholder:text-white focus:outline-none"
+                    placeholder="Enter your password"
+                  />
+                  <p
+                    className="text-Sky w-full text-end cursor-pointer"
+                    onClick={() => setForgotPassword(true)}
+                  >
+                    forgot password
+                  </p>
+                  <button
+                    className="w-full h-[50px] bg-Sky rounded-md text-white mx-auto text-xl"
+                    onClick={handleSubmit}
+                  >
+                    Login
+                  </button>
+                </>
+              }
+              <p className="flex items-center mt-3 flex-wrap">
                 <p className="text-white">You agree with our |&nbsp;</p>
                 <Link className="text-Sky" to="/privacy">
                   Privacy & Policy
