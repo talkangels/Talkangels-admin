@@ -75,7 +75,7 @@ const App = () => {
     {
       path: Routing.Register,
       component: Register,
-      isPrivateRoute: true,
+      isPrivateRoute: false,
     },
     {
       path: Routing.Dashboard,

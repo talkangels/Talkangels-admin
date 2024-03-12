@@ -53,7 +53,7 @@ const Login = () => {
       if (result?.status === 200) {
         setLoading(false);
         toast.success(result?.message);
-        setForgotPassword(false)
+        setForgotPassword(false);
       } else {
         setLoading(false);
         toast.error(result?.message);
@@ -77,14 +77,11 @@ const Login = () => {
           </div>
           <div className="flex items-center justify-center bg-Background_login h-full px-4">
             <div className="flex flex-col gap-3 max-w-[500px] items-center">
-              <h3 className="text-3xl text-white font-Popins font-semibold">
+              <h3 className="text-3xl text-white font-Popins font-semibold md:text-left text-center">
                 Welcome to TALK ANGELS Portal
               </h3>
               <h3 className="text-3xl text-white font-Popins font-semibold w-full my-3 text-center">
-                {
-                  !forgotPassword ?
-                    "SignIn to Portal" : "Forgot Password"
-                }
+                {!forgotPassword ? "SignIn to Portal" : "Forgot Password"}
               </h3>
               <input
                 type="text"
@@ -93,8 +90,7 @@ const Login = () => {
                 placeholder="Enter your email id"
                 onChange={handleUserdata}
               />
-              {
-                forgotPassword &&
+              {forgotPassword && (
                 <div className="flex gap-[50px] my-5 w-full">
                   <button
                     className="w-full h-[50px] bg-red rounded-md text-white mx-auto text-xl"
@@ -109,9 +105,8 @@ const Login = () => {
                     Forgot password
                   </button>
                 </div>
-              }
-              {
-                !forgotPassword &&
+              )}
+              {!forgotPassword && (
                 <>
                   <input
                     type="password"
@@ -133,7 +128,7 @@ const Login = () => {
                     Login
                   </button>
                 </>
-              }
+              )}
               <p className="flex items-center mt-3 flex-wrap">
                 <p className="text-white">You agree with our |&nbsp;</p>
                 <Link className="text-Sky" to="/privacy">

@@ -141,7 +141,10 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                         <li className="overflow-hidden">
                           <ul className="space-y-1">
                             {navigation.map((item) => (
-                              <li key={item.name}>
+                              <li
+                                key={item.name}
+                                onClick={() => setSidebarOpen(false)}
+                              >
                                 <Link
                                   to={item.href}
                                   className={classNames(

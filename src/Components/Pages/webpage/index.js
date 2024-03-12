@@ -333,7 +333,7 @@ const Index = () => {
           <div className="xl:max-w-[90%] mx-auto ">
             <div className="flex items-center justify-between">
               <div className="max-w-[693px]">
-                <h3 className="text-left text-white md:text-[64px] text-[50px] relative uppercase font-bold">
+                <h3 className="md:text-left text-center text-white md:text-[64px] text-[50px] relative uppercase font-bold ">
                   Our Speciality
                   <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
                     <DoorShape />
@@ -347,7 +347,7 @@ const Index = () => {
                   make voice calls to your matches. Your safety and privacy are
                   super important to us too.
                 </p>
-                <p className="text-[40px] font-[600] text-white mt-[52px]">
+                <p className="text-[40px] font-[600] text-white mt-[52px] md:text-left text-center">
                   Join TalkAngel today{" "}
                   <span className="text-Homegreen">
                     to find the one who makes your heart happy.
@@ -524,7 +524,7 @@ const Index = () => {
                 <h2 className="text-[48px] text-white uppercase font-bold">
                   TALKANGELS
                 </h2>
-                <div className="flex items-center gap-6 flex-wrap ml-2 md:justify-start justify-center">
+                <div className="flex items-center gap-6 flex-wrap ml-2 md:justify-start justify-center md:mt-0 my-6">
                   <Facebook />
                   <Twitter />
                   <Instagram />
@@ -537,7 +537,7 @@ const Index = () => {
                     About Us
                   </h2>
                   <Link
-                    to="/privacypolicy"
+                    to="/privacy"
                     className="text-white md:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     Privacy Policy
