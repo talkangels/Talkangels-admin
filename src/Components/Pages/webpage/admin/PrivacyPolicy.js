@@ -102,11 +102,7 @@ export default function PrivacyPolicyAdmin({
                     <div className='flex gap-4 py-5 border-b border-white/25 '>
                         <div className="flex flex-wrap items-center w-full gap-2">
                             <div className="w-full relative">
-                                <img
-                                    src={User}
-                                    alt=""
-                                    className="absolute top-1/2 -translate-y-1/2 left-6"
-                                />
+                                <h3 className="absolute top-1/2 -translate-y-1/2 left-6 text-white">{sectionIndex + 1} .</h3>
                                 <input
                                     type="text"
                                     value={section.title}
@@ -125,13 +121,9 @@ export default function PrivacyPolicyAdmin({
                                 ></textarea>
                             </div>
                             {section.topics.map((topic, topicIndex) => (
-                                <div className='flex w-full gap-5 items-center'>
+                                <div className='flex w-full gap-5 items-center ml-12'>
                                     <div className="w-full relative">
-                                        <img
-                                            src={User}
-                                            alt=""
-                                            className="absolute top-1/2 -translate-y-1/2 left-6"
-                                        />
+                                        <h3 className="absolute top-1/2 -translate-y-1/2 left-6 text-white">{topicIndex + 1} .</h3>
                                         <input
                                             type="text"
                                             value={topic}

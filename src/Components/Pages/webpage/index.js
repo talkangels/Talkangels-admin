@@ -222,7 +222,7 @@ const Index = () => {
                       <Arrow_Right />
                     }
                   </button>
-                  <button className="w-[280px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
+                  <button className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
                     Download the app{" "}
                     {
                       // eslint-disable-next-line
@@ -501,14 +501,14 @@ const Index = () => {
         <div className="BottomShape mt-24 pt-[111px] pb-[190px] relative">
           <div className="xl:max-w-[80%] mx-auto px-3">
             <div>
-              <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white">
+              <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex">
                 Your happily
                 <span className="uppercase ml-2 md:static block">
                   ever after
                 </span>
               </h2>
               <h2 className="lg:text-end text-center md:text-[68px] text-[47px] font-semibold text-white uppercase lg:max-w-[556px] relative">
-                Talkangel!
+                with Talkangel!
               </h2>
               <p className="lg:text-left text-center text-[30px] text-white font-thin lg:max-w-[630px] mt-2">
                 Join the exciting journey of meeting new friends within our
@@ -522,7 +522,7 @@ const Index = () => {
                     <Arrow_Right />
                   }
                 </button>
-                <button className="w-[280px] h-[80px] px-2 bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
+                <button className="w-[300px] h-[80px] px-2 bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
                   Download the app{" "}
                   {
                     // eslint-disable-next-line
