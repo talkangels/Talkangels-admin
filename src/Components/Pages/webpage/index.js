@@ -503,7 +503,7 @@ const Index = () => {
         <div className="BottomShape mt-24 pt-[111px] pb-[190px] relative">
           <div className="xl:max-w-[80%] mx-auto px-3">
             <div>
-              <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex">
+              <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex flex-wrap md:justify-start justify-center">
                 Your happily
                 <span className="uppercase ml-2 lg:static block">
                   ever after
