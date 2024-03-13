@@ -152,7 +152,7 @@ const Index = () => {
                   </div>
                   <div className="-mr-2 flex sm:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -194,27 +194,27 @@ const Index = () => {
         </Disclosure>
         <div className="xl:max-w-[90%] mx-auto px-3">
           <div className="pt-20">
-            <div className="grid lg:grid-cols-2 xl:items-center items-start justify-between flex-wrap">
+            <div className="grid lg:grid-cols-2 grid-cols-1 xl:items-center items-start justify-between flex-wrap">
               <div className="">
-                <h2 className="text-[52px] font-league tracking-wide text-white font-light relative md:w-fit md:text-left text-center">
+                <h2 className="text-[52px] font-league tracking-wide text-white font-light relative lg:w-fit lg:text-left text-center">
                   The door to
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2">
                     <DoorShape />
                   </span>
                 </h2>
-                <h2 className="text-Homegreen md:text-[64px] text-[58px] md:justify-start justify-center font-bold mt-5 flex items-center gap-2 flex-wrap">
+                <h2 className="text-Homegreen lg:text-[64px] text-[58px] lg:justify-start justify-center font-bold mt-5 flex items-center gap-2 flex-wrap">
                   Friendship
                   <span className="h-[69px] w-[87px] block bg-hero_pattern -mt-4"></span>
                   Forever
                 </h2>
-                <h2 className="text-white md:text-[100px] text-[60px] md:text-left text-center font-bold">
+                <h2 className="text-white lg:text-[100px] text-[60px] lg:text-left text-center font-bold">
                   Unlocked!
                 </h2>
-                <p className="text-white text-[30px] font-thin max-w-[640px] md:text-left text-center">
+                <p className="text-white text-[30px] font-thin lg:max-w-[640px] lg:text-left text-center">
                   Join the exciting journey of meeting new friends within our
                   vibrant community of over one million users!
                 </p>
-                <div className="flex items-center gap-4 mt-[28px] flex-wrap md:justify-start justify-center">
+                <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                   <button className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
                     Get Started{" "}
                     {
@@ -224,14 +224,16 @@ const Index = () => {
                   </button>
                   <button className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
                     Download the app{" "}
-                    {
-                      // eslint-disable-next-line
-                      <Arrow_Right />
-                    }
+                    <div className="-rotate-45">
+                      {
+                        // eslint-disable-next-line
+                        <Arrow_Right />
+                      }
+                    </div>
                   </button>
                 </div>
               </div>
-              <div className="relative  items-center justify-center lg:order-2 order-1 md:flex hidden">
+              <div className="relative  items-center justify-center lg:order-2 order-1 lg:flex hidden">
                 <div className="">
                   <div>
                     <img src={User_1} alt="" className="" />
@@ -255,7 +257,7 @@ const Index = () => {
               <Listenerscard img={Listenersimg_6} />
               <Listenerscard img={Listenersimg_5} />
             </div>
-            <div className="flex md:justify-end justify-center">
+            <div className="flex lg:justify-end justify-center">
               <button className="mt-[42px] text-white text-center text-[24px] bg-[#232243] p-4 rounded">
                 View More Listeners
               </button>
@@ -275,8 +277,8 @@ const Index = () => {
                   />
                 </div>
               </div>
-              <div className="xl:w-[70%] lg:ml-[180px] lg:mt-0 mt-10">
-                <h3 className="text-center text-white text-[64px] relative">
+              <div className="xl:w-[70%] w-full lg:ml-[180px] lg:mt-0 mt-10">
+                <h3 className="text-center text-white text-[64px] relative xl:-ml-[100px] ml-0">
                   Key Features
                   <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
                     <DoorShape />
@@ -285,52 +287,52 @@ const Index = () => {
                 <div className="flex items-center justify-center flex-wrap">
                   <div className="mt-[81px] grid md:grid-cols-2 gap-x-[77px] gap-y-[73px]">
                     <div>
-                      <div className="flex md:justify-start justify-center">
+                      <div className="flex lg:justify-start justify-center">
                         <Smileyemoji />
                       </div>
-                      <h4 className="text-white text-[32px] font-semibold mt-5 md:text-left text-center">
+                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
                         Free Chat
                       </h4>
-                      <p className="text-[20px] md:text-justify text-center text-white max-w-[313px] font-extralight">
+                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
                         Product Discovery is vital when you want to conduct
                         thorough target market research and user testing to
                         minimize risk to your product investment.
                       </p>
                     </div>
                     <div>
-                      <div className="flex md:justify-start justify-center">
+                      <div className="flex lg:justify-start justify-center">
                         <Smileyemoji />
                       </div>
-                      <h4 className="text-white text-[32px] font-semibold mt-5 md:text-left text-center">
+                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
                         Free Chat
                       </h4>
-                      <p className="text-[20px] md:text-justify text-center text-white max-w-[313px] font-extralight">
+                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
                         Product Discovery is vital when you want to conduct
                         thorough target market research and user testing to
                         minimize risk to your product investment.
                       </p>
                     </div>
                     <div>
-                      <div className="flex md:justify-start justify-center">
+                      <div className="flex lg:justify-start justify-center">
                         <Smileyemoji />
                       </div>
-                      <h4 className="text-white text-[32px] font-semibold mt-5 md:text-left text-center">
+                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
                         Free Chat
                       </h4>
-                      <p className="text-[20px] md:text-justify text-center text-white max-w-[313px] font-extralight">
+                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
                         Product Discovery is vital when you want to conduct
                         thorough target market research and user testing to
                         minimize risk to your product investment.
                       </p>
                     </div>
                     <div>
-                      <div className="flex md:justify-start justify-center">
+                      <div className="flex lg:justify-start justify-center">
                         <Smileyemoji />
                       </div>
-                      <h4 className="text-white text-[32px] font-semibold mt-5 md:text-left text-center">
+                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
                         Free Chat
                       </h4>
-                      <p className="text-[20px] md:text-justify text-center text-white max-w-[313px] font-extralight">
+                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
                         Product Discovery is vital when you want to conduct
                         thorough target market research and user testing to
                         minimize risk to your product investment.
@@ -345,14 +347,14 @@ const Index = () => {
         <div className="relative  pt-[120px] px-3">
           <div className="xl:max-w-[90%] mx-auto ">
             <div className="flex items-center justify-between">
-              <div className="max-w-[693px]">
-                <h3 className="md:text-left text-center text-white md:text-[64px] text-[50px] relative uppercase font-bold ">
+              <div className="lg:max-w-[693px]">
+                <h3 className="lg:text-left text-center text-white lg:text-[64px] text-[50px] relative uppercase font-bold ">
                   Our Speciality
                   <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
                     <DoorShape />
                   </span>
                 </h3>
-                <p className="text-[28px] md:text-justify text-center text-white font-extralight">
+                <p className="text-[28px] lg:text-justify text-center text-white font-extralight">
                   Welcome to TalkAngel! We're more than just a dating app. Our
                   platform makes it easy for you to find and chat with special
                   people. You can look for love, friendship, or just have a nice
@@ -360,7 +362,7 @@ const Index = () => {
                   make voice calls to your matches. Your safety and privacy are
                   super important to us too.
                 </p>
-                <p className="text-[40px] font-[600] text-white mt-[52px] md:text-left text-center">
+                <p className="text-[40px] font-[600] text-white mt-[52px] lg:text-left text-center">
                   Join TalkAngel today{" "}
                   <span className="text-Homegreen">
                     to find the one who makes your heart happy.
@@ -377,7 +379,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="relative  md:pt-[178px] pt-[100px] px-7" id="Slider-1">
+        <div className="relative  lg:pt-[178px] pt-[100px] px-7" id="Slider-1">
           <Slider {...settings}>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
@@ -430,7 +432,7 @@ const Index = () => {
             </div>
           </Slider>
         </div>
-        <div className="md:w-[70%] mx-auto md:mt-0">
+        <div className="lg:w-[70%] mx-auto lg:mt-0">
           <Slider {...Slider2} className="">
             <div>
               <h3 className="text-Homegreen text-[215px] text-center">”</h3>
@@ -503,7 +505,7 @@ const Index = () => {
             <div>
               <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex">
                 Your happily
-                <span className="uppercase ml-2 md:static block">
+                <span className="uppercase ml-2 lg:static block">
                   ever after
                 </span>
               </h2>
@@ -514,7 +516,7 @@ const Index = () => {
                 Join the exciting journey of meeting new friends within our
                 vibrant community of over one million users!
               </p>
-              <div className="flex items-center gap-4 mt-[28px] flex-wrap md:justify-start justify-center">
+              <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                 <button className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
                   Get Started{" "}
                   {
@@ -524,10 +526,12 @@ const Index = () => {
                 </button>
                 <button className="w-[300px] h-[80px] px-2 bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
                   Download the app{" "}
-                  {
-                    // eslint-disable-next-line
-                    <Arrow_Right />
-                  }
+                  <div className="-rotate-45">
+                    {
+                      // eslint-disable-next-line
+                      <Arrow_Right />
+                    }
+                  </div>
                 </button>
               </div>
             </div>
@@ -539,62 +543,62 @@ const Index = () => {
           />
         </div>
         <footer>
-          <div className="md:pt-[110px] xl:max-w-[90%] mx-auto px-3">
-            <div className=" flex items-center md:justify-between justify-center border-b border-white/25 pb-[112px] flex-wrap">
-              <div>
-                <h2 className="text-[48px] text-white uppercase font-bold">
+          <div className="lg:pt-[110px] xl:max-w-[90%] mx-auto px-3">
+            <div className=" flex items-center lg:justify-between justify-center border-b border-white/25 pb-[112px] flex-wrap">
+              <div className="lg:w-auto w-full">
+                <h2 className="text-[48px] text-white uppercase font-bold lg:text-left text-center">
                   TALKANGELS
                 </h2>
-                <div className="flex items-center gap-6 flex-wrap ml-2 md:justify-start justify-center md:mt-0 my-6">
+                <div className="flex items-center gap-6 flex-wrap ml-2 lg:justify-start justify-center lg:mt-0 my-6">
                   <Facebook />
                   <Twitter />
                   <Instagram />
                   <Linkedin />
                 </div>
               </div>
-              <div className="grid md:grid-cols-2 gap-x-[67px]">
+              <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
                 <div className="flex flex-col gap-y-5">
-                  <h2 className="text-white md:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
+                  <h2 className="text-white lg:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
                     About Us
                   </h2>
                   <Link
                     to="/privacy"
-                    className="text-white md:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     Privacy Policy
                   </Link>
                   <Link
                     to="/"
-                    className="text-white md:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     Refund & Cancellation
                   </Link>
                   <Link
                     to="/tnc"
-                    className="text-white md:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     Terms & Conditions
                   </Link>
                 </div>
-                <div className="flex flex-col gap-y-5 md:mt-0 mt-5">
-                  <h2 className="text-white md:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
+                <div className="flex flex-col gap-y-5 lg:mt-0 mt-5">
+                  <h2 className="text-white lg:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
                     Support
                   </h2>
                   <Link
                     to="/"
-                    className="text-white md:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     Contact Us
                   </Link>
                   <Link
                     to="/"
-                    className="text-white md:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     Guidelines
                   </Link>
                   <Link
                     to="/"
-                    className="text-white md:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     FAQs
                   </Link>
@@ -602,7 +606,7 @@ const Index = () => {
               </div>
             </div>
             <div className="py-11 flex items-center justify-between flex-wrap">
-              <div className="flex items-center flex-wrap md:justify-start justify-center">
+              <div className="flex items-center flex-wrap lg:justify-start justify-center">
                 <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
                   Get the App!
                 </h2>
@@ -616,11 +620,11 @@ const Index = () => {
               <div className="">
                 <Link
                   to="mailto:info@talkangels.com"
-                  className="text-white text-lg md:text-right text-center font-medium leading-[37.674px] block"
+                  className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block"
                 >
                   info@talkangels.com
                 </Link>
-                <h2 className="text-white md:text-right text-center text-lg font-light">
+                <h2 className="text-white lg:text-right text-center text-lg font-light">
                   © Copyright 2024 -{" "}
                   <span className="text-Homegreen"> TALKANGELS</span>, All
                   Rights Reserved.
