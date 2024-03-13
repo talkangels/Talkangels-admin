@@ -1,8 +1,16 @@
 import React, { useState } from 'react'
 import User from "../../../assets/StaffDetails/user.png";
 import Bio from "../../../assets/StaffDetails/addBio.png";
+import { AddWebPage } from '../../../services/webPage';
+import { toast } from 'react-toastify';
 
-export default function PrivacyPolicyAdmin({ privacyPolicy, setPrivacyPolicy }) {
+export default function PrivacyPolicyAdmin({
+    privacyPolicy,
+    setPrivacyPolicy,
+    getWebpage,
+    setLoading,
+    tab
+}) {
 
     const addField = () => {
         setPrivacyPolicy({
@@ -73,6 +81,20 @@ export default function PrivacyPolicyAdmin({ privacyPolicy, setPrivacyPolicy }) 
             data: newData,
         });
     };
+
+    const handleSubmit = async () => {
+        setLoading(true)
+        const result = await AddWebPage(privacyPolicy)
+        if (result.status === 201) {
+            setLoading(false)
+            getWebpage(tab)
+            toast.success(result.message)
+        } else {
+            setLoading(false)
+            toast.error(result.message)
+        }
+    }
+
     return (
         <>
             {
@@ -89,14 +111,14 @@ export default function PrivacyPolicyAdmin({ privacyPolicy, setPrivacyPolicy }) 
                                     type="text"
                                     value={section.title}
                                     onChange={(e) => handleTitleChange(sectionIndex, e.target.value)}
-                                    className="text-white/50 bg-darkBlack w-full h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+                                    className="text-white bg-darkBlack w-full h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
                                     placeholder="Add Title"
                                 />
                             </div>
                             <div className="w-full relative mt-2">
                                 <img src={Bio} alt="" className="absolute top-[10px] left-6" />
                                 <textarea
-                                    className="text-white/50 bg-darkBlack w-full h-[100px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50 pt-[10px]"
+                                    className="text-white bg-darkBlack w-full h-[100px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50 pt-[10px]"
                                     placeholder="Add Body"
                                     value={section.body}
                                     onChange={(e) => handleBodyChange(sectionIndex, e.target.value)}
@@ -114,7 +136,7 @@ export default function PrivacyPolicyAdmin({ privacyPolicy, setPrivacyPolicy }) 
                                             type="text"
                                             value={topic}
                                             onChange={(e) => handleTopicChange(sectionIndex, topicIndex, e.target.value)}
-                                            className="text-white/50 bg-darkBlack w-full h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+                                            className="text-white bg-darkBlack w-full h-[40px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
                                             placeholder="Add Topic"
                                         />
                                     </div>
@@ -167,6 +189,7 @@ export default function PrivacyPolicyAdmin({ privacyPolicy, setPrivacyPolicy }) 
                 ))
             }
             <button
+                onClick={handleSubmit}
                 className="bg-Sky text-white font-Popins font-normal md:w-[150px] h-[40px] rounded"
             >
                 Submit
