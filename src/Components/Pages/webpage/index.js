@@ -1,7 +1,15 @@
 import React from "react";
+import { Disclosure } from "@headlessui/react";
+import { Link } from "react-router-dom";
+// Components
+import Listenerscard from "./Listenerscard";
+// Slider
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+// images and icons
 import Logo from "../../assets/Webpagelogo.png";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   Arrow_Right,
   DoorShape,
@@ -13,17 +21,17 @@ import {
   Twitter,
 } from "./Shape";
 import User_1 from "../../assets/homepage/Herosection.png";
-import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Listenerscard from "./Listenerscard";
 import Listenersimg_1 from "../../assets/homepage/Listenersimg_1.png";
 import Phone from "../../assets/homepage/iPhone-13-Pro-Front.png";
 import card from "../../assets/homepage/phonecard.png";
 import Speciality_mobile from "../../assets/homepage/SpecialityMobile.png";
-import Slider from "react-slick";
 import PlayStore from "../../assets/homepage/Playstoreicon.png";
 import AppleStore from "../../assets/homepage/Applestore.png";
-import { Link } from "react-router-dom";
+import Listenersimg_2 from "../../assets/homepage/Listenersimg_2.png";
+import Listenersimg_3 from "../../assets/homepage/Listenersimg_3.png";
+import Listenersimg_4 from "../../assets/homepage/Listenersimg_4.png";
+import Listenersimg_5 from "../../assets/homepage/Listenersimg_5.png";
+import Listenersimg_6 from "../../assets/homepage/Listenersimg_6.png";
 
 const Index = () => {
   const Router = [
@@ -52,18 +60,16 @@ const Index = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 4,
     autoplay: true,
     autoplaySpeed: 1000,
-    dots: false,
-    speed: 1000,
     slide: "div",
     cssEase: "linear",
     responsive: [
       {
         breakpoint: 1400,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
@@ -99,10 +105,10 @@ const Index = () => {
     speed: 1300,
     arrows: false,
     centerMode: true,
+    swipeToSlide: true,
   };
 
   const Slider2 = {
-    dots: false,
     infinite: true,
     slidesToShow: 1,
     autoplay: true,
@@ -113,7 +119,6 @@ const Index = () => {
     cssEase: "linear",
     arrows: false,
   };
-
   return (
     <>
       <div className="bg-Mainbackground_gradint">
@@ -211,10 +216,18 @@ const Index = () => {
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap md:justify-start justify-center">
                   <button className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
-                    Get Started <Arrow_Right />
+                    Get Started{" "}
+                    {
+                      // eslint-disable-next-line
+                      <Arrow_Right />
+                    }
                   </button>
                   <button className="w-[280px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
-                    Download the app <Arrow_Right />
+                    Download the app{" "}
+                    {
+                      // eslint-disable-next-line
+                      <Arrow_Right />
+                    }
                   </button>
                 </div>
               </div>
@@ -237,10 +250,10 @@ const Index = () => {
           </h3>
           <div className="xl:max-w-[90%] mx-auto px-7 mt-[63px]">
             <div className="grid xl:grid-cols-4 gap-x-[52px] lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-20 gap-y-6">
-              <Listenerscard img={Listenersimg_1} />
-              <Listenerscard img={Listenersimg_1} />
-              <Listenerscard img={Listenersimg_1} />
-              <Listenerscard img={Listenersimg_1} />
+              <Listenerscard img={Listenersimg_4} />
+              <Listenerscard img={Listenersimg_5} />
+              <Listenerscard img={Listenersimg_6} />
+              <Listenerscard img={Listenersimg_5} />
             </div>
             <div className="flex md:justify-end justify-center">
               <button className="mt-[42px] text-white text-center text-[24px] bg-[#232243] p-4 rounded">
@@ -368,49 +381,49 @@ const Index = () => {
           <Slider {...settings}>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_1}
+                src={Listenersimg_2}
                 className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_1}
+                src={Listenersimg_3}
                 className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_1}
+                src={Listenersimg_4}
                 className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_1}
+                src={Listenersimg_5}
                 className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_1}
+                src={Listenersimg_6}
                 className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_1}
+                src={Listenersimg_4}
                 className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_1}
+                src={Listenersimg_2}
                 className="w-full h-full object-cover object-top"
                 alt=""
               />
@@ -503,10 +516,18 @@ const Index = () => {
               </p>
               <div className="flex items-center gap-4 mt-[28px] flex-wrap md:justify-start justify-center">
                 <button className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
-                  Get Started <Arrow_Right />
+                  Get Started{" "}
+                  {
+                    // eslint-disable-next-line
+                    <Arrow_Right />
+                  }
                 </button>
                 <button className="w-[280px] h-[80px] px-2 bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
-                  Download the app <Arrow_Right />
+                  Download the app{" "}
+                  {
+                    // eslint-disable-next-line
+                    <Arrow_Right />
+                  }
                 </button>
               </div>
             </div>
