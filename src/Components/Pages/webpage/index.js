@@ -144,9 +144,13 @@ const Index = () => {
                             </a>
                           </>
                         ))}
-                        <button className="border rounded-full w-[100px] h-[40px] text-white">
+                        <Link
+                          to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                          target="_blank"
+                          className="border rounded-full w-[100px] h-[40px] text-white flex items-center justify-center"
+                        >
                           Download
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -184,9 +188,13 @@ const Index = () => {
                       </Disclosure.Button>
                     </>
                   ))}
-                  <button className="border rounded mt-5 w-full h-[40px] text-white">
+                  <Link
+                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    target="_blank"
+                    className="border rounded-lg w-full h-[40px] text-white flex items-center justify-center"
+                  >
                     Download
-                  </button>
+                  </Link>
                 </div>
               </Disclosure.Panel>
             </>
@@ -620,7 +628,7 @@ const Index = () => {
               <div className="">
                 <Link
                   to="mailto:info@talkangels.com"
-                  className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block"
+                  className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit ml-auto"
                 >
                   info@talkangels.com
                 </Link>
