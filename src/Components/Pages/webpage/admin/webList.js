@@ -1,22 +1,18 @@
-import React, { useState } from 'react'
-import User from "../../../assets/StaffDetails/user.png";
+import React from 'react'
 import Bio from "../../../assets/StaffDetails/addBio.png";
-import { AddWebPage } from '../../../services/webPage';
-import { toast } from 'react-toastify';
 
-export default function PrivacyPolicyAdmin({
-    privacyPolicy,
-    setPrivacyPolicy,
-    getWebpage,
-    setLoading,
-    tab
+export default function WebListPage({
+    webPageData,
+    setWebPageData,
+    handleSubmit,
+    deleteTab
 }) {
 
     const addField = () => {
-        setPrivacyPolicy({
-            ...privacyPolicy,
+        setWebPageData({
+            ...webPageData,
             data: [
-                ...privacyPolicy.data,
+                ...webPageData.data,
                 {
                     title: "",
                     body: "",
@@ -27,78 +23,65 @@ export default function PrivacyPolicyAdmin({
     };
 
     const addTopic = (index) => {
-        const newData = [...privacyPolicy.data];
+        const newData = [...webPageData.data];
         newData[index].topics.push("");
-        setPrivacyPolicy({
-            ...privacyPolicy,
+        setWebPageData({
+            ...webPageData,
             data: newData,
         });
     };
 
     const removeField = (index) => {
         if (index === 1) return;
-        const newData = [...privacyPolicy.data];
+        const newData = [...webPageData.data];
         newData.splice(index, 1);
-        setPrivacyPolicy({
-            ...privacyPolicy,
+        setWebPageData({
+            ...webPageData,
             data: newData,
         });
     };
 
     const removeTopic = (sectionIndex, topicIndex) => {
-        const newData = [...privacyPolicy.data];
+        const newData = [...webPageData.data];
         if (newData[sectionIndex].topics.length === 1) return;
         newData[sectionIndex].topics.splice(topicIndex, 1);
-        setPrivacyPolicy({
-            ...privacyPolicy,
+        setWebPageData({
+            ...webPageData,
             data: newData,
         });
     };
 
     const handleTitleChange = (index, value) => {
-        const newData = [...privacyPolicy.data];
+        const newData = [...webPageData.data];
         newData[index].title = value;
-        setPrivacyPolicy({
-            ...privacyPolicy,
+        setWebPageData({
+            ...webPageData,
             data: newData,
         });
     };
 
     const handleBodyChange = (index, value) => {
-        const newData = [...privacyPolicy.data];
+        const newData = [...webPageData.data];
         newData[index].body = value;
-        setPrivacyPolicy({
-            ...privacyPolicy,
+        setWebPageData({
+            ...webPageData,
             data: newData,
         });
     };
 
     const handleTopicChange = (sectionIndex, topicIndex, value) => {
-        const newData = [...privacyPolicy.data];
+        const newData = [...webPageData.data];
         newData[sectionIndex].topics[topicIndex] = value;
-        setPrivacyPolicy({
-            ...privacyPolicy,
+        setWebPageData({
+            ...webPageData,
             data: newData,
         });
     };
 
-    const handleSubmit = async () => {
-        setLoading(true)
-        const result = await AddWebPage(privacyPolicy)
-        if (result.status === 201) {
-            setLoading(false)
-            getWebpage(tab)
-            toast.success(result.message)
-        } else {
-            setLoading(false)
-            toast.error(result.message)
-        }
-    }
-
     return (
         <>
             {
-                privacyPolicy.data.map((section, sectionIndex) => (
+                webPageData.data.map((section, sectionIndex) => (
                     <div className='flex gap-4 py-5 border-b border-white/25 '>
                         <div className="flex flex-wrap items-center w-full gap-2">
                             <div className="w-full relative">
@@ -114,7 +97,7 @@ export default function PrivacyPolicyAdmin({
                             <div className="w-full relative mt-2">
                                 <img src={Bio} alt="" className="absolute top-[10px] left-6" />
                                 <textarea
-                                    className="text-white bg-darkBlack w-full h-[100px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50 pt-[10px]"
+                                    className="text-white bg-darkBlack w-full min-h-[150px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50 pt-[10px]"
                                     placeholder="Add Body"
                                     value={section.body}
                                     onChange={(e) => handleBodyChange(sectionIndex, e.target.value)}
@@ -157,7 +140,7 @@ export default function PrivacyPolicyAdmin({
                             ))}
                         </div>
                         {
-                            sectionIndex === privacyPolicy.data.length - 1 ?
+                            sectionIndex === webPageData.data.length - 1 ?
                                 <button
                                     onClick={addField}
                                     className="h-10 w-12 bg-Sky rounded-md shadow-Iconshadow flex items-center justify-center"
@@ -180,12 +163,20 @@ export default function PrivacyPolicyAdmin({
                     </div>
                 ))
             }
-            <button
-                onClick={handleSubmit}
-                className="bg-Sky text-white font-Popins font-normal md:w-[150px] h-[40px] rounded"
-            >
-                Submit
-            </button>
+            <div className='flex items-center justify-between'>
+                <button
+                    onClick={deleteTab}
+                    className="bg-red text-white font-Popins font-normal md:w-[100px] h-[40px] rounded"
+                >
+                    Delete
+                </button>
+                <button
+                    onClick={handleSubmit}
+                    className="bg-Sky text-white font-Popins font-normal md:w-[100px] h-[40px] rounded"
+                >
+                    Submit
+                </button>
+            </div>
         </>
     )
 }

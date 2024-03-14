@@ -22,6 +22,31 @@ export const GetWebPage = async (body) => {
         let response = await axios({
             method: "POST",
             url: `${baseURL}admin/get-web-page`,
+            data: body,
+        });
+        return response.data;
+    } catch (error) {
+        return error?.response?.data;
+    }
+};
+
+export const GetWebPageNames = async () => {
+    try {
+        let response = await axios({
+            method: "GET",
+            url: `${baseURL}admin/all-web-page-name`,
+        });
+        return response.data;
+    } catch (error) {
+        return error?.response?.data;
+    }
+};
+
+export const DelateWebPage = async (body) => {
+    try {
+        let response = await axios({
+            method: "DELETE",
+            url: `${baseURL}admin/delete-web-page`,
             headers: {
                 Authorization: localStorage.getItem("token"),
             },
