@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { AddWebPage, DelateWebPage, GetWebPage, GetWebPageNames } from "../../../services/webPage";
 import Spinner from "../../../layout/spinner";
 import WebListPage from "./webList";
 import { toast } from "react-toastify";
 
 const WebPageAdmin = () => {
-    
+
     const [loading, setLoading] = useState(false);
     const [tabs, setTabs] = useState([]);
     const [newTabName, setNewTabName] = useState("")
