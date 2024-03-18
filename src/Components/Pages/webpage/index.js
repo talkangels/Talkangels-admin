@@ -1,5 +1,4 @@
 import React from "react";
-import { Disclosure } from "@headlessui/react";
 import { Link } from "react-router-dom";
 // Components
 import Listenerscard from "./Listenerscard";
@@ -8,8 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 // images and icons
-import Logo from "../../assets/Webpagelogo.png";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import {
   Arrow_Right,
   DoorShape,
@@ -32,31 +29,10 @@ import Listenersimg_3 from "../../assets/homepage/Listenersimg_3.png";
 import Listenersimg_4 from "../../assets/homepage/Listenersimg_4.png";
 import Listenersimg_5 from "../../assets/homepage/Listenersimg_5.png";
 import Listenersimg_6 from "../../assets/homepage/Listenersimg_6.png";
+import Header from "./Header";
+import { Routing } from "../../../utils/routing";
 
 const Index = () => {
-  const Router = [
-    {
-      Name: "Home",
-      link: "",
-    },
-    {
-      Name: "Listeners",
-      link: "",
-    },
-    {
-      Name: "Blog",
-      link: "",
-    },
-    {
-      Name: "FAQs",
-      link: "",
-    },
-    {
-      Name: "Intern",
-      link: "",
-    },
-  ];
-
   const settings = {
     dots: false,
     infinite: true,
@@ -122,84 +98,7 @@ const Index = () => {
   return (
     <>
       <div className="bg-Mainbackground_gradint">
-        <Disclosure as="nav" className="bg-transparent">
-          {({ open }) => (
-            <>
-              <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center justify-between">
-                  <div className="flex items-center justify-between w-full">
-                    <div className="flex-shrink-0">
-                      <img className="h-8 w-auto" src={Logo} alt="Logo" />
-                    </div>
-                    <div className="hidden sm:ml-6 sm:block">
-                      <div className="flex space-x-4 items-center">
-                        {Router.map((routing, i) => (
-                          <>
-                            <a
-                              key={i}
-                              href={routing.link}
-                              className="text-lg text-white font-league font-light"
-                            >
-                              {routing.Name}
-                            </a>
-                          </>
-                        ))}
-                        <Link
-                          to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                          target="_blank"
-                          className="border rounded-full w-[100px] h-[40px] text-white flex items-center justify-center"
-                        >
-                          Download
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="-mr-2 flex sm:hidden">
-                    {/* Mobile menu button */}
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Open main menu</span>
-                      {open ? (
-                        <XMarkIcon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <Bars3Icon
-                          className="block h-6 w-6"
-                          aria-hidden="true"
-                        />
-                      )}
-                    </Disclosure.Button>
-                  </div>
-                </div>
-              </div>
-
-              <Disclosure.Panel className="sm:hidden">
-                <div className="px-2 pb-3 pt-2">
-                  {Router.map((routing, i) => (
-                    <>
-                      <Disclosure.Button
-                        as="a"
-                        href={routing.link}
-                        className="block text-lg text-white font-league font-light mt-3"
-                      >
-                        {routing.Name}
-                      </Disclosure.Button>
-                    </>
-                  ))}
-                  <Link
-                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                    target="_blank"
-                    className="border rounded-lg w-full h-[40px] text-white flex items-center justify-center"
-                  >
-                    Download
-                  </Link>
-                </div>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
+        <Header />
         <div className="xl:max-w-[90%] mx-auto px-3">
           <div className="pt-20">
             <div className="grid lg:grid-cols-2 grid-cols-1 xl:items-center items-start justify-between flex-wrap">
@@ -223,14 +122,22 @@ const Index = () => {
                   vibrant community of over one million users!
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
-                  <button className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
+                  <Link
+                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                    target="_blank"
+                  >
                     Get Started{" "}
                     {
                       // eslint-disable-next-line
                       <Arrow_Right />
                     }
-                  </button>
-                  <button className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
+                  </Link>
+                  <Link
+                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                    target="_blank"
+                  >
                     Download the app{" "}
                     <div className="-rotate-45">
                       {
@@ -238,7 +145,7 @@ const Index = () => {
                         <Arrow_Right />
                       }
                     </div>
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="relative  items-center justify-center lg:order-2 order-1 lg:flex hidden">
@@ -259,7 +166,7 @@ const Index = () => {
             </span>
           </h3>
           <div className="xl:max-w-[90%] mx-auto px-7 mt-[63px]">
-            <div className="grid xl:grid-cols-4 gap-x-[52px] lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-20 gap-y-6">
+            <div className="grid xxl:grid-cols-4 xxl:gap-x-[52px] gap-x-10 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-20 gap-y-6">
               <Listenerscard img={Listenersimg_4} />
               <Listenerscard img={Listenersimg_5} />
               <Listenerscard img={Listenersimg_6} />
@@ -525,14 +432,22 @@ const Index = () => {
                 vibrant community of over one million users!
               </p>
               <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
-                <button className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
+                <Link
+                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                  className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                  target="_blank"
+                >
                   Get Started{" "}
                   {
                     // eslint-disable-next-line
                     <Arrow_Right />
                   }
-                </button>
-                <button className="w-[300px] h-[80px] px-2 bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]">
+                </Link>
+                <Link
+                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                  className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                  target="_blank"
+                >
                   Download the app{" "}
                   <div className="-rotate-45">
                     {
@@ -540,7 +455,7 @@ const Index = () => {
                       <Arrow_Right />
                     }
                   </div>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -605,7 +520,7 @@ const Index = () => {
                     Guidelines
                   </Link>
                   <Link
-                    to="/"
+                    to={Routing.Faq}
                     className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     FAQs
@@ -628,7 +543,7 @@ const Index = () => {
               <div className="">
                 <Link
                   to="mailto:info@talkangels.com"
-                  className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit ml-auto"
+                  className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit md:ml-auto md:mx-0 mx-auto"
                 >
                   info@talkangels.com
                 </Link>

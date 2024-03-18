@@ -1,6 +1,7 @@
 export const Routing = {
   Initial: "/",
-  Admin:"/admin",
+  Admin: "/admin",
+  Faq: "/",
   Login: "/admin/login",
   ResetPassword: "/admin/reset-password",
   Register: "/admin/register",
@@ -19,5 +20,5 @@ export const Routing = {
   TransactionHistory: "/admin/transactionHistory",
   ReportAndProblem: "/admin/report-and-problem",
   Sendnotification: "/admin/sendnotification",
-  WebPageAdmin:"/admin/web-page"
+  WebPageAdmin: "/admin/web-page",
 };
