@@ -66,7 +66,7 @@ const ResetPassword = () => {
                     placeholder="Enter your password"
                   />
                   <input
-                    type="password"
+                    type="text"
                     name="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}

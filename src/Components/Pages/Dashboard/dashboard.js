@@ -133,10 +133,7 @@ const Dashboard = () => {
                   <h2 className="text-3xl font-semibold text-white">Revenue</h2>
                   <div className="flex items-center gap-x-5 gap-y-0 flex-wrap">
                     <h3 className="text-[50px] text-yellow font-semibold flex items-baseline gap-x-1">
-                      67 <span className="text-lg text-Gray">Hr</span>
-                    </h3>
-                    <h3 className="text-[50px] text-yellow font-semibold flex items-baseline gap-x-1">
-                      46 <span className="text-lg text-Gray">Min</span>
+                      00 <span className="text-lg text-Gray">rs</span>
                     </h3>
                   </div>
                 </div>
@@ -152,10 +149,10 @@ const Dashboard = () => {
                   <h2 className="text-3xl font-semibold text-white">Minutes</h2>
                   <div className="flex items-center gap-x-5 gap-y-0 flex-wrap">
                     <h3 className="text-[50px] text-yellow font-semibold flex items-baseline gap-x-1">
-                      67 <span className="text-lg text-Gray">Hr</span>
+                      00 <span className="text-lg text-Gray">Hr</span>
                     </h3>
                     <h3 className="text-[50px] text-yellow font-semibold flex items-baseline gap-x-1">
-                      46 <span className="text-lg text-Gray">Min</span>
+                      00 <span className="text-lg text-Gray">Min</span>
                     </h3>
                   </div>
                 </div>
@@ -191,7 +188,7 @@ const Dashboard = () => {
               </button>
             </div>
             <div className="flex flex-col gap-4 mt-7">
-              {mostRated?.length > 0 &&
+              {mostRated?.length > 0 ?
                 mostRated.map((item, index) => (
                   <>
                     <div
@@ -234,7 +231,19 @@ const Dashboard = () => {
                       </div>
                     </div>
                   </>
-                ))}
+                ))
+                :
+                <div className="h-[15vh] flex items-center justify-center">
+                  <div className="">
+                    <div className="max-w-[318px] mx-auto flex items-center justify-center">
+                      <img src={nodatagif} alt="" className="object-contain" />
+                    </div>
+                    <h2 className="text-white text-[32px] font-semibold mt-10 text-center font-Popins">
+                      No Data right now!
+                    </h2>
+                  </div>
+                </div>
+              }
             </div>
           </div>
           <div className="w-full bg-darkBlack mt-5 rounded-2xl p-8 min-h-[123px] grid grid-cols-1 items-center">
@@ -317,7 +326,7 @@ const Dashboard = () => {
             {!loading &&
               Withdraw.filter((item) => item.request_status === "pending")
                 .length === 0 && (
-                <div className="h-[65vh] flex items-center justify-center">
+                <div className="h-[70vh] flex items-center justify-center">
                   <div className="">
                     <div className="max-w-[318px] mx-auto flex items-center justify-center">
                       <img src={nodatagif} alt="" className="object-contain" />
