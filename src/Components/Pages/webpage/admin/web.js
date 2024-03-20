@@ -50,6 +50,7 @@ const WebPageAdmin = () => {
                 isActive: index === 0,
             }));
             setTabs(newData)
+            setLoading(false);
             getWebpage(newData.find(tab => tab.isActive).name);
         } else {
             console.log("Data not found");
