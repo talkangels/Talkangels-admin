@@ -119,7 +119,7 @@ const SendNotification = ({ setLoading, setShowNotification }) => {
       title: bodyData.title,
       body: bodyData.body,
       userIds: userList
-        .filter((person) => person.select)
+        .filter((person) => person.select && person.id !== 1)
         .map((person) => person.id),
       angel_id: selectedAngel?.id ? selectedAngel?.id : "",
       type: selectedType?.name ? selectedType?.name : "",
