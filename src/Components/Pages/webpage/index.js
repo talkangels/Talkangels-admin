@@ -533,10 +533,12 @@ const Index = () => {
                 <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
                   Get the App!
                 </h2>
-                <Link>
+                <Link to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                  target="_blank">
                   <img src={PlayStore} alt="" />
                 </Link>
-                <Link className="ml-4">
+                <Link to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                  target="_blank" className="ml-4">
                   <img src={AppleStore} alt="" />
                 </Link>
               </div>
