@@ -21,9 +21,6 @@ const Dashboard = () => {
   const [Withdraw, setWithdraw] = useState([]);
   const [loading, setLoading] = useState(false);
   const [mostRated, setMostRated] = useState([]);
-  const [adminDetail, setAdminDetail] = useState({});
-  const [charge, setCharge] = useState("");
-  const [showCharge, setShowCharge] = useState(true);
   const [showNotification, setShowNotification] = useState(false);
 
   const getWithdraws = async () => {
@@ -50,22 +47,9 @@ const Dashboard = () => {
     }
   };
 
-  const getAdminDetail = async () => {
-    setLoading(true);
-    const id = JSON.parse(window.localStorage.getItem("userDetail"))?._id;
-    const result = await GetOneAdmin(id);
-    if (result.status === 200) {
-      setAdminDetail(result.data);
-      setLoading(false);
-    } else {
-      setAdminDetail({});
-      setLoading(false);
-    }
-  };
   useEffect(() => {
     getWithdraws();
     getMostRatedStaff();
-    getAdminDetail();
   }, []);
 
   const [selectedList, setSelectedList] = useState({
@@ -99,25 +83,6 @@ const Dashboard = () => {
 
   const Staffpersonal = (id) => {
     navigate(`/admin/staffdetail/${id}`);
-  };
-
-  const heandleCharges = async () => {
-    setLoading(true);
-    const body = {
-      newCharges: charge,
-    };
-
-    const result = await ChangeCharges(body);
-    if (result.status === 200) {
-      toast.success(result.message);
-      setLoading(false);
-      setShowCharge(!showCharge);
-      getAdminDetail();
-      setCharge("");
-    } else {
-      toast.error(result.message);
-      setLoading(false);
-    }
   };
 
   return (
@@ -246,23 +211,10 @@ const Dashboard = () => {
               }
             </div>
           </div>
-          <div className="w-full bg-darkBlack mt-5 rounded-2xl p-8 min-h-[123px] grid grid-cols-1 items-center">
+          <div className="w-full bg-darkBlack mt-5 rounded-2xl p-5 min-h-[100px] grid grid-cols-1 items-center">
             <div className="flex items-center gap-4 md:flex-nowrap flex-wrap">
               <button
-                onClick={() => {
-                  setShowCharge(true);
-                  setShowNotification(false);
-                }}
-                className={`${showCharge ? "bg-red" : "bg-Sky"
-                  } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
-              >
-                Change Charges
-              </button>
-              <button
-                onClick={() => {
-                  setShowNotification(!showNotification);
-                  setShowCharge(false);
-                }}
+                onClick={() => setShowNotification(!showNotification)}
                 className={`${showNotification ? "bg-red" : "bg-Sky"
                   } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
               >
@@ -281,15 +233,6 @@ const Dashboard = () => {
               <SendNotification
                 setLoading={setLoading}
                 setShowNotification={setShowNotification}
-              />
-            )}
-
-            {showCharge && (
-              <Charges
-                setCharge={setCharge}
-                adminDetail={adminDetail}
-                charge={charge}
-                heandleCharges={heandleCharges}
               />
             )}
           </div>
@@ -347,7 +290,7 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 };

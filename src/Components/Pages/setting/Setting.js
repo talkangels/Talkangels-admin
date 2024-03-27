@@ -18,6 +18,9 @@ const Setting = () => {
     name: "",
     email: "",
     mobile_number: "",
+    staff_charges: "",
+    user_charges: "",
+    revenue: ""
   });
 
   const handleStaffdata = (e) => {
@@ -32,6 +35,9 @@ const Setting = () => {
         name: result.data.name,
         email: result.data.email,
         mobile_number: result.data.mobile_number,
+        staff_charges: result.data.staff_charges,
+        user_charges: result.data.user_charges,
+        revenue: result.data.revenue,
       });
       setLoading(false);
     } else {
@@ -54,12 +60,7 @@ const Setting = () => {
     if (result?.status === 200) {
       setLoading(false);
       toast.success(result?.message);
-      setAdminDetail({
-        name: "",
-        email: "",
-        mobile_number: "",
-      });
-      navigate(Routing.Dashboard);
+      getAdminDetail();
     } else {
       setLoading(false);
       toast.error(result?.message);
@@ -126,6 +127,128 @@ const Setting = () => {
                   className="text-white bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white"
                   placeholder="email"
                 />
+              </div>
+              <div className="w-full relative lg:col-span-1 col-span-2">
+                {
+                  adminDetail.staff_charges &&
+                  <label className="text-white ml-5">Staff Charges</label>
+                }
+                <div className="w-full relative">
+                  <img
+                    src={User}
+                    alt=""
+                    className="absolute top-1/2 -translate-y-1/2 left-6"
+                  />
+                  <input
+                    name="staff_charges"
+                    type="number"
+                    onChange={handleStaffdata}
+                    value={adminDetail.staff_charges}
+                    className="text-white bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white"
+                    placeholder="Staff Charges"
+                  />
+                </div>
+              </div>
+              <div className="w-full lg:col-span-1 col-span-2">
+                {
+                  adminDetail.user_charges &&
+                  <label className="text-white ml-5">User Charges</label>
+                }
+                <div className="w-full relative">
+                  <img
+                    src={User}
+                    alt=""
+                    className="absolute top-1/2 -translate-y-1/2 left-6"
+                  />
+                  <input
+                    name="user_charges"
+                    type="number"
+                    onChange={handleStaffdata}
+                    value={adminDetail.user_charges}
+                    className="text-white bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white"
+                    placeholder="User Charges"
+                  />
+                </div>
+              </div>
+              <div className="flex justify-between w-full flex-wrap col-span-2 p-5">
+                <div className="flex items-center">
+                  <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="#fff"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lightgray text-[17px] capitalize">
+                      current earnings
+                    </h4>
+                    <h4 className="text-white text-[22px]">
+                      {adminDetail.revenue?.revenue_earnings || "00"}
+                    </h4>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="#fff"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lightgray text-[17px] capitalize">
+                      total pending money
+                    </h4>
+                    <h4 className="text-white text-[22px]">
+                      {adminDetail.revenue?.total_pending_money || "00"}
+                    </h4>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="#fff"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lightgray text-[17px] capitalize">
+                      total money withdraws
+                    </h4>
+                    <h4 className="text-white text-[22px]">
+                      {adminDetail.revenue?.total_money_withdraws || "00"}
+                    </h4>
+                  </div>
+                </div>
               </div>
               <div className="w-full relative col-span-2 flex items-center justify-end">
                 <button
