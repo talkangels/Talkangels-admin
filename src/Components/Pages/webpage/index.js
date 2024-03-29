@@ -230,7 +230,7 @@ const Index = () => {
                   />
                 </div>
               </div>
-              <div className="xl:w-[70%] w-full lg:ml-[180px] lg:mt-0 mt-10">
+              <div className="xl:w-[60%] w-full lg:ml-auto lg:mt-0 mt-10">
                 <h3 className="text-center text-white text-[64px] relative xl:-ml-[100px] ml-0">
                   Key Features
                   <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
@@ -240,55 +240,54 @@ const Index = () => {
                 <div className="flex items-center justify-center flex-wrap">
                   <div className="mt-[81px] grid md:grid-cols-2 gap-x-[77px] gap-y-[73px]">
                     <div>
-                      <div className="flex lg:justify-start justify-center">
-                        <Smileyemoji />
-                      </div>
+                      <div className="flex lg:justify-start justify-center"></div>
                       <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
-                        Free Chat
+                        Ensuring 100% User Anonymous
                       </h4>
-                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
-                        Product Discovery is vital when you want to conduct
-                        thorough target market research and user testing to
-                        minimize risk to your product investment.
+                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
+                        Talkangel App is 100% Anonymous for users. Listeners can
+                        never know who they are talking to on the Talkangel App.
                       </p>
                     </div>
                     <div>
-                      <div className="flex lg:justify-start justify-center">
-                        <Smileyemoji />
-                      </div>
+                      <div className="flex lg:justify-start justify-center"></div>
                       <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
-                        Free Chat
+                        Listeners Choose Between Real or Masked Names for Safety
                       </h4>
-                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
-                        Product Discovery is vital when you want to conduct
-                        thorough target market research and user testing to
-                        minimize risk to your product investment.
+                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
+                        If a listener is comfortable sharing his/her name
+                        publicly then his/her name would be real otherwise we
+                        allow listeners to use a masked name to keep their
+                        identity safe online. give me title of that
                       </p>
                     </div>
                     <div>
-                      <div className="flex lg:justify-start justify-center">
-                        <Smileyemoji />
-                      </div>
                       <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
-                        Free Chat
+                        Policy Compliance and Quality Assurance Through
+                        AI-Enabled Conversation Monitoring
                       </h4>
-                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
-                        Product Discovery is vital when you want to conduct
-                        thorough target market research and user testing to
-                        minimize risk to your product investment.
+                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
+                        While we do not record your conversation but if your
+                        conversation is flagged by our AI (Artifically
+                        Intelligent) system for violating the app's policies, it
+                        might be recorded in parts or full for further
+                        investigation. It will however not be used in any way to
+                        generate profit but it might be used for investigation
+                        in case of a dispute and for quality improvement.
                       </p>
                     </div>
                     <div>
-                      <div className="flex lg:justify-start justify-center">
-                        <Smileyemoji />
-                      </div>
                       <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
-                        Free Chat
+                        Empathetic Support and Solutions, Without Professional
+                        Counseling
                       </h4>
-                      <p className="text-[20px] lg:text-justify text-center text-white max-w-[313px] font-extralight">
-                        Product Discovery is vital when you want to conduct
-                        thorough target market research and user testing to
-                        minimize risk to your product investment.
+                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
+                        Talkangel App in an emotional wellness app where you can
+                        speak with empathetic listeners who can help you find
+                        solutions to your problems and relief over your
+                        concerns. However, the way to get advice or help on
+                        Talkangel App is very different from counselling and we
+                        do not provide any form of professional counselling.
                       </p>
                     </div>
                   </div>
@@ -337,49 +336,61 @@ const Index = () => {
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
                 src={Listenersimg_2}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover "
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_3}
-                className="w-full h-full object-cover object-top"
+                src={
+                  "https://s3-alpha-sig.figma.com/img/5aa8/8d8b/3ecb686354f0b5f4593699440b46ec24?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UpxtVhGblAGCHgwjSiPV586t97TAkflGB~jiVJHynNy~tTZRDRmwY9iHv4fPYj4hIQaPFefBp9jexwrj53yIGPE08mvoY9a~GIsySxtBuo0owGu~eM5lhe8esypUb1ED4g7TYg3jOlPBWWyAeaxkfg17vvbS4Yt-Tr4x~7bGd3mOqYZ9iwYRn5dAHVo1kM-cKpLXdB47j5Q1qOUeuBvNSQNHTk81AV27b2oEMvIEZwzoIVznZyaCpxj0tT4PLAPvYluAsTaPJ8hE7ar9BAKVkKUuj3zekuT6ILm66j7lhuwLTCBx-Rr6qkyNMQYGQ6vtH3KN3aQHwFZ2OAC7QaPCDA__"
+                }
+                className="w-full h-full object-cover"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_4}
-                className="w-full h-full object-cover object-top"
+                src={
+                  "https://img.freepik.com/free-photo/indian-young-woman-face-portrait-close-up_53876-139755.jpg"
+                }
+                className="w-full h-full object-cover"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_5}
-                className="w-full h-full object-cover object-top"
+                src={
+                  "https://img.freepik.com/free-photo/smiling-young-beautiful-girl-looking-straight-ahead-wearing-white-t-shirt-isolated-pink_141793-86537.jpg"
+                }
+                className="w-full h-full object-cover"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_6}
-                className="w-full h-full object-cover object-top"
+                src={
+                  "https://avatars.mds.yandex.net/i?id=320423d984ab91d480a88de13a54e8a17215460f-12159448-images-thumbs&n=13"
+                }
+                className="w-full h-full object-cover"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_4}
-                className="w-full h-full object-cover object-top"
+                src={
+                  "https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13"
+                }
+                className="w-full h-full object-cover"
                 alt=""
               />
             </div>
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
-                src={Listenersimg_2}
-                className="w-full h-full object-cover object-top"
+                src={
+                  "https://yandex-images.clstorage.net/S5Cj6a129/9bd1fbnBE0w6/c5fcvOYdxn2LRujK8D1GlhLQQWctQ6BVsNRQD143ASF6CVT6XTkKRLUBvIlYj7hCnBdRbiQE_vK99KVYUJZYfzejHQ0C7WZti3Y4W0CtNiaS1cU27iWi1-cnt2w5wBaz_rkBTw1964EAoV8qvLqudenzBpmAB4j1rpECPJWjHhiyBNwdEtx2np72GIiSXLciYGLwwl-1wjSkdpTMWNL3UL9L0q2_vO0CAJD-yEsoDnVKUtbJAfXKlD-DQJx1oj2oQ6Uf_oJdR15Nt1qJIh11sLMBkDENlgJltXTH7UrT9KM96BL9Lzwd86IzDpuqaJ2UijH2KFN1GQTt0sE9Z6DNKnCFvV6DfrQP_LboyXLctZKBYWCi7xQS1Kdm1N0pQSYRf0mSDm2vbbOTQZ15mpo_tYswRpujRNvnXtHTPbSSDmnwJz8PUi43b-3F-qqzXdSDgCCA8w10QrWlhWXNi6FVQb06It_NX3wD8wKsW4v4f8UZsdQL8zXZRP8isp9E4h_qcjaPH3AeVU6N5toYA-w0QcLCUxDNdJJ0VSYGH9gzdKF-iTHOPK19cXAR3ovKmo_l6RAFK9MWarY94GF9d_P9azBXfg2RroWcT0fLeIIsNUIw0EEgfJSR5rSFJ1_JkBTTDIhx3X2-fQCiEwwp-srNFPuR1wuCFhk3reDzPRfAb0izdb_No6_1rl4Ga5uzLodgkALCkpzFUOel9PYeG_J0Ej-JIL-P7F9xEjPMaZj5PgcZIkTZcVXJ17-Q4k3FgU-Z8vVuv3DMlQ799AvII15X01AS82EPhADVZfb1fBmC1lAdq5H_Xh6uc5Diris6WB_VGDJV2kBnG8WMwjJv1YM-SBH138zSb4R8rMYo-ZM9NoHDM0FBv_cSBWcVxT1KcMSCLnhj3k_MDiJgkr7KKcs_dspBNOtzVbk1TMBiLabzH5sipU99oc_kLY6XyPoiTIRQUkKysf5WsJUVVcauQ"
+                }
+                className="w-full h-full object-cover "
                 alt=""
               />
             </div>
@@ -406,26 +417,25 @@ const Index = () => {
                   <img
                     src={Listenersimg_1}
                     alt=""
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover "
                   />
                 </div>
                 <div className="ml-4">
                   <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
                     meera v.
                   </h3>
-                  <p className="font-thin tracking-[0.5px] text-white/70 text-xs font-league">
-                    CEO @codewidget
-                  </p>
                 </div>
               </div>
             </div>
             <div>
               <h3 className="text-Homegreen text-[215px] text-center">”</h3>
               <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
-                “During Product Discovery, Startup House helped me to understand
-                the lean start-up way of product development with initial
-                research, discovery workshops and many hours of discussion and
-                iteration.”
+                "It is really a great app. recommended to all those who are
+                facing stress, depression or any other types of difficulties in
+                their life. the experts are reallyg good. They are really good
+                listener as well as consultation. one more thing that I like
+                about the app is that both in the morning as well as in the
+                night the send motivation messages which is really sweet"
               </p>
               <div className="flex items-center justify-center gap-x-3 mt-7">
                 <Star />
@@ -436,18 +446,54 @@ const Index = () => {
               <div className="flex items-center justify-center mt-7">
                 <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
                   <img
-                    src={Listenersimg_1}
+                    src={
+                      "https://yandex-images.clstorage.net/S5Cj6a129/9bd1fbnBE0w6/c5fcvOYdxn2LRujK8D1GlhLQQWctQ6BVsNRQD143ASF6CVT6XTkKRLUBvIlYj7hCnBdRbiQE_vK99KVYUJZYfzejHQ0C7WZti3Y4W0CtNiaS1cU27iWi1-cnt2w5wBaz_rkBTw1964EAoV8qvLqudenzBpmAB4j1rpECPJWjHhiyBNwdEtx2np72GIiSXLciYGLwwl-1wjSkdpTMWNL3UL9L0q2_vO0CAJD-yEsoDnVKUtbJAfXKlD-DQJx1oj2oQ6Uf_oJdR15Nt1qJIh11sLMBkDENlgJltXTH7UrT9KM96BL9Lzwd86IzDpuqaJ2UijH2KFN1GQTt0sE9Z6DNKnCFvV6DfrQP_LboyXLctZKBYWCi7xQS1Kdm1N0pQSYRf0mSDm2vbbOTQZ15mpo_tYswRpujRNvnXtHTPbSSDmnwJz8PUi43b-3F-qqzXdSDgCCA8w10QrWlhWXNi6FVQb06It_NX3wD8wKsW4v4f8UZsdQL8zXZRP8isp9E4h_qcjaPH3AeVU6N5toYA-w0QcLCUxDNdJJ0VSYGH9gzdKF-iTHOPK19cXAR3ovKmo_l6RAFK9MWarY94GF9d_P9azBXfg2RroWcT0fLeIIsNUIw0EEgfJSR5rSFJ1_JkBTTDIhx3X2-fQCiEwwp-srNFPuR1wuCFhk3reDzPRfAb0izdb_No6_1rl4Ga5uzLodgkALCkpzFUOel9PYeG_J0Ej-JIL-P7F9xEjPMaZj5PgcZIkTZcVXJ17-Q4k3FgU-Z8vVuv3DMlQ799AvII15X01AS82EPhADVZfb1fBmC1lAdq5H_Xh6uc5Diris6WB_VGDJV2kBnG8WMwjJv1YM-SBH138zSb4R8rMYo-ZM9NoHDM0FBv_cSBWcVxT1KcMSCLnhj3k_MDiJgkr7KKcs_dspBNOtzVbk1TMBiLabzH5sipU99oc_kLY6XyPoiTIRQUkKysf5WsJUVVcauQ"
+                    }
                     alt=""
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover "
                   />
                 </div>
                 <div className="ml-4">
                   <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
-                    meera v.
+                    Anushka S.
                   </h3>
-                  <p className="font-thin tracking-[0.5px] text-white/70 text-xs font-league">
-                    CEO @codewidget
-                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-Homegreen text-[215px] text-center">”</h3>
+              <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
+                "An extremely helpful aap, Clarity can be of tremendous
+                assistance to those who are struggling with stress, anxiety, and
+                despair. It's a useful tool for people who have recently lost
+                someone and are trying to move on as well. The software provides
+                a diverse array of features that are all conveniently placed in
+                one location, including heat maps, session recordings, user
+                metrics, and a sophisticated dashboard. In light of my
+                experience, I heartily endorse Clarity and considers it as an
+                amazing app."
+              </p>
+              <div className="flex items-center justify-center gap-x-3 mt-7">
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+                <Star />
+              </div>
+              <div className="flex items-center justify-center mt-7">
+                <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
+                  <img
+                    src={
+                      "https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13"
+                    }
+                    alt=""
+                    className="w-full h-full object-cover "
+                  />
+                </div>
+                <div className="ml-4">
+                  <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
+                    Rita L.
+                  </h3>
                 </div>
               </div>
             </div>
@@ -571,12 +617,17 @@ const Index = () => {
                 <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
                   Get the App!
                 </h2>
-                <Link to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                  target="_blank">
+                <Link
+                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                  target="_blank"
+                >
                   <img src={PlayStore} alt="" />
                 </Link>
-                <Link to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                  target="_blank" className="ml-4">
+                <Link
+                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                  target="_blank"
+                  className="ml-4"
+                >
                   <img src={AppleStore} alt="" />
                 </Link>
               </div>
