@@ -1,15 +1,14 @@
 export const Routing = {
   Initial: "/",
   Admin: "/admin",
-  Faq: "/",
   Login: "/admin/login",
   ResetPassword: "/admin/reset-password",
   Register: "/admin/register",
   PrivacyPolicy: "/privacy",
   TermsConditions: "/tnc",
+  Faq: "/faq's",
 
   // admin
-
   Dashboard: "/admin/dashboard",
   StaffDetails: "/admin/staffdetail",
   FeedbackList: "/admin/feedback",

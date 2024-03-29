@@ -1,11 +1,13 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Logo from "../../assets/Webpagelogo.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Routing } from "../../../utils/routing";
 const Header = () => {
+
+  const navigate = useNavigate()
   const Router = [
     {
       Name: "Home",
@@ -37,7 +39,7 @@ const Header = () => {
               <div className="flex h-16 items-center justify-between">
                 <div className="flex items-center justify-between w-full">
                   <div className="flex-shrink-0">
-                    <img className="h-8 w-auto" src={Logo} alt="Logo" />
+                    <img className="h-8 w-auto" src={Logo} alt="Logo" onClick={() => navigate("/")} />
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4 items-center">
