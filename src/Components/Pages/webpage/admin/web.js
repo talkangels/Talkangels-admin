@@ -141,7 +141,6 @@ const WebPageAdmin = () => {
       toast.error(result.message);
     }
   };
-
   return (
     <>
       {loading && <Spinner />}
