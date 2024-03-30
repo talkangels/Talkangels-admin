@@ -7,6 +7,7 @@ export const Routing = {
   PrivacyPolicy: "/privacy",
   TermsConditions: "/tnc",
   Faq: "/faq's",
+  Listeners: "/listeners",
 
   // admin
   Dashboard: "/admin/dashboard",

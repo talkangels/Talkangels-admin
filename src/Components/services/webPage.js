@@ -57,3 +57,15 @@ export const DelateWebPage = async (body) => {
         return error?.response?.data;
     }
 };
+
+export const GetWebPageListener = async () => {
+  try {
+    let response = await axios({
+      method: "GET",
+      url: `${baseURL}admin/web-page-all-listeners`,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};

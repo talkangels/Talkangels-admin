@@ -128,3 +128,21 @@ input[type=number] {
   height: 100%;
   width: 134px;
 }
+
+.faqtransition {
+  transition: all .35s;
+}
+
+.show {
+  animation: bull .40s linear forwards;
+}
+
+@keyframes bull {
+  0% {
+    padding: 0;
+  }
+
+  100% {
+    padding: 16px 16px 16px 32px;
+  }
+}

@@ -6,8 +6,7 @@ import Logo from "../../assets/Webpagelogo.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Routing } from "../../../utils/routing";
 const Header = () => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const Router = [
     {
       Name: "Home",
@@ -15,7 +14,7 @@ const Header = () => {
     },
     {
       Name: "Listeners",
-      link: "",
+      link: "/listeners",
     },
     {
       Name: "Blog",
@@ -25,10 +24,6 @@ const Header = () => {
       Name: "FAQs",
       link: Routing.Faq,
     },
-    {
-      Name: "Intern",
-      link: "",
-    },
   ];
   return (
     <div>
@@ -36,10 +31,15 @@ const Header = () => {
         {({ open }) => (
           <>
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex h-16 items-center justify-between">
+              <div className="flex h-24 items-center justify-between">
                 <div className="flex items-center justify-between w-full">
                   <div className="flex-shrink-0">
-                    <img className="h-8 w-auto" src={Logo} alt="Logo" onClick={() => navigate("/")} />
+                    <img
+                      className="h-10 w-auto"
+                      src={Logo}
+                      alt="Logo"
+                      onClick={() => navigate("/")}
+                    />
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4 items-center">

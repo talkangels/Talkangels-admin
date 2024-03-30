@@ -3,7 +3,7 @@ import { Tickmark } from "./Shape";
 
 const Listenerscard = ({ img, name, Year, Experience, content }) => {
   return (
-    <div className="bg-[#232243] rounded-xl flex items-center justify-center pt-[65px] px-[40px] pb-[47px]">
+    <div className="bg-[#232243] rounded-xl flex items-center justify-center py-[25px] px-[20px]">
       <div>
         <div className="relative listener z-20 flex items-center justify-center">
           <div className="w-[217px] h-[217px] rounded-full overflow-hidden">

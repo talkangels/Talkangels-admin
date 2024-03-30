@@ -13,7 +13,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Smileyemoji,
   Star,
   Twitter,
 } from "./Shape";
@@ -25,10 +24,6 @@ import Speciality_mobile from "../../assets/homepage/SpecialityMobile.png";
 import PlayStore from "../../assets/homepage/Playstoreicon.png";
 import AppleStore from "../../assets/homepage/Applestore.png";
 import Listenersimg_2 from "../../assets/homepage/Listenersimg_1.png";
-import Listenersimg_3 from "../../assets/homepage/Listenersimg_3.png";
-import Listenersimg_4 from "../../assets/homepage/Listenersimg_4.png";
-import Listenersimg_5 from "../../assets/homepage/Listenersimg_5.png";
-import Listenersimg_6 from "../../assets/homepage/Listenersimg_6.png";
 import Header from "./Header";
 import { Routing } from "../../../utils/routing";
 
@@ -180,10 +175,10 @@ const Index = () => {
               />
               <Listenerscard
                 img={
-                  "https://img.freepik.com/free-photo/indian-young-woman-face-portrait-close-up_53876-139755.jpg"
+                  "https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg"
                 }
-                name={"Sheeri"}
-                Year={26}
+                name={"Shivani"}
+                Year={22}
                 Experience={1.4}
                 content={
                   "About 5 years ago, I met a guy. He proposed to me and I accepted the proposal. Initially, the relationship went in a very smooth way. Gradually, it became toxic. He started tracking my life like a spy. There was no personal space for me. If I wanted to do something, first I had to tell him and wait for his approval. He became extremely possessive with time, even he blocked all my male friends from my phone and told me not to talk to anyone of them. I was depressed as hell. One day, I gathered myself and told my friends everything that I felt in those 3 years and I finally, broke up with him. That day I felt like I got out of 3-year imprisonment. Let's connect if you want to share something."
@@ -211,9 +206,12 @@ const Index = () => {
               />
             </div>
             <div className="flex lg:justify-end justify-center">
-              <button className="mt-[42px] text-white text-center text-[24px] bg-[#232243] p-4 rounded">
+              <Link
+                to="/listeners"
+                className="mt-[42px] text-white text-center text-[24px] bg-[#232243] p-4 rounded"
+              >
                 View More Listeners
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -230,7 +228,7 @@ const Index = () => {
                   />
                 </div>
               </div>
-              <div className="xl:w-[60%] w-full lg:ml-auto lg:mt-0 mt-10">
+              <div className="md:w-[60%] w-full lg:ml-auto lg:mt-0 mt-10">
                 <h3 className="text-center text-white text-[64px] relative xl:-ml-[100px] ml-0">
                   Key Features
                   <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
@@ -238,29 +236,7 @@ const Index = () => {
                   </span>
                 </h3>
                 <div className="flex items-center justify-center flex-wrap">
-                  <div className="mt-[81px] grid md:grid-cols-2 gap-x-[77px] gap-y-[73px]">
-                    <div>
-                      <div className="flex lg:justify-start justify-center"></div>
-                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
-                        Ensuring 100% User Anonymous
-                      </h4>
-                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
-                        Talkangel App is 100% Anonymous for users. Listeners can
-                        never know who they are talking to on the Talkangel App.
-                      </p>
-                    </div>
-                    <div>
-                      <div className="flex lg:justify-start justify-center"></div>
-                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
-                        Listeners Choose Between Real or Masked Names for Safety
-                      </h4>
-                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
-                        If a listener is comfortable sharing his/her name
-                        publicly then his/her name would be real otherwise we
-                        allow listeners to use a masked name to keep their
-                        identity safe online. give me title of that
-                      </p>
-                    </div>
+                  <div className="mt-[81px] grid md:grid-cols-2 gap-x-[50px] gap-y-[73px]">
                     <div>
                       <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
                         Policy Compliance and Quality Assurance Through
@@ -288,6 +264,29 @@ const Index = () => {
                         concerns. However, the way to get advice or help on
                         Talkangel App is very different from counselling and we
                         do not provide any form of professional counselling.
+                      </p>
+                    </div>
+
+                    <div>
+                      <div className="flex lg:justify-start justify-center"></div>
+                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
+                        Listeners Choose Between Real or Masked Names for Safety
+                      </h4>
+                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
+                        If a listener is comfortable sharing his/her name
+                        publicly then his/her name would be real otherwise we
+                        allow listeners to use a masked name to keep their
+                        identity safe online. give me title of that
+                      </p>
+                    </div>
+                    <div>
+                      <div className="flex lg:justify-start justify-center"></div>
+                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
+                        Ensuring 100% User Anonymous
+                      </h4>
+                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
+                        Talkangel App is 100% Anonymous for users. Listeners can
+                        never know who they are talking to on the Talkangel App.
                       </p>
                     </div>
                   </div>
@@ -352,9 +351,9 @@ const Index = () => {
             <div className="h-[250px] rounded-[35px] overflow-hidden">
               <img
                 src={
-                  "https://img.freepik.com/free-photo/indian-young-woman-face-portrait-close-up_53876-139755.jpg"
+                  "https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg"
                 }
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>
@@ -463,14 +462,14 @@ const Index = () => {
             <div>
               <h3 className="text-Homegreen text-[215px] text-center">”</h3>
               <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
-                "An extremely helpful aap, Clarity can be of tremendous
+                "An extremely helpful aap, talkangels can be of tremendous
                 assistance to those who are struggling with stress, anxiety, and
                 despair. It's a useful tool for people who have recently lost
                 someone and are trying to move on as well. The software provides
                 a diverse array of features that are all conveniently placed in
                 one location, including heat maps, session recordings, user
                 metrics, and a sophisticated dashboard. In light of my
-                experience, I heartily endorse Clarity and considers it as an
+                experience, I heartily endorse talkangels and considers it as an
                 amazing app."
               </p>
               <div className="flex items-center justify-center gap-x-3 mt-7">

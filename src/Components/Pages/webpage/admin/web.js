@@ -12,7 +12,6 @@ import { toast } from "react-toastify";
 const WebPageAdmin = () => {
   const [loading, setLoading] = useState(false);
   const [tabs, setTabs] = useState([]);
-  console.log("🚀 ~ WebPageAdmin ~ tabs:", tabs);
   const [newTabName, setNewTabName] = useState("");
   const [webPageData, setWebPageData] = useState({
     page: "",
