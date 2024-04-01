@@ -50,6 +50,11 @@ const navigation = [
     href: Routing.TransactionHistory,
     icon: TransactionHistorys,
   },
+  {
+    name: "Listener Request",
+    href: Routing.ListenerRequst,
+    icon: TransactionHistorys,
+  },
   { name: "Settings", href: Routing.Settings, icon: Settings },
 ];
 

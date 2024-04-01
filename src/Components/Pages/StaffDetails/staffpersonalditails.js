@@ -11,6 +11,7 @@ import Bio from "../../assets/StaffDetails/addBio.png";
 import { DeleteStaff, SingleStaff } from "../../services/staff";
 import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
+import { DeleteListener } from "../../services/listener";
 
 const Staffpersonalditails = () => {
   const navigate = useNavigate();
@@ -113,12 +114,25 @@ const Staffpersonalditails = () => {
               </div>
               <div className="flex items-center">
                 <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" className=" w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <h4 className="text-lightgray text-[17px]">Email</h4>
+                  <h4 className="text-white text-[22px]">
+                    {staffDetail.email || ""}
+                  </h4>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="bg-[#2A2949] min-h-10 min-w-10 rounded-lg flex items-center justify-center">
                   <img src={Age} alt="Username" />
                 </div>
                 <div className="ml-4">
                   <h4 className="text-lightgray text-[17px]">Age</h4>
                   <h4 className="text-white text-[22px]">
-                    {staffDetail.Age} Years old
+                    {staffDetail.age} Years old
                   </h4>
                 </div>
               </div>
@@ -166,7 +180,7 @@ const Staffpersonalditails = () => {
                     current earnings
                   </h4>
                   <h4 className="text-white text-[22px]">
-                    {staffDetail?.earnings?.current_earnings || "00"}
+                    {staffDetail?.earnings?.current_earnings.toFixed(2) || "00"}
                   </h4>
                 </div>
               </div>
@@ -201,7 +215,7 @@ const Staffpersonalditails = () => {
                     total money withdraws
                   </h4>
                   <h4 className="text-white text-[22px]">
-                    {staffDetail?.earnings?.total_money_withdraws || "00"}
+                    {staffDetail?.earnings?.total_money_withdraws.toFixed(2) || "00"}
                   </h4>
                 </div>
               </div>
@@ -259,7 +273,7 @@ const Staffpersonalditails = () => {
                     total pending money
                   </h4>
                   <h4 className="text-white text-[22px]">
-                    {staffDetail?.earnings?.total_pending_money || "00"}
+                    {staffDetail?.earnings?.total_pending_money.toFixed(2) || "00"}
                   </h4>
                 </div>
               </div>

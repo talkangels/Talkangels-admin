@@ -38,7 +38,6 @@ const WebPageAdmin = () => {
       setWebPageData({ ...result.data, data: newData });
       setLoading(false);
     } else {
-      console.log("Data not found");
       setLoading(false);
     }
   };
@@ -57,7 +56,6 @@ const WebPageAdmin = () => {
       }
       setLoading(false);
     } else {
-      console.log("Data not found");
       setLoading(false);
     }
   };
