@@ -18,6 +18,7 @@ export const Routing = {
   Staffpersonalditails: "/admin/staffdetail/:id",
   Recharge: "/admin/recharge",
   TransactionHistory: "/admin/transactionHistory",
+  ListenerRequst: "/admin/listener-requst",
   ReportAndProblem: "/admin/report-and-problem",
   Sendnotification: "/admin/sendnotification",
   WebPageAdmin: "/admin/web-page",

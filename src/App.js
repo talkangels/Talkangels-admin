@@ -37,6 +37,8 @@ const Webpage = lazy(() => import("./Components/Pages/webpage/index"));
 const ResetPassword = lazy(() =>
   import("./Components/Pages/Login/resetPassword")
 );
+const ListenerRequst = lazy(() => import("./Components/Pages/Listeners/Listeners"));
+
 const Setting = lazy(() => import("./Components/Pages/setting/Setting"));
 const WebPageAdmin = lazy(() => import("./Components/Pages/webpage/admin/web"));
 const Faq = lazy(() => import("./Components/Pages/webpage/Faq"));
@@ -127,6 +129,11 @@ const App = () => {
     {
       path: Routing.ReportAndProblem,
       component: ReportAndProblem,
+      isPrivateRoute: true,
+    },
+    {
+      path: Routing.ListenerRequst,
+      component: ListenerRequst,
       isPrivateRoute: true,
     },
     {

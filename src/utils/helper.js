@@ -20,6 +20,8 @@ export const HaderName = (number) => {
       return "Transaction History";
     case "admin/web-page":
       return "Web Page";
+    case "admin/listener-requst":
+      return "Listener";
     case "admin/setting":
       return "Setting";
     default:

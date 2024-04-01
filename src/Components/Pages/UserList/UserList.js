@@ -120,7 +120,7 @@ const UserList = () => {
                         {user.name}
                       </td>
                       <td className="text-white text-base pl-[27px]">
-                        {user?.talk_angel_wallet?.total_ballance}
+                        {user?.talk_angel_wallet?.total_ballance?.toFixed(2)}
                       </td>
                       <td className="text-white text-base pl-[27px]">
                         {user.mobile_number}
