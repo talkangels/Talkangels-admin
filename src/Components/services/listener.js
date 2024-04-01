@@ -31,3 +31,18 @@ export const UpdateListenerRequstStatus = async (body) => {
         return error?.response?.data;
     }
 };
+
+export const DeleteListener = async (id) => {
+    try {
+      let response = await axios({
+        method: "DELETE",
+        url: `${baseURL}admin/listener/delete-listener-requst/${id}`,
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return error?.response?.data;
+    }
+  };

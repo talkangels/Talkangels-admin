@@ -1,6 +1,5 @@
 import React from "react";
 import userselect from "../../assets/StaffDetails/useruelecticon.png";
-import Usename from "../../assets/StaffDetails/username.png";
 import Call from "../../assets/StaffDetails/call.png";
 import Gender from "../../assets/StaffDetails/gender.png";
 import Bio from "../../assets/StaffDetails/addBio.png";

@@ -1,26 +1,44 @@
 import { Switch } from "@headlessui/react";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
-import { GetAllUser, UpdateUserStatus } from "../../services/user";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../../layout/spinner";
-import { GetAllListenerRequst, UpdateListenerRequstStatus } from "../../services/listener";
+import { DeleteListener, GetAllListenerRequst, UpdateListenerRequstStatus } from "../../services/listener";
 import { useNavigate } from "react-router-dom";
 import { Routing } from "../../../utils/routing";
+import { Listbox, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+
+const Genderoption = [
+  {
+    id: "",
+    name: "Status"
+  },
+  {
+    id: 1,
+    name: "Accept"
+  },
+  {
+    id: 0,
+    name: "Pendding"
+  },
+];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const Listeners = () => {
   const navigate = useNavigate()
+
+  const [selected, setSelected] = useState(Genderoption[0]);
   const [listenerList, setListenerList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getListeners = async () => {
     setLoading(true);
     const body = {
-      status: "",
+      status: selected.id,
     };
     const result = await GetAllListenerRequst(body);
     if (result?.status === 200) {
@@ -33,7 +51,7 @@ const Listeners = () => {
   };
   useEffect(() => {
     getListeners();
-  }, []);
+  }, [selected]);
 
   const handleSwitchChange = async (index) => {
     if (index) {
@@ -51,6 +69,19 @@ const Listeners = () => {
         setLoading(false);
         toast.error(result?.message);
       }
+    }
+  };
+
+  const heandleDelete = async (id) => {
+    setLoading(true);
+    const result = await DeleteListener(id);
+    if (result?.status === 200) {
+      setLoading(false);
+      toast.success(result.message);
+      getListeners();
+    } else {
+      setLoading(false);
+      toast.error(result.message);
     }
   };
 
@@ -73,7 +104,7 @@ const Listeners = () => {
           </>
         ) : (
           <>
-            <table className="min-w-[1000px] w-full ">
+            <table className="min-w-[1000px] w-full min-h-[200px]">
               <thead className="bg-darkBlue sticky top-0 z-10 ">
                 <tr className="h-[60px]">
                   <th
@@ -120,9 +151,73 @@ const Listeners = () => {
                   </th>
                   <th
                     scope="col"
-                    className="text-left  font-semibold text-white text-lg "
+                    className="text-left  font-semibold text-white text-lg px-[27px]"
                   >
-
+                    <Listbox value={selected} onChange={setSelected}>
+                      {({ open }) => (
+                        <>
+                          <div className="relative">
+                            <Listbox.Button className="relative text-white/50 bg-darkBlack w-full h-[40px] rounded-md focus:outline-none pl-[20px] placeholder:text-white/50">
+                              <span className="block truncate text-left text-sm">
+                                {selected.name || "Status"}
+                              </span>
+                              <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                <ChevronDownIcon
+                                  className={`h-6 w-6 text-white ${open === true && "rotate-180"
+                                    }`}
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            </Listbox.Button>
+                            <Transition
+                              show={open}
+                              as={Fragment}
+                              leave="transition ease-in duration-100"
+                              leaveFrom="opacity-100"
+                              leaveTo="opacity-0"
+                            >
+                              <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                                {Genderoption.map((person) => (
+                                  <Listbox.Option
+                                    key={person.id}
+                                    className={({ active }) =>
+                                      classNames(
+                                        active
+                                          ? "bg-darkBlack text-white"
+                                          : "text-gray-900",
+                                        "relative select-none text-sm font-Popins cursor-pointer py-2 pl-3 pr-4"
+                                      )
+                                    }
+                                    value={person}
+                                  >
+                                    {({ selected, active }) => (
+                                      <>
+                                        <span
+                                          className={classNames(
+                                            selected
+                                              ? "font-semibold"
+                                              : "font-normal",
+                                            " truncate flex items-center justify-between"
+                                          )}
+                                        >
+                                          {person.name}
+                                          <input
+                                            name="plan"
+                                            type="radio"
+                                            defaultChecked={selected}
+                                            className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                          />
+                                        </span>
+                                      </>
+                                    )}
+                                  </Listbox.Option>
+                                ))}
+                              </Listbox.Options>
+                            </Transition>
+                          </div>
+                        </>
+                      )}
+                    </Listbox>
                   </th>
                 </tr>
               </thead>
@@ -153,7 +248,7 @@ const Listeners = () => {
                       </td>
                       {
                         user?.status === 0 &&
-                        <td className="text-white text-base">
+                        <td className="text-white text-base text-center">
                           <Switch
                             checked={user?.status === 1}
                             onChange={() => handleSwitchChange(user)}
@@ -186,12 +281,30 @@ const Listeners = () => {
                       }
                       {
                         user?.status === 1 &&
-                        <td className="text-red text-base">
-                          <p onClick={() => navigate(Routing.StaffDetails, {
-                            state: {
-                              data: user
-                            }
-                          })} className="cursor-pointer">Add</p>
+                        <td>
+                          <div className="flex items-center justify-between px-10 text-[#5686de] text-base">
+                            <p onClick={() => navigate(Routing.StaffDetails, {
+                              state: {
+                                data: user
+                              }
+                            })} className="cursor-pointer">Add</p>
+
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth="1.5"
+                              stroke="red"
+                              className="w-5 h-5 cursor-pointer"
+                              onClick={() => heandleDelete(user?._id)}
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                              />
+                            </svg>
+                          </div>
                         </td>
                       }
                     </>
