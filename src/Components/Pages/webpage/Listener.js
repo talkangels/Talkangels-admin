@@ -5,6 +5,7 @@ import { GetWebPageListener } from "../../services/webPage";
 import Listenersimg_2 from "../../assets/homepage/Listenersimg_1.png";
 import Spinner from "../../layout/spinner";
 import { Link } from "react-router-dom";
+import { Routing } from "../../../utils/routing";
 
 const Listener = () => {
   const [loading, setLoading] = useState(false);
@@ -33,7 +34,7 @@ const Listener = () => {
           <div>
             <div className="flex justify-end">
               <Link
-                to="/listeners"
+                to={Routing.BeListener}
                 className="mt-[30px] text-white text-center text-[18px] bg-[#15b37e] hover:bg-[#15b37ea1] px-5 py-1 rounded"
               >
                 Be A Listener

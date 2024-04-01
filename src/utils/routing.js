@@ -8,6 +8,7 @@ export const Routing = {
   TermsConditions: "/tnc",
   Faq: "/faq's",
   Listeners: "/listeners",
+  BeListener: "/be-listener",
 
   // admin
   Dashboard: "/admin/dashboard",

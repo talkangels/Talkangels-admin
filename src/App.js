@@ -41,6 +41,7 @@ const Setting = lazy(() => import("./Components/Pages/setting/Setting"));
 const WebPageAdmin = lazy(() => import("./Components/Pages/webpage/admin/web"));
 const Faq = lazy(() => import("./Components/Pages/webpage/Faq"));
 const Listener = lazy(() => import("./Components/Pages/webpage/Listener"));
+const BeListener = lazy(() => import("./Components/Pages/webpage/BeListener"));
 
 const App = () => {
   const routes = [
@@ -52,6 +53,11 @@ const App = () => {
     {
       path: Routing.Listeners,
       component: Listener,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.BeListener,
+      component: BeListener,
       isPrivateRoute: false,
     },
     {
