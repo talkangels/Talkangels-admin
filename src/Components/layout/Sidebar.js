@@ -13,6 +13,7 @@ import Logout from "../assets/dashboard/logOut.png";
 import TransactionHistorys from "../assets/dashboard/Vector.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Routing } from "../../utils/routing";
+import Listener from "../assets/dashboard/User-Podcast.svg";
 
 const navigation = [
   {
@@ -53,7 +54,7 @@ const navigation = [
   {
     name: "Listener Request",
     href: Routing.ListenerRequst,
-    icon: TransactionHistorys,
+    icon: Listener,
   },
   { name: "Settings", href: Routing.Settings, icon: Settings },
 ];

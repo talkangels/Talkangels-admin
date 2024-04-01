@@ -11,10 +11,10 @@ function classNames(...classes) {
 }
 
 const ListofStaff = () => {
+  const navigate = useNavigate();
+
   const [staffList, setStaffList] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
 
   const getStaff = async () => {
     setLoading(true);

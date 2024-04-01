@@ -5,6 +5,7 @@ import { ForgotPassword, userLogin } from "../../services/auth";
 import Spinner from "../../layout/spinner";
 import LoginIllustation from "../../assets/Login/Login-amico.png";
 import { toast } from "react-toastify";
+import Logo from "../../assets/logo.svg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -78,7 +79,13 @@ const Login = () => {
           </div>
           <div className="flex items-center justify-center bg-Background_login h-full px-4">
             <div className="flex flex-col gap-3 max-w-[500px] items-center">
-              <h3 className="text-3xl text-white font-Popins font-semibold md:text-left text-center">
+              <img
+                src={Logo}
+                alt=""
+                srcset=""
+                className="w-[100px] h-[100px] p-2 mx-auto"
+              />
+              <h3 className="text-3xl mt-3 text-white font-Popins font-semibold md:text-left text-center">
                 Welcome to TALK ANGELS Portal
               </h3>
               <h3 className="text-3xl text-white font-Popins font-semibold w-full my-3 text-center">
