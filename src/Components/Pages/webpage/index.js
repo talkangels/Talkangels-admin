@@ -17,6 +17,10 @@ import {
   Twitter,
 } from "./Shape";
 import User_1 from "../../assets/homepage/Herosection.png";
+import User_2 from "../../assets/homepage/Herosection2.png";
+import User_3 from "../../assets/homepage/Herosection3.png";
+import User_4 from "../../assets/homepage/Herosection4.png";
+
 import Listenersimg_1 from "../../assets/homepage/Listenersimg_1.png";
 import Phone from "../../assets/homepage/iPhone-13-Pro-Front.png";
 import card from "../../assets/homepage/phonecard.png";
@@ -147,8 +151,11 @@ const Index = () => {
               </div>
               <div className="relative  items-center justify-center lg:order-2 order-1 lg:flex hidden">
                 <div className="">
-                  <div>
+                  <div className="imagesContainer">
                     <img src={User_1} alt="" className="" />
+                    <img src={User_2} alt="" className="" />
+                    <img src={User_3} alt="" className="" />
+                    <img src={User_4} alt="" className="" />
                   </div>
                 </div>
               </div>
