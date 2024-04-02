@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-  const loggedIn = localStorage.getItem("is_login");
+  const loggedIn = localStorage.getItem("token");
 
   const location = useLocation();
   if (!loggedIn) {
