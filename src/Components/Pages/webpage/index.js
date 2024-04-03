@@ -296,344 +296,348 @@ const Index = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="relative  pt-[120px] px-3">
-          <div className="xl:max-w-[90%] mx-auto ">
-            <div className="flex items-center justify-between">
-              <div className="lg:max-w-[693px]">
-                <h3 className="lg:text-left text-center text-white lg:text-[64px] text-[50px] relative uppercase font-bold ">
-                  Our Speciality
-                  <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
-                    <DoorShape />
-                  </span>
-                </h3>
-                <p className="text-[28px] lg:text-justify text-center text-white font-extralight">
-                  Welcome to TalkAngel! We're more than just a dating app. Our
-                  platform makes it easy for you to find and chat with special
-                  people. You can look for love, friendship, or just have a nice
-                  chat. Plus, we have a cool feature that lets you recharge and
-                  make voice calls to your matches. Your safety and privacy are
-                  super important to us too.
-                </p>
-                <p className="text-[40px] font-[600] text-white mt-[52px] lg:text-left text-center">
-                  Join TalkAngel today{" "}
-                  <span className="text-Homegreen">
-                    to find the one who makes your heart happy.
-                  </span>
-                </p>
+          <div className="relative  pt-[120px] px-3">
+            <div className="xl:max-w-[90%] mx-auto ">
+              <div className="flex items-center justify-between">
+                <div className="lg:max-w-[693px]">
+                  <h3 className="lg:text-left text-center text-white lg:text-[64px] text-[50px] relative uppercase font-bold ">
+                    Our Speciality
+                    <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
+                      <DoorShape />
+                    </span>
+                  </h3>
+                    <p className="text-[28px] lg:text-justify text-center text-white font-extralight">
+                      Welcome to TalkAngel! We're more than just a dating app.
+                      Our platform makes it easy for you to find and chat with
+                      special people. You can look for love, friendship, or just
+                      have a nice chat. Plus, we have a cool feature that lets
+                      you recharge and make voice calls to your matches. Your
+                      safety and privacy are super important to us too.
+                    </p>
+                    <p className="text-[40px] font-[600] text-white mt-[52px] lg:text-left text-center">
+                      Join TalkAngel today{" "}
+                      <span className="text-Homegreen">
+                        to find the one who makes your heart happy.
+                      </span>
+                    </p>
+                </div>
+                <div className="">
+                  <img
+                    src={Speciality_mobile}
+                    alt=""
+                    className="absolute top-0 right-0 Speciality"
+                  />
+                </div>
               </div>
-              <div className="">
+            </div>
+          </div>
+          <div
+            className="relative  lg:pt-[178px] pt-[100px] px-7"
+            id="Slider-1"
+          >
+            <Slider {...settings}>
+              <div className="h-[250px] rounded-[35px] overflow-hidden">
                 <img
-                  src={Speciality_mobile}
+                  src={Listenersimg_2}
+                  className="w-full h-full object-cover "
                   alt=""
-                  className="absolute top-0 right-0 Speciality"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="relative  lg:pt-[178px] pt-[100px] px-7" id="Slider-1">
-          <Slider {...settings}>
-            <div className="h-[250px] rounded-[35px] overflow-hidden">
-              <img
-                src={Listenersimg_2}
-                className="w-full h-full object-cover "
-                alt=""
-              />
-            </div>
-            <div className="h-[250px] rounded-[35px] overflow-hidden">
-              <img
-                src={
-                  "https://s3-alpha-sig.figma.com/img/5aa8/8d8b/3ecb686354f0b5f4593699440b46ec24?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UpxtVhGblAGCHgwjSiPV586t97TAkflGB~jiVJHynNy~tTZRDRmwY9iHv4fPYj4hIQaPFefBp9jexwrj53yIGPE08mvoY9a~GIsySxtBuo0owGu~eM5lhe8esypUb1ED4g7TYg3jOlPBWWyAeaxkfg17vvbS4Yt-Tr4x~7bGd3mOqYZ9iwYRn5dAHVo1kM-cKpLXdB47j5Q1qOUeuBvNSQNHTk81AV27b2oEMvIEZwzoIVznZyaCpxj0tT4PLAPvYluAsTaPJ8hE7ar9BAKVkKUuj3zekuT6ILm66j7lhuwLTCBx-Rr6qkyNMQYGQ6vtH3KN3aQHwFZ2OAC7QaPCDA__"
-                }
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </div>
-            <div className="h-[250px] rounded-[35px] overflow-hidden">
-              <img
-                src={
-                  "https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg"
-                }
-                className="w-full h-full object-cover object-top"
-                alt=""
-              />
-            </div>
-            <div className="h-[250px] rounded-[35px] overflow-hidden">
-              <img
-                src={
-                  "https://img.freepik.com/free-photo/smiling-young-beautiful-girl-looking-straight-ahead-wearing-white-t-shirt-isolated-pink_141793-86537.jpg"
-                }
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </div>
-            <div className="h-[250px] rounded-[35px] overflow-hidden">
-              <img
-                src={
-                  "https://avatars.mds.yandex.net/i?id=320423d984ab91d480a88de13a54e8a17215460f-12159448-images-thumbs&n=13"
-                }
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </div>
-            <div className="h-[250px] rounded-[35px] overflow-hidden">
-              <img
-                src={
-                  "https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13"
-                }
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </div>
-            <div className="h-[250px] rounded-[35px] overflow-hidden">
-              <img
-                src={
-                  "https://yandex-images.clstorage.net/S5Cj6a129/9bd1fbnBE0w6/c5fcvOYdxn2LRujK8D1GlhLQQWctQ6BVsNRQD143ASF6CVT6XTkKRLUBvIlYj7hCnBdRbiQE_vK99KVYUJZYfzejHQ0C7WZti3Y4W0CtNiaS1cU27iWi1-cnt2w5wBaz_rkBTw1964EAoV8qvLqudenzBpmAB4j1rpECPJWjHhiyBNwdEtx2np72GIiSXLciYGLwwl-1wjSkdpTMWNL3UL9L0q2_vO0CAJD-yEsoDnVKUtbJAfXKlD-DQJx1oj2oQ6Uf_oJdR15Nt1qJIh11sLMBkDENlgJltXTH7UrT9KM96BL9Lzwd86IzDpuqaJ2UijH2KFN1GQTt0sE9Z6DNKnCFvV6DfrQP_LboyXLctZKBYWCi7xQS1Kdm1N0pQSYRf0mSDm2vbbOTQZ15mpo_tYswRpujRNvnXtHTPbSSDmnwJz8PUi43b-3F-qqzXdSDgCCA8w10QrWlhWXNi6FVQb06It_NX3wD8wKsW4v4f8UZsdQL8zXZRP8isp9E4h_qcjaPH3AeVU6N5toYA-w0QcLCUxDNdJJ0VSYGH9gzdKF-iTHOPK19cXAR3ovKmo_l6RAFK9MWarY94GF9d_P9azBXfg2RroWcT0fLeIIsNUIw0EEgfJSR5rSFJ1_JkBTTDIhx3X2-fQCiEwwp-srNFPuR1wuCFhk3reDzPRfAb0izdb_No6_1rl4Ga5uzLodgkALCkpzFUOel9PYeG_J0Ej-JIL-P7F9xEjPMaZj5PgcZIkTZcVXJ17-Q4k3FgU-Z8vVuv3DMlQ799AvII15X01AS82EPhADVZfb1fBmC1lAdq5H_Xh6uc5Diris6WB_VGDJV2kBnG8WMwjJv1YM-SBH138zSb4R8rMYo-ZM9NoHDM0FBv_cSBWcVxT1KcMSCLnhj3k_MDiJgkr7KKcs_dspBNOtzVbk1TMBiLabzH5sipU99oc_kLY6XyPoiTIRQUkKysf5WsJUVVcauQ"
-                }
-                className="w-full h-full object-cover "
-                alt=""
-              />
-            </div>
-          </Slider>
-        </div>
-        <div className="lg:w-[70%] mx-auto lg:mt-0">
-          <Slider {...Slider2} className="">
-            <div>
-              <h3 className="text-Homegreen text-[215px] text-center">”</h3>
-              <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
-                “During Product Discovery, Startup House helped me to understand
-                the lean start-up way of product development with initial
-                research, discovery workshops and many hours of discussion and
-                iteration.”
-              </p>
-              <div className="flex items-center justify-center gap-x-3 mt-7">
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </div>
-              <div className="flex items-center justify-center mt-7">
-                <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
-                  <img
-                    src={Listenersimg_1}
-                    alt=""
-                    className="w-full h-full object-cover "
-                  />
-                </div>
-                <div className="ml-4">
-                  <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
-                    meera v.
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-Homegreen text-[215px] text-center">”</h3>
-              <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
-                "It is really a great app. recommended to all those who are
-                facing stress, depression or any other types of difficulties in
-                their life. the experts are reallyg good. They are really good
-                listener as well as consultation. one more thing that I like
-                about the app is that both in the morning as well as in the
-                night the send motivation messages which is really sweet"
-              </p>
-              <div className="flex items-center justify-center gap-x-3 mt-7">
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </div>
-              <div className="flex items-center justify-center mt-7">
-                <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
-                  <img
-                    src={
-                      "https://yandex-images.clstorage.net/S5Cj6a129/9bd1fbnBE0w6/c5fcvOYdxn2LRujK8D1GlhLQQWctQ6BVsNRQD143ASF6CVT6XTkKRLUBvIlYj7hCnBdRbiQE_vK99KVYUJZYfzejHQ0C7WZti3Y4W0CtNiaS1cU27iWi1-cnt2w5wBaz_rkBTw1964EAoV8qvLqudenzBpmAB4j1rpECPJWjHhiyBNwdEtx2np72GIiSXLciYGLwwl-1wjSkdpTMWNL3UL9L0q2_vO0CAJD-yEsoDnVKUtbJAfXKlD-DQJx1oj2oQ6Uf_oJdR15Nt1qJIh11sLMBkDENlgJltXTH7UrT9KM96BL9Lzwd86IzDpuqaJ2UijH2KFN1GQTt0sE9Z6DNKnCFvV6DfrQP_LboyXLctZKBYWCi7xQS1Kdm1N0pQSYRf0mSDm2vbbOTQZ15mpo_tYswRpujRNvnXtHTPbSSDmnwJz8PUi43b-3F-qqzXdSDgCCA8w10QrWlhWXNi6FVQb06It_NX3wD8wKsW4v4f8UZsdQL8zXZRP8isp9E4h_qcjaPH3AeVU6N5toYA-w0QcLCUxDNdJJ0VSYGH9gzdKF-iTHOPK19cXAR3ovKmo_l6RAFK9MWarY94GF9d_P9azBXfg2RroWcT0fLeIIsNUIw0EEgfJSR5rSFJ1_JkBTTDIhx3X2-fQCiEwwp-srNFPuR1wuCFhk3reDzPRfAb0izdb_No6_1rl4Ga5uzLodgkALCkpzFUOel9PYeG_J0Ej-JIL-P7F9xEjPMaZj5PgcZIkTZcVXJ17-Q4k3FgU-Z8vVuv3DMlQ799AvII15X01AS82EPhADVZfb1fBmC1lAdq5H_Xh6uc5Diris6WB_VGDJV2kBnG8WMwjJv1YM-SBH138zSb4R8rMYo-ZM9NoHDM0FBv_cSBWcVxT1KcMSCLnhj3k_MDiJgkr7KKcs_dspBNOtzVbk1TMBiLabzH5sipU99oc_kLY6XyPoiTIRQUkKysf5WsJUVVcauQ"
-                    }
-                    alt=""
-                    className="w-full h-full object-cover "
-                  />
-                </div>
-                <div className="ml-4">
-                  <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
-                    Anushka S.
-                  </h3>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 className="text-Homegreen text-[215px] text-center">”</h3>
-              <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
-                "An extremely helpful aap, talkangels can be of tremendous
-                assistance to those who are struggling with stress, anxiety, and
-                despair. It's a useful tool for people who have recently lost
-                someone and are trying to move on as well. The software provides
-                a diverse array of features that are all conveniently placed in
-                one location, including heat maps, session recordings, user
-                metrics, and a sophisticated dashboard. In light of my
-                experience, I heartily endorse talkangels and considers it as an
-                amazing app."
-              </p>
-              <div className="flex items-center justify-center gap-x-3 mt-7">
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-                <Star />
-              </div>
-              <div className="flex items-center justify-center mt-7">
-                <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
-                  <img
-                    src={
-                      "https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13"
-                    }
-                    alt=""
-                    className="w-full h-full object-cover "
-                  />
-                </div>
-                <div className="ml-4">
-                  <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
-                    Rita L.
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </Slider>
-        </div>
-        <div className="BottomShape mt-24 pt-[111px] pb-[190px] relative">
-          <div className="xl:max-w-[80%] mx-auto px-3">
-            <div>
-              <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex flex-wrap md:justify-start justify-center">
-                Your happily
-                <span className="uppercase ml-2 lg:static block">
-                  ever after
-                </span>
-              </h2>
-              <h2 className="lg:text-end text-center md:text-[68px] text-[47px] font-semibold text-white uppercase lg:max-w-[556px] relative">
-                with Talkangel!
-              </h2>
-              <p className="lg:text-left text-center text-[30px] text-white font-thin lg:max-w-[630px] mt-2">
-                Join the exciting journey of meeting new friends within our
-                vibrant community of over one million users!
-              </p>
-              <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
-                <Link
-                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                  className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                  target="_blank"
-                >
-                  Get Started{" "}
-                  {
-                    // eslint-disable-next-line
-                    <Arrow_Right />
+              <div className="h-[250px] rounded-[35px] overflow-hidden">
+                <img
+                  src={
+                    "https://s3-alpha-sig.figma.com/img/5aa8/8d8b/3ecb686354f0b5f4593699440b46ec24?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UpxtVhGblAGCHgwjSiPV586t97TAkflGB~jiVJHynNy~tTZRDRmwY9iHv4fPYj4hIQaPFefBp9jexwrj53yIGPE08mvoY9a~GIsySxtBuo0owGu~eM5lhe8esypUb1ED4g7TYg3jOlPBWWyAeaxkfg17vvbS4Yt-Tr4x~7bGd3mOqYZ9iwYRn5dAHVo1kM-cKpLXdB47j5Q1qOUeuBvNSQNHTk81AV27b2oEMvIEZwzoIVznZyaCpxj0tT4PLAPvYluAsTaPJ8hE7ar9BAKVkKUuj3zekuT6ILm66j7lhuwLTCBx-Rr6qkyNMQYGQ6vtH3KN3aQHwFZ2OAC7QaPCDA__"
                   }
-                </Link>
-                <Link
-                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                  className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                  target="_blank"
-                >
-                  Download the app{" "}
-                  <div className="-rotate-45">
-                    {
-                      // eslint-disable-next-line
-                      <Arrow_Right />
-                    }
-                  </div>
-                </Link>
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
               </div>
-            </div>
+              <div className="h-[250px] rounded-[35px] overflow-hidden">
+                <img
+                  src={
+                    "https://i.pinimg.com/736x/23/76/b6/2376b6619630266ab3de14ae52897d39.jpg"
+                  }
+                  className="w-full h-full object-cover object-top"
+                  alt=""
+                />
+              </div>
+              <div className="h-[250px] rounded-[35px] overflow-hidden">
+                <img
+                  src={
+                    "https://img.freepik.com/free-photo/smiling-young-beautiful-girl-looking-straight-ahead-wearing-white-t-shirt-isolated-pink_141793-86537.jpg"
+                  }
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+              <div className="h-[250px] rounded-[35px] overflow-hidden">
+                <img
+                  src={
+                    "https://avatars.mds.yandex.net/i?id=320423d984ab91d480a88de13a54e8a17215460f-12159448-images-thumbs&n=13"
+                  }
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+              <div className="h-[250px] rounded-[35px] overflow-hidden">
+                <img
+                  src={
+                    "https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13"
+                  }
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+              <div className="h-[250px] rounded-[35px] overflow-hidden">
+                <img
+                  src={
+                    "https://yandex-images.clstorage.net/S5Cj6a129/9bd1fbnBE0w6/c5fcvOYdxn2LRujK8D1GlhLQQWctQ6BVsNRQD143ASF6CVT6XTkKRLUBvIlYj7hCnBdRbiQE_vK99KVYUJZYfzejHQ0C7WZti3Y4W0CtNiaS1cU27iWi1-cnt2w5wBaz_rkBTw1964EAoV8qvLqudenzBpmAB4j1rpECPJWjHhiyBNwdEtx2np72GIiSXLciYGLwwl-1wjSkdpTMWNL3UL9L0q2_vO0CAJD-yEsoDnVKUtbJAfXKlD-DQJx1oj2oQ6Uf_oJdR15Nt1qJIh11sLMBkDENlgJltXTH7UrT9KM96BL9Lzwd86IzDpuqaJ2UijH2KFN1GQTt0sE9Z6DNKnCFvV6DfrQP_LboyXLctZKBYWCi7xQS1Kdm1N0pQSYRf0mSDm2vbbOTQZ15mpo_tYswRpujRNvnXtHTPbSSDmnwJz8PUi43b-3F-qqzXdSDgCCA8w10QrWlhWXNi6FVQb06It_NX3wD8wKsW4v4f8UZsdQL8zXZRP8isp9E4h_qcjaPH3AeVU6N5toYA-w0QcLCUxDNdJJ0VSYGH9gzdKF-iTHOPK19cXAR3ovKmo_l6RAFK9MWarY94GF9d_P9azBXfg2RroWcT0fLeIIsNUIw0EEgfJSR5rSFJ1_JkBTTDIhx3X2-fQCiEwwp-srNFPuR1wuCFhk3reDzPRfAb0izdb_No6_1rl4Ga5uzLodgkALCkpzFUOel9PYeG_J0Ej-JIL-P7F9xEjPMaZj5PgcZIkTZcVXJ17-Q4k3FgU-Z8vVuv3DMlQ799AvII15X01AS82EPhADVZfb1fBmC1lAdq5H_Xh6uc5Diris6WB_VGDJV2kBnG8WMwjJv1YM-SBH138zSb4R8rMYo-ZM9NoHDM0FBv_cSBWcVxT1KcMSCLnhj3k_MDiJgkr7KKcs_dspBNOtzVbk1TMBiLabzH5sipU99oc_kLY6XyPoiTIRQUkKysf5WsJUVVcauQ"
+                  }
+                  className="w-full h-full object-cover "
+                  alt=""
+                />
+              </div>
+            </Slider>
           </div>
-          <img
-            src={Phone}
-            alt=""
-            className="lg:absolute top-[79px] xl:right-[150px] right-7 lg:mt-0 mt-10 mx-auto px-7"
-          />
-        </div>
-        <footer>
-          <div className="lg:pt-[110px] xl:max-w-[90%] mx-auto px-3">
-            <div className=" flex items-center lg:justify-between justify-center border-b border-white/25 pb-[112px] flex-wrap">
-              <div className="lg:w-auto w-full">
-                <h2 className="text-[48px] text-white uppercase font-bold lg:text-left text-center">
-                  TALKANGELS
-                </h2>
-                <div className="flex items-center gap-6 flex-wrap ml-2 lg:justify-start justify-center lg:mt-0 my-6">
-                  <Facebook />
-                  <Twitter />
-                  <Instagram />
-                  <Linkedin />
+          <div className="lg:w-[70%] mx-auto lg:mt-0">
+            <Slider {...Slider2} className="">
+              <div>
+                <h3 className="text-Homegreen text-[215px] text-center">”</h3>
+                <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
+                  “During Product Discovery, Startup House helped me to
+                  understand the lean start-up way of product development with
+                  initial research, discovery workshops and many hours of
+                  discussion and iteration.”
+                </p>
+                <div className="flex items-center justify-center gap-x-3 mt-7">
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                </div>
+                <div className="flex items-center justify-center mt-7">
+                  <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
+                    <img
+                      src={Listenersimg_1}
+                      alt=""
+                      className="w-full h-full object-cover "
+                    />
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
+                      meera v.
+                    </h3>
+                  </div>
                 </div>
               </div>
-              <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
-                {/* <div className="flex flex-col gap-y-5">
+              <div>
+                <h3 className="text-Homegreen text-[215px] text-center">”</h3>
+                <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
+                  "It is really a great app. recommended to all those who are
+                  facing stress, depression or any other types of difficulties
+                  in their life. the experts are reallyg good. They are really
+                  good listener as well as consultation. one more thing that I
+                  like about the app is that both in the morning as well as in
+                  the night the send motivation messages which is really sweet"
+                </p>
+                <div className="flex items-center justify-center gap-x-3 mt-7">
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                </div>
+                <div className="flex items-center justify-center mt-7">
+                  <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
+                    <img
+                      src={
+                        "https://yandex-images.clstorage.net/S5Cj6a129/9bd1fbnBE0w6/c5fcvOYdxn2LRujK8D1GlhLQQWctQ6BVsNRQD143ASF6CVT6XTkKRLUBvIlYj7hCnBdRbiQE_vK99KVYUJZYfzejHQ0C7WZti3Y4W0CtNiaS1cU27iWi1-cnt2w5wBaz_rkBTw1964EAoV8qvLqudenzBpmAB4j1rpECPJWjHhiyBNwdEtx2np72GIiSXLciYGLwwl-1wjSkdpTMWNL3UL9L0q2_vO0CAJD-yEsoDnVKUtbJAfXKlD-DQJx1oj2oQ6Uf_oJdR15Nt1qJIh11sLMBkDENlgJltXTH7UrT9KM96BL9Lzwd86IzDpuqaJ2UijH2KFN1GQTt0sE9Z6DNKnCFvV6DfrQP_LboyXLctZKBYWCi7xQS1Kdm1N0pQSYRf0mSDm2vbbOTQZ15mpo_tYswRpujRNvnXtHTPbSSDmnwJz8PUi43b-3F-qqzXdSDgCCA8w10QrWlhWXNi6FVQb06It_NX3wD8wKsW4v4f8UZsdQL8zXZRP8isp9E4h_qcjaPH3AeVU6N5toYA-w0QcLCUxDNdJJ0VSYGH9gzdKF-iTHOPK19cXAR3ovKmo_l6RAFK9MWarY94GF9d_P9azBXfg2RroWcT0fLeIIsNUIw0EEgfJSR5rSFJ1_JkBTTDIhx3X2-fQCiEwwp-srNFPuR1wuCFhk3reDzPRfAb0izdb_No6_1rl4Ga5uzLodgkALCkpzFUOel9PYeG_J0Ej-JIL-P7F9xEjPMaZj5PgcZIkTZcVXJ17-Q4k3FgU-Z8vVuv3DMlQ799AvII15X01AS82EPhADVZfb1fBmC1lAdq5H_Xh6uc5Diris6WB_VGDJV2kBnG8WMwjJv1YM-SBH138zSb4R8rMYo-ZM9NoHDM0FBv_cSBWcVxT1KcMSCLnhj3k_MDiJgkr7KKcs_dspBNOtzVbk1TMBiLabzH5sipU99oc_kLY6XyPoiTIRQUkKysf5WsJUVVcauQ"
+                      }
+                      alt=""
+                      className="w-full h-full object-cover "
+                    />
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
+                      Anushka S.
+                    </h3>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-Homegreen text-[215px] text-center">”</h3>
+                <p className="text-center text-[32px] font-extralight text-white -mt-[150px] px-3">
+                  "An extremely helpful aap, talkangels can be of tremendous
+                  assistance to those who are struggling with stress, anxiety,
+                  and despair. It's a useful tool for people who have recently
+                  lost someone and are trying to move on as well. The software
+                  provides a diverse array of features that are all conveniently
+                  placed in one location, including heat maps, session
+                  recordings, user metrics, and a sophisticated dashboard. In
+                  light of my experience, I heartily endorse talkangels and
+                  considers it as an amazing app."
+                </p>
+                <div className="flex items-center justify-center gap-x-3 mt-7">
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                  <Star />
+                </div>
+                <div className="flex items-center justify-center mt-7">
+                  <div className="w-20 h-20 rounded-full border border-Homegreen overflow-hidden">
+                    <img
+                      src={
+                        "https://avatars.mds.yandex.net/i?id=2ac87f014a26f48e7928adfb6b56333f787c5f1b-10449875-images-thumbs&n=13"
+                      }
+                      alt=""
+                      className="w-full h-full object-cover "
+                    />
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="uppercase text-white font-Popins font-bold tracking-[1px]">
+                      Rita L.
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+          </div>
+          <div className="BottomShape mt-24 pt-[111px] pb-[190px] relative">
+           
+              <div className="xl:max-w-[80%] mx-auto px-3">
+                <div>
+                  <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex flex-wrap md:justify-start justify-center">
+                    Your happily
+                    <span className="uppercase ml-2 lg:static block">
+                      ever after
+                    </span>
+                  </h2>
+                  <h2 className="lg:text-end text-center md:text-[68px] text-[47px] font-semibold text-white uppercase lg:max-w-[556px] relative">
+                    with Talkangel!
+                  </h2>
+                  <p className="lg:text-left text-center text-[30px] text-white font-thin lg:max-w-[630px] mt-2">
+                    Join the exciting journey of meeting new friends within our
+                    vibrant community of over one million users!
+                  </p>
+                  <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
+                    <Link
+                      to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                      className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                      target="_blank"
+                    >
+                      Get Started{" "}
+                      {
+                        // eslint-disable-next-line
+                        <Arrow_Right />
+                      }
+                    </Link>
+                    <Link
+                      to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                      className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                      target="_blank"
+                    >
+                      Download the app{" "}
+                      <div className="-rotate-45">
+                        {
+                          // eslint-disable-next-line
+                          <Arrow_Right />
+                        }
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            <img
+              src={Phone}
+              alt=""
+              className="lg:absolute top-[79px] xl:right-[150px] right-7 lg:mt-0 mt-10 mx-auto px-7"
+            />
+          </div>
+          <footer>
+            <div className="lg:pt-[110px] xl:max-w-[90%] mx-auto px-3">
+              <div className=" flex items-center lg:justify-between justify-center border-b border-white/25 pb-[112px] flex-wrap">
+                <div className="lg:w-auto w-full">
+                  <h2 className="text-[48px] text-white uppercase font-bold lg:text-left text-center">
+                    TALKANGELS
+                  </h2>
+                  <div className="flex items-center gap-6 flex-wrap ml-2 lg:justify-start justify-center lg:mt-0 my-6">
+                    <Facebook />
+                    <Twitter />
+                    <Instagram />
+                    <Linkedin />
+                  </div>
+                </div>
+                <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
+                  {/* <div className="flex flex-col gap-y-5">
                   <h2 className="text-white lg:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
                     About Us
                   </h2>
                   
                 </div> */}
-                {/* <div className="flex flex-col gap-y-5 lg:mt-0 mt-5"> */}
-                <Link
-                  to="/"
-                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  to="/"
-                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                >
-                  Guidelines
-                </Link>
-                <Link
-                  to={Routing.Faq}
-                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                >
-                  FAQs
-                </Link>
-                <Link
-                  to="/policies"
-                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                >
-                  Privacy Policy
-                </Link>
-                {/* </div> */}
+                  {/* <div className="flex flex-col gap-y-5 lg:mt-0 mt-5"> */}
+                  <Link
+                    to="/"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    Contact Us
+                  </Link>
+                  <Link
+                    to="/"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    Guidelines
+                  </Link>
+                  <Link
+                    to={Routing.Faq}
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    FAQs
+                  </Link>
+                  <Link
+                    to="/policies"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    Privacy Policy
+                  </Link>
+                  {/* </div> */}
+                </div>
+              </div>
+              <div className="py-11 flex items-center justify-between flex-wrap">
+                <div className="flex items-center flex-wrap lg:justify-start justify-center">
+                  <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
+                    Get the App!
+                  </h2>
+                  <Link
+                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    target="_blank"
+                  >
+                    <img src={PlayStore} alt="" />
+                  </Link>
+                  <Link
+                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    target="_blank"
+                    className="ml-4"
+                  >
+                    <img src={AppleStore} alt="" />
+                  </Link>
+                </div>
+                <div className="">
+                  <Link
+                    to="mailto:info@talkangels.com"
+                    className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit md:ml-auto md:mx-0 mx-auto"
+                  >
+                    info@talkangels.com
+                  </Link>
+                  <h2 className="text-white lg:text-right text-center text-lg font-light">
+                    © Copyright 2024 -{" "}
+                    <span className="text-Homegreen"> TALKANGELS</span>, All
+                    Rights Reserved.
+                  </h2>
+                </div>
               </div>
             </div>
-            <div className="py-11 flex items-center justify-between flex-wrap">
-              <div className="flex items-center flex-wrap lg:justify-start justify-center">
-                <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
-                  Get the App!
-                </h2>
-                <Link
-                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                  target="_blank"
-                >
-                  <img src={PlayStore} alt="" />
-                </Link>
-                <Link
-                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                  target="_blank"
-                  className="ml-4"
-                >
-                  <img src={AppleStore} alt="" />
-                </Link>
-              </div>
-              <div className="">
-                <Link
-                  to="mailto:info@talkangels.com"
-                  className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit md:ml-auto md:mx-0 mx-auto"
-                >
-                  info@talkangels.com
-                </Link>
-                <h2 className="text-white lg:text-right text-center text-lg font-light">
-                  © Copyright 2024 -{" "}
-                  <span className="text-Homegreen"> TALKANGELS</span>, All
-                  Rights Reserved.
-                </h2>
-              </div>
-            </div>
-          </div>
-        </footer>
+          </footer>
+        </div>
       </div>
     </>
   );
