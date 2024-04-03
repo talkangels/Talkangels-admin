@@ -626,11 +626,11 @@ const Index = () => {
                   </Link>
                 </div>
                 <div className="">
-                  <Link
-                    to="mailto:info@talkangels.com"
+                <Link
+                    to="mailto:Talkangels5524@Gmail.Com"
                     className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit md:ml-auto md:mx-0 mx-auto"
                   >
-                    info@talkangels.com
+                    talkangels5524@gmail.com
                   </Link>
                   <h2 className="text-white lg:text-right text-center text-lg font-light">
                     © Copyright 2024 -{" "}
