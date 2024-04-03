@@ -246,21 +246,6 @@ const Index = () => {
                   <div className="mt-[81px] grid md:grid-cols-2 gap-x-[50px] gap-y-[73px]">
                     <div>
                       <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
-                        Policy Compliance and Quality Assurance Through
-                        AI-Enabled Conversation Monitoring
-                      </h4>
-                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
-                        While we do not record your conversation but if your
-                        conversation is flagged by our AI (Artifically
-                        Intelligent) system for violating the app's policies, it
-                        might be recorded in parts or full for further
-                        investigation. It will however not be used in any way to
-                        generate profit but it might be used for investigation
-                        in case of a dispute and for quality improvement.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
                         Empathetic Support and Solutions, Without Professional
                         Counseling
                       </h4>
@@ -284,6 +269,16 @@ const Index = () => {
                         publicly then his/her name would be real otherwise we
                         allow listeners to use a masked name to keep their
                         identity safe online. give me title of that
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
+                        Our Listener?
+                      </h4>
+                      <p className="text-[20px] lg:text-justify text-center text-white font-extralight">
+                        Listeners are people on TALKANGELS App who have seen
+                        tough times in their lives and can actively listen to
+                        your problems and feelings and make you feel better.
                       </p>
                     </div>
                     <div>
@@ -570,52 +565,38 @@ const Index = () => {
                 </div>
               </div>
               <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
-                <div className="flex flex-col gap-y-5">
+                {/* <div className="flex flex-col gap-y-5">
                   <h2 className="text-white lg:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
                     About Us
                   </h2>
-                  <Link
-                    to="/privacy"
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    Privacy Policy
-                  </Link>
-                  <Link
-                    to="/"
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    Refund & Cancellation
-                  </Link>
-                  <Link
-                    to="/tnc"
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    Terms & Conditions
-                  </Link>
-                </div>
-                <div className="flex flex-col gap-y-5 lg:mt-0 mt-5">
-                  <h2 className="text-white lg:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
-                    Support
-                  </h2>
-                  <Link
-                    to="/"
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    Contact Us
-                  </Link>
-                  <Link
-                    to="/"
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    Guidelines
-                  </Link>
-                  <Link
-                    to={Routing.Faq}
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    FAQs
-                  </Link>
-                </div>
+                  
+                </div> */}
+                {/* <div className="flex flex-col gap-y-5 lg:mt-0 mt-5"> */}
+                <Link
+                  to="/"
+                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  to="/"
+                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                >
+                  Guidelines
+                </Link>
+                <Link
+                  to={Routing.Faq}
+                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                >
+                  FAQs
+                </Link>
+                <Link
+                  to="/policies"
+                  className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                >
+                  Privacy Policy
+                </Link>
+                {/* </div> */}
               </div>
             </div>
             <div className="py-11 flex items-center justify-between flex-wrap">

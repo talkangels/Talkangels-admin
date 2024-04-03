@@ -4,7 +4,7 @@ export const Routing = {
   Login: "/admin/login",
   ResetPassword: "/admin/reset-password",
   Register: "/admin/register",
-  PrivacyPolicy: "/privacy",
+  PrivacyPolicy: "/policies",
   TermsConditions: "/tnc",
   Faq: "/faq's",
   Listeners: "/listeners",

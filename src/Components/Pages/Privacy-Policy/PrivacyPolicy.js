@@ -4,74 +4,149 @@ import { Link } from "react-router-dom";
 const PrivacyPolicy = () => {
   const data = [
     {
-      title: "Introduction",
-      body: "This Is The Private Policy Of TalkAngels And Its Future Versions (Hereinafter Referred To As TalkAngels, Service, We, Us, Our Or App), Which Is A Commercial App And This Policy Can Be Found At Www.Talkangels.Com This Page Is Used To Inform Users Regarding Our Data Handling Practices And Disclosure Of Personal Information If Anyone Decided To Use Our Service. If You Choose To Use Our Service, Then You Agree To The Collection And Use Of Information In Relation To This Policy. The Personal Information That We Collect Is Used For Providing And Improving The Service. We Will Not Use Or Share Your Information With Any Third Party Without Your Consent Except As Described In This Privacy Policy.",
-    },
-    {
-      title: "Information Collection and Use",
-      body: "When you install this App on your device and register with TalkAngels, personally identifiable information about you may be collected during the downloading process of the app (as requested from your during the downloading process) when you register with us. For Registration on TalkAngels, you are required to provide your Mobile Phone Number and Name, depending upon the device you are using. You may also provide personally identifiable information like Profile Picture but that is optional. In addition, when you install the Service on your device and register with TalkAngels, you may be asked to allow us access to your microphone If you consent, we will have access to your voice while you talking with other user in TalkAngels. If you do not want TalkAngels to access microphone, we may not be able to offer some of the features that require this access. TalkAngels not collect personally identifiable information, such as certain profile information including country of residence, languages and preferences. In addition, TalkAngels may collect and store information about your and others’ usage of and interaction with the Service and our websites, including numbers of Calls made by members, call durations, usage by geographies, device and connection information, IP address, device capability, bandwidth, statistics on page views, network type and traffic to and from our Service. TalkAngels allows you to call on voice in the TalkAngels application with other users, and if you choose to do communications will not be stored on our servers. In addition, if you choose to share these items with other TalkAngels users, we may not be able to remove them from our servers or make them unavailable to anyone you have shared them with. communications in the TalkAngels application is your sole decision. By choosing to share that information, you should understand that you may no longer be able to control how that information is used and that it may become publicly available (depending in part on your actions or the actions of others with whom you have shared the information). TalkAngels is not responsible for any use or misuse of information you share with other users. We may also use your device id for identifying your device. This is used to match your device with your account.",
-    },
-    {
-      title: "Log Data",
-      body: "We want to inform you that whenever you use our Service, in a case of an error in the app we collect data and information (through third party products) on your phone called Log Data. This Log Data may include information such as your device Internet Protocol (“IP”) address, device name, operating system version, the configuration of the app when utilizing our Service, the time and date of your use of the Service, and other statistics.",
-    },
-    {
-      title: "Data Security",
-      body: "Protecting user privacy and personal information is a top priority for TalkAngels. We make substantial efforts to ensure the privacy of all personally identifiable information you provide to us. Access to all personally identifiable information is restricted to those TalkAngels employees, contractors, agents and third-party service providers who need to know that information in order to provide, operate, develop, maintain, support or improve the Service. TalkAngels  uses password protection, access logs, and system monitoring to safeguard the confidentiality and security of all member information. To complete a commerce transaction on TalkAngels item shop/store, you will be requested to provide your payment information, including your credit card number, card expiration date, CVV code, billing address or Net-banking or Payment Wallet details. In that event, we will transmit your information securely directly to a third party vendor or merchant (Secure payment Gateway) who will collect such information in order to process and fulfill your purchase. Talk Angles does not process or store your payment information. However, we may store other information about your purchases made on our app, which may include the merchant’s name, the date, time and amount of the transaction and other purchase information. TalkAngels will not directly share your contact number with other users. TalkAngels encrypt your number and provide a unique chat ID to every user so that they can talk with other users freely without worrying about disclosing their identity. However, User with their own consent can share their personal details with other users. TalkAngels shall not be responsible for any misuse of information shared by the users through our app.In addition, due to the inherent nature of the Internet and related technology, we do not guarantee the protection of information under our control against loss, misuse or alteration.",
-    },
-    {
-      title: "Parties with whom we may share your data",
-      body: "We may share User Content and your information (including but not limited to, information from cookies, log files, device identifiers, and usage data) with businesses that are legally part of the same group of companies that TalkAngels is part of, or that become part of that group ('Affiliates'). Affiliates may use this information to help provide, understand, and improve the Service (including by providing analytics) and Affiliates' own services (including by providing you with better and more relevant experiences). But these Affiliates will honor the choices you make about who can see your contents. We also may share your information as well as information from tools like cookies, log files, and device identifiers and location data, with third-party organizations that help us provide the Service to you ('Service Providers'). Our Service Providers will be given access to your information as is reasonably necessary to provide the Service under reasonable confidentiality terms. We may also share aggregate or anonymous information with third parties, including advertisers and investors. For example, we may tell our advertisers the number of users our app receives. This information does not contain any personal or personally identifiable information, and is used to develop content and services that we hope you will find of interest.  We may remove parts of data that can identify you and share anonymized data with other parties. We may also combine your information with other information in a way that it is no longer associated with you and share that aggregated information for better service enhancement. In certain instances, TalkAngels may have contracts with third parties to provide products and/or services in connection with the Service. In those cases, TalkAngels may share your personal information with TalkAngels’s third-party service providers, but only in connection with providing the services to you. For example, TalkAngels shares your phone number third party SMS and email providers to deliver the authentication SMS or email to you when you register with TalkAngels. We contractually require that these third parties use your information solely to deliver SMS or email to you and to use appropriate security measures to protect your information. In addition, certain TalkAngels servers are owned and hosted by third party service providers. This Privacy Policy does not apply to the practices of third-party service providers. Your information may be stored and processed in any country in which TalkAngels maintains facilities and provides services. In this regard, or for purposes of sharing or disclosing data as described in this Privacy Policy, TalkAngels reserves the right to transfer information outside of your country. By using the Service, you consent to any such transfer of information outside of your country.",
-    },
-    {
-      title: "Other Use of Information we collect:",
-      body: "We use any may disclose your personal information only as follows:",
+      title: "Listeners Blog FAQs Intern Download",
+      title2: "Privacy Policy, T&C, and R&C Introduction",
+      body: [
+        "We/ TALKANGELS, are an internet based mobile phone application by TALKANGELS, and this document uses the words “we” and “TALKANGLES” interchangeably, and “you” and “users” interchangeably. The expression “we” covers both TALKANGLES and TALKANGELS, as and when the context allows.",
+        "Terms “We”, “TALKANGELS”, “TALKANGELS”, covers their respective current or former employees, officers, directors, agents, successors, assigns, parents, subsidiaries, divisions or affiliated corporations.",
+        "The users’ right to privacy is of paramount importance to TALKANGELS community.",
+        "We take data security and privacy with critical importance. We obligate ourselves to maintain a no-leak and no-disclosure business as any private and sensitive data must receive proportioned protection. In our application, users and providers / ‘listeners’, are in control and can decide what they want to share and what they prefer to keep private.",
+      ],
       Topic: [
-        "- To Verify your identity",
-        "- To connect you with others (without disclosing mobile number) as enabled by the service",
-        "- To share your profile with other users on the app",
-        "- To allow your use of certain features of the Service that may be offered from time to time (such as Premium/VIP Services (see our Terms of Use), etc.",
-        "- To deliver to you any administrative notices, alerts and communications relevant to your use of the Service",
-        "- To provide you with relevant content that you requested, using information that you allow us to collect from you or that you provide to a social media provider with which your TalkAngels account is connected, such as information regarding your and your TalkAngels contacts' respective locations",
-        "- To contact you via email, SMS or otherwise for the purpose of informing you about new products, services or promotions offered by TalkAngels (you can opt-out of such emails or SMSs by sending an email to talkangels5524@gmail.com)",
-        "- For internal operations, including troubleshooting problems, data analysis, testing, research, improvements to the Service, detecting and protecting against error, fraud or other illegal activity.",
-        "- When we have a good faith belief that the law, any legal process, law enforcement, national security or issue of public importance requires disclosure.",
-        "- To protect and defend our rights or property (including to enforce our Terms of Use and other agreements); or",
-        "- In connection with a corporate transaction involving TalkAngels, such as the purchase or sale of a business unit, an acquisition, merger, sale of assets, or other similar event.",
+        "-   Any information you share with us by your own choosing is ‘redacted’, ‘obscure’, and       ‘censored’ from everyone, including the employees of TALKANGELS, as well as the external    ‘listeners’ we bring in, for your engagement.",
+        "-   The information or data you share with our ‘listeners’ or otherwise, is for “your eyes only”. We only retain the basic minimum information like name and contact number, for the registration process. -   We do not send you messages without your permission. ",
+        "-   We send promotional messages with an option to opt-out at any time.",
+        "-   We do not share data with any third party, whatsoever.",
+      ],
+      body2: [
+        "However, TALKANGELS may, with your implied permission, use the basic information and data provided by you, to provide a more personalized online experience. ",
+        "TALKANGELS stores any data entered by the user, in a very secured format deterring any leakage or misuse.",
+        "No “sensitive personal data” is collected or stored and used as per the required legal guidelines. We emphasize and actively inform all users to avoid sharing any “sensitive personal data” with anyone related to, or connected to, or representing TALKANGELS. ",
+        "The only purpose of collecting any basic or required information is to provide you with a more secure experience to the real-time users and enable the ‘listeners’ to address and engage the users, coherently and cogently.",
+        "In general, you can visit TALKANGELS’s portal without telling us who you are and without revealing any information about yourself. There are times, however, when TALKANGELS may need information from you. Only in such incidences, as disclosed, TALKANGELS reserves the right to gather the information and use it according to the terms mentioned.",
+        "TALKANGELS does not rent, sell, or share personal or any other form of information about you to anyone, including non-affiliates, except to provide the services as agreed or intended to be generally provided through the TALKANGELS application or any other service you've specifically requested, when TALKANGELS has your permission.",
+        "TALKANGELS provides your redacted and censored information to unspecified listeners (as defined in the disclaimer) who timely engage with TALKANGELS under strict confidentiality agreements and non-disclosure contracts. ",
+        "However, TALKANGELS as per law, is legally bound to disclose information that any government organization with proper instructions from the court of law, in order to investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the physical safety of any person, or as otherwise required by law. ",
+        "TALKANGELS, as far as its publishing and online involvement is concerned, is only an intermediary as defined under the “Information Technology Act, 2000” and “Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules 2021”, and does not modify and edit or in any way manipulate user-generated contents (if any), and therefore, is protected under law.",
       ],
     },
     {
-      title: "User Profile",
-      body: "The information you enter into your user profile (your “Profile”) not be shared with your TalkAngels contacts. You control your Profile and you can access and modify your Profile from the TalkAngels application at any time. In addition, if you register with TalkAngels using your WhatsApp account (e.g. WhatsApp login), we may store your WhatsApp ID and corresponding token on our servers and, if you give us your express consent, we will have access to and may collect certain information that you make available on WhatsApp(for example, your first and last names). Your Profile is available to other users of the Service who are connected to you on TalkAngels. In addition, unless you opt-out (by writing an email to talkangels5524@gmail.com), your Profile with your random chat ID is discoverable by other TalkAngels users, including by way of example in listings of contacts that will include your Gender, Interest, Age group.",
-    },
-    {
-      title: "Data Access and removal",
-      body: "",
-      Topic: [
-        "- You can always control what information you choose to share with us on the Service. To do so, you can change your settings in the Service or in your mobile device. Alternatively, you can remove the Service from your mobile device entirely.",
-        "- You can remove your data anytime you want. If you ask us to delete your account, we will use commercially reasonable efforts to remove your data from our servers.",
-        "- Any personally identifiable information that you share in Voice Call, TalkAngels is not responsible for any use or misuse of your information that might result from your disclosure of information.",
+      title: "Information collected directly:",
+      title2: "",
+      body: [
+        "TALKANGELS may, at times, receive or collect some information to operate, provide, improve, understand, support, and market our services, including when you install, access, or use our services.The types of information we receive and collect depend on how you use our services.",
+        "When a user enquires about, registers for, or uses our services, websites or application, then the mechanics of the system may need to procure (off course with your consent) some basic identification data - including your name and phone number.",
+        "TALKANGELS is a portal which brings two individual set of parties at the same platform. Though we cannot be held directly or vicariously liable by conduct or disclosure of either party (considering we do not ask for any personal or typical information to be disclosed by either party or monitor the information shared at our mobile application), we do go to extra lengths to ensure your rights are protected and privacy is maintained at all costs.",
+        "However, parties are bound to secure each other’s information in accordance with law and maintain each other’s privacy integrity, and ethics and are individually liable for any violations.",
       ],
     },
     {
-      title: "Data Deletion Instructions",
-      body: "You can delete your account, or remove certain personal information, by logging into your TalkAngels account-Click on My Profile and Press 'Delete Account' Button. By Deleting Account, you will no longer access that account and we will delete that account permanently. If there is any other personal information you believe we saved in our record, you can ask us to delete that by writing us at talkangels5524@gmail.com",
+      title: "Other policy issues: ",
+      title2: "",
+      body: [
+        "Parties are urged not to share sensitive personal information or core medical issues as TALKANGELS is not a medical facilitator or in any way certified to practice medicine or advice professionally. While under our privacy policy if such information are shared by any party, this would be to their own volition and such data shall be protected as far as reasonably possible by us, however, we can not take responsibility for any information which the user may have chosen to share on TALKANGELS mobile application on their own volition or otherwise.",
+        "TALKANGELS reserves the right to alter any of the conditions without prior notice to any of the parties. TALKANGELS stays committed to protecting the data of both parties.",
+        "TALKANGELS takes no responsibility and account for the consensual exchange of information between the real-time user and listeners (as defined in the disclaimer) and the post effect or events following with the sharing of the data between the parties.",
+        "Payments Data: When you use our services for purchases or other financial transactions, we process additional information about you, including payment account and transaction information. Payment account and transaction information include information needed to complete the transaction (this includes information about the payment method, amounts involved). If you use our payments services, our privacy practices are described below:",
+        "When any party registers to use services making or giving payments, we receive your bank's name and confirm the bank account for use. If you do not have a BHIM UPI PIN already for your bank account, you can set one using your partial debit card number, expiry date, PIN (if required by your bank), and bank-issued one-time password (OTP) to set up a BHIM UPI PIN.",
+        "We DO NOT RETAIN any user’s sensitive payment data (any debit card number, expiry date, PIN, OTP, or BHIM UPI PIN), as per law. ",
+        "We don’t have access to the BHIM UPI PIN because it is encrypted by Common Library (CL) software provided by National Payments Corporation of India. ",
+        "If you would like to manage, change, limit, or delete your payment information, we allow you to do that through your Payments settings or by deleting your account. ",
+        "The extent of application services: Our services do not provide access to emergency services or emergency services providers, including the medical, police, fire departments, or hospitals, or otherwise connect to public safety answering points. You should ensure you can contact your relevant emergency services providers in your relevant city or local administration. Our services are limited to providing general non-certified advisory, discussions and guidance only.",
+        "YOU USE OUR SERVICES AT YOUR OWN RISK AND SUBJECT TO THE FOLLOWING DISCLAIMERS. WE ARE PROVIDING OUR SERVICES ON AN “AS IS” BASIS WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, AND FREEDOM FROM COMPUTER VIRUS OR OTHER HARMFUL CODE.",
+        "WE DO NOT WARRANT THAT ANY INFORMATION PROVIDED BY US IS ACCURATE, COMPLETE, OR USEFUL, THAT OUR SERVICES WILL BE OPERATIONAL, ERROR-FREE, SECURE, OR SAFE, OR THAT OUR SERVICES WILL FUNCTION WITHOUT DISRUPTIONS, DELAYS, OR IMPERFECTIONS.",
+        "WE DO NOT CONTROL, AND ARE NOT RESPONSIBLE FOR, CONTROLLING HOW OR WHEN OUR USERS USE OUR SERVICES OR THE FEATURES, SERVICES, AND INTERFACES OUR SERVICES PROVIDE. WE ARE NOT RESPONSIBLE FOR AND ARE NOT OBLIGATED TO CONTROL THE ACTIONS OR INFORMATION (INCLUDING CONTENT) OF OUR USERS OR OTHER THIRD PARTIES. ",
+        "YOU RELEASE US, OUR SUBSIDIARIES, AFFILIATES, OUR AND THEIR DIRECTORS, OFFICERS, EMPLOYEES, PARTNERS, AND AGENTS FROM ANY CLAIM, COMPLAINT, CAUSE OF ACTION, CONTROVERSY, DISPUTE, OR DAMAGES (TOGETHER, “CLAIM”), KNOWN AND UNKNOWN, RELATING TO, ARISING OUT OF, OR IN ANY WAY CONNECTED WITH ANY SUCH CLAIM YOU HAVE AGAINST ANY THIRD-PARTIES.",
+        "YOUR RIGHTS WITH RESPECT TO THE PARTIES ARE NOT MODIFIED BY THE FOREGOING DISCLAIMER IF THE LAWS OF THE COUNTRY OR TERRITORY OF RESIDENCE, APPLICABLE AS A RESULT OF YOUR USE OF OUR SERVICES, DO NOT PERMIT IT. ",
+        "Indemnification: If either the ‘users’ or the ‘listeners’ or any party on their behalf or a third party brings a claim (including a 'Third-Party Claim') against us, in relation to any party’s actions in re. TALKANGELS, or any other use of our services by you, you will, to the maximum extent permitted by applicable law, indemnify, and hold TALKANGELS and its employees and directors, harmless from and against all liabilities, damages, losses, and expenses of any kind (including reasonable legal fees and costs) relating to, arising out of, or in any way in connection with any of of our services.",
+        "Dispute Resolution and Governing Law: The law governing any dispute arising out of or related to TALKANGELS shall be under express jurisdiction of courts at ‘New Delhi’, central district court.",
+        "The ‘Governing Law’ would be Indian Law. All disputes shall be referred to ‘Arbitration’ under sole arbitrator, appointed mutually or through FICCI, and shall either be a lawyer or the High Court or a retired District Judge or a retired senior Bureaucrat with the Government of India. ",
+        "Arbitrator’s fee shall not be more than as provided for in the ‘model fee’ under the Arbitration and Conciliation Act, 1996, and the language used, shall be English. ",
+        "With regard to parties based out of India, as we are an Indian party, registered in India, with primary place of business based out of India, it would be assumed that the subject matter of any dispute arose in India and shall be subject to the substantial law of India. This Policy, should you choose to proceed to use any of our services, bind you legally, and this document expressly bars the jurisdiction of any other court or forum not based out of New Delhi, India. ",
+      ],
     },
     {
-      title: "Other Third Party/Outbound Links",
-      body: "If you accessed a website, product or service provided by a third party, including through the Service or a TalkAngels website, such third party may also collect information about you. Please see the privacy policies of each such third party for more information about how they use the information they collect. This Privacy Policy does not apply to any exchange of information between you and any third party.",
+      title: "Terms of Service ",
+      title2: "",
+      body: [
+        "We/ TALKANGELS, are an internet based mobile phone application by TALKANGELS, and this document uses the words “we” and “TALKANGELS” interchangeably, and “you” and “users” interchangeably. The expression “we” covers both TALKANGELS and TALKANGELS, as and when the context allows. ",
+      ],
     },
     {
-      title: "Age Restrictions",
-      body: "The Service is not directed to children under the age of eighteen (18) and we do not knowingly collect personally identifiable information from children under the age of eighteen as part of the Service. If we become aware that we have inadvertently received personally identifiable information from a user under the age of eighteen as part of the Service, we will delete such information from our records. If we change our practices in the future, we will obtain prior, verifiable parental consent before collecting any personally identifiable information from children under the age of eighteen as part of the Service.",
+      title: "How we work: ",
+      title2: "",
+      body: [
+        "TALKANGELS allows you to access certain features or content in exchange for a recurring fee, as applicable (the “Membership Services”). Your transactions and any other use of the ‘Membership Services’ i.e. services you avail, post enrolling with TALKANGELS’s internet run mobile application, are subject to these “Terms of Service”.",
+      ],
+      Topic: [
+        "1. You undertake and understand that these terms apply to you, the moment you ‘download’ the “TALKANGELS App”, available on the concerned application store of your phone, or downloaded / used/ procured by any other medium. ",
+        "2. You further understand and undertake that these Terms of Service are to be read along with our Privacy Policy, and each of these documents is incorporated in each other by reference.",
+        "3. These terms are legally binding and the application is governed by the laws of India, and falls within the New Delhi jurisdiction.",
+      ],
+      body2: [
+        "Should you, the “user” choose to proceed with our mobile application, and enjoy its features and services, beyond this point, it would be held and assumed that you or any party acting under or related to you, have agreed to each and every foregoing term of usage, condition, and liability, and that these terms bind you and TALKANGELS with the force of law, and that this document is to be read and applied as a whole.",
+        "We declare, and you understand that: ",
+        "We refer to these individuals who help you discuss any issue which you may want to discuss as “listeners”, for the sake of terminology.",
+        "Though to the limited extent possible, we verify all such “listeners” associated with us, we do not conduct verification of each and every assertion made by the listeners and our vetting process is basic due diligence. ",
+        "We cannot, at any point in time, be held to be responsible, if any information declared by any listener may prove to not be an accurate depiction of his or her portrayal, accomplishment, experience, or circumstance. ",
+        "You understand that these “listeners” we curate to adhere to your optimum customer expectation, are not our employees or under our employment in any way, and are individuals associated with us for the limited purpose of helping you discuss your problems, concerns, issues, inhibitions, or general feelings and thoughts, in an associated role (experience sharing interaction) and each of these individuals/ listeners are liable for their own conduct, behavior, disclosures, revelations, advice or suggestion. ",
+        "You undertake to proceed only with the declared understanding that we are not certified to give or prescribe medical or psychological care of assistance to any user, and are only a platform that enables you to discuss your problems, concerns, issues, inhibitions, or general feelings and thoughts, with our ‘listeners’ who, as per their disclosures, have been similarly placed in the past are may now be in a position to lend you an ear, support you by discussing your concerns and/ or suggest you alternatives to tackle your situation, in a non-professional way, without being liable for these discussions. We, TALKANGELS, actively encourage you to seek professional assistance through government agencies like hospitals, police, fire department, etc., should you be at any medical, psychological, or physical risk, and need help. ",
+        "You further understand that we as an application, have designed our interface to keep you anonymous, and still put you in touch with people who, as per them, are experienced on the issue and may be equipped to discuss your issues. (Please refer to our privacy policy).",
+        "If on the basis of what you choose to share, or choose to ask the listener, (which we recommend, to keep non-specific, so that your identity remains untraceable), if any issue arises, disputes are created, or a situation is created by your or the listener's action or conduct, which may not be in the best of the interests of either of the parties, please do report such incident to us, however, we cannot be responsible or held liable, even vicariously, for any such circumstance, incident, event, dispute, conflict. You or anyone acting on your behalf, undertake to keep us indemnified at all times, from all such circumstance, incident, event, dispute, conflict, that may arise on the basis of the conversation or disclosure or any involvement, which you may get into, with the individual listeners. We encourage you to not track or form an association of any nature with the listeners, for your anonymity.",
+        "You undertake to be solely responsible for your actions, decisions or conduct, while using the application, or in any circumstance which relates to, or finds its genesis with reference to TALKANGELS.",
+        "We are not responsible for, and cannot be held responsible for any of your actions or conduct, which are illegal, self-destructive, or otherwise, anti-social and against the public policy of India. In these circumstances, we expressly distance ourselves from any association with any party as we are only a platform for individuals to interact and discuss, and cannot be held responsible for any unpleasant or unfortunate incident, death by suicide, depression, or any similar incident. We are in the business of giving you an anonymous platform to discuss your issues and have no control or limit over the conduct of either of the parties who are all responsible for themselves, and their conduct is not curated for the sake of your own privacy. ",
+        "TALKANGELS declares that the interaction between the real-time users and the listeners, is not a professional contract, and does not tender any professional advice. ",
+        "TALKANGELS provides no indemnity towards any loss or damage caused to any party be it of any kind. TALKANGELS holds fully qualified consent from both parties for their interaction with each other. ",
+        "Changes or Discontinuation of Member Services. TALKANGELS reserves the right to change the availability of Member Services. In addition, we reserve the right to modify, suspend, or discontinue any Member Service with or without notice to you and we will not be liable to you or any third party for any such modifications, suspension, or termination. ",
+        "Removal or Unavailability of Content. In certain cases, the content available within a Member Service may become unavailable due to restrictions from our licensors or other legal or policy reasons. TALKANGELS  will have no liability to you for any such unavailability. ",
+        "Changes to the Membership Terms of Service. We may change these Membership Terms of Service from time to time so we encourage you to periodically review the most up-to-date version. If you refuse to accept the updated Membership Terms of Service then TALKANGELS  reserves its right to discontinue your use of the Membership Services. ",
+        "Communications. By using the Member Services, you consent to receive communications from us including marketing communications such as newsletters about TALKANGELS features and content, special offers, promotional announcements, and customer surveys, to your registered email address or via other methods. ",
+      ],
     },
     {
-      title: "Changes/Modification to This Privacy Policy",
-      body: "We reserve the right at our discretion to make changes to this Privacy Policy. You may review updates to our Privacy Policy at any time via links on our website. You agree to accept electronic communications and/or postings of a revised Privacy Policy on the TalkAngels website, we reserve the right to modify this policy from time to time. Thus, you are advised to review this page periodically for any changes. These changes are effective immediately, after they are posted on our website.",
+      title: "ANTI-HACKING PROVISION ",
+      title2: "",
+      body: [
+        "You expressly agree not to use this portal in any manner or for any purpose that is prohibited by this membership contract. In addition, you expressly agree not to:",
+      ],
+      Topic: [
+        "(1) use the portal for any purpose that is prohibited by any law or regulation, or to facilitate the violation of any law or regulation; ",
+        "(2) use or attempt to use any “deep-link,” “scraper,” “robot,” “bot,” “spider,” “data mining,” “computer code” or any other automated device, program, tool, algorithm, process or methodology or manual process having similar processes or functionality, to access, acquire, copy, or monitor any portion of the portal or any data or content found on or accessed through the portal without our prior express written consent; ",
+        "(3) obtain or attempt to obtain through any means any materials or information on the portal that has not been intentionally made publicly available; ",
+        "(4) in any way bypass or circumvent any other measure employed to limit or prevent access to the application or its content; ",
+        "(5) violate the security of the application or attempt to gain unauthorized access to the application, data, materials, information, computer systems or networks connected to any server associated with us, through hacking, password mining, or any other means; ",
+        "(6) interfere or attempt to interfere with the proper working of the mobile application or any activities conducted on or through the application, including accessing any data, content, or other information prior to the time that it is intended to be available to the public on the application;",
+        "(7) recording of any conversation or chatting shall also amount to hacking and infringement of the Membership Policy. ",
+      ],
+      body2: [
+        "Note of Caution. TALKANGELS shall not be responsible for any Force Majeure or Act of God or local authority's direction and the services shall be accordingly suspended till further direction. TALKANGELS shall not be liable at all under any circumstances, whatsoever.",
+        "TALKANGELS does not provide price protection or refunds in the event of a price reduction or promotional offering. You agree to pay for any Membership Services that you register for (except during a free trial period, if any). ",
+        "For international users specifically, TALKANGELS will charge your credit card or any other form of payment for the price listed on the relevant Member Services offer, along with any additional amounts relating to applicable taxes, bank fees, and currency fluctuations. ",
+      ],
     },
     {
-      title: "Contact Us",
-      body: "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at talkangels5524@gmail.com",
+      title: "Other Terms",
+      title2: "",
+      body: [
+        "You acknowledge and agree that certain content available in the Member Services may be considered offensive to some people and that such content may not be labeled as such. Additionally, certain descriptions of Membership Services or content available in the Membership Services are not guaranteed to be accurate. You agree to use the Membership Services at your own risk and, subject to applicable laws, TALKANGELS will have no liability to you for any content that you find offensive. ",
+        "You acknowledge and agree that TALKANGELS should not be held liable for any act or conduct of either party that originates from the discussion that takes place between the real-time user and listener. Furthermore, even the listener can not be held liable for any wrongful act of the user, and the discussion shall not be taken as instigation to commit any illegal activity either from the listener or us. ",
+        "Members can reach us by mail/post at: ",
+        "Lal Bungalow, Surat - Dumas Rd, Near, Athwalines, Athwa, Surat, Gujarat 395001",
+        "Or by email at: talkangels5524@gmail.com",
+        "If you have questions or feedback about Membership Services, please send it to the email address above. ",
+        "You agree that you are solely responsible for (and that TALKANGELS has no responsibility to you for) your use of any Membership Service, any breach of your obligations under the Membership Terms of Service, and for the consequences (including loss or damage of any kind which TALKANGELS may suffer) of any such breach. ",
+        "You acknowledge and agree that you are responsible for paying all fees in a timely manner and for providing us with a valid credit card, payment information, or another form of payment acceptable to TALKANGELS. ",
+        "You acknowledge that your online acceptance of these or any other terms constitute a binding agreement between you and TALKANGELS and signify your intent to be bound to such online acceptances. Subject to applicable laws, in no event will TALKANGELS liable for any causes of action brought by you or any agent of yours arising from or related to the services that exceed the payments actually received and retained by TALKANGELS from you for the Member ",
+      ],
+    },
+    {
+      title: "Services.",
+      title2: "",
+      body: [
+        "Made with ❤️ in India",
+        "About Us Privacy Policy, T&C, and R&C",
+        "A product of © 2021-2022 TALKANGELS. All Rights Reserved.",
+      ],
     },
   ];
 
@@ -81,25 +156,40 @@ const PrivacyPolicy = () => {
         <h1 className="text-center font-semibold text-5xl">Privacy Policy</h1>
       </div>
       <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4">
-        {data.map((item, i) => (
+        {data?.map((item, i) => (
           <>
             <div>
-              <h2 className="text-left font-semibold text-2xl">{item.title}</h2>
-              <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
-                {item.body}
-              </p>
-              <ul className="ml-[50px] text-lg capitalize leading-[35px]">
-                {item?.Topic?.map((subtopic, i) => (
+              <h2 className="text-left font-semibold text-2xl">
+                {item?.title}
+                <br />
+                {item?.title2}
+              </h2>
+              {item?.body?.map((data) => (
+                <>
+                  <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
+                    {data}
+                  </p>
+                </>
+              ))}
+              <ul className="ml-[100px] text-lg capitalize leading-[35px]">
+                {item?.Topic?.map((subtopic) => (
                   <li>{subtopic}</li>
                 ))}
               </ul>
+              {item?.body2?.map((data) => (
+                <>
+                  <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
+                    {data}
+                  </p>
+                </>
+              ))}
             </div>
           </>
         ))}
       </div>
       <div className="bg-darkBlue py-5 mt-10">
         <p className="mt-10 text-lg capitalize leading-[35px] text-center font-semibold text-white">
-          This privacy policy updated on 29th Feb 2024
+          This privacy policy updated on 03th APR 2024
         </p>
         <Link
           className="text-lg leading-[35px] text-center font-semibold text-Sky w-full block"
