@@ -37,19 +37,27 @@ const Webpage = lazy(() => import("./Components/Pages/webpage/index"));
 const ResetPassword = lazy(() =>
   import("./Components/Pages/Login/resetPassword")
 );
-const ListenerRequst = lazy(() => import("./Components/Pages/Listeners/Listeners"));
+const ListenerRequst = lazy(() =>
+  import("./Components/Pages/Listeners/Listeners")
+);
 
 const Setting = lazy(() => import("./Components/Pages/setting/Setting"));
 const WebPageAdmin = lazy(() => import("./Components/Pages/webpage/admin/web"));
 const Faq = lazy(() => import("./Components/Pages/webpage/Faq"));
 const Listener = lazy(() => import("./Components/Pages/webpage/Listener"));
 const BeListener = lazy(() => import("./Components/Pages/webpage/BeListener"));
+const Refund = lazy(() => import("./Components/Pages/webpage/Refund"));
 
 const App = () => {
   const routes = [
     {
       path: Routing.Initial,
       component: Webpage,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.Refund,
+      component: Refund,
       isPrivateRoute: false,
     },
     {

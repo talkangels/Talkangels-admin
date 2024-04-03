@@ -9,6 +9,7 @@ export const Routing = {
   Faq: "/faq's",
   Listeners: "/listeners",
   BeListener: "/be-listener",
+  Refund: "/refund",
 
   // admin
   Dashboard: "/admin/dashboard",

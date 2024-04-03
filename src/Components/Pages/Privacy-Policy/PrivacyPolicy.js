@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../webpage/Header";
 
 const PrivacyPolicy = () => {
   const data = [
     {
-      title: "Listeners Blog FAQs Intern Download",
-      title2: "Privacy Policy, T&C, and R&C Introduction",
+      title: "Introduction",
       body: [
         "We/ TALKANGELS, are an internet based mobile phone application by TALKANGELS, and this document uses the words “we” and “TALKANGLES” interchangeably, and “you” and “users” interchangeably. The expression “we” covers both TALKANGLES and TALKANGELS, as and when the context allows.",
         "Terms “We”, “TALKANGELS”, “TALKANGELS”, covers their respective current or former employees, officers, directors, agents, successors, assigns, parents, subsidiaries, divisions or affiliated corporations.",
@@ -145,58 +145,65 @@ const PrivacyPolicy = () => {
       body: [
         "Made with ❤️ in India",
         "About Us Privacy Policy, T&C, and R&C",
-        "A product of © 2021-2022 TALKANGELS. All Rights Reserved.",
+        "A product of © 2024-2025 TALKANGELS. All Rights Reserved.",
       ],
     },
   ];
 
   return (
     <>
-      <div className="bg-darkBlue py-7 text-white sticky top-0 left-0">
-        <h1 className="text-center font-semibold text-5xl">Privacy Policy</h1>
-      </div>
-      <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4">
-        {data?.map((item, i) => (
-          <>
-            <div>
-              <h2 className="text-left font-semibold text-2xl">
-                {item?.title}
-                <br />
-                {item?.title2}
-              </h2>
-              {item?.body?.map((data) => (
-                <>
-                  <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
-                    {data}
-                  </p>
-                </>
-              ))}
-              <ul className="ml-[100px] text-lg capitalize leading-[35px]">
-                {item?.Topic?.map((subtopic) => (
-                  <li>{subtopic}</li>
+      <div className="bg-darkBlue py-7 text-white">
+        <div className="sticky top-0 left-0 bg-darkBlue">
+          <Header />
+        </div>
+        <div className="bg-darkBlue pt-4 text-white">
+          <h1 className="text-center font-semibold text-5xl">
+            Privacy Policy, T&C, and R&C
+          </h1>
+        </div>
+        <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4">
+          {data?.map((item, i) => (
+            <>
+              <div>
+                <h2 className="text-left font-semibold text-2xl">
+                  {item?.title}
+                  <br />
+                  {item?.title2}
+                </h2>
+                {item?.body?.map((data) => (
+                  <>
+                    <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
+                      {data}
+                    </p>
+                  </>
                 ))}
-              </ul>
-              {item?.body2?.map((data) => (
-                <>
-                  <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
-                    {data}
-                  </p>
-                </>
-              ))}
-            </div>
-          </>
-        ))}
-      </div>
-      <div className="bg-darkBlue py-5 mt-10">
-        <p className="mt-10 text-lg capitalize leading-[35px] text-center font-semibold text-white">
-          This privacy policy updated on 03th APR 2024
-        </p>
-        <Link
-          className="text-lg leading-[35px] text-center font-semibold text-Sky w-full block"
-          to="/"
-        >
-          www.talkangels.com
-        </Link>
+                <ul className="ml-[100px] text-lg capitalize leading-[35px]">
+                  {item?.Topic?.map((subtopic) => (
+                    <li>{subtopic}</li>
+                  ))}
+                </ul>
+                {item?.body2?.map((data) => (
+                  <>
+                    <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
+                      {data}
+                    </p>
+                  </>
+                ))}
+              </div>
+            </>
+          ))}
+        </div>
+        <div className="bg-darkBlue py-5 mt-10">
+          <p className="mt-10 text-lg capitalize leading-[35px] text-center font-semibold text-white">
+            This Privacy Policy, T&C, and R&C updated on 03th APR 2024
+          </p>
+          <Link
+            className="text-lg leading-[35px] text-center font-semibold text-Sky w-full block"
+            to="/"
+          >
+            www.talkangels.com
+          </Link>
+        </div>
       </div>
     </>
   );

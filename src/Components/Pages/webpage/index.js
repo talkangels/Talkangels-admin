@@ -306,20 +306,20 @@ const Index = () => {
                       <DoorShape />
                     </span>
                   </h3>
-                    <p className="text-[28px] lg:text-justify text-center text-white font-extralight">
-                      Welcome to TalkAngel! We're more than just a dating app.
-                      Our platform makes it easy for you to find and chat with
-                      special people. You can look for love, friendship, or just
-                      have a nice chat. Plus, we have a cool feature that lets
-                      you recharge and make voice calls to your matches. Your
-                      safety and privacy are super important to us too.
-                    </p>
-                    <p className="text-[40px] font-[600] text-white mt-[52px] lg:text-left text-center">
-                      Join TalkAngel today{" "}
-                      <span className="text-Homegreen">
-                        to find the one who makes your heart happy.
-                      </span>
-                    </p>
+                  <p className="text-[28px] lg:text-justify text-center text-white font-extralight">
+                    Welcome to TalkAngel! We're more than just a dating app. Our
+                    platform makes it easy for you to find and chat with special
+                    people. You can look for love, friendship, or just have a
+                    nice chat. Plus, we have a cool feature that lets you
+                    recharge and make voice calls to your matches. Your safety
+                    and privacy are super important to us too.
+                  </p>
+                  <p className="text-[40px] font-[600] text-white mt-[52px] lg:text-left text-center">
+                    Join TalkAngel today{" "}
+                    <span className="text-Homegreen">
+                      to find the one who makes your heart happy.
+                    </span>
+                  </p>
                 </div>
                 <div className="">
                   <img
@@ -503,50 +503,49 @@ const Index = () => {
             </Slider>
           </div>
           <div className="BottomShape mt-24 pt-[111px] pb-[190px] relative">
-           
-              <div className="xl:max-w-[80%] mx-auto px-3">
-                <div>
-                  <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex flex-wrap md:justify-start justify-center">
-                    Your happily
-                    <span className="uppercase ml-2 lg:static block">
-                      ever after
-                    </span>
-                  </h2>
-                  <h2 className="lg:text-end text-center md:text-[68px] text-[47px] font-semibold text-white uppercase lg:max-w-[556px] relative">
-                    with Talkangel!
-                  </h2>
-                  <p className="lg:text-left text-center text-[30px] text-white font-thin lg:max-w-[630px] mt-2">
-                    Join the exciting journey of meeting new friends within our
-                    vibrant community of over one million users!
-                  </p>
-                  <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
-                    <Link
-                      to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                      className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                      target="_blank"
-                    >
-                      Get Started{" "}
+            <div className="xl:max-w-[80%] mx-auto px-3">
+              <div>
+                <h2 className="lg:text-left text-center md:text-[50px] text-[45px] font-semibold text-white flex flex-wrap md:justify-start justify-center">
+                  Your happily
+                  <span className="uppercase ml-2 lg:static block">
+                    ever after
+                  </span>
+                </h2>
+                <h2 className="lg:text-end text-center md:text-[68px] text-[47px] font-semibold text-white uppercase lg:max-w-[556px] relative">
+                  with Talkangel!
+                </h2>
+                <p className="lg:text-left text-center text-[30px] text-white font-thin lg:max-w-[630px] mt-2">
+                  Join the exciting journey of meeting new friends within our
+                  vibrant community of over one million users!
+                </p>
+                <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
+                  <Link
+                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                    target="_blank"
+                  >
+                    Get Started{" "}
+                    {
+                      // eslint-disable-next-line
+                      <Arrow_Right />
+                    }
+                  </Link>
+                  <Link
+                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                    target="_blank"
+                  >
+                    Download the app{" "}
+                    <div className="-rotate-45">
                       {
                         // eslint-disable-next-line
                         <Arrow_Right />
                       }
-                    </Link>
-                    <Link
-                      to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                      className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                      target="_blank"
-                    >
-                      Download the app{" "}
-                      <div className="-rotate-45">
-                        {
-                          // eslint-disable-next-line
-                          <Arrow_Right />
-                        }
-                      </div>
-                    </Link>
-                  </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
+            </div>
             <img
               src={Phone}
               alt=""
@@ -568,13 +567,6 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
-                  {/* <div className="flex flex-col gap-y-5">
-                  <h2 className="text-white lg:text-right text-center text-[26px] font-medium underline tracking-[0.52px]">
-                    About Us
-                  </h2>
-                  
-                </div> */}
-                  {/* <div className="flex flex-col gap-y-5 lg:mt-0 mt-5"> */}
                   <Link
                     to="/"
                     className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
@@ -598,6 +590,18 @@ const Index = () => {
                     className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
                     Privacy Policy
+                  </Link>
+                  <Link
+                    to="/refund"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    Refund & Cancellation
+                  </Link>
+                  <Link
+                    to="/about"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    About-Us
                   </Link>
                   {/* </div> */}
                 </div>
