@@ -125,6 +125,7 @@ const Index = () => {
                     to={
                       "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
                     }
+                    className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >
                     Get Started{" "}
                     {
@@ -636,7 +637,7 @@ const Index = () => {
                   </Link>
                 </div>
                 <div className="">
-                <Link
+                  <Link
                     to="mailto:Talkangels5524@Gmail.Com"
                     className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit md:ml-auto md:mx-0 mx-auto"
                   >
