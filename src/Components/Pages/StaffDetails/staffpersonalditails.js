@@ -11,7 +11,6 @@ import Bio from "../../assets/StaffDetails/addBio.png";
 import { DeleteStaff, SingleStaff } from "../../services/staff";
 import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
-import { DeleteListener } from "../../services/listener";
 
 const Staffpersonalditails = () => {
   const navigate = useNavigate();
@@ -37,6 +36,7 @@ const Staffpersonalditails = () => {
   };
   useEffect(() => {
     getSingleStaff();
+    // eslint-disable-next-line
   }, []);
 
   const heandleDelete = async () => {

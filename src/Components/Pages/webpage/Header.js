@@ -55,8 +55,11 @@ const Header = () => {
                         </>
                       ))}
                       <Link
-                        to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                        target="_blank"
+                        to={
+                          "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                        }
+                        download={"AppLink"}
+                        content="AppLink"
                         className="border rounded-full w-[100px] h-[40px] text-white flex items-center justify-center"
                       >
                         Download

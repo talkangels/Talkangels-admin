@@ -122,9 +122,9 @@ const Index = () => {
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                   <Link
-                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                    className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                    target="_blank"
+                    to={
+                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    }
                   >
                     Get Started{" "}
                     {
@@ -133,7 +133,9 @@ const Index = () => {
                     }
                   </Link>
                   <Link
-                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    to={
+                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    }
                     className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                     target="_blank"
                   >
@@ -520,7 +522,9 @@ const Index = () => {
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                   <Link
-                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    to={
+                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    }
                     className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                     target="_blank"
                   >
@@ -531,7 +535,9 @@ const Index = () => {
                     }
                   </Link>
                   <Link
-                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    to={
+                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    }
                     className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                     target="_blank"
                   >
@@ -612,13 +618,17 @@ const Index = () => {
                     Get the App!
                   </h2>
                   <Link
-                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    to={
+                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    }
                     target="_blank"
                   >
                     <img src={PlayStore} alt="" />
                   </Link>
                   <Link
-                    to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    to={
+                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
+                    }
                     target="_blank"
                     className="ml-4"
                   >

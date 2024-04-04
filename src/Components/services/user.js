@@ -31,3 +31,17 @@ export const UpdateUserStatus = async (body) => {
     return error?.response?.data;
   }
 };
+export const DeleteUser = async (id) => {
+  try {
+    let response = await axios({
+      method: "DELETE",
+      url: `${baseURL}user/delete/${id}`,
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};

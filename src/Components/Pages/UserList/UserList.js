@@ -1,7 +1,7 @@
 import { Switch } from "@headlessui/react";
 import React, { useState } from "react";
 import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
-import { GetAllUser, UpdateUserStatus } from "../../services/user";
+import { DeleteUser, GetAllUser, UpdateUserStatus } from "../../services/user";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../../layout/spinner";
@@ -49,6 +49,19 @@ const UserList = () => {
         setLoading(false);
         toast.error(result?.message);
       }
+    }
+  };
+
+  const heandleDelete = async (userIndex) => {
+    setLoading(true);
+    const result = await DeleteUser(userIndex);
+    if (result?.status === 200) {
+      setLoading(false);
+      toast.success(result.message);
+      getUsers();
+    } else {
+      setLoading(false);
+      toast.error(result.message);
     }
   };
 
@@ -156,7 +169,12 @@ const UserList = () => {
                         </Switch>
                       </td>
                       <td className="text-red text-base">
-                        <p className="cursor-pointer">Delete</p>
+                        <p
+                          className="cursor-pointer"
+                          onClick={() => heandleDelete(user?._id)}
+                        >
+                          Delete
+                        </p>
                       </td>
                     </>
                   </tr>
