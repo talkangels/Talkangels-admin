@@ -99,7 +99,7 @@ const Index = () => {
       <div className="bg-Mainbackground_gradint">
         <Header />
         <div className="xl:max-w-[90%] mx-auto px-3">
-          <div className="pt-20">
+          <div>
             <div className="grid lg:grid-cols-2 grid-cols-1 xl:items-center items-start justify-between flex-wrap">
               <div className="">
                 <h2 className="text-[52px] font-league tracking-wide text-white font-light relative lg:w-fit lg:text-left text-center">
