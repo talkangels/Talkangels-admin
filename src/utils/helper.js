@@ -16,8 +16,6 @@ export const HaderName = (number) => {
       return "Report And Problem";
     case "admin/transactionHistory":
       return "Transaction History";
-    case "admin/transactionHistory":
-      return "Transaction History";
     case "admin/web-page":
       return "Web Page";
     case "admin/listener-requst":

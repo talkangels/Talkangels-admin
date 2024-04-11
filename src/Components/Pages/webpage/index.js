@@ -575,6 +575,18 @@ const Index = () => {
                 </div>
                 <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
                   <Link
+                    to="/refund"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    Refund & Cancellation
+                  </Link>
+                  <Link
+                    to="/policies"
+                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
+                  >
+                    Privacy Policy
+                  </Link>
+                  <Link
                     to="/"
                     className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
                   >
@@ -592,18 +604,7 @@ const Index = () => {
                   >
                     FAQs
                   </Link>
-                  <Link
-                    to="/policies"
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    Privacy Policy
-                  </Link>
-                  <Link
-                    to="/refund"
-                    className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-                  >
-                    Refund & Cancellation
-                  </Link>
+
                   <Link
                     to="/about"
                     className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"

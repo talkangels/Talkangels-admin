@@ -1,10 +1,7 @@
 import { Switch } from "@headlessui/react";
 import React, { useState } from "react";
 import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
-import {
-  GetReportList,
-  UpdateReportStatus,
-} from "../../services/report";
+import { GetReportList, UpdateReportStatus } from "../../services/report";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../../layout/spinner";
@@ -120,13 +117,13 @@ const ReportAndProblem = () => {
                         {i + 1}
                       </td>
                       <td className="text-white text-base pl-[27px]">
-                        {item.user.name}
+                        {item?.user?.name || "Anonymous user"}
                       </td>
                       <td className="text-white text-base pl-[27px]">
                         {item?.comment}
                       </td>
                       <td className="text-white text-base pl-[27px]">
-                        {item.user.role}
+                        {item?.user?.role}
                       </td>
                       <td className="text-white text-base">
                         <Switch
