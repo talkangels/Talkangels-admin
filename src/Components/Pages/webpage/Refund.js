@@ -13,25 +13,25 @@ const Refund = () => {
           </h1>
           <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4 text-white">
             <h1 className="font-semibold text-5xl">Refund</h1>
-            <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
+            <p className="mt-4 pl-9 text-lg  leading-[35px]">
               If user has made the payment and money has been deducted from
               their bank account but they didn't received the benefits of it due
               to bank server down, in this kind of cases money will be refunded
-              to the users account in next 3-4 working days.
-              Payments Are Non-Refundable And There Are No Refunds Or Credits
-              For Partially Used Periods/Credits, Except That We May Approve A
-              Refund In The Form Of A Credit On Request If Exceptional
-              Circumstances Exist. If You Believe Exceptional Circumstances
-              Exist, Please Contact Us And Explain The Circumstances That You
-              Believe Merits A Refund. We Are Not Making Any Promise That We
-              Will Give You A Refund. If We Give You A Refund, We Will Issue The
-              Refund In The Form Of Free Services Or A Credit To The Payment
-              Method You Used For Your Purchase; We Will Not Make Refunds In The
-              Form Of Cash Or Check. The Provision Of A Refund In One Instance
-              Does Not Entitle You To A Refund In The Future For Similar
-              Instances; Nor Does It Obligate Us To Provide Refunds In The
-              Future, Under Any Circumstance. Refunds Are Not Available To Users
-              Who Are Banned By TalkAngels Or Its Community.
+              to the users account in next 3-4 working days. Payments are
+              non-refundable and there are no refunds or credits for partially
+              used periods/credits, except that we may approve a refund in the
+              form of a credit on request if exceptional circumstances exist. If
+              you believe exceptional circumstances exist, please contact us and
+              explain the circumstances that you believe merits a refund. We are
+              not making any promise that we will give you a refund. If we give
+              you a refund, we will issue the refund in the form of free
+              services or a credit to the payment method you used for your
+              purchase; we will not make refunds in the form of cash or check.
+              The provision of a refund in one instance does not entitle you to
+              a refund in the future for similar instances; nor does it obligate
+              us to provide refunds in the future, under any circumstance.
+              Refunds are not available to users who are banned by talkangels or
+              its community.
             </p>
           </div>
           <div className=" py-5 absolute bottom-0 left-0 w-full">

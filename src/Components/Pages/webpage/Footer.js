@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
           <div className="">
             <p className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px]">
-              Charges for service is 3 RS per minuts
+              Charges for service is 3.00 Rs/Minutes.
             </p>
             <Link
               to="mailto:Talkangels5524@Gmail.Com"
