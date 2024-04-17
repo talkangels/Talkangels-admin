@@ -14,6 +14,10 @@ const Refund = () => {
           <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4 text-white">
             <h1 className="font-semibold text-5xl">Refund</h1>
             <p className="mt-4 pl-9 text-lg capitalize leading-[35px]">
+              If user has made the payment and money has been deducted from
+              their bank account but they didn't received the benefits of it due
+              to bank server down, in this kind of cases money will be refunded
+              to the users account in next 3-4 working days.
               Payments Are Non-Refundable And There Are No Refunds Or Credits
               For Partially Used Periods/Credits, Except That We May Approve A
               Refund In The Form Of A Credit On Request If Exceptional

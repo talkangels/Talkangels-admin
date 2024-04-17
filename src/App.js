@@ -47,6 +47,7 @@ const Faq = lazy(() => import("./Components/Pages/webpage/Faq"));
 const Listener = lazy(() => import("./Components/Pages/webpage/Listener"));
 const BeListener = lazy(() => import("./Components/Pages/webpage/BeListener"));
 const Refund = lazy(() => import("./Components/Pages/webpage/Refund"));
+const AboutUs = lazy(() => import("./Components/Pages/webpage/AboutUs"));
 
 const App = () => {
   const routes = [
@@ -63,6 +64,11 @@ const App = () => {
     {
       path: Routing.Listeners,
       component: Listener,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.About,
+      component: AboutUs,
       isPrivateRoute: false,
     },
     {

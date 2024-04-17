@@ -15,7 +15,7 @@ export const DoorShape = () => {
     </svg>
   );
 };
-export const Arrow_Right = () => {
+export const ArrowRight = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

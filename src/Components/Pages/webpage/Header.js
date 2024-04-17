@@ -10,16 +10,16 @@ const Header = () => {
   const Router = [
     {
       Name: "Home",
-      link: "/",
+      link: Routing.Initial,
     },
     {
       Name: "Listeners",
-      link: "/listeners",
+      link: Routing.Listeners,
     },
-    {
-      Name: "Blog",
-      link: "",
-    },
+    // {
+    //   Name: "Blog",
+    //   link: Routing.Blog,
+    // },
     {
       Name: "FAQs",
       link: Routing.Faq,
