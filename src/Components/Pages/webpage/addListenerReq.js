@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Logo from "../../assets/logo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Call from "../../assets/StaffDetails/call.png";
 import Gender from "../../assets/StaffDetails/gender.png";
 import Bio from "../../assets/StaffDetails/addBio.png";
@@ -29,7 +29,6 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
     age: "",
   });
   const [charges, setCharges] = useState("");
-  console.log("🚀 ~ AddListenerReq ~ charges:", charges);
 
   const getCharges = async () => {
     setLoading(true);

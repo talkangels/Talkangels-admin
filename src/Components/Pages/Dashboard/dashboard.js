@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ClockIcon from "../../assets/dashboard/clock.png";
 import {
-  ChangeCharges,
   GetMostRatedList,
   UpdateWithdrawRequestStatus,
   allWithdrawRequest,
@@ -9,10 +8,8 @@ import {
 import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { GetOneAdmin } from "../../services/auth";
 import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
 import SendNotification from "./sendNotification";
-import Charges from "./charges";
 import TransactionDashboard from "./transactionHistory";
 import { Routing } from "../../../utils/routing";
 

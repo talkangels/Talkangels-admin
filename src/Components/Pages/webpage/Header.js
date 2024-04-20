@@ -16,10 +16,10 @@ const Header = () => {
       Name: "Listeners",
       link: Routing.Listeners,
     },
-    // {
-    //   Name: "Blog",
-    //   link: Routing.Blog,
-    // },
+    {
+      Name: "Blog",
+      link: Routing.Blog,
+    },
     {
       Name: "FAQs",
       link: Routing.Faq,
@@ -45,13 +45,13 @@ const Header = () => {
                     <div className="flex space-x-4 items-center">
                       {Router.map((routing, i) => (
                         <>
-                          <a
+                          <Link
                             key={i}
-                            href={routing.link}
+                            to={routing.link}
                             className="text-lg text-white font-league font-light"
                           >
                             {routing.Name}
-                          </a>
+                          </Link>
                         </>
                       ))}
                       <Link

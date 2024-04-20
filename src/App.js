@@ -48,12 +48,18 @@ const Listener = lazy(() => import("./Components/Pages/webpage/Listener"));
 const BeListener = lazy(() => import("./Components/Pages/webpage/BeListener"));
 const Refund = lazy(() => import("./Components/Pages/webpage/Refund"));
 const AboutUs = lazy(() => import("./Components/Pages/webpage/AboutUs"));
+const Blog = lazy(() => import("./Components/Pages/webpage/Blog"));
 
 const App = () => {
   const routes = [
     {
       path: Routing.Initial,
       component: Webpage,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.Blog,
+      component: Blog,
       isPrivateRoute: false,
     },
     {

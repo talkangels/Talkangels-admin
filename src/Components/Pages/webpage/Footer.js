@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routing } from "../../../utils/routing";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Twitter } from "./Shape";
 import PlayStore from "../../assets/homepage/Playstoreicon.png";
 import AppleStore from "../../assets/homepage/Applestore.png";
+import { GetCharges } from "../../services/listener";
 
 const Footer = () => {
+  const [charges, setCharges] = useState("");
+
+  const getCharges = async () => {
+    const result = await GetCharges();
+    if (result?.status === 201) {
+      setCharges(result?.data);
+    }
+  };
+
+  useEffect(() => {
+    getCharges();
+  }, []);
+
   return (
     <footer>
       <div className="lg:pt-[110px] xl:max-w-[90%] mx-auto px-3">
@@ -75,7 +89,7 @@ const Footer = () => {
           </div>
           <div className="">
             <p className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px]">
-              Charges for service is 3.00 Rs/Minutes.
+              Charges for service is {charges?.call}.00 Rs/Minutes.
             </p>
             <Link
               to="mailto:Talkangels5524@Gmail.Com"
