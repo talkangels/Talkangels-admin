@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="lg:pt-[110px] xl:max-w-[90%] mx-auto px-3">
         <div className=" flex items-center lg:justify-between justify-center border-b border-white/25 pb-[30px] flex-wrap">
           <div className="lg:w-auto w-full">
-            <h2 className="text-[48px] text-white uppercase font-bold lg:text-left text-center">
+            <h2 className="sm:text-[48px] text-[43px] text-white uppercase font-bold lg:text-left text-center">
               TALKANGELS
             </h2>
             <div className="flex items-center gap-6 flex-wrap ml-2 lg:justify-start justify-center lg:mt-0 my-6">

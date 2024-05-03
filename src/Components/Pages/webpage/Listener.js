@@ -77,7 +77,7 @@ const Listener = () => {
                 />
                 <Listenerscard
                   img={
-                    "https://s3-alpha-sig.figma.com/img/5aa8/8d8b/3ecb686354f0b5f4593699440b46ec24?Expires=1712534400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UpxtVhGblAGCHgwjSiPV586t97TAkflGB~jiVJHynNy~tTZRDRmwY9iHv4fPYj4hIQaPFefBp9jexwrj53yIGPE08mvoY9a~GIsySxtBuo0owGu~eM5lhe8esypUb1ED4g7TYg3jOlPBWWyAeaxkfg17vvbS4Yt-Tr4x~7bGd3mOqYZ9iwYRn5dAHVo1kM-cKpLXdB47j5Q1qOUeuBvNSQNHTk81AV27b2oEMvIEZwzoIVznZyaCpxj0tT4PLAPvYluAsTaPJ8hE7ar9BAKVkKUuj3zekuT6ILm66j7lhuwLTCBx-Rr6qkyNMQYGQ6vtH3KN3aQHwFZ2OAC7QaPCDA__"
+                    "https://media.istockphoto.com/id/613557584/photo/portrait-of-a-beautifull-smiling-man.jpg?s=612x612&w=0&k=20&c=hkCg5CrmTKOApePbPOyo1U9GexEfIJOJqoLXJIvcN8E="
                   }
                   name={"Neetesh"}
                   Year={23}

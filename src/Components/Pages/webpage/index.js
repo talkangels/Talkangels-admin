@@ -83,6 +83,7 @@ const Index = () => {
     cssEase: "linear",
     arrows: false,
   };
+
   return (
     <>
       <div className="bg-Mainbackground_gradint">
@@ -220,7 +221,7 @@ const Index = () => {
                   />
                 </div>
               </div>
-              <div className="md:w-[60%] w-full lg:ml-auto lg:mt-0 mt-10">
+              <div className="xl:w-[60%] lg:w-[50%] w-full lg:ml-auto lg:mt-0 mt-10">
                 <h3 className="text-center text-white text-[64px] relative xl:-ml-[100px] ml-0">
                   Key Features
                   <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
@@ -228,7 +229,7 @@ const Index = () => {
                   </span>
                 </h3>
                 <div className="flex items-center justify-center flex-wrap">
-                  <div className="mt-[81px] grid md:grid-cols-2 gap-x-[50px] gap-y-[73px]">
+                  <div className="mt-[81px] grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 gap-x-[50px] gap-y-[73px]">
                     <div>
                       <h4 className="text-white text-[32px] font-semibold mt-5 lg:text-left text-center">
                         Empathetic Support and Solutions, Without Professional
