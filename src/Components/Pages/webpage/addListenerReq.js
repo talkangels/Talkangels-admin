@@ -76,7 +76,6 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
       <img
         src={Logo}
         alt=""
-        srcset=""
         className="w-[100px] h-[100px] border border-white rounded-2xl p-2 mx-auto"
       />
       <h1 className="text-white mt-12 mb-5 text-2xl text-center">
@@ -126,13 +125,13 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="#fff"
               className="absolute top-1/2 -translate-y-1/2 left-6 w-6 h-6"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"
               />
             </svg>
@@ -150,13 +149,13 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="#fff"
               className="absolute top-1/2 -translate-y-1/2 left-6 w-6 h-6"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"
               />
             </svg>

@@ -14,11 +14,7 @@ import { toast } from "react-toastify";
 import Spinner from "../../layout/spinner";
 
 // select
-const Genderoption = [
-  "Male",
-  "Female",
-  "Other",
-];
+const Genderoption = ["Male", "Female", "Other"];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -34,7 +30,7 @@ const Addstaff = ({ setStaff, dataForm }) => {
     bio: dataForm.bio || "",
     email: dataForm.email || "",
     language: dataForm.language || "",
-    age: dataForm.age || ""
+    age: dataForm.age || "",
   });
   const [image, SetImage] = useState({
     image: null,
@@ -73,7 +69,7 @@ const Addstaff = ({ setStaff, dataForm }) => {
         bio: "",
         email: "",
         age: "",
-        language: ""
+        language: "",
       });
       setStaff(1);
       setLoading(false);
@@ -100,10 +96,11 @@ const Addstaff = ({ setStaff, dataForm }) => {
             <img
               src={image.image_url ? image.image_url : userselect}
               alt=""
-              className={`${image.image_url
-                ? "h-[138px] w-[138px] bg-darkBlack rounded-full flex items-center justify-center relative"
-                : null
-                }`}
+              className={`${
+                image.image_url
+                  ? "h-[138px] w-[138px] bg-darkBlack rounded-full flex items-center justify-center relative"
+                  : null
+              }`}
             />
             <input
               type="file"
@@ -146,8 +143,19 @@ const Addstaff = ({ setStaff, dataForm }) => {
               />
             </div>
             <div className="w-full relative lg:col-span-1 col-span-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" className="absolute top-1/2 -translate-y-1/2 left-6 w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="#fff"
+                className="absolute top-1/2 -translate-y-1/2 left-6 w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25"
+                />
               </svg>
               <input
                 type="email"
@@ -159,8 +167,19 @@ const Addstaff = ({ setStaff, dataForm }) => {
               />
             </div>
             <div className="w-full relative lg:col-span-1 col-span-2">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" className="absolute top-1/2 -translate-y-1/2 left-6 w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="#fff"
+                className="absolute top-1/2 -translate-y-1/2 left-6 w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"
+                />
               </svg>
               <input
                 type="text"
@@ -200,8 +219,9 @@ const Addstaff = ({ setStaff, dataForm }) => {
                         </span>
                         <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                           <ChevronDownIcon
-                            className={`h-6 w-6 text-white ${open === true && "rotate-180"
-                              }`}
+                            className={`h-6 w-6 text-white ${
+                              open === true && "rotate-180"
+                            }`}
                             aria-hidden="true"
                           />
                         </span>

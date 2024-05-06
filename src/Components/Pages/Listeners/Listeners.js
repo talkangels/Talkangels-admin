@@ -4,7 +4,11 @@ import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../../layout/spinner";
-import { DeleteListener, GetAllListenerRequst, UpdateListenerRequstStatus } from "../../services/listener";
+import {
+  DeleteListener,
+  GetAllListenerRequst,
+  UpdateListenerRequstStatus,
+} from "../../services/listener";
 import { useNavigate } from "react-router-dom";
 import { Routing } from "../../../utils/routing";
 import { Listbox, Transition } from "@headlessui/react";
@@ -13,15 +17,15 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 const Genderoption = [
   {
     id: "",
-    name: "Status"
+    name: "Status",
   },
   {
     id: 1,
-    name: "Accept"
+    name: "Accept",
   },
   {
     id: 0,
-    name: "Pendding"
+    name: "Pendding",
   },
 ];
 function classNames(...classes) {
@@ -29,7 +33,7 @@ function classNames(...classes) {
 }
 
 const Listeners = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [selected, setSelected] = useState(Genderoption[0]);
   const [listenerList, setListenerList] = useState([]);
@@ -163,8 +167,9 @@ const Listeners = () => {
                               </span>
                               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                                 <ChevronDownIcon
-                                  className={`h-6 w-6 text-white ${open === true && "rotate-180"
-                                    }`}
+                                  className={`h-6 w-6 text-white ${
+                                    open === true && "rotate-180"
+                                  }`}
                                   aria-hidden="true"
                                 />
                               </span>
@@ -246,8 +251,7 @@ const Listeners = () => {
                       <td className="text-white text-base pl-[27px]">
                         {user.age}
                       </td>
-                      {
-                        user?.status === 0 &&
+                      {user?.status === 0 && (
                         <td className="text-white text-base text-center">
                           <Switch
                             checked={user?.status === 1}
@@ -278,16 +282,22 @@ const Listeners = () => {
                             />
                           </Switch>
                         </td>
-                      }
-                      {
-                        user?.status === 1 &&
+                      )}
+                      {user?.status === 1 && (
                         <td>
                           <div className="flex items-center justify-between px-10 text-[#5686de] text-base">
-                            <p onClick={() => navigate(Routing.StaffDetails, {
-                              state: {
-                                data: user
+                            <p
+                              onClick={() =>
+                                navigate(Routing.StaffDetails, {
+                                  state: {
+                                    data: user,
+                                  },
+                                })
                               }
-                            })} className="cursor-pointer">Add</p>
+                              className="cursor-pointer"
+                            >
+                              Add
+                            </p>
 
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -299,14 +309,14 @@ const Listeners = () => {
                               onClick={() => heandleDelete(user?._id)}
                             >
                               <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                                 d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
                               />
                             </svg>
                           </div>
                         </td>
-                      }
+                      )}
                     </>
                   </tr>
                 ))}

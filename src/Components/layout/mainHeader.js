@@ -34,11 +34,6 @@ const Header = ({ setSidebarOpen }) => {
               <Menu.Button className="-m-1.5 flex items-center p-1.5 cursor-default">
                 <span className="sr-only">Open user menu</span>
                 <div className="h-12 w-12 rounded-full bg-gray-50 overflow-hidden">
-                  {/* <img
-                    className="h-full w-full"
-                    src="https://codelineinfotech.com/admin/public/uploads/team/1682176335.jpg"
-                    alt=""
-                  /> */}
                 </div>
                 <span className="hidden lg:flex lg:items-center">
                   <span

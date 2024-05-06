@@ -59,7 +59,7 @@ const Footer = () => {
               to={Routing.About}
               className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
             >
-              About-Us
+              Contact-Us
             </Link>
             {/* </div> */}
           </div>
