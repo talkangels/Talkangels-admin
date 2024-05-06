@@ -7,7 +7,7 @@ export const Routing = {
   PrivacyPolicy: "/policies",
   TermsConditions: "/tnc",
   Faq: "/faq's",
-  About: "/aboutUs",
+  About: "/contact-us",
   Listeners: "/listeners",
   BeListener: "/be-listener",
   Refund: "/refund",
