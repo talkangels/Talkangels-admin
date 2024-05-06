@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Routing } from "../../../utils/routing";
 import { ForgotPassword, userLogin } from "../../services/auth";
@@ -12,6 +12,8 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [forgotPassword, setForgotPassword] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const loggedIn = localStorage.getItem("token");
+
   const [userdata, setUserdata] = useState({
     user_id: "",
     password: "",
@@ -64,6 +66,14 @@ const Login = () => {
       toast.info("If you forgot your password, please add a mail address");
     }
   };
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate(Routing.Dashboard);
+    } else {
+      navigate(Routing.Login);
+    }
+  }, []);
 
   return (
     <>
