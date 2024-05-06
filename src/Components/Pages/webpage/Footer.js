@@ -88,9 +88,9 @@ const Footer = () => {
             </Link>
           </div>
           <div className="">
-            <p className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px]">
+            {/* <p className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px]">
               Charges for service is {charges?.call}.00 Rs/Minutes.
-            </p>
+            </p> */}
             <Link
               to="mailto:Talkangels5524@Gmail.Com"
               className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit md:ml-auto md:mx-0 mx-auto"
