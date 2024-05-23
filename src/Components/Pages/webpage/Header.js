@@ -93,13 +93,12 @@ const Header = () => {
                     </Disclosure.Button>
                   </>
                 ))}
-                <Link
-                  to="https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                  target="_blank"
+                <a
+                  href={Apk}
                   className="border rounded-lg w-full h-[40px] text-white flex items-center justify-center"
                 >
                   Download
-                </Link>
+                </a>
               </div>
             </Disclosure.Panel>
           </>
