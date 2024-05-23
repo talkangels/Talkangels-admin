@@ -5,6 +5,7 @@ import { Facebook, Instagram, Linkedin, Twitter } from "./Shape";
 import PlayStore from "../../assets/homepage/Playstoreicon.png";
 import AppleStore from "../../assets/homepage/Applestore.png";
 import { GetCharges } from "../../services/listener";
+import Apk from "../../assets/apk/Talkangels.apk";
 
 const Footer = () => {
   const [charges, setCharges] = useState("");
@@ -69,23 +70,17 @@ const Footer = () => {
             <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
               Get the App!
             </h2>
-            <Link
-              to={
-                "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-              }
-              target="_blank"
-            >
+            <a href={Apk} download="talkangels">
               <img src={PlayStore} alt="" />
-            </Link>
-            <Link
-              to={
-                "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-              }
+            </a>
+            <a
+              href={Apk}
+              download="talkangels"
               target="_blank"
               className="ml-4"
             >
               <img src={AppleStore} alt="" />
-            </Link>
+            </a>
           </div>
           <div className="">
             {/* <p className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px]">

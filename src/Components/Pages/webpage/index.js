@@ -19,6 +19,7 @@ import Speciality_mobile from "../../assets/homepage/SpecialityMobile.png";
 import Listenersimg_2 from "../../assets/homepage/Listenersimg_1.png";
 import Header from "./Header";
 import Footer from "./Footer";
+import Apk from "../../assets/apk/Talkangels.apk";
 
 const Index = () => {
   const settings = {
@@ -111,26 +112,23 @@ const Index = () => {
                   vibrant community of over one million users!
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
-                  <Link
-                    to={
-                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                    }
+                  <a
+                    href={Apk}
+                    download="talkangels"
                     className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >
                     Get Started <ArrowRight />
-                  </Link>
-                  <Link
-                    to={
-                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                    }
+                  </a>
+                  <a
+                    href={Apk}
+                    download="talkangels"
                     className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                    target="_blank"
                   >
                     Download the app{" "}
                     <div className="-rotate-45">
                       <ArrowRight />
                     </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
               <div className="relative  items-center justify-center lg:order-2 order-1 lg:flex hidden">
@@ -505,25 +503,21 @@ const Index = () => {
                   vibrant community of over one million users!
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
-                  <Link
-                    to={
-                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                    }
+                  <a
+                    href={Apk}
+                    download="talkangels"
                     className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                    target="_blank"
                   >
                     Get Started{" "}
                     {
                       // eslint-disable-next-line
                       <ArrowRight />
                     }
-                  </Link>
-                  <Link
-                    to={
-                      "https://drive.google.com/drive/folders/1qNcOt1_XvBbBvmOSH1eTr0DZxljcGm4S"
-                    }
+                  </a>
+                  <a
+                    href={Apk}
+                    download="talkangels"
                     className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
-                    target="_blank"
                   >
                     Download the app{" "}
                     <div className="-rotate-45">
@@ -532,7 +526,7 @@ const Index = () => {
                         <ArrowRight />
                       }
                     </div>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

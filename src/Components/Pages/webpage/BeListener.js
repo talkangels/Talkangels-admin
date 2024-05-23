@@ -41,7 +41,7 @@ const BeListener = () => {
                   />
                 </svg>
                 Talkangel App Only accepting applications from candidates who
-                are{" "}
+                are
               </div>
               <b className="text-center">&nbsp;21 years old or above</b>
             </h2>
@@ -53,7 +53,7 @@ const BeListener = () => {
                 Yes
               </button>
               <Link
-                to={"/"}
+                to="/"
                 className="border-2 text-center rounded-md mt-2 mx-auto w-[90px] h-[30px] text-white/25 font-semibold font-Popins  border-white/25"
               >
                 No
