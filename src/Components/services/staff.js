@@ -36,7 +36,7 @@ export const UpdateStaffStatus = async (body) => {
   try {
     let response = await axios({
       method: "PUT",
-      url: `${baseURL}admin/update-staff/${body.id}`,
+      url: `${baseURL}staff/update-staff/${body.id}`,
       headers: {
         Authorization: localStorage.getItem("token"),
       },
