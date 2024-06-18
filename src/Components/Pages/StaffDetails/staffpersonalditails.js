@@ -8,20 +8,37 @@ import Age from "../../assets/StaffDetails/age.png";
 import Gender from "../../assets/StaffDetails/gender.png";
 import Language from "../../assets/StaffDetails/language.png";
 import Bio from "../../assets/StaffDetails/addBio.png";
-import { DeleteStaff, SingleStaff } from "../../services/staff";
+import {
+  DeleteStaff,
+  SingleStaff,
+  UpdateStaffStatus,
+} from "../../services/staff";
 import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
+// import socket from "../../../socket";
 
 const Staffpersonalditails = () => {
   const navigate = useNavigate();
   const staffid = useParams();
+  const [staffDetail, setStaffList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // socket
+
+  // useEffect(() => {
+  //   socket.on("soketGetOneNotes", (data) => {
+  //     // setStaffList(data.data);
+  //     console.log(data, "================>");
+  //   });
+
+  //   return () => {
+  //     socket.off("soketGetOneNotes");
+  //   };
+  // }, [staffDetail]);
 
   const heandleNavigate = () => {
     navigate(Routing.StaffDetails, { state: { tab: 1 } });
   };
-
-  const [staffDetail, setStaffList] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   const getSingleStaff = async () => {
     setLoading(true);
@@ -41,6 +58,14 @@ const Staffpersonalditails = () => {
 
   const heandleDelete = async () => {
     setLoading(true);
+    const body = {
+      id: staffid.id,
+      data: { status: 0 },
+    };
+    const Updateresult = await UpdateStaffStatus(body);
+    if (Updateresult?.status !== 200) {
+      toast.error(Updateresult?.message);
+    }
     const result = await DeleteStaff(staffid.id);
     if (result?.status === 200) {
       setLoading(false);

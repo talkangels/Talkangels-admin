@@ -19,6 +19,10 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [mostRated, setMostRated] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
+  const [selectedList, setSelectedList] = useState({
+    requestId: "",
+    status: "",
+  });
 
   const getWithdraws = async () => {
     setLoading(true);
@@ -48,12 +52,7 @@ const Dashboard = () => {
     getWithdraws();
     getMostRatedStaff();
   }, []);
-
-  const [selectedList, setSelectedList] = useState({
-    requestId: "",
-    status: "",
-  });
-
+  
   const handleUpdateStatus = async () => {
     if (selectedList.status === "pending") {
       return toast.error("select only accept or reject");

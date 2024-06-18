@@ -6,7 +6,7 @@ const Rating = ({ totalStars, Rating }) => {
       {[...Array(totalStars)].map((_, index) => (
         <svg
           key={index}
-          className={`h-8 w-8 fill-current cursor-pointer ${
+          className={`h-8 w-8 fill-current ${
             index < Rating ? "text-yellow" : "text-gray-400"
           }`}
           xmlns="http://www.w3.org/2000/svg"

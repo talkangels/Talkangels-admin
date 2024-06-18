@@ -83,3 +83,15 @@ export const UpdateAdminDetail = async (body, id) => {
     return error?.response?.data;
   }
 };
+export const AddAdminDetail = async (body) => {
+  try {
+    let response = await axios({
+      method: "POST",
+      url: `${baseURL}auth/admin/register`,
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};

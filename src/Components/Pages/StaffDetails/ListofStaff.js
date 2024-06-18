@@ -93,6 +93,12 @@ const ListofStaff = () => {
                     scope="col"
                     className="text-left  font-semibold text-white text-lg pl-[27px]"
                   >
+                    Image
+                  </th>
+                  <th
+                    scope="col"
+                    className="text-left  font-semibold text-white text-lg pl-[27px]"
+                  >
                     Name
                   </th>
                   <th
@@ -125,6 +131,13 @@ const ListofStaff = () => {
                     <>
                       <td className="text-white text-base pl-[27px]">
                         {i + 1}
+                      </td>
+                      <td className="text-white text-base pl-[27px] py-3">
+                        <img
+                          src={user.image}
+                          alt={user.id}
+                          className="w-[50px] h-[50px] rounded-full overflow-hidden object-cover"
+                        />
                       </td>
                       <td className="text-white text-base pl-[27px]">
                         {user.name}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Spinner from "../../layout/spinner";
 import LoginIllustation from "../../assets/Login/Login-amico.png";
+import { AddAdminDetail } from "../../services/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -11,12 +13,20 @@ const Register = () => {
     password: "",
   });
   const handleUserdata = (e) => {
-    setLoading(true);
     setUserdata({
       ...userdata,
       [e.target.name]: e.target.value,
     });
-    setLoading(false);
+  };
+  const HeandleAddAdmin = async () => {
+    const result = await AddAdminDetail(userdata);
+    if (result?.status === 201) {
+      toast.success(result?.message);
+      setLoading(false);
+    } else {
+      toast.error(result?.message);
+      setLoading(false);
+    }
   };
 
   return (
@@ -68,7 +78,10 @@ const Register = () => {
                 className=" w-full bg-darkBlack text-white p-2 text-lg rounded-md placeholder:text-white focus:outline-none"
                 placeholder="Enter your password"
               />
-              <button className="w-full h-[50px] bg-Sky rounded-md text-white mx-auto text-xl">
+              <button
+                className="w-full h-[50px] bg-Sky rounded-md text-white mx-auto text-xl"
+                onClick={HeandleAddAdmin}
+              >
                 Register
               </button>
             </div>

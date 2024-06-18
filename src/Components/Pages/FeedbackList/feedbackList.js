@@ -29,10 +29,10 @@ const FeedbackList = () => {
         {!loading && ratingList.length === 0 ? (
           <div className="h-[63vh] flex items-center justify-center">
             <div className="">
-              <div className="max-w-[318px] mx-auto">
-                <img src={nodatagif} alt="" className="w-full" />
+              <div className="max-w-[318px] mx-auto flex items-center justify-center">
+                <img src={nodatagif} alt="" className="object-contain" />
               </div>
-              <h2 className="text-white text-[32px] font-semibold mt-14 text-center font-Popins">
+              <h2 className="text-white text-[32px] font-semibold mt-7 text-center font-Popins">
                 No FeedBack to show right now!
               </h2>
             </div>
