@@ -37,7 +37,8 @@ const WebPageAdmin = () => {
       }));
       setWebPageData({ ...result.data, data: newData });
       setLoading(false);
-    } else {
+    }
+    else {
       setLoading(false);
     }
   };
@@ -62,6 +63,7 @@ const WebPageAdmin = () => {
 
   useEffect(() => {
     getWebPageName();
+    // eslint-disable-next-line
   }, []);
 
   const handleSubmit = async () => {
@@ -82,7 +84,7 @@ const WebPageAdmin = () => {
       setTabs((prevTabs) =>
         prevTabs.map((tab) => ({
           ...tab,
-          isActive: tab.name === tabName,
+          isActive: tab?.name === tabName,
         }))
       );
       getWebpage(tabName);
@@ -90,7 +92,7 @@ const WebPageAdmin = () => {
   };
 
   const addTab = (tabName) => {
-    const isNewTabPresent = tabs.some((tab) => tab.name === "New Tab");
+    const isNewTabPresent = tabs.some((tab) => tab?.name === "New Tab");
     if (!isNewTabPresent) {
       setTabs((prevTabs) => {
         return [...prevTabs, { name: tabName, isActive: false }];
@@ -99,7 +101,7 @@ const WebPageAdmin = () => {
   };
 
   const deleteTab = async () => {
-    const tabName = tabs.find((tab) => tab.isActive).name;
+    const tabName = tabs.find((tab) => tab.isActive)?.name;
     setLoading(true);
     const data = {
       page: tabName,
@@ -114,7 +116,6 @@ const WebPageAdmin = () => {
       toast.error(result.message);
     }
   };
-
   const addNewPage = async () => {
     setLoading(true);
     const data = {
@@ -177,15 +178,15 @@ const WebPageAdmin = () => {
             <div className="grid grid-cols-2 items-center justify-between gap-5 mb-5">
               {tabs.map((item, i) => (
                 <button
-                  key={item.name}
+                  key={item?.name}
                   className={`w-full h-[55px] rounded-full text-lg font-semibold flex items-center justify-center ${
                     item.isActive
                       ? "bg-Sky text-white"
                       : "bg-transparent border-[#88888E] border-[0.5px] text-[#88888E]"
                   }`}
-                  onClick={() => handleTabClick(item.name)}
+                  onClick={() => handleTabClick(item?.name)}
                 >
-                  {item.name === "New Tab" ? (
+                  {item?.name === "New Tab" ? (
                     <>
                       <div className="flex items-center gap-3 w-full p-1">
                         <input
@@ -204,7 +205,7 @@ const WebPageAdmin = () => {
                       </div>
                     </>
                   ) : (
-                    item.name
+                    item?.name
                   )}
                 </button>
               ))}

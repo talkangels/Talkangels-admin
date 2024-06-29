@@ -39,7 +39,7 @@ const Dashboard = () => {
   const getMostRatedStaff = async () => {
     setLoading(true);
     const result = await GetMostRatedList();
-    if (result.status === 200) {
+    if (result?.status === 200) {
       setMostRated(result.data);
       setLoading(false);
     } else {
@@ -54,12 +54,12 @@ const Dashboard = () => {
   }, []);
   
   const handleUpdateStatus = async () => {
-    if (selectedList.status === "pending") {
+    if (selectedList?.status === "pending") {
       return toast.error("select only accept or reject");
     }
     setLoading(true);
     const result = await UpdateWithdrawRequestStatus(selectedList);
-    if (result.status === 200) {
+    if (result?.status === 200) {
       setLoading(false);
       getWithdraws();
       toast.success(result.mmessage);

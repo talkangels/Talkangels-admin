@@ -23,19 +23,6 @@ const Staffpersonalditails = () => {
   const [staffDetail, setStaffList] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // socket
-
-  // useEffect(() => {
-  //   socket.on("soketGetOneNotes", (data) => {
-  //     // setStaffList(data.data);
-  //     console.log(data, "================>");
-  //   });
-
-  //   return () => {
-  //     socket.off("soketGetOneNotes");
-  //   };
-  // }, [staffDetail]);
-
   const heandleNavigate = () => {
     navigate(Routing.StaffDetails, { state: { tab: 1 } });
   };

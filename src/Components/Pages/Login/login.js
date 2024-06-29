@@ -41,7 +41,6 @@ const Login = () => {
       localStorage.setItem("is_login", true);
       navigate(Routing.Dashboard);
       toast.success(result?.message);
-      console.log(result,"============");
     } else {
       setLoading(false);
       toast.error(result?.message);
