@@ -92,12 +92,12 @@ const ReportAndProblem = () => {
                   >
                     Report
                   </th>
-                  <th
+                  {/* <th
                     scope="col"
                     className="text-left  font-semibold text-white text-lg pl-[27px]"
                   >
                     Role
-                  </th>
+                  </th> */}
                   <th
                     scope="col"
                     className="text-left  font-semibold text-white text-lg "
@@ -122,9 +122,9 @@ const ReportAndProblem = () => {
                       <td className="text-white text-base pl-[27px]">
                         {item?.comment}
                       </td>
-                      <td className="text-white text-base pl-[27px]">
+                      {/* <td className="text-white text-base pl-[27px]">
                         {item?.user?.role}
-                      </td>
+                      </td> */}
                       <td className="text-white text-base">
                         <Switch
                           checked={item?.status === 1}
