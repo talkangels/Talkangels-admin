@@ -12,20 +12,24 @@ const Index = () => {
   };
   insitialzeSDK();
   const [orderId, setOrderId] = useState("");
-  
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const userId = queryParams.get("userid");
+  const phone = queryParams.get("phone");
+  const name = queryParams.get("name");
+  const amount = queryParams.get("amount");
+  const token = queryParams.get("token");
   const getSessionId = async () => {
     try {
       let res = await axios.get(
-        `https://web.talkangels.com/api/v1/user/create-payment/668d385d73c515c296e8b684?phone=7623977514&name=Flutter dev&amount=20`,
+        `https://web.talkangels.com/api/v1/user/create-payment/${userId}?phone=${phone}&name=${name}&amount=${amount}`,
         {
           headers: {
-            Authorization: 
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiXy5fR2FqZXJhXy5fIiwibW9iaWxlX251bWJlciI6NzQ5MDA5MzAzNCwicm9sZSI6InVzZXIiLCJzdGF0dXMiOjEsImlhdCI6MTcyNjExNjAyNCwiZXhwIjoxNzI2OTgwMDI0fQ.1L8HVJdbKSJvgPCSQRDZGiRhCEk5XZMeKXx7REFZe4Q",
+            Authorization: `Bearer ${token}`,
           },
         }
       );
       if (res.data) {
-        // setOrderId(res.data.data.order_id);
         return res.data.data;
       }
     } catch (error) {
@@ -34,17 +38,17 @@ const Index = () => {
   };
 
   const verifyPayment = async (orderId) => {
-    console.log(orderId,"==========verify");
     try {
-      let res = await axios.get(`https://web.talkangels.com/api/v1/user/verify-payment/${orderId}`, {
-        headers: {
-          Authorization: 
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiXy5fR2FqZXJhXy5fIiwibW9iaWxlX251bWJlciI6NzQ5MDA5MzAzNCwicm9sZSI6InVzZXIiLCJzdGF0dXMiOjEsImlhdCI6MTcyNjExNjAyNCwiZXhwIjoxNzI2OTgwMDI0fQ.1L8HVJdbKSJvgPCSQRDZGiRhCEk5XZMeKXx7REFZe4Q",
-        },
-      });
+      let res = await axios.get(
+        `https://web.talkangels.com/api/v1/user/verify-payment/${orderId}`,
+        {
+          headers: {
+            Authorization:
+              `Bearer ${token}`,
+          },
+        }
+      );
       if (res && res.data) {
-        console.log(res.data);
-        document.write("hayyyy payment done")
         alert("payment verified");
       }
     } catch (error) {
@@ -55,16 +59,13 @@ const Index = () => {
   const handleClick = async () => {
     try {
       let sessionId = await getSessionId();
-      console.log(sessionId.order_id,"===============================");
-       setOrderId(sessionId.order_id);
+      setOrderId(sessionId.order_id);
       let checkoutOptions = {
         paymentSessionId: sessionId.payment_session_id,
         redirectTarget: "_modal",
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
-        console.log("payment initialized");
-        console.log(orderId,"============>click");
         verifyPayment(sessionId.order_id);
       });
     } catch (error) {
@@ -73,9 +74,9 @@ const Index = () => {
   };
 
   useEffect(() => {
-    handleClick()
-  }, [])
-  
+    handleClick();
+  }, []);
+
   return (
     <>
       <h1>Cashfree payment getway</h1>
