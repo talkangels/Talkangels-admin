@@ -33,7 +33,7 @@ export const GetOneAdmin = async (id) => {
       method: "GET",
       url: `${baseURL}admin/detail/${id}`,
       headers: {
-        Authorization: localStorage.getItem("token"),
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -73,8 +73,8 @@ export const UpdateAdminDetail = async (body, id) => {
     let response = await axios({
       method: "PUT",
       url: `${baseURL}admin/update/${id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body,
     });

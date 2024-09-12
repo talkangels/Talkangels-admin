@@ -6,8 +6,8 @@ export const AddRecharge = async (body) => {
     let response = await axios({
       method: "POST",
       url: `${baseURL}admin/add-recharge`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body,
     });
@@ -22,8 +22,8 @@ export const GetAllRecharge = async (body) => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/all-recharge?page_no=${body.page_no}&items_per_page=${body.items_per_page}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -37,8 +37,8 @@ export const UpdateRechargeStatus = async (body) => {
     let response = await axios({
       method: "PUT",
       url: `${baseURL}admin/update-recharge/${body.id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body.data,
     });
@@ -53,8 +53,8 @@ export const DeleteRechargeStatus = async (id) => {
     let response = await axios({
       method: "DELETE",
       url: `${baseURL}admin/delete-recharge/${id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;

@@ -6,8 +6,8 @@ export const GetAllUser = async (body) => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/all-user?page_no=${body.page_no}&items_per_page=${body.items_per_page}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -21,8 +21,8 @@ export const UpdateUserStatus = async (body) => {
     let response = await axios({
       method: "PUT",
       url: `${baseURL}admin/update-user/${body.id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body.data,
     });
@@ -36,8 +36,8 @@ export const DeleteUser = async (id) => {
     let response = await axios({
       method: "DELETE",
       url: `${baseURL}user/delete/${id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;

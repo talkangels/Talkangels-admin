@@ -6,8 +6,8 @@ export const GetRatingList = async () => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/all-rating`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;

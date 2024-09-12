@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Spinner from "./Components/layout/spinner";
 
 const Login = lazy(() => import("./Components/Pages/Login/login"));
+const Payment = lazy(() => import("./Components/Pages/payment/Index"));
+
 const Register = lazy(() => import("./Components/Pages/Login/ragisterAdmin"));
 const PrivacyPolicy = lazy(() =>
   import("./Components/Pages/Privacy-Policy/PrivacyPolicy")
@@ -55,6 +57,11 @@ const App = () => {
     {
       path: Routing.Initial,
       component: Webpage,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.Payment,
+      component: Payment,
       isPrivateRoute: false,
     },
     {

@@ -6,8 +6,8 @@ export const ChangeCharges = async (body) => {
     let response = await axios({
       method: "POST",
       url: `${baseURL}admin/update-charges`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body,
     });
@@ -22,8 +22,8 @@ export const GetMostRatedList = async () => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/most-rated`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -37,8 +37,8 @@ export const UpdateWithdrawRequestStatus = async (body) => {
     let response = await axios({
       method: "PUT",
       url: `${baseURL}admin/update-withdraw-request`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body,
     });
@@ -53,8 +53,8 @@ export const allWithdrawRequest = async () => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/all-withdraw-request`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -68,8 +68,8 @@ export const SendNotificationUser = async (body) => {
     let response = await axios({
       method: "POST",
       url: `${baseURL}admin/send-notification/user`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body,
     });

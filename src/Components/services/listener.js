@@ -31,8 +31,8 @@ export const GetAllListenerRequst = async (body) => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/listener/all-listeners-requst?status=${body.status}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -46,8 +46,8 @@ export const UpdateListenerRequstStatus = async (body) => {
     let response = await axios({
       method: "PUT",
       url: `${baseURL}admin/listener/update-listener-requst/${body.id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body.data,
     });
@@ -62,8 +62,8 @@ export const DeleteListener = async (id) => {
     let response = await axios({
       method: "DELETE",
       url: `${baseURL}admin/listener/delete-listener-requst/${id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;

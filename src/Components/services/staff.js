@@ -6,8 +6,8 @@ export const GetAllStaffList = async (body) => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/all-staff?page_no=${body.page_no}&items_per_page=${body.items_per_page}&search_text=${body.search_text}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -21,8 +21,8 @@ export const AddStaffDetail = async (body) => {
     let response = await axios({
       method: "POST",
       url: `${baseURL}admin/add-staff`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body,
     });
@@ -37,8 +37,8 @@ export const UpdateStaffStatus = async (body) => {
     let response = await axios({
       method: "PUT",
       url: `${baseURL}staff/update-staff/${body.id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
       data: body.data,
     });
@@ -53,8 +53,8 @@ export const SingleStaff = async (id) => {
     let response = await axios({
       method: "GET",
       url: `${baseURL}admin/one-staff/${id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
@@ -68,8 +68,8 @@ export const DeleteStaff = async (id) => {
     let response = await axios({
       method: "DELETE",
       url: `${baseURL}admin/delete-staff/${id}`,
-      headers: {
-        Authorization: localStorage.getItem("token"),
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
       },
     });
     return response.data;
