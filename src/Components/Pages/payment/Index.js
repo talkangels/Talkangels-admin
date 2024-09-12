@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { load } from "@cashfreepayments/cashfree-js";
 
@@ -16,7 +16,7 @@ const Index = () => {
   const getSessionId = async () => {
     try {
       let res = await axios.get(
-        `https://web.talkangels.com/api/v1/user/create-payment/66e17c81a494e2bcfa0c1884?phone=7046292419&name=Mona&amount=20`,
+        `https://web.talkangels.com/api/v1/user/create-payment/668d385d73c515c296e8b684?phone=7623977514&name=Flutter dev&amount=20`,
         {
           headers: {
             Authorization: 
@@ -25,8 +25,8 @@ const Index = () => {
         }
       );
       if (res.data) {
-        setOrderId(res.data.data.order_id);
-        return res.data.data.payment_session_id;
+        // setOrderId(res.data.data.order_id);
+        return res.data.data;
       }
     } catch (error) {
       console.log(error);
@@ -52,24 +52,30 @@ const Index = () => {
     }
   };
 
-  const handleClick = async (e) => {
-    e.preventDefault();
+  const handleClick = async () => {
     try {
       let sessionId = await getSessionId();
+      console.log(sessionId.order_id,"===============================");
+       setOrderId(sessionId.order_id);
       let checkoutOptions = {
-        paymentSessionId: sessionId,
+        paymentSessionId: sessionId.payment_session_id,
         redirectTarget: "_modal",
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
         console.log("payment initialized");
         console.log(orderId,"============>click");
-        verifyPayment(orderId);
+        verifyPayment(sessionId.order_id);
       });
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    handleClick()
+  }, [])
+  
   return (
     <>
       <h1>Cashfree payment getway</h1>

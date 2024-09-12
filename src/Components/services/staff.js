@@ -77,3 +77,18 @@ export const DeleteStaff = async (id) => {
     return error?.response?.data;
   }
 };
+
+export const getpaymentVerify = async (body) => {
+  try {
+    let response = await axios({
+      method: "GET",
+      url: `${baseURL}user/verify-payment/${body.order_id}`,
+       headers: {
+        Authorization:`Bearer ${body.token}` ,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};
