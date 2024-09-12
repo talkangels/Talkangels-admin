@@ -44,6 +44,7 @@ const Index = () => {
       });
       if (res && res.data) {
         console.log(res.data);
+        document.write("hayyyy payment done")
         alert("payment verified");
       }
     } catch (error) {
