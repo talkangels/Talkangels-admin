@@ -6,7 +6,7 @@ export const Routing = {
   Register: "/admin/register",
   PrivacyPolicy: "/policies",
   TermsConditions: "/tnc",
-  Payment:"/payment",
+  Payment:"/payment/:id/:phone/:name/:amount/:token",
   Faq: "/faq's",
   About: "/contact-us",
   Listeners: "/listeners",

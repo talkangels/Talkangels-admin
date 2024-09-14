@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { load } from "@cashfreepayments/cashfree-js";
+import { useParams } from "react-router-dom";
 
 const Index = () => {
   let cashfree;
@@ -12,20 +13,16 @@ const Index = () => {
   };
   insitialzeSDK();
   const [orderId, setOrderId] = useState("");
+  const user_details = useParams()
+  console.log(user_details, "==========> perms");
 
-  const queryParams = new URLSearchParams(window.location.search);
-  const userId = queryParams.get("userid");
-  const phone = queryParams.get("phone");
-  const name = queryParams.get("name");
-  const amount = queryParams.get("amount");
-  const token = queryParams.get("token");
   const getSessionId = async () => {
     try {
       let res = await axios.get(
-        `https://web.talkangels.com/api/v1/user/create-payment/${userId}?phone=${phone}&name=${name}&amount=${amount}`,
+        `https://web.talkangels.com/api/v1/user/create-payment/${user_details.id}?phone=${user_details.phone}&name=${user_details.name}&amount=${user_details.amount}`,
         {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `Bearer ${user_details.token}`,
           },
         }
       );
@@ -43,8 +40,7 @@ const Index = () => {
         `https://web.talkangels.com/api/v1/user/verify-payment/${orderId}`,
         {
           headers: {
-            Authorization:
-              `Bearer ${token}`,
+            Authorization: `Bearer ${user_details.token}`,
           },
         }
       );
