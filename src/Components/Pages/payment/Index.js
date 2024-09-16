@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { load } from "@cashfreepayments/cashfree-js";
-import { useParams } from "react-router-dom";
+import { AddBallenceAPI, GetSessionIdAPI } from "../../services/Payment";
+import { Routing } from "../../../utils/routing";
+import { toast } from "react-toastify";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   let cashfree;
 
   let insitialzeSDK = async function () {
@@ -12,50 +15,40 @@ const Index = () => {
     });
   };
   insitialzeSDK();
-  const [orderId, setOrderId] = useState("");
-  const user_details = useParams()
-  console.log(user_details, "==========> perms");
+  const user_details = useParams();
 
   const getSessionId = async () => {
     try {
-      let res = await axios.get(
-        `https://web.talkangels.com/api/v1/user/create-payment/${user_details.id}?phone=${user_details.phone}&name=${user_details.name}&amount=${user_details.amount}`,
-        {
-          headers: {
-            Authorization: `Bearer ${user_details.token}`,
-          },
-        }
-      );
-      if (res.data) {
-        return res.data.data;
+      const result = await GetSessionIdAPI(user_details);
+      if (result.status === 200) {
+        return result.data;
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Payment failed, please try again");
+      navigate(Routing.Initial);
     }
   };
 
   const verifyPayment = async (orderId) => {
     try {
-      let res = await axios.get(
-        `https://web.talkangels.com/api/v1/user/verify-payment/${orderId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${user_details.token}`,
-          },
-        }
-      );
-      if (res && res.data) {
-        alert("payment verified");
+      const body = {
+        user_id: user_details.id,
+        payment_id: orderId,
+      };
+      const result = await AddBallenceAPI(body, user_details?.token);
+      if (result.status === 200) {
+        toast.success(result?.message);
+        navigate(Routing.Initial);
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Payment failed, please try again");
+      navigate(Routing.Initial);
     }
   };
 
   const handleClick = async () => {
     try {
       let sessionId = await getSessionId();
-      setOrderId(sessionId.order_id);
       let checkoutOptions = {
         paymentSessionId: sessionId.payment_session_id,
         redirectTarget: "_modal",
@@ -65,7 +58,8 @@ const Index = () => {
         verifyPayment(sessionId.order_id);
       });
     } catch (error) {
-      console.log(error);
+      toast.error("Payment failed, please try again");
+      navigate(Routing.Initial);
     }
   };
 
@@ -75,9 +69,7 @@ const Index = () => {
 
   return (
     <>
-      <h1>Cashfree payment getway</h1>
-      <div className="card">
-        <button onClick={handleClick}>Pay now</button>
+      <div className="h-screen bg-[#15142C]">  
       </div>
     </>
   );
