@@ -25,7 +25,8 @@ const Index = () => {
       }
     } catch (error) {
       toast.error("Payment failed, please try again");
-      navigate(Routing.Initial);
+      // navigate(Routing.Initial);
+       navigate('/', { replace: true });
     }
   };
 
@@ -38,11 +39,13 @@ const Index = () => {
       const result = await AddBallenceAPI(body, user_details?.token);
       if (result.status === 200) {
         toast.success(result?.message);
-        navigate(Routing.Initial);
+        // navigate(Routing.Initial);
+         navigate('/', { replace: true });
       }
     } catch (error) {
       toast.error("Payment failed, please try again");
-      navigate(Routing.Initial);
+      // navigate(Routing.Initial);
+       navigate('/', { replace: true });
     }
   };
 
@@ -59,7 +62,8 @@ const Index = () => {
       });
     } catch (error) {
       toast.error("Payment failed, please try again");
-      navigate(Routing.Initial);
+      // navigate(Routing.Initial);
+       navigate('/', { replace: true });
     }
   };
 
