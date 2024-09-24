@@ -11,7 +11,7 @@ const Index = () => {
 
   let insitialzeSDK = async function () {
     cashfree = await load({
-      mode: "sandbox",
+      mode: "production",
     });
   };
   insitialzeSDK();
@@ -52,6 +52,7 @@ const Index = () => {
   const handleClick = async () => {
     try {
       let sessionId = await getSessionId();
+      console.log("🚀 ~ handleClick ~ sessio̥nId:", sessionId)
       let checkoutOptions = {
         paymentSessionId: sessionId.payment_session_id,
         redirectTarget: "_modal",
@@ -73,8 +74,7 @@ const Index = () => {
 
   return (
     <>
-      <div className="h-screen bg-[#15142C]">  
-      </div>
+     <div className="card"></div>
     </>
   );
 };
