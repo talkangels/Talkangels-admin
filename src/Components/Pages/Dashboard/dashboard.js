@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ClockIcon from "../../assets/dashboard/clock.png";
 import {
   GetMostRatedList,
+  GetTotalHoursWorked,
   UpdateWithdrawRequestStatus,
   allWithdrawRequest,
 } from "../../services/dashboard";
@@ -12,6 +13,7 @@ import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
 import SendNotification from "./sendNotification";
 import TransactionDashboard from "./transactionHistory";
 import { Routing } from "../../../utils/routing";
+import { GetOneAdmin } from "../../services/auth";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -23,6 +25,16 @@ const Dashboard = () => {
     requestId: "",
     status: "",
   });
+  const [Revenue, setRevenue] = useState({
+    revenue: "",
+    total_minutes: {
+      hr: 0,
+      min: 0,
+    },
+  });
+  console.log("🚀 ~ Dashboard ~ Revenue:", Revenue);
+
+  const id = JSON.parse(window.localStorage.getItem("userDetail"))?._id;
 
   const getWithdraws = async () => {
     setLoading(true);
@@ -48,11 +60,44 @@ const Dashboard = () => {
     }
   };
 
+  const getTotalHours = async () => {
+    setLoading(true);
+    const result = await GetTotalHoursWorked();
+    if (result?.status === 200) {
+      setRevenue((prevRevenue) => ({
+        ...prevRevenue,
+        total_minutes: {
+          hr: result.data.total_minutes.hr,
+          min: result.data.total_minutes.min,
+        },
+      }));
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
+  };
+
+  const getAdminDetail = async () => {
+    setLoading(true);
+    const result = await GetOneAdmin(id);
+    if (result.status === 200) {
+      setRevenue((prevRevenue) => ({
+        ...prevRevenue,
+        revenue: result.data.revenue.revenue_earnings,
+      }));
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     getWithdraws();
     getMostRatedStaff();
+    getAdminDetail();
+    getTotalHours();
   }, []);
-  
+
   const handleUpdateStatus = async () => {
     if (selectedList?.status === "pending") {
       return toast.error("select only accept or reject");
@@ -94,7 +139,8 @@ const Dashboard = () => {
                   <h2 className="text-3xl font-semibold text-white">Revenue</h2>
                   <div className="flex items-center gap-x-5 gap-y-0 flex-wrap">
                     <h3 className="text-[50px] text-yellow font-semibold flex items-baseline gap-x-1">
-                      00 <span className="text-lg text-Gray">rs</span>
+                      {Revenue.revenue}{" "}
+                      <span className="text-lg text-Gray">rs</span>
                     </h3>
                   </div>
                 </div>
@@ -110,10 +156,12 @@ const Dashboard = () => {
                   <h2 className="text-3xl font-semibold text-white">Minutes</h2>
                   <div className="flex items-center gap-x-5 gap-y-0 flex-wrap">
                     <h3 className="text-[50px] text-yellow font-semibold flex items-baseline gap-x-1">
-                      00 <span className="text-lg text-Gray">Hr</span>
+                      {Revenue?.total_minutes?.hr}{" "}
+                      <span className="text-lg text-Gray">Hr</span>
                     </h3>
                     <h3 className="text-[50px] text-yellow font-semibold flex items-baseline gap-x-1">
-                      00 <span className="text-lg text-Gray">Min</span>
+                      {Revenue?.total_minutes?.min}{" "}
+                      <span className="text-lg text-Gray">Min</span>
                     </h3>
                   </div>
                 </div>
@@ -149,7 +197,7 @@ const Dashboard = () => {
               </button>
             </div>
             <div className="flex flex-col gap-4 mt-7">
-              {mostRated?.length > 0 ?
+              {mostRated?.length > 0 ? (
                 mostRated.map((item, index) => (
                   <>
                     <div
@@ -193,7 +241,7 @@ const Dashboard = () => {
                     </div>
                   </>
                 ))
-                :
+              ) : (
                 <div className="h-[15vh] flex items-center justify-center">
                   <div className="">
                     <div className="max-w-[318px] mx-auto flex items-center justify-center">
@@ -204,15 +252,16 @@ const Dashboard = () => {
                     </h2>
                   </div>
                 </div>
-              }
+              )}
             </div>
           </div>
           <div className="w-full bg-darkBlack mt-5 rounded-2xl p-5 min-h-[100px] grid grid-cols-1 items-center">
             <div className="flex items-center gap-4 md:flex-nowrap flex-wrap">
               <button
                 onClick={() => setShowNotification(!showNotification)}
-                className={`${showNotification ? "bg-red" : "bg-Sky"
-                  } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
+                className={`${
+                  showNotification ? "bg-red" : "bg-Sky"
+                } text-white font-Popins font-normal md:w-[150px] w-full h-[40px] rounded`}
               >
                 Send Notification
               </button>
@@ -286,7 +335,7 @@ const Dashboard = () => {
             )}
           </div>
         </div>
-      </div >
+      </div>
     </>
   );
 };

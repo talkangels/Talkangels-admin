@@ -32,6 +32,21 @@ export const GetMostRatedList = async () => {
   }
 };
 
+export const GetTotalHoursWorked = async () => {
+  try {
+    let response = await axios({
+      method: "GET",
+      url: `${baseURL}/admin/total-hr`,
+       headers: {
+        Authorization:`Bearer ${localStorage.getItem("token")}` ,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};
+
 export const UpdateWithdrawRequestStatus = async (body) => {
   try {
     let response = await axios({
