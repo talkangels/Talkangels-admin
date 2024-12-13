@@ -18,7 +18,7 @@ import card from "../../assets/homepage/phonecard.png";
 import Speciality_mobile from "../../assets/homepage/SpecialityMobile.png";
 import Listenersimg_2 from "../../assets/homepage/Listenersimg_1.png";
 import Header from "./Header";
-import Footer from "./Footer";
+import Footer  from "./Footer";
 import Apk from "../../assets/apk/Talkangels.apk";
 
 const Index = () => {
