@@ -5,7 +5,6 @@ import { Facebook, Instagram, Linkedin, Twitter } from "./Shape";
 import PlayStore from "../../assets/homepage/Playstoreicon.png";
 import AppleStore from "../../assets/homepage/Applestore.png";
 import { GetCharges } from "../../services/listener";
-import Apk from "../../assets/apk/Talkangels.apk";
 
 const Footer = () => {
   const [charges, setCharges] = useState("");
@@ -70,11 +69,14 @@ const Footer = () => {
             <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
               Get the App!
             </h2>
-            <a href={Apk} download="talkangels">
+            <a
+              href="../../../../public/assets/apk/Talkangels.apk"
+              download="talkangels"
+            >
               <img src={PlayStore} alt="" />
             </a>
             <a
-              href={Apk}
+              href="../../../../public/assets/apk/Talkangels.apk"
               download="talkangels"
               target="_blank"
               className="ml-4"

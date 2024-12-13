@@ -18,8 +18,7 @@ import card from "../../assets/homepage/phonecard.png";
 import Speciality_mobile from "../../assets/homepage/SpecialityMobile.png";
 import Listenersimg_2 from "../../assets/homepage/Listenersimg_1.png";
 import Header from "./Header";
-import Footer  from "./Footer";
-import Apk from "../../assets/apk/Talkangels.apk";
+import Footer from "./Footer";
 
 const Index = () => {
   const settings = {
@@ -113,14 +112,14 @@ const Index = () => {
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                   <a
-                    href={Apk}
+                    href="../../../../public/assets/apk/Talkangels.apk"
                     download="talkangels"
                     className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >
                     Get Started <ArrowRight />
                   </a>
                   <a
-                    href={Apk}
+                    href="../../../../public/assets/apk/Talkangels.apk"
                     download="talkangels"
                     className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >
@@ -504,7 +503,7 @@ const Index = () => {
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                   <a
-                    href={Apk}
+                    href="../../../../public/assets/apk/Talkangels.apk"
                     download="talkangels"
                     className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >
@@ -515,7 +514,7 @@ const Index = () => {
                     }
                   </a>
                   <a
-                    href={Apk}
+                    href="../../../../public/assets/apk/Talkangels.apk"
                     download="talkangels"
                     className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >

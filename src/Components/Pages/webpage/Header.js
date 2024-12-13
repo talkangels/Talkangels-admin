@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Webpagelogo.png";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Routing } from "../../../utils/routing";
-import Apk from "../../assets/apk/Talkangels.apk";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -57,7 +56,7 @@ const Header = () => {
                         </>
                       ))}
                       <a
-                        href={Apk}
+    href="../../../../public/assets/apk/Talkangels.apk"
                         className="border rounded-full w-[100px] h-[40px] text-white flex items-center justify-center"
                       >
                         Download
@@ -94,7 +93,7 @@ const Header = () => {
                   </>
                 ))}
                 <a
-                  href={Apk}
+         href="../../../../public/assets/apk/Talkangels.apk"
                   className="border rounded-lg w-full h-[40px] text-white flex items-center justify-center"
                 >
                   Download
