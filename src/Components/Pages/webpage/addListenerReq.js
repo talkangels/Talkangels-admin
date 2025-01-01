@@ -6,8 +6,11 @@ import Gender from "../../assets/StaffDetails/gender.png";
 import Bio from "../../assets/StaffDetails/addBio.png";
 import User from "../../assets/StaffDetails/user.png";
 import Age from "../../assets/StaffDetails/age.png";
+import { RiLockPasswordFill } from "react-icons/ri";
 import { Listbox, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { IoEyeSharp } from "react-icons/io5";
+import { BsFillEyeSlashFill } from "react-icons/bs";
 import { GetCharges, SentListenerReq } from "../../services/listener";
 import { toast } from "react-toastify";
 
@@ -27,8 +30,21 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
     email: "",
     language: "",
     age: "",
+    password: "",
+    Confrim_password: ""
   });
   const [charges, setCharges] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfrimPassword, setshowConfrimPassword] = useState(false)
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfrimPasswordVisibility = () => {
+    setshowConfrimPassword(!showConfrimPassword);
+  };
+
 
   const getCharges = async () => {
     setLoading(true);
@@ -51,13 +67,17 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
 
   const handleSubmit = async () => {
     setLoading(true);
+
     const body = {
       name: staffDetail.name,
       mobile_number: staffDetail.mobile_number,
+      country_code: '+91',
       bio: staffDetail.bio,
       email: staffDetail.email,
       language: staffDetail.language,
       age: staffDetail.age,
+      password: staffDetail.password,
+      Confrim_password: staffDetail.Confrim_password,
       gender: selected,
     };
     const result = await SentListenerReq(body);
@@ -197,9 +217,8 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
                       </span>
                       <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                         <ChevronDownIcon
-                          className={`h-6 w-6 text-white ${
-                            open === true && "rotate-180"
-                          }`}
+                          className={`h-6 w-6 text-white ${open === true && "rotate-180"
+                            }`}
                           aria-hidden="true"
                         />
                       </span>
@@ -251,6 +270,66 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
                 </>
               )}
             </Listbox>
+          </div>
+          <div className="w-full relative lg:col-span-1 col-span-2">
+            {/* <img
+              src={Age}
+              alt=""
+              className="absolute top-1/2 -translate-y-1/2 left-6"
+            /> */}
+            <RiLockPasswordFill className="absolute top-1/2 -translate-y-1/2 left-6 text-white text-lg" />
+            <input
+              type={showPassword ? "text" : "password"}
+              value={staffDetail.password}
+              onChange={handleStaffdata}
+              name="password"
+              className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+              placeholder="Password"
+            />
+            <button
+              onClick={togglePasswordVisibility}
+              style={{
+                position: "absolute",
+                right: "20px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              {showPassword ? <BsFillEyeSlashFill color="white" size={20} /> : <IoEyeSharp color="white" size={20} />}
+            </button>
+          </div>
+          <div className="w-full relative lg:col-span-1 col-span-2">
+            {/* <img
+              src={Age}
+              alt=""
+              className="absolute top-1/2 -translate-y-1/2 left-6"
+            /> */}
+            <RiLockPasswordFill className="absolute top-1/2 -translate-y-1/2 left-6 text-white text-lg" />
+            <input
+              type={showConfrimPassword ? "text" : "password"}
+              value={staffDetail.Confrim_password}
+              onChange={handleStaffdata}
+              name="Confrim_password"
+              className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+              placeholder="Confirm password"
+            />
+            <button
+              onClick={toggleConfrimPasswordVisibility}
+              style={{
+                position: "absolute",
+                right: "20px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              {showConfrimPassword ? <BsFillEyeSlashFill color="white" size={20} /> : <IoEyeSharp color="white" size={20} />}
+            </button>
           </div>
           <div className="w-full relative col-span-2">
             <img src={Bio} alt="" className="absolute top-[27px] left-6" />

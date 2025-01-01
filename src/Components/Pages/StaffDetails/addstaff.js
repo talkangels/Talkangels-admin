@@ -12,6 +12,9 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { AddStaffDetail } from "../../services/staff";
 import { toast } from "react-toastify";
 import Spinner from "../../layout/spinner";
+import { BsFillEyeSlashFill } from "react-icons/bs";
+import { IoEyeSharp } from "react-icons/io5";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 // select
 const Genderoption = ["Male", "Female", "Other"];
@@ -23,14 +26,28 @@ function classNames(...classes) {
 const Addstaff = ({ setStaff, dataForm }) => {
   const [selected, setSelected] = useState(dataForm?.gender || "");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfrimPassword, setshowConfrimPassword] = useState(false)
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfrimPasswordVisibility = () => {
+    setshowConfrimPassword(!showConfrimPassword);
+  };
 
   const [staffDetail, setStaffDetail] = useState({
     name: dataForm.name || "",
+    country_code: dataForm.country_code || "",
     mobile_number: dataForm.mobile_number || "",
     bio: dataForm.bio || "",
     email: dataForm.email || "",
     language: dataForm.language || "",
     age: dataForm.age || "",
+    password: dataForm.password || "",
+    Confrim_password: dataForm.Confrim_password || "",
+    request_status: dataForm.request_status || "",
   });
   const [image, SetImage] = useState({
     image: null,
@@ -51,6 +68,7 @@ const Addstaff = ({ setStaff, dataForm }) => {
 
     const formData = new FormData();
     formData.append("name", staffDetail.name);
+    formData.append("country_code", staffDetail.country_code || '+91');
     formData.append("mobile_number", staffDetail.mobile_number);
     formData.append("gender", selected);
     formData.append("bio", staffDetail.bio);
@@ -58,6 +76,9 @@ const Addstaff = ({ setStaff, dataForm }) => {
     formData.append("language", staffDetail.language);
     formData.append("age", staffDetail.age);
     formData.append("image", image.image);
+    formData.append("password", staffDetail.password);
+    formData.append("Confrim_password", staffDetail.Confrim_password);
+    formData.append("request_status", staffDetail.request_status || 'admin');
 
     const result = await AddStaffDetail(formData);
     if (result?.status === 201) {
@@ -70,6 +91,8 @@ const Addstaff = ({ setStaff, dataForm }) => {
         email: "",
         age: "",
         language: "",
+        password: "",
+        Confrim_password: ""
       });
       setStaff(1);
       setLoading(false);
@@ -96,11 +119,10 @@ const Addstaff = ({ setStaff, dataForm }) => {
             <img
               src={image.image_url ? image.image_url : userselect}
               alt=""
-              className={`${
-                image.image_url
-                  ? "h-[138px] w-[138px] bg-darkBlack rounded-full flex items-center justify-center relative"
-                  : null
-              }`}
+              className={`${image.image_url
+                ? "h-[138px] w-[138px] bg-darkBlack rounded-full flex items-center justify-center relative"
+                : null
+                }`}
             />
             <input
               type="file"
@@ -219,9 +241,8 @@ const Addstaff = ({ setStaff, dataForm }) => {
                         </span>
                         <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                           <ChevronDownIcon
-                            className={`h-6 w-6 text-white ${
-                              open === true && "rotate-180"
-                            }`}
+                            className={`h-6 w-6 text-white ${open === true && "rotate-180"
+                              }`}
                             aria-hidden="true"
                           />
                         </span>
@@ -275,6 +296,58 @@ const Addstaff = ({ setStaff, dataForm }) => {
                   </>
                 )}
               </Listbox>
+            </div>
+            <div className="w-full relative lg:col-span-1 col-span-2">
+              <RiLockPasswordFill className="absolute top-1/2 -translate-y-1/2 left-6 text-white text-lg" />
+              <input
+                type={showPassword ? "text" : "password"}
+                value={staffDetail.password}
+                onChange={handleStaffdata}
+                name="password"
+                className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+                placeholder="Password"
+                disabled={staffDetail.request_status === 'listner'}
+              />
+              <button
+                onClick={togglePasswordVisibility}
+                style={{
+                  position: "absolute",
+                  right: "20px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {showPassword ? <BsFillEyeSlashFill color="white" size={20} /> : <IoEyeSharp color="white" size={20} />}
+              </button>
+            </div>
+            <div className="w-full relative lg:col-span-1 col-span-2">
+              <RiLockPasswordFill className="absolute top-1/2 -translate-y-1/2 left-6 text-white text-lg" />
+              <input
+                type={showConfrimPassword ? "text" : "password"}
+                value={staffDetail.Confrim_password}
+                onChange={handleStaffdata}
+                name="Confrim_password"
+                className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
+                placeholder="Confirm password"
+                disabled={staffDetail.request_status === 'listner'}
+              />
+              <button
+                onClick={toggleConfrimPasswordVisibility}
+                style={{
+                  position: "absolute",
+                  right: "20px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {showConfrimPassword ? <BsFillEyeSlashFill color="white" size={20} /> : <IoEyeSharp color="white" size={20} />}
+              </button>
             </div>
             <div className="w-full relative col-span-2">
               <img src={Bio} alt="" className="absolute top-[27px] left-6" />
