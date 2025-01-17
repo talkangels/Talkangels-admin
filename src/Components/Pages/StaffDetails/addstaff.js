@@ -15,7 +15,6 @@ import Spinner from "../../layout/spinner";
 import { BsFillEyeSlashFill } from "react-icons/bs";
 import { IoEyeSharp } from "react-icons/io5";
 import { RiLockPasswordFill } from "react-icons/ri";
-import heic2any from "heic2any";
 
 // select
 const Genderoption = ["Male", "Female", "Other"];
@@ -55,41 +54,12 @@ const Addstaff = ({ setStaff, dataForm }) => {
     image_url: "",
   });
 
-  // function processImage(event) {
-  //   const imageFile = event.target.files[0];
-  //   const imageUrl = URL.createObjectURL(imageFile);
-  //   SetImage({ image: imageFile, image_url: imageUrl });
-  // }
-
-
-  async function processImage(event) {
+  function processImage(event) {
     const imageFile = event.target.files[0];
-
-    if (imageFile) {
-      if (imageFile.type === "image/heic") {
-        try {
-          const convertedBlob = await heic2any({
-            blob: imageFile,
-            toType: "image/jpeg",
-          });
-          const convertedFile = new File(
-            [convertedBlob],
-            imageFile.name.replace(/\.[^/.]+$/, ".jpeg"),
-            { type: "image/jpeg" }
-          );
-          const imageUrl = URL.createObjectURL(convertedFile);
-          SetImage({ image: convertedFile, image_url: imageUrl });
-        } catch (error) {
-          toast.error("Failed to convert HEIC image.");
-          console.error("Error converting HEIC image:", error);
-        }
-      } else {
-        // For non-HEIC images
-        const imageUrl = URL.createObjectURL(imageFile);
-        SetImage({ image: imageFile, image_url: imageUrl });
-      }
-    }
+    const imageUrl = URL.createObjectURL(imageFile);
+    SetImage({ image: imageFile, image_url: imageUrl });
   }
+
 
   const handleStaffdata = (e) => {
     setStaffDetail({ ...staffDetail, [e.target.name]: e.target.value });
