@@ -76,8 +76,8 @@ const AddListenerReq = ({ setLoading, setStatus1 }) => {
       email: staffDetail.email,
       language: staffDetail.language,
       age: staffDetail.age,
-      password: staffDetail.password,
-      Confrim_password: staffDetail.Confrim_password,
+      password: staffDetail.password || "No_Password",
+      Confrim_password: staffDetail.Confrim_password || "No_Password",
       gender: selected,
     };
     const result = await SentListenerReq(body);
