@@ -298,7 +298,7 @@ const Addstaff = ({ setStaff, dataForm }) => {
                 )}
               </Listbox>
             </div>
-            <div className="w-full relative lg:col-span-1 col-span-2">
+            {/* <div className="w-full relative lg:col-span-1 col-span-2">
               <RiLockPasswordFill className="absolute top-1/2 -translate-y-1/2 left-6 text-white text-lg" />
               <input
                 type={showPassword ? "text" : "password"}
@@ -349,7 +349,7 @@ const Addstaff = ({ setStaff, dataForm }) => {
               >
                 {showConfrimPassword ? <BsFillEyeSlashFill color="white" size={20} /> : <IoEyeSharp color="white" size={20} />}
               </button>
-            </div>
+            </div> */}
             <div className="w-full relative col-span-2">
               <img src={Bio} alt="" className="absolute top-[27px] left-6" />
               <textarea
