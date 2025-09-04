@@ -23,7 +23,7 @@ const AboutUs = () => {
                 inquiry or find the{" "}
                 <a
                   class="text-base text-[#00e5ff]"
-                  href="mailto:talkangels5524@gmail.com"
+                  href="mailto:support@talkangels.com"
                 >
                   department email
                 </a>{" "}
@@ -33,8 +33,8 @@ const AboutUs = () => {
                 <h2 className="text-white">
                   Email:
                   <span class="text-base text-[#00e5ff] ml-4">
-                    <a href="mailto:talkangels5524@gmail.com">
-                      talkangels5524@gmail.com
+                    <a href="mailto:support@talkangels.com">
+                      support@talkangels.com
                     </a>
                   </span>
                 </h2>

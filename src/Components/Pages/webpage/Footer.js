@@ -87,10 +87,10 @@ const Footer = () => {
               Charges for service is {charges?.call}.00 Rs/Minutes.
             </p> */}
             <Link
-              to="mailto:Talkangels5524@Gmail.Com"
+              to="mailto:support@talkangels.com"
               className="text-white text-lg lg:text-right text-center font-medium leading-[37.674px] block w-fit md:ml-auto md:mx-0 mx-auto"
             >
-              talkangels5524@gmail.com
+              support@talkangels.com
             </Link>
             <h2 className="text-white lg:text-right text-center text-lg font-light">
               © Copyright 2024 -{" "}

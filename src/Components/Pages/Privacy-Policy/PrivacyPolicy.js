@@ -132,7 +132,7 @@ const PrivacyPolicy = () => {
         "You acknowledge and agree that TALKANGELS should not be held liable for any act or conduct of either party that originates from the discussion that takes place between the real-time user and listener. Furthermore, even the listener can not be held liable for any wrongful act of the user, and the discussion shall not be taken as instigation to commit any illegal activity either from the listener or us. ",
         "Members can reach us by mail/post at: ",
         "Lal Bungalow, Surat - Dumas Rd, Near, Athwalines, Athwa, Surat, Gujarat 395001",
-        "Or by email at: talkangels5524@gmail.com",
+        "Or by email at: support@talkangels.com",
         "If you have questions or feedback about Membership Services, please send it to the email address above. ",
         "You agree that you are solely responsible for (and that TALKANGELS has no responsibility to you for) your use of any Membership Service, any breach of your obligations under the Membership Terms of Service, and for the consequences (including loss or damage of any kind which TALKANGELS may suffer) of any such breach. ",
         "You acknowledge and agree that you are responsible for paying all fees in a timely manner and for providing us with a valid credit card, payment information, or another form of payment acceptable to TALKANGELS. ",
