@@ -93,7 +93,7 @@ const Footer = () => {
               support@talkangels.com
             </Link>
             <h2 className="text-white lg:text-right text-center text-lg font-light">
-              © Copyright 2024 -{" "}
+              © Copyright {new Date().getFullYear()} -{" "}
               <span className="text-Homegreen"> TALKANGELS</span>, All Rights
               Reserved.
             </h2>

@@ -12,7 +12,11 @@ import User_1 from "../../assets/homepage/Herosection.png";
 import User_2 from "../../assets/homepage/Herosection2.png";
 import User_3 from "../../assets/homepage/Herosection3.png";
 import User_4 from "../../assets/homepage/Herosection4.png";
-import Listenersimg_1 from "../../assets/homepage/Listenersimg_1.png";
+import screen1 from '../../assets/homepage/screen1.svg'
+import screen2 from '../../assets/homepage/screen2.svg'
+import screen3 from '../../assets/homepage/screen3.svg'
+import screen4 from '../../assets/homepage/screen4.svg'
+import screen5 from '../../assets/homepage/screen5.svg'
 import Phone from "../../assets/homepage/iPhone-13-Pro-Front.png";
 import card from "../../assets/homepage/phonecard.png";
 import Speciality_mobile from "../../assets/homepage/SpecialityMobile.png";
@@ -144,7 +148,37 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="pt-[66px] bg-HOmepage mt-[139px] pb-[64px]">
+        <div className="xl:max-w-[90%] mx-auto px-10 space-y-10 py-10">
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <img src={screen1} className="w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] object-contain" />
+            <div className="space-y-6">
+              <h3 className="text-white text-[22px] lg:text-[40px] sm:text-right">Find new friends on private calls</h3>
+              <p className="text-white/60 text-[18px] lg:text-[30px] sm:text-right max-w-[950px]">Talk your heart out with friends in one-on-one audio calls. No judgment, no pressure — just real conversations at your pace.</p>
+            </div>
+          </div>
+          <div className="flex flex-col-reverse sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <div className="space-y-6">
+              <h3 className="text-white text-[22px] lg:text-[40px]">Say hello to new friends!</h3>
+              <p className="text-white/60 text-[18px] lg:text-[30px] max-w-[950px]">Break the ice with a quick chat or call — it’s easy, fun, and just a “hello” away. Whether you're looking to vent, laugh, or connect, there’s always someone to talk to.</p>
+            </div>
+            <img src={screen2} className="w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] object-contain" />
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <img src={screen5} className="w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] object-contain" />
+            <div className="space-y-6">
+              <h3 className="text-white text-[22px] lg:text-[40px] sm:text-right">Fun talks without any distractions</h3>
+              <p className="text-white/60 text-[18px] lg:text-[30px] sm:text-right max-w-[950px]">No likes, no swipes, no crowd — just pure one-on-one conversations. Enjoy meaningful chats where your voice truly matters.</p>
+            </div>
+          </div>
+          <div className="flex flex-col-reverse sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <div className="space-y-6">
+              <h3 className="text-white text-[22px] lg:text-[40px]">100% safe and secure audio calls</h3>
+              <p className="text-white/60 text-[18px] lg:text-[30px] max-w-[950px]">Your privacy is our priority — every call stays just between you and your friend. No recordings, no leaks, just a safe space to be yourself.</p>
+            </div>
+            <img src={screen4} className="w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] object-contain" />
+          </div>
+        </div>
+        {/* <div className="pt-[66px] bg-HOmepage mt-[139px] pb-[64px]">
           <h3 className="text-center text-white text-[64px] relative">
             Listeners
             <span className="absolute bottom-5 left-1/2 -translate-x-1/2">
@@ -205,8 +239,8 @@ const Index = () => {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="pt-[151px]">
+        </div> */}
+        {/* <div className="pt-[151px]">
           <div className="xl:max-w-[90%] mx-auto px-3 overflow-x-hidden">
             <div className="flex items-center lg:flex-nowrap flex-wrap lg:justify-start justify-center">
               <div>
@@ -537,7 +571,8 @@ const Index = () => {
             />
           </div>
           <Footer />
-        </div>
+        </div> */}
+        <Footer />
       </div>
     </>
   );
