@@ -1,8 +1,8 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { Link, useNavigate } from "react-router-dom";
-
 import Logo from "../../assets/Webpagelogo.png";
+import newtakangleLogo from "../../assets/newtakangleLogo.svg";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Routing } from "../../../utils/routing";
 import Apk from "../../assets/apk/Talkangels.apk";
@@ -39,13 +39,14 @@ const Header = () => {
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex h-24 items-center justify-between">
                 <div className="flex items-center justify-between w-full">
-                  <div className="flex-shrink-0">
+                  <div className="flex items-center gap-2">
                     <img
-                      className="h-10 w-auto"
-                      src={Logo}
+                      className="h-16 w-auto"
+                      src={newtakangleLogo}
                       alt="Logo"
                       onClick={() => navigate("/")}
                     />
+                    <h1 className="text-white font-Allerta text-[20px]">TALKANGELS</h1>
                   </div>
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4 items-center">
@@ -60,12 +61,12 @@ const Header = () => {
                           </Link>
                         </>
                       ))}
-                      <a
+                      {/* <a
                         href={Apk}
                         className="border rounded-full w-[100px] h-[40px] text-white flex items-center justify-center"
                       >
                         Download
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>
@@ -97,12 +98,12 @@ const Header = () => {
                     </Disclosure.Button>
                   </>
                 ))}
-                <a
+                {/* <a
                   href={Apk}
                   className="border rounded-lg w-full h-[40px] text-white flex items-center justify-center"
                 >
                   Download
-                </a>
+                </a> */}
               </div>
             </Disclosure.Panel>
           </>

@@ -112,8 +112,7 @@ const Index = () => {
                   Unlocked!
                 </h2>
                 <p className="text-white text-[30px] font-thin lg:max-w-[640px] lg:text-left text-center">
-                  Join the exciting journey of meeting new friends within our
-                  vibrant community of over one million users!
+                  Join us on this exciting journey of meeting new friends and being part of our growing community!
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                   <a
@@ -123,7 +122,7 @@ const Index = () => {
                   >
                     Get Started <ArrowRight />
                   </a>
-                  <a
+                  {/* <a
                     href={Apk}
                     download="talkangels"
                     className="w-[300px] h-[80px] bg-red text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
@@ -132,7 +131,7 @@ const Index = () => {
                     <div className="-rotate-45">
                       <ArrowRight />
                     </div>
-                  </a>
+                  </a> */}
                 </div>
               </div>
               <div className="relative  items-center justify-center lg:order-2 order-1 lg:flex hidden">

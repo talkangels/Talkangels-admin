@@ -137,7 +137,7 @@ const Faq = () => {
 
   // Reusable section renderer
   const renderFaqSection = (title, start, end) => (
-    <div className="mx-auto px-6 py-12 sm:py-32 lg:px-8 lg:py-12 lg:max-w-[85vw]">
+    <div className="mx-auto px-6 lg:px-8 py-6 lg:max-w-[85vw]">
       <div>
         <h2 className="text-2xl font-bold leading-10 tracking-tight text-white">
           {title}
