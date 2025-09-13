@@ -172,7 +172,7 @@ const PrivacyPolicy = () => {
         </div>
         <div className="bg-darkBlue pt-4 text-white">
           <h1 className="text-center font-semibold text-5xl">
-            Privacy Policy, T&C, and R&C
+            Privacy Policy
           </h1>
         </div>
         <div className="flex flex-col gap-6 max-w-7xl mx-auto mt-10 px-4">
@@ -219,7 +219,7 @@ const PrivacyPolicy = () => {
         </div>
         <div className="bg-darkBlue py-5 mt-10">
           <p className="mt-10 text-lg capitalize leading-[35px] text-center font-semibold text-white">
-            This Privacy Policy, T&C, and R&C updated on 11th September {new Date().getFullYear()}
+            This Privacy Policy updated on 11th September {new Date().getFullYear()}
           </p>
         </div>
       </div>

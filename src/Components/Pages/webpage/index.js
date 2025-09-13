@@ -104,7 +104,7 @@ const Index = () => {
                     <DoorShape />
                   </span>
                 </h2>
-                <h2 className="text-Homegreen lg:text-[64px] text-[58px] lg:justify-start justify-center font-bold mt-5 flex items-center gap-2 flex-wrap">
+                <h2 className="lg:text-[64px] text-[58px] lg:justify-start justify-center font-bold mt-5 flex items-center gap-2 flex-wrap bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
                   Friendship
                   <span className="h-[69px] w-[87px] block bg-hero_pattern -mt-4"></span>
                   Forever
@@ -119,7 +119,7 @@ const Index = () => {
                   <a
                     href={Apk}
                     download="talkangels"
-                    className="w-[260px] h-[80px] bg-Homegreen text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
+                    className="w-[260px] h-[80px] bg-gradient-to-r from-purple-500 to-pink-500 text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >
                     Get Started <ArrowRight />
                   </a>

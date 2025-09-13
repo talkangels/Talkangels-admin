@@ -31,6 +31,14 @@ const AboutUs = () => {
               </p>
               <div className="mt-4">
                 <h2 className="text-white">
+                  Name:
+                  <span class="text-base text-[#00e5ff] ml-4">
+                    <a>
+                      RAIYANI PIYUSH JINABHAI
+                    </a>
+                  </span>
+                </h2>
+                <h2 className="text-white">
                   Email:
                   <span class="text-base text-[#00e5ff] ml-4">
                     <a href="mailto:support@talkangels.com">

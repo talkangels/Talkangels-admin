@@ -1,4 +1,16 @@
 import React, { useState, useEffect } from "react";
+import boy1 from '../../assets/cardAnimation/boy1.jfif'
+import boy2 from '../../assets/cardAnimation/boy2.jfif'
+import boy3 from '../../assets/cardAnimation/boy3.jfif'
+
+import gril1 from '../../assets/cardAnimation/gril1.jfif'
+import gril2 from '../../assets/cardAnimation/gril2.jfif'
+import gril3 from '../../assets/cardAnimation/gril3.jfif'
+
+import gril4 from '../../assets/cardAnimation/gril4.jfif'
+import gril5 from '../../assets/cardAnimation/gril5.jfif'
+import gril6 from '../../assets/cardAnimation/gril6.jfif'
+
 
 const cardsData = [
     {
@@ -6,9 +18,9 @@ const cardsData = [
         gradient: "from-purple-500 to-pink-500",
         color: 'text-white',
         images: [
-            "https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fHww",
-            "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVyc29ufGVufDB8fDB8fHww",
-            "https://images.unsplash.com/photo-1554151228-14d9def656e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+            gril1,
+            boy1,
+            gril4
         ],
     },
     {
@@ -16,9 +28,9 @@ const cardsData = [
         gradient: "from-gray-200 to-gray-300",
         color: 'text-black',
         images: [
-            "https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fHww",
-            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fHww",
-            "https://plus.unsplash.com/premium_photo-1664536392896-cd1743f9c02c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+            boy2,
+            gril2,
+            gril5
         ],
     },
     {
@@ -26,9 +38,9 @@ const cardsData = [
         gradient: "from-gray-800 to-gray-900",
         color: 'text-white',
         images: [
-            "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fHww",
-            "https://images.unsplash.com/photo-1491349174775-aaafddd81942?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
-            "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+            gril3,
+            boy3,
+            gril6
         ],
     },
 ];
