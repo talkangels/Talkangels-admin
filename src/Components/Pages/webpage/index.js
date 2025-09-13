@@ -16,7 +16,7 @@ import screen1 from '../../assets/homepage/screen1.svg'
 import screen2 from '../../assets/homepage/screen2.svg'
 import screen3 from '../../assets/homepage/screen3.svg'
 import screen4 from '../../assets/homepage/screen4.svg'
-import screen5 from '../../assets/homepage/screen5.svg'
+import screen5 from '../../assets/homepage/screen5.png'
 import Phone from "../../assets/homepage/iPhone-13-Pro-Front.png";
 import card from "../../assets/homepage/phonecard.png";
 import Speciality_mobile from "../../assets/homepage/SpecialityMobile.png";
