@@ -203,6 +203,13 @@ input[type=number] {
   }
 }
 
+/* You can add custom hover / tilt animations */
+.card:hover {
+  transform: scale(1.05) rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+
+
 /* .imagesContainer {
   width: 852px;
   height: 803px;

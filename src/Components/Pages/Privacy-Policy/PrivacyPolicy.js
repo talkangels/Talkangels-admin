@@ -219,14 +219,8 @@ const PrivacyPolicy = () => {
         </div>
         <div className="bg-darkBlue py-5 mt-10">
           <p className="mt-10 text-lg capitalize leading-[35px] text-center font-semibold text-white">
-            This Privacy Policy, T&C, and R&C updated on 11th Spt {new Date().getFullYear()}
+            This Privacy Policy, T&C, and R&C updated on 11th September {new Date().getFullYear()}
           </p>
-          <Link
-            className="text-lg leading-[35px] text-center font-semibold text-Sky w-full block"
-            to="/"
-          >
-            www.talkangels.com
-          </Link>
         </div>
       </div>
     </>

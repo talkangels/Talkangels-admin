@@ -34,15 +34,15 @@ const Refund = () => {
               its community.
             </p>
           </div>
-          <div className=" py-5 absolute bottom-0 left-0 w-full">
+          <div className=" py-5 w-full">
             <p className="mt-10 text-lg capitalize leading-[35px] text-center font-semibold text-white">
-              This privacy policy updated on 03th APR 2024
+              Refund & Cancellation Policy Updated on 11th September 2025
             </p>
             <Link
               className="text-lg leading-[35px] text-center font-semibold text-Sky w-full block"
-              to="/"
+              to="mailto:support@talkangels.com"
             >
-              www.talkangels.com
+              support@talkangels.com
             </Link>
           </div>
         </div>

@@ -41,7 +41,7 @@ const Header = () => {
                 <div className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
                     <img
-                      className="h-16 w-auto"
+                      className="h-10 w-auto"
                       src={newtakangleLogo}
                       alt="Logo"
                       onClick={() => navigate("/")}

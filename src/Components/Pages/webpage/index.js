@@ -24,6 +24,7 @@ import Listenersimg_2 from "../../assets/homepage/Listenersimg_1.png";
 import Header from "./Header";
 import Footer from "./Footer";
 import Apk from "../../assets/apk/Talkangels.apk";
+import AnimatedCards from "./AnimatedCards ";
 
 const Index = () => {
   const settings = {
@@ -93,9 +94,9 @@ const Index = () => {
     <>
       <div className="bg-Mainbackground_gradint">
         <Header />
-        <div className="xl:max-w-[90%] mx-auto px-3">
+        <div className="xl:max-w-[90%] mx-auto px-3 py-20">
           <div>
-            <div className="grid lg:grid-cols-2 grid-cols-1 xl:items-center items-start justify-between flex-wrap">
+            <div className="flex xl:items-center justify-between">
               <div className="">
                 <h2 className="text-[52px] font-league tracking-wide text-white font-light relative lg:w-fit lg:text-left text-center">
                   The door to
@@ -134,15 +135,16 @@ const Index = () => {
                   </a> */}
                 </div>
               </div>
-              <div className="relative  items-center justify-center lg:order-2 order-1 lg:flex hidden">
-                <div className="">
+              <div className="hidden lg:block">
+                {/* <div className="">
                   <div className="imagesContainer">
                     <img src={User_1} alt="" className="" />
                     <img src={User_2} alt="" className="" />
                     <img src={User_3} alt="" className="" />
                     <img src={User_4} alt="" className="" />
                   </div>
-                </div>
+                </div> */}
+                <AnimatedCards />
               </div>
             </div>
           </div>
