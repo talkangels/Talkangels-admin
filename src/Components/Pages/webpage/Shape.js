@@ -1,17 +1,13 @@
 export const DoorShape = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="113"
-      height="12"
-      viewBox="0 0 113 12"
-      fill="none"
-    >
-      <path
-        d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349"
-        stroke="#FF4848"
-        strokeWidth="2"
-      />
+    <svg width="113" height="12" viewBox="0 0 113 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[113px] h-[12px]">
+      <defs>
+        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="rgb(168,85,247)" />
+          <stop offset="100%" stop-color="rgb(236,72,153)" />
+        </linearGradient>
+      </defs>
+      <path d="M1 11C18.6957 4.64899 68.7288 -0.641643 112 1.47349" stroke="url(#lineGradient)" stroke-width="2" />
     </svg>
   );
 };

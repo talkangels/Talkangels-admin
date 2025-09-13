@@ -30,10 +30,10 @@ const Footer = () => {
               TALKANGELS
             </h2>
             <div className="flex items-center gap-6 flex-wrap ml-2 lg:justify-start justify-center lg:mt-0 my-6">
-              <Facebook />
+              {/* <Facebook />
               <Twitter />
               <Instagram />
-              <Linkedin />
+              <Linkedin /> */}
             </div>
           </div>
           <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
