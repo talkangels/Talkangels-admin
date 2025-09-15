@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import AboutImg from "../../assets/homepage/About.png";
@@ -6,8 +6,48 @@ import Call from "../../assets/StaffDetails/call.png";
 import Bio from "../../assets/StaffDetails/addBio.png";
 import User from "../../assets/StaffDetails/user.png";
 import Age from "../../assets/StaffDetails/age.png";
+import { SendSupport } from "../../services/Support";
+import { toast } from "react-toastify";
 
 const AboutUs = () => {
+  const [formMessage, setFormMessage] = useState({ type: "", text: "" });
+  const [support, setsupport] = useState({
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "message": ""
+  })
+
+  const handleCollect = (e) => {
+    setsupport({
+      ...support,
+      [e.target.name]: e.target.value
+    })
+  }
+
+
+  const handleSendSupport = async (e) => {
+    try {
+      e.preventDefault();
+      const result = await SendSupport(support)
+
+      if (result?.success) {
+        setFormMessage({ type: "success", text: result?.message || "Your request has been submitted successfully!" });
+        setsupport({
+          "first_name": "",
+          "last_name": "",
+          "email": "",
+          "message": ""
+        })
+      } else {
+        setFormMessage({ type: "error", text: result?.message || "Something went wrong" });
+      }
+    } catch (error) {
+      return console.log(error.message)
+    }
+  }
+
+
   return (
     <>
       <div className=" px-3 bg-[#141425]">
@@ -60,7 +100,17 @@ const AboutUs = () => {
                 </h2>
               </div>
             </div>
-            <div className="lg:w-[750px] grid grid-cols-2 gap-10 p-4 border-2 rounded-md">
+            <form onSubmit={handleSendSupport} className="lg:w-[750px] grid grid-cols-2 gap-10 p-4 border-2 rounded-md">
+              {formMessage.text && (
+                <div
+                  className={`col-span-2 p-3 rounded-md text-base text-center font-medium ${formMessage.type === "success"
+                      ? " text-green border border-green"
+                      : "text-red border border-red"
+                    }`}
+                >
+                  {formMessage.text}
+                </div>
+              )}
               <div className="w-full relative lg:col-span-1 col-span-2">
                 <img
                   src={User}
@@ -69,9 +119,12 @@ const AboutUs = () => {
                 />
                 <input
                   type="text"
-                  name="name"
+                  name="first_name"
+                  value={support.first_name}
+                  onChange={handleCollect}
                   className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
                   placeholder="First Name*"
+                  required
                 />
               </div>
               <div className="w-full relative lg:col-span-1 col-span-2">
@@ -82,9 +135,12 @@ const AboutUs = () => {
                 />
                 <input
                   type="text"
-                  name="name"
+                  name="last_name"
+                  value={support.last_name}
+                  onChange={handleCollect}
                   className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
                   placeholder="Last Name*"
+                  required
                 />
               </div>
               <div className="w-full relative col-span-2">
@@ -105,8 +161,11 @@ const AboutUs = () => {
                 <input
                   type="email"
                   name="email"
+                  value={support.email}
+                  onChange={handleCollect}
                   className="text-white/50 bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50"
                   placeholder="Email*"
+                  required
                 />
               </div>
               <div className="w-full relative col-span-2">
@@ -114,15 +173,18 @@ const AboutUs = () => {
                 <textarea
                   className="text-white/50 bg-darkBlack w-full h-[125px] rounded-md focus:outline-none pl-[60px] placeholder:text-white/50 pt-[27px]"
                   placeholder="What can we help you with?"
-                  name="bio"
+                  name="message"
+                  value={support.message}
+                  onChange={handleCollect}
+                  required
                 ></textarea>
               </div>
               <div className="w-full relative col-span-2">
-                <button className="border-2 rounded-md mx-auto w-[110px] h-[45px] text-green font-semibold font-Popins  border-green">
+                <button type="submit" className="border-2 rounded-md mx-auto w-[110px] h-[45px] text-green font-semibold font-Popins  border-green">
                   Submit
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
         <Footer />
