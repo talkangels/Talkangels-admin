@@ -25,6 +25,7 @@ export const Routing = {
   TransactionHistory: "/admin/transactionHistory",
   ListenerRequst: "/admin/listener-requst",
   ReportAndProblem: "/admin/report-and-problem",
+  Support: "/admin/support-request",
   Sendnotification: "/admin/sendnotification",
   WebPageAdmin: "/admin/web-page",
 };

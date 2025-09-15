@@ -32,6 +32,9 @@ const UserDetail = lazy(() => import("./Components/Pages/UserList/UserList"));
 const ReportAndProblem = lazy(() =>
   import("./Components/Pages/Report/ReportAndProblem")
 );
+const Support = lazy(() =>
+  import("./Components/Pages/Support/Support")
+);
 const TransactionHistory = lazy(() =>
   import("./Components/Pages/TransactionHistory/TransactionHistory")
 );
@@ -162,6 +165,11 @@ const App = () => {
     {
       path: Routing.ReportAndProblem,
       component: ReportAndProblem,
+      isPrivateRoute: true,
+    },
+    {
+      path: Routing.Support,
+      component: Support,
       isPrivateRoute: true,
     },
     {

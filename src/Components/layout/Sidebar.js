@@ -8,6 +8,7 @@ import StaffDetails from "../assets/dashboard/staffDetails.png";
 import FeedbackList from "../assets/dashboard/feedbackList.png";
 import UserDetails from "../assets/dashboard/userDetails.png";
 import Settings from "../assets/dashboard/settings.png";
+import Support from "../assets/dashboard/Support.svg";
 import Wallet from "../assets/dashboard/wallet.png";
 import Logout from "../assets/dashboard/logOut.png";
 import TransactionHistorys from "../assets/dashboard/Vector.png";
@@ -45,6 +46,11 @@ const navigation = [
     name: "Report a Problem",
     href: Routing.ReportAndProblem,
     icon: FeedbackList,
+  },
+  {
+    name: "Support Request",
+    href: Routing.Support,
+    icon: Support,
   },
   {
     name: "Withdraw Request",
@@ -160,7 +166,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                                     "group flex gap-x-3 rounded-md h-[82px] text-[22px] pl-[40px] items-center leading-6  rounded-tr-full rounded-br-full max-w-[340px] font-league"
                                   )}
                                 >
-                                  <img src={item.icon} alt="" />
+                                  <img src={item.icon} className="w-[25px] h-[30px] object-contain" alt="" />
                                   {item.name}
                                 </Link>
                               </li>
