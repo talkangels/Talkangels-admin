@@ -13,6 +13,7 @@ export const Routing = {
   BeListener: "/be-listener",
   Refund: "/refund",
   Blog: "/blog",
+  ChildSafetyStandards:'/child-safety-standards',
 
   // admin
   Dashboard: "/admin/dashboard",

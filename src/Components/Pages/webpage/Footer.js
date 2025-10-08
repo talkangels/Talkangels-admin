@@ -36,34 +36,50 @@ const Footer = () => {
               <Linkedin /> */}
             </div>
           </div>
-          <div className="grid lg:grid-cols-2 gap-x-[67px] lg:w-auto w-full">
-            <Link
-              to="/refund"
-              className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-            >
-              Refund & Cancellation
-            </Link>
-            <Link
-              to="/policies"
-              className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to={Routing.Faq}
-              className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-            >
-              FAQs
-            </Link>
+          <div className="grid lg:grid-cols-3 gap-x-[67px] lg:w-auto w-full">
+            {/* Left Column */}
+            <div className="flex flex-col items-center lg:items-end space-y-1">
+              <Link
+                to={Routing.Refund}
+                className="text-white text-[18px] font-extralight tracking-[0.36px]"
+              >
+                Refund & Cancellation
+              </Link>
+              <Link
+                to={Routing.Faq}
+                className="text-white text-[18px] font-extralight tracking-[0.36px]"
+              >
+                FAQs
+              </Link>
+            </div>
 
-            <Link
-              to={Routing.About}
-              className="text-white lg:text-right text-center text-[18px] font-extralight tracking-[0.36px]"
-            >
-              Contact-Us
-            </Link>
-            {/* </div> */}
+            {/* Center Column */}
+            <div className="flex flex-col items-center space-y-1">
+              <Link
+                to={Routing.ChildSafetyStandards}
+                className="text-white text-[18px] font-extralight tracking-[0.36px]"
+              >
+                Child Safety Standards
+              </Link>
+              <Link
+                to={Routing.PrivacyPolicy}
+                className="text-white text-[18px] font-extralight tracking-[0.36px]"
+              >
+                Privacy Policy
+              </Link>
+            </div>
+
+            {/* Right Column */}
+            <div className="flex justify-center lg:justify-start">
+              <Link
+                to={Routing.About}
+                className="text-white text-[18px] font-extralight tracking-[0.36px]"
+              >
+                Contact-Us
+              </Link>
+            </div>
           </div>
+
         </div>
         <div className="py-11 flex items-center justify-between flex-wrap">
           <div className="flex items-center flex-wrap lg:justify-start justify-center">

@@ -14,6 +14,9 @@ const Register = lazy(() => import("./Components/Pages/Login/ragisterAdmin"));
 const PrivacyPolicy = lazy(() =>
   import("./Components/Pages/Privacy-Policy/PrivacyPolicy")
 );
+const ChildSafetyStandards = lazy(() =>
+  import("./Components/Pages/Privacy-Policy/ChildSafetyStandards")
+);
 const TermsConditions = lazy(() =>
   import("./Components/Pages/Privacy-Policy/TermsConditions")
 );
@@ -110,6 +113,11 @@ const App = () => {
     {
       path: Routing.PrivacyPolicy,
       component: PrivacyPolicy,
+      isPrivateRoute: false,
+    },
+    {
+      path: Routing.ChildSafetyStandards,
+      component: ChildSafetyStandards,
       isPrivateRoute: false,
     },
     {
