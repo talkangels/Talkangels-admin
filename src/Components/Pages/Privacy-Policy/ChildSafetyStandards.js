@@ -47,7 +47,7 @@ const ChildSafetyStandards = () => {
       isdot: true
     },
     {
-      title: "14. Grievance Redressal Mechanism",
+      title: "5. Grievance Redressal Mechanism",
       title2: "",
       body: [
         "If you have a grievance regarding this Child Safety Standards, contact me at:",
