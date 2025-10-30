@@ -8,6 +8,12 @@ import Spinner from "../../layout/spinner";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { Routing } from "../../../utils/routing";
+import { MdInstallMobile } from "react-icons/md";
+import { Switch } from "@headlessui/react";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const Setting = () => {
   const navigate = useNavigate();
@@ -20,7 +26,10 @@ const Setting = () => {
     mobile_number: "",
     staff_charges: "",
     user_charges: "",
-    revenue: ""
+    revenue: "",
+    App_version_force: "",
+    App_Version_Name: "",
+    App_Version_Code: ""
   });
 
   const handleStaffdata = (e) => {
@@ -38,6 +47,9 @@ const Setting = () => {
         staff_charges: result.data.staff_charges,
         user_charges: result.data.user_charges,
         revenue: result.data.revenue,
+        App_version_force: result.data.App_version_force,
+        App_Version_Name: result.data.App_Version_Name,
+        App_Version_Code: result.data.App_Version_Code
       });
       setLoading(false);
     } else {
@@ -57,6 +69,25 @@ const Setting = () => {
   const handelUpdatedetail = async () => {
     setLoading(true);
     const result = await UpdateAdminDetail(adminDetail, id);
+    if (result?.status === 200) {
+      setLoading(false);
+      toast.success(result?.message);
+      getAdminDetail();
+    } else {
+      setLoading(false);
+      toast.error(result?.message);
+    }
+  };
+
+  const handelUpdateForceInstall = async (Force_install) => {
+    setLoading(true);
+    const body = {
+      App_version_force: !Force_install
+    }
+
+    console.log(body);
+  
+    const result = await UpdateAdminDetail(body, id);
     if (result?.status === 200) {
       setLoading(false);
       toast.success(result?.message);
@@ -131,7 +162,7 @@ const Setting = () => {
               <div className="w-full relative lg:col-span-1 col-span-2">
                 {
                   adminDetail.staff_charges &&
-                  <label className="text-white ml-5">Staff Charges</label>
+                  <label className="text-white">Staff Charges</label>
                 }
                 <div className="w-full relative">
                   <img
@@ -152,7 +183,7 @@ const Setting = () => {
               <div className="w-full lg:col-span-1 col-span-2">
                 {
                   adminDetail.user_charges &&
-                  <label className="text-white ml-5">User Charges</label>
+                  <label className="text-white">User Charges</label>
                 }
                 <div className="w-full relative">
                   <img
@@ -168,6 +199,75 @@ const Setting = () => {
                     className="text-white bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white"
                     placeholder="User Charges"
                   />
+                </div>
+              </div>
+              <div className="col-span-2 grid grid-cols-11 gap-5">
+                <div className="w-full relative col-span-5">
+                  {
+                    adminDetail.App_Version_Name &&
+                    <label className="text-white">App Version Name</label>
+                  }
+                  <div className="w-full relative">
+                    <MdInstallMobile className="absolute top-1/2 -translate-y-1/2 left-6 text-[25px] text-white" />
+                    <input
+                      name="App_Version_Name"
+                      type="text"
+                      onChange={handleStaffdata}
+                      value={adminDetail.App_Version_Name}
+                      className="text-white bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white"
+                      placeholder="Staff Charges"
+                    />
+                  </div>
+                </div>
+                <div className="w-full relative col-span-5">
+                  {
+                    adminDetail.App_Version_Code &&
+                    <label className="text-white">App Version Code</label>
+                  }
+                  <div className="w-full relative">
+                    <MdInstallMobile className="absolute top-1/2 -translate-y-1/2 left-6 text-[25px] text-white" />
+                    <input
+                      name="App_Version_Code"
+                      type="text"
+                      onChange={handleStaffdata}
+                      value={adminDetail.App_Version_Code}
+                      className="text-white bg-darkBlack w-full h-[70px] rounded-md focus:outline-none pl-[60px] placeholder:text-white"
+                      placeholder="User Charges"
+                    />
+                  </div>
+                </div>
+                <div className="w-full relative ">
+                  <label className="text-white text-center">Force Install</label>
+                  <div className="w-full flex items-center justify-center h-[70px]">
+                    <Switch
+                      checked={adminDetail.App_version_force}
+                      onChange={() => handelUpdateForceInstall(adminDetail.App_version_force)}
+                      className="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full focus:outline-none focus:border-none focus-visible:outline-none focus:ring-0"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute h-full w-full rounded-md"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className={classNames(
+                          adminDetail.App_version_force
+                            ? "bg-lightgreen"
+                            : "bg-[#36394E]",
+                          "pointer-events-none absolute mx-auto h-4 w-9 rounded-full transition-colors duration-200 ease-in-out"
+                        )}
+                      />
+                      <span
+                        aria-hidden="true"
+                        className={classNames(
+                          adminDetail.App_version_force
+                            ? "translate-x-5 bg-green"
+                            : "translate-x-0 bg-[#798593]",
+                          "pointer-events-none absolute left-0 inline-block h-5 w-5 transform rounded-full shadow ring-0 transition-transform duration-200 ease-in-out"
+                        )}
+                      />
+                    </Switch>
+                  </div>
                 </div>
               </div>
               <div className="flex justify-between w-full flex-wrap col-span-2 p-5">
