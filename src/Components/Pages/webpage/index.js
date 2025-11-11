@@ -117,8 +117,8 @@ const Index = () => {
                 </p>
                 <div className="flex items-center gap-4 mt-[28px] flex-wrap lg:justify-start justify-center">
                   <a
-                    href={Apk}
-                    download="talkangels"
+                    href="https://play.google.com/store/apps/details?id=com.talkangels.pro&pcampaignid=web_share"
+                    target="_blank"
                     className="w-[260px] h-[80px] bg-gradient-to-r from-purple-500 to-pink-500 text-[28px] text-white rounded-full flex items-center justify-center gap-[34px]"
                   >
                     Get Started <ArrowRight />

@@ -86,12 +86,12 @@ const Footer = () => {
             <h2 className="text-white text-[26px] font-medium leading-[37.674px] mr-5">
               Get the App!
             </h2>
-            <a href={Apk} download="talkangels">
+            <a href="https://play.google.com/store/apps/details?id=com.talkangels.pro&pcampaignid=web_share"
+              target="_blank">
               <img src={PlayStore} alt="" />
             </a>
             <a
-              href={Apk}
-              download="talkangels"
+              href="https://play.google.com/store/apps/details?id=com.talkangels.pro&pcampaignid=web_share"
               target="_blank"
               className="ml-4"
             >
