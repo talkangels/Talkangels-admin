@@ -91,8 +91,8 @@ const Footer = () => {
               <img src={PlayStore} alt="" />
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.talkangels.pro&pcampaignid=web_share"
-              target="_blank"
+              // href="https://play.google.com/store/apps/details?id=com.talkangels.pro&pcampaignid=web_share"
+              // target="_blank"
               className="ml-4"
             >
               <img src={AppleStore} alt="" />
