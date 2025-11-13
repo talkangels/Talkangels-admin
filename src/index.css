@@ -59,3 +59,11 @@ body {
   z-index: 1;
   background: linear-gradient(180deg, #2a2949 0%, rgba(42, 41, 73, 0.61) 100%);
 }
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      display: none;
+    }
+
+    

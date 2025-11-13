@@ -48,7 +48,12 @@ const ResetPassword = lazy(() =>
 const ListenerRequst = lazy(() =>
   import("./Components/Pages/Listeners/Listeners")
 );
-
+const TransactionReport = lazy(() =>
+  import("./Components/Pages/Data Reports/TransactionReport")
+);
+const CallingReport = lazy(() =>
+  import("./Components/Pages/Data Reports/CallingReport")
+);
 const Setting = lazy(() => import("./Components/Pages/setting/Setting"));
 const WebPageAdmin = lazy(() => import("./Components/Pages/webpage/admin/web"));
 const Faq = lazy(() => import("./Components/Pages/webpage/Faq"));
@@ -188,6 +193,16 @@ const App = () => {
     {
       path: Routing.Settings,
       component: Setting,
+      isPrivateRoute: true,
+    },
+    {
+      path: Routing.callingReport,
+      component: CallingReport,
+      isPrivateRoute: true,
+    },
+    {
+      path: Routing.transctionReport,
+      component: TransactionReport,
       isPrivateRoute: true,
     },
     {

@@ -6,14 +6,14 @@ export const Routing = {
   Register: "/admin/register",
   PrivacyPolicy: "/policies",
   TermsConditions: "/tnc",
-  Payment:"/payment/:id/:phone/:name/:amount/:token",
+  Payment: "/payment/:id/:phone/:name/:amount/:token",
   Faq: "/faq's",
   About: "/contact-us",
   Listeners: "/listeners",
   BeListener: "/be-listener",
   Refund: "/refund",
   Blog: "/blog",
-  ChildSafetyStandards:'/child-safety-standards',
+  ChildSafetyStandards: '/child-safety-standards',
 
   // admin
   Dashboard: "/admin/dashboard",
@@ -29,4 +29,6 @@ export const Routing = {
   Support: "/admin/support-request",
   Sendnotification: "/admin/sendnotification",
   WebPageAdmin: "/admin/web-page",
+  callingReport: "/admin/calling-report",
+  transctionReport: "/admin/transaction-report",
 };

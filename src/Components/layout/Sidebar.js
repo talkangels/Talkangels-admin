@@ -15,6 +15,8 @@ import TransactionHistorys from "../assets/dashboard/Vector.png";
 import { Link, useNavigate } from "react-router-dom";
 import { Routing } from "../../utils/routing";
 import Listener from "../assets/dashboard/User-Podcast.svg";
+import DataReportsMenu from '../Pages/Data Reports/DataReportsMenu'
+
 
 const navigation = [
   {
@@ -171,6 +173,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                                 </Link>
                               </li>
                             ))}
+                            <DataReportsMenu current={current} setSidebarOpen={setSidebarOpen} />
                           </ul>
                         </li>
                         <li>
@@ -224,6 +227,7 @@ const Sidebar = ({ setSidebarOpen, sidebarOpen }) => {
                       </Link>
                     </li>
                   ))}
+                  <DataReportsMenu current={current} setSidebarOpen={setSidebarOpen} />
                 </ul>
               </li>
               <li>

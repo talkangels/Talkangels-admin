@@ -249,3 +249,12 @@ input[type=number] {
     opacity: 1;
   }
 } */
+
+/* input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      display: none;
+    } */
+
+/* input[type="date"] {
+  color-scheme: dark;
+} */
