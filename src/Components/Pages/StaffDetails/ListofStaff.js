@@ -120,6 +120,9 @@ const ListofStaff = () => {
                   >
                     Status
                   </th>
+                  <th scope="col" className="relative">
+                    <span className="sr-only">Edit</span>
+                  </th>
                   <th scope="col" className="relative rounded-tr-[20px]">
                     <span className="sr-only">Edit</span>
                   </th>
@@ -184,6 +187,14 @@ const ListofStaff = () => {
                           onClick={() => Staffpersonal(user._id)}
                         >
                           More
+                        </p>
+                      </td>
+                      <td className="text-red text-base">
+                        <p
+                          className="cursor-pointer"
+                          onClick={() => Staffpersonal(user._id)}
+                        >
+                          Report
                         </p>
                       </td>
                     </>
