@@ -4,6 +4,8 @@ export default function AppRedirect() {
     useEffect(() => {
         const ua = navigator.userAgent.toLowerCase();
 
+        console.log(ua);
+    
         const androidPackage = "com.talkangels.app";
         const androidStore = "https://play.google.com/store/apps/details?id=" + androidPackage;
 
@@ -19,11 +21,11 @@ export default function AppRedirect() {
         window.location.href = intentUrl;
 
         // Backup fallback after 1 sec (some browsers block intent)
-        setTimeout(() => {
-            if (ua.includes("android")) {
-                window.location.replace(androidStore);
-            }
-        }, 1000);
+        // setTimeout(() => {
+        //     if (ua.includes("android")) {
+        //         window.location.replace(androidStore);
+        //     }
+        // }, 1000);
     }, []);
 
     return (
