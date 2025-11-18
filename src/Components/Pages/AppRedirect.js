@@ -4,19 +4,24 @@ export default function AppRedirect() {
     useEffect(() => {
         const ua = navigator.userAgent.toLowerCase();
 
-        const androidLink =
-            "https://play.google.com/store/apps/details?id=com.talkangels.app";
+        const androidPackage = "com.talkangels.app";
+        const androidStore = "https://play.google.com/store/apps/details?id=" + androidPackage;
 
-        const cleanedPath = path.replace(/^\//, "");
-        // Try opening app first
-        window.location.href = `intent://${cleanedPath}#Intent;scheme=https;package=com.talkangels.app;S.browser_fallback_url=" +
-            encodeURIComponent(https://play.google.com/store/apps/details?id=com.talkangels.app) +
-            ";end`;
+        // Android intent link
+        const intentUrl =
+            "intent://open#Intent;scheme=talkangels;package=" +
+            androidPackage +
+            ";S.browser_fallback_url=" +
+            encodeURIComponent(androidStore) +
+            ";end";
 
-        // If app is not installed → fallback after 1500ms
+        // Try opening the app
+        window.location.href = intentUrl;
+
+        // Backup fallback after 1 sec (some browsers block intent)
         setTimeout(() => {
             if (ua.includes("android")) {
-                window.location.replace(androidLink);
+                window.location.replace(androidStore);
             }
         }, 1000);
     }, []);
