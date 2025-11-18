@@ -57,8 +57,8 @@ const CallingReport = lazy(() =>
 const Setting = lazy(() => import("./Components/Pages/setting/Setting"));
 const WebPageAdmin = lazy(() => import("./Components/Pages/webpage/admin/web"));
 const Faq = lazy(() => import("./Components/Pages/webpage/Faq"));
-const Listener = lazy(() => import("./Components/Pages/webpage/Listener"));
-const BeListener = lazy(() => import("./Components/Pages/webpage/BeListener"));
+// const Listener = lazy(() => import("./Components/Pages/webpage/Listener"));
+// const BeListener = lazy(() => import("./Components/Pages/webpage/BeListener"));
 const Refund = lazy(() => import("./Components/Pages/webpage/Refund"));
 const AboutUs = lazy(() => import("./Components/Pages/webpage/AboutUs"));
 const Blog = lazy(() => import("./Components/Pages/webpage/Blog"));
@@ -85,21 +85,21 @@ const App = () => {
       component: Refund,
       isPrivateRoute: false,
     },
-    {
-      path: Routing.Listeners,
-      component: Listener,
-      isPrivateRoute: false,
-    },
+    // {
+    //   path: Routing.Listeners,
+    //   component: Listener,
+    //   isPrivateRoute: false,
+    // },
     {
       path: Routing.About,
       component: AboutUs,
       isPrivateRoute: false,
     },
-    {
-      path: Routing.BeListener,
-      component: BeListener,
-      isPrivateRoute: false,
-    },
+    // {
+    //   path: Routing.BeListener,
+    //   component: BeListener,
+    //   isPrivateRoute: false,
+    // },
     {
       path: Routing.Faq,
       component: Faq,
