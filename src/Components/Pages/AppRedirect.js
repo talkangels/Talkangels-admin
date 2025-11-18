@@ -18,7 +18,7 @@ export default function AppRedirect() {
             ";end";
 
         // Try opening the app
-        window.location.href = intentUrl;
+        // window.location.href = intentUrl;
 
         // Backup fallback after 1 sec (some browsers block intent)
         // setTimeout(() => {
