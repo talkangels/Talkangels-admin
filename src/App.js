@@ -6,6 +6,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner from "./Components/layout/spinner";
+import AppRedirect from "./Components/Pages/AppRedirect";
 
 const Login = lazy(() => import("./Components/Pages/Login/login"));
 const Payment = lazy(() => import("./Components/Pages/payment/Index"));
@@ -235,6 +236,7 @@ const App = () => {
                 }
               />
             ))}
+            <Route path="/open-app" element={<AppRedirect />} />
             <Route
               path="*"
               element={
