@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 // Components
 import Listenerscard from "./Listenerscard";
@@ -27,6 +27,48 @@ import Apk from "../../assets/apk/Talkangels.apk";
 import AnimatedCards from "./AnimatedCards ";
 
 const Index = () => {
+  useEffect(() => {
+    const packageName = "com.talkangels.pro";
+    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+    const currentPath = window.location.pathname.replace(/^\//, "");
+
+    // 📌 Detect Devices
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroid = ua.includes("android");
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+    const isMobile = isAndroid || isIOS;
+
+    // 📌 If NOT mobile → Do NOT redirect
+    if (!isMobile) {
+      console.log("🖥 Desktop detected → No redirect");
+      return; // stop here, stay on website
+    }
+
+    // 📌 Intent URL for Android
+    const intentUrl =
+      "intent://" +
+      currentPath +
+      "#Intent;scheme=https;package=" +
+      packageName +
+      ";S.browser_fallback_url=" +
+      encodeURIComponent(playStore) +
+      ";end";
+
+    // 📌 Android → Try open app, fallback Play Store
+    if (isAndroid) {
+      console.log("🤖 Android detected → Opening App");
+      window.location.href = intentUrl;
+      return;
+    }
+
+    // 📌 iPhone → Open App Store or stay
+    if (isIOS) {
+      console.log("🍎 iOS detected → Opening App Store");
+      window.location.href = playStore;
+      return;
+    }
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
