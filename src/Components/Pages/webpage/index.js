@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 // Components
 import Listenerscard from "./Listenerscard";
 // Slider
@@ -27,36 +27,47 @@ import Apk from "../../assets/apk/Talkangels.apk";
 import AnimatedCards from "./AnimatedCards ";
 
 const Index = () => {
-  const { id, code } = useParams();   // Dynamic parameters (optional)
-
   useEffect(() => {
     const packageName = "com.talkangels.pro";
     const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+    const currentPath = window.location.pathname.replace(/^\//, "");
 
-    // Detect device
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    // 📌 Detect Devices
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroid = ua.includes("android");
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+    const isMobile = isAndroid || isIOS;
 
-    // Detect full path after /open/, /refer/, /profile/
-    const fullPath = window.location.pathname; // Example: /open/23 or /refer/ABC
+    // 📌 If NOT mobile → Do NOT redirect
+    if (!isMobile) {
+      console.log("🖥 Desktop detected → No redirect");
+      return; // stop here, stay on website
+    }
 
-    if (isAndroid && isMobile) {
-      // Intent URL for Android App
-      const intentUrl =
-        `intent://${fullPath.replace("/", "")}` +
-        `#Intent;scheme=https;package=${packageName};` +
-        `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
+    // 📌 Intent URL for Android
+    const intentUrl =
+      "intent://" +
+      currentPath +
+      "#Intent;scheme=https;package=" +
+      packageName +
+      ";S.browser_fallback_url=" +
+      encodeURIComponent(playStore) +
+      ";end";
 
+    // 📌 Android → Try open app, fallback Play Store
+    if (isAndroid) {
+      console.log("🤖 Android detected → Opening App");
       window.location.href = intentUrl;
-    } else if (isMobile) {
-      // iOS → redirect to App Store or open website
+      return;
+    }
+
+    // 📌 iPhone → Open App Store or stay
+    if (isIOS) {
+      console.log("🍎 iOS detected → Opening App Store");
       window.location.href = playStore;
-    } else {
-      // Desktop → open normal website (NO redirect)
       return;
     }
   }, []);
-
 
   const settings = {
     dots: false,
@@ -611,46 +622,3 @@ const Index = () => {
 };
 
 export default Index;
-
-
-  // useEffect(() => {
-  //   const packageName = "com.talkangels.pro";
-  //   const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
-  //   const currentPath = window.location.pathname.replace(/^\//, "");
-
-  //   // 📌 Detect Devices
-  //   const ua = navigator.userAgent.toLowerCase();
-  //   const isAndroid = ua.includes("android");
-  //   const isIOS = /iphone|ipad|ipod/.test(ua);
-  //   const isMobile = isAndroid || isIOS;
-
-  //   // 📌 If NOT mobile → Do NOT redirect
-  //   if (!isMobile) {
-  //     console.log("🖥 Desktop detected → No redirect");
-  //     return; // stop here, stay on website
-  //   }
-
-  //   // 📌 Intent URL for Android
-  //   const intentUrl =
-  //     "intent://" +
-  //     currentPath +
-  //     "#Intent;scheme=https;package=" +
-  //     packageName +
-  //     ";S.browser_fallback_url=" +
-  //     encodeURIComponent(playStore) +
-  //     ";end";
-
-  //   // 📌 Android → Try open app, fallback Play Store
-  //   if (isAndroid) {
-  //     console.log("🤖 Android detected → Opening App");
-  //     window.location.href = intentUrl;
-  //     return;
-  //   }
-
-  //   // 📌 iPhone → Open App Store or stay
-  //   if (isIOS) {
-  //     console.log("🍎 iOS detected → Opening App Store");
-  //     window.location.href = playStore;
-  //     return;
-  //   }
-  // }, []);
