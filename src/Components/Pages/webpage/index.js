@@ -57,14 +57,14 @@ const Index = () => {
     // 📌 Android → Try open app, fallback Play Store
     if (isAndroid) {
       console.log("🤖 Android detected → Opening App");
-      window.location.href = intentUrl;
+      window.location = intentUrl;
       return;
     }
 
     // 📌 iPhone → Open App Store or stay
     if (isIOS) {
       console.log("🍎 iOS detected → Opening App Store");
-      window.location.href = playStore;
+      window.location = playStore;
       return;
     }
   }, []);
