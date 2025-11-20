@@ -11,7 +11,7 @@ const Index = () => {
 
   let insitialzeSDK = async function () {
     cashfree = await load({
-      mode: "sandbox",
+      mode: "production",
     });
   };
   insitialzeSDK();
@@ -26,7 +26,7 @@ const Index = () => {
     } catch (error) {
       toast.error("Payment failed, please try again");
       // navigate(Routing.Initial);
-      navigate('/', { replace: true });
+       navigate('/', { replace: true });
     }
   };
 
@@ -39,12 +39,13 @@ const Index = () => {
       const result = await AddBallenceAPI(body, user_details?.token);
       if (result.status === 200) {
         toast.success(result?.message);
-
-        window.location = 'intent://open#Intent;scheme=https;package=com.talkangels.pro;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.talkangels.pro;end'
+        // navigate(Routing.Initial);
+         navigate('/', { replace: true });
       }
     } catch (error) {
-      window.location = 'intent://open#Intent;scheme=https;package=com.talkangels.pro;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.talkangels.pro;end'
       toast.error("Payment failed, please try again");
+      // navigate(Routing.Initial);
+       navigate('/', { replace: true });
     }
   };
 
@@ -63,7 +64,7 @@ const Index = () => {
     } catch (error) {
       toast.error("Payment failed, please try again");
       // navigate(Routing.Initial);
-      navigate('/', { replace: true });
+       navigate('/', { replace: true });
     }
   };
 
@@ -73,7 +74,7 @@ const Index = () => {
 
   return (
     <>
-      <div className="card"></div>
+     <div className="card"></div>
     </>
   );
 };
