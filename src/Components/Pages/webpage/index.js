@@ -36,56 +36,50 @@ const Index = () => {
     }
   }
 
-useEffect(() => {
-  const packageName = "com.talkangels.pro";
-  const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
-  const currentPath = window.location.pathname.replace(/^\//, "");
+  useEffect(() => {
+    const packageName = "com.talkangels.pro";
+    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
 
-  // 🚫 Skip redirect IF route is payment gateway page
-  if (currentPath.startsWith("payment")) {
-    console.log("⏳ Payment route detected → Do NOT redirect to app");
-    return;
-  }
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  // 📌 Detect Devices
-  const ua = navigator.userAgent.toLowerCase();
-  const isAndroid = ua.includes("android");
-  const isIOS = /iphone|ipad|ipod/.test(ua);
-  const isMobile = isAndroid || isIOS;
+    const routePath = window.location.pathname; // e.g., /open OR /profile OR /refer
 
-  // 📌 If NOT mobile → Do NOT redirect
-  if (!isMobile) {
-    console.log("🖥 Desktop detected → No redirect");
-    return;
-  }
+    // Only redirect on EXACT 3 pages
+    const allowedRoutes = ["/open", "/profile", "/refer"];
 
-  // 📌 Intent URL for Android
-  const intentUrl =
-    "intent://" +
-    currentPath +
-    "#Intent;scheme=https;package=" +
-    packageName +
-    ";S.browser_fallback_url=" +
-    encodeURIComponent(playStore) +
-    ";end";
+    // ❌ If route is NOT EXACT match → no redirect
+    if (!allowedRoutes.includes(routePath)) {
+      console.log("⛔ Route not allowed for redirect:", routePath);
+      return;
+    }
 
-  // 📌 Android → Try open app
-  if (isAndroid) {
-    console.log("🤖 Android detected → Opening App");
-    window.location = intentUrl;
-    return;
-  }
+    // Query params
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id") || "";
+    const code = searchParams.get("code") || "";
 
-  // 📌 iPhone → App store
-  if (isIOS) {
-    console.log("🍎 iOS detected → Opening App Store");
-    window.location = playStore;
-    return;
-  }
-}, []);
+    // Deep link URL
+    let fullPath = routePath.replace("/", ""); // open OR profile OR refer
 
+    if (id) fullPath += `/${id}`;
+    if (code) fullPath += `/${code}`;
 
+    if (isAndroid && isMobile) {
+      const intentUrl =
+        `intent://${fullPath}` +
+        `#Intent;scheme=https;package=${packageName};` +
+        `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
+      window.location.href = intentUrl;
+      return;
+    }
+
+    if (isMobile) {
+      window.location.href = playStore;
+      return;
+    }
+  }, []);
 
   const settings = {
     dots: false,
