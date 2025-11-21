@@ -8,16 +8,22 @@ export default function AppRedirect() {
     const isAndroid = /Android/i.test(navigator.userAgent);
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    // Full route (/open, /profile, /refer)
+    // Full route path
     const routePath = window.location.pathname; // /open or /profile or /refer
+
+    // ⛔ Skip redirect for payment URL
+    if (routePath.startsWith("/payment")) {
+      console.log("⛔ Payment route detected → No redirect");
+      return;
+    }
 
     // Query params
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id") || "";
     const code = searchParams.get("code") || "";
 
-    // Create full deep link path
-    let fullPath = routePath.replace("/", ""); // open  OR refer OR profile
+    // Deep link path
+    let fullPath = routePath.replace("/", ""); // open OR refer OR profile
 
     if (id) fullPath += `/${id}`;
     if (code) fullPath += `/${code}`;
@@ -32,8 +38,12 @@ export default function AppRedirect() {
         `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
       window.location.href = intentUrl;
-    } else if (isMobile) {
+      return;
+    }
+
+    if (isMobile) {
       window.location.href = playStore;
+      return;
     }
   }, []);
 
