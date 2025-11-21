@@ -60,7 +60,7 @@ export const Logs = async (body) => {
   try {
     let response = await axios({
       method: "POST",
-      url: `${baseURL}/print/logs`,
+      url: `${baseURL}print/logs`,
       data: body,
     });
     return response.data;
