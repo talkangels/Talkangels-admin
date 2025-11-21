@@ -36,50 +36,50 @@ const Index = () => {
     }
   }
 
-  useEffect(() => {
-    const packageName = "com.talkangels.pro";
-    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+  // useEffect(() => {
+  //   const packageName = "com.talkangels.pro";
+  //   const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
 
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  //   const isAndroid = /Android/i.test(navigator.userAgent);
+  //   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    const routePath = window.location.pathname; // e.g., /open OR /profile OR /refer
+  //   const routePath = window.location.pathname; // e.g., /open OR /profile OR /refer
 
-    // Only redirect on EXACT 3 pages
-    const allowedRoutes = ["/open", "/profile", "/refer"];
+  //   // Only redirect on EXACT 3 pages
+  //   const allowedRoutes = ["/open", "/profile", "/refer"];
 
-    // ❌ If route is NOT EXACT match → no redirect
-    if (!allowedRoutes.includes(routePath)) {
-      console.log("⛔ Route not allowed for redirect:", routePath);
-      return;
-    }
+  //   // ❌ If route is NOT EXACT match → no redirect
+  //   if (!allowedRoutes.includes(routePath)) {
+  //     console.log("⛔ Route not allowed for redirect:", routePath);
+  //     return;
+  //   }
 
-    // Query params
-    const searchParams = new URLSearchParams(window.location.search);
-    const id = searchParams.get("id") || "";
-    const code = searchParams.get("code") || "";
+  //   // Query params
+  //   const searchParams = new URLSearchParams(window.location.search);
+  //   const id = searchParams.get("id") || "";
+  //   const code = searchParams.get("code") || "";
 
-    // Deep link URL
-    let fullPath = routePath.replace("/", ""); // open OR profile OR refer
+  //   // Deep link URL
+  //   let fullPath = routePath.replace("/", ""); // open OR profile OR refer
 
-    if (id) fullPath += `/${id}`;
-    if (code) fullPath += `/${code}`;
+  //   if (id) fullPath += `/${id}`;
+  //   if (code) fullPath += `/${code}`;
 
-    if (isAndroid && isMobile) {
-      const intentUrl =
-        `intent://${fullPath}` +
-        `#Intent;scheme=https;package=${packageName};` +
-        `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
+  //   if (isAndroid && isMobile) {
+  //     const intentUrl =
+  //       `intent://${fullPath}` +
+  //       `#Intent;scheme=https;package=${packageName};` +
+  //       `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-      window.location.href = intentUrl;
-      return;
-    }
+  //     window.location.href = intentUrl;
+  //     return;
+  //   }
 
-    if (isMobile) {
-      window.location.href = playStore;
-      return;
-    }
-  }, []);
+  //   if (isMobile) {
+  //     window.location.href = playStore;
+  //     return;
+  //   }
+  // }, []);
 
   const settings = {
     dots: false,
