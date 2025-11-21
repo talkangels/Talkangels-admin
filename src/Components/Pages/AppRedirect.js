@@ -33,9 +33,9 @@ export default function AppRedirect() {
 
       console.log(intentUrl, "============>");
 
-      // window.location = intentUrl;
+      window.location = intentUrl;
     } else if (isMobile) {
-      // window.location = playStore;
+      window.location = playStore;
     }
   }, []);
 
