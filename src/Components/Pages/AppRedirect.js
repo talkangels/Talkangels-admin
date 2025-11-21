@@ -25,22 +25,17 @@ export default function AppRedirect() {
     console.log("Route Path:", routePath);
     console.log("Full Path:", fullPath);
 
-    const intentUrl =
-      `intent://${fullPath}` +
-      `#Intent;scheme=https;package=${packageName};` +
-      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
-
-    console.log(intentUrl);
-
     if (isAndroid && isMobile) {
       const intentUrl =
         `intent://${fullPath}` +
         `#Intent;scheme=https;package=${packageName};` +
         `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-      window.location = intentUrl;
+      console.log(intentUrl, "============>");
+
+      // window.location = intentUrl;
     } else if (isMobile) {
-      window.location = playStore;
+      // window.location = playStore;
     }
   }, []);
 
