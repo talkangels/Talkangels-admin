@@ -33,7 +33,7 @@ export const GetOneAdmin = async (id) => {
       method: "GET",
       url: `${baseURL}admin/detail/${id}`,
       headers: {
-        Authorization:`Bearer ${localStorage.getItem("token")}` ,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
     return response.data;
@@ -47,6 +47,20 @@ export const ForgotPassword = async (body) => {
     let response = await axios({
       method: "POST",
       url: `${baseURL}admin/forgot-password`,
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    return error?.response?.data;
+  }
+};
+
+
+export const Logs = async (body) => {
+  try {
+    let response = await axios({
+      method: "POST",
+      url: `${baseURL}/print/logs`,
       data: body,
     });
     return response.data;
@@ -73,8 +87,8 @@ export const UpdateAdminDetail = async (body, id) => {
     let response = await axios({
       method: "PUT",
       url: `${baseURL}admin/update/${id}`,
-       headers: {
-        Authorization:`Bearer ${localStorage.getItem("token")}` ,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       data: body,
     });

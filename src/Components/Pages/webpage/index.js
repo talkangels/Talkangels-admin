@@ -25,55 +25,67 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Apk from "../../assets/apk/Talkangels.apk";
 import AnimatedCards from "./AnimatedCards ";
+import { Logs } from "../../services/auth";
 
 const Index = () => {
-useEffect(() => {
-  const packageName = "com.talkangels.pro";
-  const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
-  const currentPath = window.location.pathname.replace(/^\//, "");
-
-  // 📌 NEW: Block mobile redirect for payment route
-  if (currentPath.startsWith("payment/")) {
-    console.log("🚫 Payment route detected → No redirect");
-    return;
+  const handleSend = async (data) => {
+    try {
+      await Logs({ data: data })
+    } catch (error) {
+      await Logs({ error: error })
+    }
   }
+  useEffect(() => {
+    const packageName = "com.talkangels.pro";
+    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+    const currentPath = window.location.pathname.replace(/^\//, "");
 
-  // 📌 Detect Devices
-  const ua = navigator.userAgent.toLowerCase();
-  const isAndroid = ua.includes("android");
-  const isIOS = /iphone|ipad|ipod/.test(ua);
-  const isMobile = isAndroid || isIOS;
+    // 📌 NEW: Block mobile redirect for payment route
+    if (currentPath.startsWith("payment/")) {
+      handleSend(`🚫 Payment route detected → No redirect ${currentPath} -==> ${currentPath.startsWith("payment/")}`)
+      console.log("🚫 Payment route detected → No redirect");
+      return;
+    }
 
-  // 📌 If NOT mobile → Do NOT redirect
-  if (!isMobile) {
-    console.log("🖥 Desktop detected → No redirect");
-    return;
-  }
+    // 📌 Detect Devices
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroid = ua.includes("android");
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+    const isMobile = isAndroid || isIOS;
 
-  // 📌 Intent URL for Android
-  const intentUrl =
-    "intent://" +
-    currentPath +
-    "#Intent;scheme=https;package=" +
-    packageName +
-    ";S.browser_fallback_url=" +
-    encodeURIComponent(playStore) +
-    ";end";
+    // 📌 If NOT mobile → Do NOT redirect
+    if (!isMobile) {
+      handleSend("🖥 Desktop detected → No redirect")
+      console.log("🖥 Desktop detected → No redirect");
+      return;
+    }
 
-  // 📌 Android → Try open app, fallback Play Store
-  if (isAndroid) {
-    console.log("🤖 Android detected → Opening App");
-    window.location = intentUrl;
-    return;
-  }
+    // 📌 Intent URL for Android
+    const intentUrl =
+      "intent://" +
+      currentPath +
+      "#Intent;scheme=https;package=" +
+      packageName +
+      ";S.browser_fallback_url=" +
+      encodeURIComponent(playStore) +
+      ";end";
 
-  // 📌 iPhone → Open App Store or stay
-  if (isIOS) {
-    console.log("🍎 iOS detected → Opening App Store");
-    window.location = playStore;
-    return;
-  }
-}, []);
+    // 📌 Android → Try open app, fallback Play Store
+    if (isAndroid) {
+      handleSend(`🤖 Android detected → Opening App ${intentUrl}`)
+      console.log("🤖 Android detected → Opening App");
+      window.location = intentUrl;
+      return;
+    }
+
+    // 📌 iPhone → Open App Store or stay
+    if (isIOS) {
+      handleSend(`🍎 iOS detected → Opening App Store ${playStore}`)
+      console.log("🍎 iOS detected → Opening App Store");
+      window.location = playStore;
+      return;
+    }
+  }, []);
 
 
   const settings = {

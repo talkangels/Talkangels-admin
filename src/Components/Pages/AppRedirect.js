@@ -1,6 +1,14 @@
 import { useEffect } from "react";
+import { Logs } from "../services/auth";
 
 export default function AppRedirect() {
+  const handleSend = async (data) => {
+    try {
+      await Logs({ data: data })
+    } catch (error) {
+      await Logs({ error: error })
+    }
+  }
   useEffect(() => {
     const packageName = "com.talkangels.pro";
     const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
@@ -12,6 +20,7 @@ export default function AppRedirect() {
     const routePath = window.location.pathname; // /open or /profile or /refer
 
     if (window.location.pathname.replace(/^\//, "").startsWith("payment/")) {
+      handleSend(`🚫 Payment route detected → No redirect ${window.location.pathname.replace(/^\//, "")} -==> ${window.location.pathname.replace(/^\//, "").startsWith("payment/")}`)
       console.log("🚫 Payment route detected → No redirect");
       return;
     }
@@ -36,10 +45,11 @@ export default function AppRedirect() {
         `#Intent;scheme=https;package=${packageName};` +
         `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-      console.log(intentUrl, "============>");
+      handleSend(`🤖 Android detected → Opening App ${intentUrl}`)
 
       window.location = intentUrl;
     } else if (isMobile) {
+      handleSend(`🍎 iOS detected → Opening App Store ${playStore}`)
       window.location = playStore;
     }
   }, []);
