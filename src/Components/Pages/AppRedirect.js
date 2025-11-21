@@ -11,6 +11,11 @@ export default function AppRedirect() {
     // Full route (/open, /profile, /refer)
     const routePath = window.location.pathname; // /open or /profile or /refer
 
+    if (window.location.pathname.replace(/^\//, "").startsWith("payment/")) {
+      console.log("🚫 Payment route detected → No redirect");
+      return;
+    }
+
     // Query params
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id") || "";
