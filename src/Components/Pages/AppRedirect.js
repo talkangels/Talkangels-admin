@@ -16,13 +16,14 @@ export default function AppRedirect() {
     const isAndroid = /Android/i.test(navigator.userAgent);
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    // Full route (/open, /profile, /refer)
-    const routePath = window.location.pathname; // /open or /profile or /refer
+    const routePath = window.location.pathname; // /open or /refer or /profile or /payment/...
 
-    if (window.location.pathname.replace(/^\//, "").startsWith("payment/")) {
-      handleSend(`🚫 Payment route detected → No redirect ${window.location.pathname.replace(/^\//, "")} -==> ${window.location.pathname.replace(/^\//, "").startsWith("payment/")}`)
+    // 🚫 Block redirect for payment routes
+    const pathClean = routePath.replace(/^\//, "");
+    if (pathClean.startsWith("payment/")) {
+      handleSend(`🚫 Payment route detected → No redirect ${routePath}`);
       console.log("🚫 Payment route detected → No redirect");
-      return;
+      return; // STOP FULL EXECUTION
     }
 
     // Query params
@@ -30,14 +31,11 @@ export default function AppRedirect() {
     const id = searchParams.get("id") || "";
     const code = searchParams.get("code") || "";
 
-    // Create full deep link path
-    let fullPath = routePath.replace("/", ""); // open  OR refer OR profile
+    // Create deep link fullPath
+    let fullPath = routePath.replace("/", "");
 
     if (id) fullPath += `/${id}`;
     if (code) fullPath += `/${code}`;
-
-    console.log("Route Path:", routePath);
-    console.log("Full Path:", fullPath);
 
     if (isAndroid && isMobile) {
       const intentUrl =
@@ -45,14 +43,15 @@ export default function AppRedirect() {
         `#Intent;scheme=https;package=${packageName};` +
         `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-      handleSend(`🤖 Android detected → Opening App ${intentUrl}`)
-
+      handleSend(`🤖 Android detected → Opening App ${intentUrl}`);
       window.location = intentUrl;
+
     } else if (isMobile) {
-      handleSend(`🍎 iOS detected → Opening App Store ${playStore}`)
+      handleSend(`🍎 iOS detected → Opening App Store ${playStore}`);
       window.location = playStore;
     }
   }, []);
+
 
   return (
     <div style={{ padding: 40 }}>
