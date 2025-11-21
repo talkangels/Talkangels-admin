@@ -36,53 +36,48 @@ const Index = () => {
     }
   }
 
-useEffect(() => {
-  const packageName = "com.talkangels.pro";
-  const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+  useEffect(() => {
+    const packageName = "com.talkangels.pro";
+    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+    const currentPath = window.location.pathname.replace(/^\//, "");
 
-  const isAndroid = /Android/i.test(navigator.userAgent);
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    // 📌 Detect Devices
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroid = ua.includes("android");
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+    const isMobile = isAndroid || isIOS;
 
-  const routePath = window.location.pathname;
+    // 📌 If NOT mobile → Do NOT redirect
+    if (!isMobile) {
+      console.log("🖥 Desktop detected → No redirect");
+      return; // stop here, stay on website
+    }
 
-  // ❌ DO NOT redirect payment page
-  if (routePath.startsWith("/payment")) {
-    console.log("⛔ Skipping redirect: Payment route", routePath);
-    return;
-  }
-
-  // Redirect allowed only on 3 pages
-  const allowedRoutes = ["/open", "/profile", "/refer"];
-
-  if (!allowedRoutes.includes(routePath)) {
-    console.log("⛔ Route not allowed:", routePath);
-    return;
-  }
-
-  const searchParams = new URLSearchParams(window.location.search);
-  const id = searchParams.get("id") || "";
-  const code = searchParams.get("code") || "";
-
-  let fullPath = routePath.replace("/", "");
-
-  if (id) fullPath += `/${id}`;
-  if (code) fullPath += `/${code}`;
-
-  if (isAndroid && isMobile) {
+    // 📌 Intent URL for Android
     const intentUrl =
-      `intent://${fullPath}` +
-      `#Intent;scheme=https;package=${packageName};` +
-      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
+      "intent://" +
+      currentPath +
+      "#Intent;scheme=https;package=" +
+      packageName +
+      ";S.browser_fallback_url=" +
+      encodeURIComponent(playStore) +
+      ";end";
 
-    window.location.href = intentUrl;
-    return;
-  }
+    // 📌 Android → Try open app, fallback Play Store
+    if (isAndroid) {
+      console.log("🤖 Android detected → Opening App");
+      window.location.href = intentUrl;
+      return;
+    }
 
-  if (isMobile) {
-    window.location.href = playStore;
-    return;
-  }
-}, []);
+    // 📌 iPhone → Open App Store or stay
+    if (isIOS) {
+      console.log("🍎 iOS detected → Opening App Store");
+      window.location.href = playStore;
+      return;
+    }
+  }, []);
+
 
 
   const settings = {

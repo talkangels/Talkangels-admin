@@ -1,54 +1,41 @@
 import { useEffect } from "react";
 
 export default function AppRedirect() {
-useEffect(() => {
-  const packageName = "com.talkangels.pro";
-  const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+  useEffect(() => {
+    const packageName = "com.talkangels.pro";
+    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
 
-  const isAndroid = /Android/i.test(navigator.userAgent);
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  const routePath = window.location.pathname;
+    // Full route (/open, /profile, /refer)
+    const routePath = window.location.pathname; // /open or /profile or /refer
 
-  // ❌ DO NOT redirect payment page
-  if (routePath.startsWith("/payment")) {
-    console.log("⛔ Skipping redirect: Payment route", routePath);
-    return;
-  }
+    // Query params
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id") || "";
+    const code = searchParams.get("code") || "";
 
-  // Redirect allowed only on 3 pages
-  const allowedRoutes = ["/open", "/profile", "/refer"];
+    // Create full deep link path
+    let fullPath = routePath.replace("/", ""); // open  OR refer OR profile
 
-  if (!allowedRoutes.includes(routePath)) {
-    console.log("⛔ Route not allowed:", routePath);
-    return;
-  }
+    if (id) fullPath += `/${id}`;
+    if (code) fullPath += `/${code}`;
 
-  const searchParams = new URLSearchParams(window.location.search);
-  const id = searchParams.get("id") || "";
-  const code = searchParams.get("code") || "";
+    console.log("Route Path:", routePath);
+    console.log("Full Path:", fullPath);
 
-  let fullPath = routePath.replace("/", "");
+    if (isAndroid && isMobile) {
+      const intentUrl =
+        `intent://${fullPath}` +
+        `#Intent;scheme=https;package=${packageName};` +
+        `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-  if (id) fullPath += `/${id}`;
-  if (code) fullPath += `/${code}`;
-
-  if (isAndroid && isMobile) {
-    const intentUrl =
-      `intent://${fullPath}` +
-      `#Intent;scheme=https;package=${packageName};` +
-      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
-
-    window.location.href = intentUrl;
-    return;
-  }
-
-  if (isMobile) {
-    window.location.href = playStore;
-    return;
-  }
-}, []);
-
+      window.location.href = intentUrl;
+    } else if (isMobile) {
+      window.location.href = playStore;
+    }
+  }, []);
 
   return (
     <div style={{ padding: 40 }}>
