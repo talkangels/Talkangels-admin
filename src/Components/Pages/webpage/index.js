@@ -35,47 +35,46 @@ const Index = () => {
       await Logs({ error: error })
     }
   }
-  
+
   useEffect(() => {
     const packageName = "com.talkangels.pro";
     const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+    const currentPath = window.location.pathname.replace(/^\//, "");
 
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    // 📌 Detect Devices
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroid = ua.includes("android");
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+    const isMobile = isAndroid || isIOS;
 
-    const routePath = window.location.pathname; // /open or /refer or /profile or /payment/...
-
-    // 🚫 Block redirect for payment routes
-    const pathClean = routePath.replace(/^\//, "");
-    if (pathClean.startsWith("payment/")) {
-      handleSend(`🚫 Payment route detected → No redirect ${routePath}`);
-      console.log("🚫 Payment route detected → No redirect");
-      return; // STOP FULL EXECUTION
+    // 📌 If NOT mobile → Do NOT redirect
+    if (!isMobile) {
+      console.log("🖥 Desktop detected → No redirect");
+      return; // stop here, stay on website
     }
 
-    // Query params
-    const searchParams = new URLSearchParams(window.location.search);
-    const id = searchParams.get("id") || "";
-    const code = searchParams.get("code") || "";
+    // 📌 Intent URL for Android
+    const intentUrl =
+      "intent://" +
+      currentPath +
+      "#Intent;scheme=https;package=" +
+      packageName +
+      ";S.browser_fallback_url=" +
+      encodeURIComponent(playStore) +
+      ";end";
 
-    // Create deep link fullPath
-    let fullPath = routePath.replace("/", "");
-
-    if (id) fullPath += `/${id}`;
-    if (code) fullPath += `/${code}`;
-
-    if (isAndroid && isMobile) {
-      const intentUrl =
-        `intent://${fullPath}` +
-        `#Intent;scheme=https;package=${packageName};` +
-        `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
-
-      handleSend(`🤖 Android detected → Opening App ${intentUrl}`);
+    // 📌 Android → Try open app, fallback Play Store
+    if (isAndroid) {
+      console.log("🤖 Android detected → Opening App");
       window.location = intentUrl;
+      return;
+    }
 
-    } else if (isMobile) {
-      handleSend(`🍎 iOS detected → Opening App Store ${playStore}`);
+    // 📌 iPhone → Open App Store or stay
+    if (isIOS) {
+      console.log("🍎 iOS detected → Opening App Store");
       window.location = playStore;
+      return;
     }
   }, []);
 

@@ -1,14 +1,6 @@
 import { useEffect } from "react";
-import { Logs } from "../services/auth";
 
 export default function AppRedirect() {
-  const handleSend = async (data) => {
-    try {
-      await Logs({ data: data })
-    } catch (error) {
-      await Logs({ error: error })
-    }
-  }
   useEffect(() => {
     const packageName = "com.talkangels.pro";
     const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
@@ -16,26 +8,22 @@ export default function AppRedirect() {
     const isAndroid = /Android/i.test(navigator.userAgent);
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-    const routePath = window.location.pathname; // /open or /refer or /profile or /payment/...
-
-    // 🚫 Block redirect for payment routes
-    const pathClean = routePath.replace(/^\//, "");
-    if (pathClean.startsWith("payment/")) {
-      handleSend(`🚫 Payment route detected → No redirect ${routePath}`);
-      console.log("🚫 Payment route detected → No redirect");
-      return; // STOP FULL EXECUTION
-    }
+    // Full route (/open, /profile, /refer)
+    const routePath = window.location.pathname; // /open or /profile or /refer
 
     // Query params
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id") || "";
     const code = searchParams.get("code") || "";
 
-    // Create deep link fullPath
-    let fullPath = routePath.replace("/", "");
+    // Create full deep link path
+    let fullPath = routePath.replace("/", ""); // open  OR refer OR profile
 
     if (id) fullPath += `/${id}`;
     if (code) fullPath += `/${code}`;
+
+    console.log("Route Path:", routePath);
+    console.log("Full Path:", fullPath);
 
     if (isAndroid && isMobile) {
       const intentUrl =
@@ -43,15 +31,11 @@ export default function AppRedirect() {
         `#Intent;scheme=https;package=${packageName};` +
         `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-      handleSend(`🤖 Android detected → Opening App ${intentUrl}`);
-      window.location = intentUrl;
-
+      window.location.href = intentUrl;
     } else if (isMobile) {
-      handleSend(`🍎 iOS detected → Opening App Store ${playStore}`);
-      window.location = playStore;
+      window.location.href = playStore;
     }
   }, []);
-
 
   return (
     <div style={{ padding: 40 }}>
