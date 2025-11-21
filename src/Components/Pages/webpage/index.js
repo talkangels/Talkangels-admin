@@ -36,50 +36,54 @@ const Index = () => {
     }
   }
 
-  // useEffect(() => {
-  //   const packageName = "com.talkangels.pro";
-  //   const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
+useEffect(() => {
+  const packageName = "com.talkangels.pro";
+  const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
 
-  //   const isAndroid = /Android/i.test(navigator.userAgent);
-  //   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  //   const routePath = window.location.pathname; // e.g., /open OR /profile OR /refer
+  const routePath = window.location.pathname;
 
-  //   // Only redirect on EXACT 3 pages
-  //   const allowedRoutes = ["/open", "/profile", "/refer"];
+  // ❌ DO NOT redirect payment page
+  if (routePath.startsWith("/payment")) {
+    console.log("⛔ Skipping redirect: Payment route", routePath);
+    return;
+  }
 
-  //   // ❌ If route is NOT EXACT match → no redirect
-  //   if (!allowedRoutes.includes(routePath)) {
-  //     console.log("⛔ Route not allowed for redirect:", routePath);
-  //     return;
-  //   }
+  // Redirect allowed only on 3 pages
+  const allowedRoutes = ["/open", "/profile", "/refer"];
 
-  //   // Query params
-  //   const searchParams = new URLSearchParams(window.location.search);
-  //   const id = searchParams.get("id") || "";
-  //   const code = searchParams.get("code") || "";
+  if (!allowedRoutes.includes(routePath)) {
+    console.log("⛔ Route not allowed:", routePath);
+    return;
+  }
 
-  //   // Deep link URL
-  //   let fullPath = routePath.replace("/", ""); // open OR profile OR refer
+  const searchParams = new URLSearchParams(window.location.search);
+  const id = searchParams.get("id") || "";
+  const code = searchParams.get("code") || "";
 
-  //   if (id) fullPath += `/${id}`;
-  //   if (code) fullPath += `/${code}`;
+  let fullPath = routePath.replace("/", "");
 
-  //   if (isAndroid && isMobile) {
-  //     const intentUrl =
-  //       `intent://${fullPath}` +
-  //       `#Intent;scheme=https;package=${packageName};` +
-  //       `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
+  if (id) fullPath += `/${id}`;
+  if (code) fullPath += `/${code}`;
 
-  //     window.location.href = intentUrl;
-  //     return;
-  //   }
+  if (isAndroid && isMobile) {
+    const intentUrl =
+      `intent://${fullPath}` +
+      `#Intent;scheme=https;package=${packageName};` +
+      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-  //   if (isMobile) {
-  //     window.location.href = playStore;
-  //     return;
-  //   }
-  // }, []);
+    window.location.href = intentUrl;
+    return;
+  }
+
+  if (isMobile) {
+    window.location.href = playStore;
+    return;
+  }
+}, []);
+
 
   const settings = {
     dots: false,
