@@ -28,50 +28,6 @@ import AnimatedCards from "./AnimatedCards ";
 import { Logs } from "../../services/auth";
 
 const Index = () => {
-  const handleSend = async (data) => {
-    try {
-      await Logs({ data: data })
-    } catch (error) {
-      await Logs({ error: error })
-    }
-  }
-
-  useEffect(() => {
-    const packageName = "com.talkangels.pro";
-    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
-    const currentPath = window.location.pathname.replace(/^\//, "");
-
-    // 📌 Detect Devices
-    const ua = navigator.userAgent.toLowerCase();
-    const isAndroid = ua.includes("android");
-    const isIOS = /iphone|ipad|ipod/.test(ua);
-
-    // 📌 Intent URL for Android
-    const intentUrl =
-      "intent://" +
-      currentPath +
-      "#Intent;scheme=https;package=" +
-      packageName +
-      ";S.browser_fallback_url=" +
-      encodeURIComponent(playStore) +
-      ";end";
-
-    // 📌 Android → Try open app, fallback Play Store
-    if (isAndroid) {
-      console.log("🤖 Android detected → Opening App");
-      window.location.href = intentUrl;
-      return;
-    }
-
-    // 📌 iPhone → Open App Store or stay
-    if (isIOS) {
-      console.log("🍎 iOS detected → Opening App Store");
-      window.location.href = playStore;
-      return;
-    }
-  }, []);
-
-
 
   const settings = {
     dots: false,
