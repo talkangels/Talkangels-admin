@@ -24,11 +24,7 @@ export default function AppRedirect() {
       `#Intent;scheme=https;package=${packageName};` +
       `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-    if (isAndroid) {
       window.location.replace(intentUrl); // Open app
-    } else {
-      window.location.replace(playStore); // Other devices
-    }
   }, []);
 
   return (
