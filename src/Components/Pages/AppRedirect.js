@@ -2,35 +2,29 @@ import { useEffect } from "react";
 
 export default function AppRedirect() {
   useEffect(() => {
-    const packageName = "com.talkangels.pro";
-    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
-
     const ua = navigator.userAgent || navigator.vendor;
     const isAndroid = /Android/i.test(ua);
 
-    // Get current route: /open, /profile, /refer
-    const route = window.location.pathname.replace("/", ""); 
-
-    // Only allow these 3 pages
+    // Accepted routes
     const allowedRoutes = ["open", "profile", "refer"];
 
+    // Get route name (open / profile / refer)
+    const route = window.location.pathname.replace("/", "");
+
+    // If route not matched → do nothing
     if (!allowedRoutes.includes(route)) return;
 
-    // Build simple deep link path
-    let fullPath = route; // open OR profile OR refer
-
-    const intentUrl =
-      `intent://${fullPath}` +
-      `#Intent;scheme=https;package=${packageName};` +
-      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
-
-      window.location.replace(intentUrl); // Open app
+    // OPEN APP ONLY (no Play Store)
+    if (isAndroid) {
+      const appUrl = `intent://${route}#Intent;scheme=https;package=com.talkangels.pro;end`;
+      window.location.replace(appUrl);
+    }
   }, []);
 
   return (
     <div style={{ padding: 40 }}>
       <h2>Opening App…</h2>
-      <p>If nothing happens, install the app from Play Store.</p>
+      <p>If nothing happens, your app may not be installed.</p>
     </div>
   );
 }
