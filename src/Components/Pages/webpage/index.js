@@ -45,13 +45,6 @@ const Index = () => {
     const ua = navigator.userAgent.toLowerCase();
     const isAndroid = ua.includes("android");
     const isIOS = /iphone|ipad|ipod/.test(ua);
-    const isMobile = isAndroid || isIOS;
-
-    // 📌 If NOT mobile → Do NOT redirect
-    if (!isMobile) {
-      console.log("🖥 Desktop detected → No redirect");
-      return; // stop here, stay on website
-    }
 
     // 📌 Intent URL for Android
     const intentUrl =
