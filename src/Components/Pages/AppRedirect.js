@@ -5,42 +5,36 @@ export default function AppRedirect() {
     const packageName = "com.talkangels.pro";
     const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
 
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const ua = navigator.userAgent || navigator.vendor;
+    const isAndroid = /Android/i.test(ua);
 
-    // Full route (/open, /profile, /refer)
-    const routePath = window.location.pathname; // /open or /profile or /refer
+    // Get current route: /open, /profile, /refer
+    const route = window.location.pathname.replace("/", ""); 
 
-    // Query params
-    const searchParams = new URLSearchParams(window.location.search);
-    const id = searchParams.get("id") || "";
-    const code = searchParams.get("code") || "";
+    // Only allow these 3 pages
+    const allowedRoutes = ["open", "profile", "refer"];
 
-    // Create full deep link path
-    let fullPath = routePath.replace("/", ""); // open  OR refer OR profile
+    if (!allowedRoutes.includes(route)) return;
 
-    if (id) fullPath += `/${id}`;
-    if (code) fullPath += `/${code}`;
+    // Build simple deep link path
+    let fullPath = route; // open OR profile OR refer
 
-    console.log("Route Path:", routePath);
-    console.log("Full Path:", fullPath);
+    const intentUrl =
+      `intent://${fullPath}` +
+      `#Intent;scheme=https;package=${packageName};` +
+      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-    if (isAndroid && isMobile) {
-      const intentUrl =
-        `intent://${fullPath}` +
-        `#Intent;scheme=https;package=${packageName};` +
-        `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
-
-      window.location.href = intentUrl;
-    } else if (isMobile) {
-      window.location.href = playStore;
+    if (isAndroid) {
+      window.location.replace(intentUrl); // Open app
+    } else {
+      window.location.replace(playStore); // Other devices
     }
   }, []);
 
   return (
     <div style={{ padding: 40 }}>
       <h2>Opening App…</h2>
-      <p>If nothing happens, open Play Store manually.</p>
+      <p>If nothing happens, install the app from Play Store.</p>
     </div>
   );
 }
