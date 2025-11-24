@@ -39,7 +39,7 @@ const Index = () => {
       const result = await AddBallenceAPI(body, user_details?.token);
       if (result.status === 200) {
         toast.success(result?.message);
-        window.location = 'intent://open#Intent;scheme=https;package=com.talkangels.pro;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.talkangels.pro;end'
+        window.location = 'intent://profile#Intent;scheme=talkangels;package=com.talkangels.pro;end';
       }
     } catch (error) {
       toast.error("Payment failed, please try again");
