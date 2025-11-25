@@ -3,9 +3,9 @@ import { Logs } from "../services/auth";
 
 export default function AppRedirect() {
 
-  const handleClickLogs = async (ua, isAndroid, path, allowedRoutes, intentUrl, playStore) => {
+  const handleClickLogs = async (ua, isAndroid, path, allowedRoutes, intentUrl, playStore, status) => {
     try {
-      await Logs({ ua, isAndroid, path, allowedRoutes, intentUrl, playStore })
+      await Logs({ ua, isAndroid, path, allowedRoutes, intentUrl, playStore, status })
     } catch (error) {
       console.log(error.message)
     }
@@ -24,7 +24,7 @@ export default function AppRedirect() {
 
     const allowedRoutes = ["open", "profile", "refer"];
 
-    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, before = "is before")
+    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, "is before")
 
     // Only redirect for these routes
     if (!allowedRoutes.includes(path)) return;
@@ -34,7 +34,7 @@ export default function AppRedirect() {
       `#Intent;scheme=https;package=${packageName};` +
       `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, after = "is after")
+    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, "is after")
 
     if (isAndroid) {
       window.location.replace(intentUrl);
