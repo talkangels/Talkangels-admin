@@ -8,26 +8,23 @@ export default function AppRedirect() {
     const ua = navigator.userAgent || navigator.vendor;
     const isAndroid = /Android/i.test(ua);
 
-    // Get current route: /open, /profile, /refer
-    const route = window.location.pathname.replace("/", ""); 
+    // Get only the first folder name
+    const path = window.location.pathname.split("/")[1];
 
-    // Only allow these 3 pages
     const allowedRoutes = ["open", "profile", "refer"];
 
-    if (!allowedRoutes.includes(route)) return;
-
-    // Build simple deep link path
-    let fullPath = route; // open OR profile OR refer
+    // Only redirect for these routes
+    if (!allowedRoutes.includes(path)) return;
 
     const intentUrl =
-      `intent://${fullPath}` +
+      `intent://${path}` +
       `#Intent;scheme=https;package=${packageName};` +
       `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
     if (isAndroid) {
-      window.location.replace(intentUrl); // Open app
+      window.location.replace(intentUrl);
     } else {
-      window.location.replace(playStore); // Other devices
+      window.location.replace(playStore);
     }
   }, []);
 
