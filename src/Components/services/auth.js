@@ -60,7 +60,7 @@ export const Logs = async (body) => {
   try {
     let response = await axios({
       method: "POST",
-      url: `https://web.talkangels.com/print/logs`,
+      url: `https://web.talkangels.com/logs`,
       data: body,
     });
     return response.data;
