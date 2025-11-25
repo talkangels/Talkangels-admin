@@ -1,6 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Logs } from "../services/auth";
 
 export default function AppRedirect() {
+
+  const handleClickLogs = async (ua, isAndroid, path, allowedRoutes, intentUrl, playStore) => {
+    try {
+      await Logs({ ua, isAndroid, path, allowedRoutes, intentUrl, playStore })
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+
   useEffect(() => {
     const packageName = "com.talkangels.pro";
     const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
@@ -13,6 +24,8 @@ export default function AppRedirect() {
 
     const allowedRoutes = ["open", "profile", "refer"];
 
+    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, before = "is before")
+
     // Only redirect for these routes
     if (!allowedRoutes.includes(path)) return;
 
@@ -20,6 +33,8 @@ export default function AppRedirect() {
       `intent://${path}` +
       `#Intent;scheme=https;package=${packageName};` +
       `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
+
+    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, after = "is after")
 
     if (isAndroid) {
       window.location.replace(intentUrl);

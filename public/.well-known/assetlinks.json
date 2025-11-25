@@ -5,6 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.talkangels.pro",
       "sha256_cert_fingerprints": [
+        "9F:E7:58:D2:D8:DF:90:FE:0F:D1:4C:A0:23:26:E3:59:63:AB:A7:36:ED:E2:73:96:FC:90:91:53:F3:82:CF:B3",
+        "CA:95:3B:CD:66:E1:EB:7A:79:EB:78:99:AF:6D:2D:A1:D0:FA:BD:22:76:64:BA:84:6C:9A:4C:C8:AE:48:E0:DB",
         "CA:95:3B:CD:66:E1:EB:7A:79:EB:78:99:AF:6D:2D:A1:D0:FA:BD:22:76:64:BA:84:6C:9A:4C:C8:AE:48:E0:DB",
         "7D:25:9F:1F:3E:A7:2F:03:47:45:F8:EC:51:0E:A7:10:11:CA:37:27:65:AE:EC:8E:7F:59:68:F1:69:0E:BC:60",
         "E1:BA:87:1F:92:57:C3:EC:33:8D:A7:F6:D8:15:BC:AB:BD:7A:4C:CA:A0:EC:94:61:DF:E3:C7:A1:6C:1D:7E:AC"
