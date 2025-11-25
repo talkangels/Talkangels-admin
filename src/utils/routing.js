@@ -1,5 +1,5 @@
 export const Routing = {
-  Initial: "/",
+  Initial: "/*",
   Admin: "/admin",
   Login: "/admin/login",
   ResetPassword: "/admin/reset-password",
