@@ -19,25 +19,22 @@ export default function AppRedirect() {
     const ua = navigator.userAgent || navigator.vendor;
     const isAndroid = /Android/i.test(ua);
 
-    // FULL PATH INCLUDING QUERY PARAMS
-    const fullPath = window.location.pathname + window.location.search;
-
-    // Route name only
-    const route = window.location.pathname.split("/")[1];
+    // Get only the first folder name
+    const path = window.location.pathname.split("/")[1];
 
     const allowedRoutes = ["open", "profile", "refer"];
 
-    handleClickLogs(ua, isAndroid, route, allowedRoutes, null, playStore, "before");
+    handleClickLogs(ua, isAndroid, path, allowedRoutes, null, playStore, "is before")
 
-    if (!allowedRoutes.includes(route)) return;
+    // Only redirect for these routes
+    if (!allowedRoutes.includes(path)) return;
 
-    // Intent URL WITH QUERY PARAMS
     const intentUrl =
-      `intent://${fullPath}` +
+      `intent://${path}` +
       `#Intent;scheme=https;package=${packageName};` +
       `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
-    handleClickLogs(ua, isAndroid, route, allowedRoutes, intentUrl, playStore, "after");
+    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, "is after")
 
     if (isAndroid) {
       window.location.replace(intentUrl);
@@ -45,7 +42,6 @@ export default function AppRedirect() {
       window.location.replace(playStore);
     }
   }, []);
-
 
   return (
     <div style={{ padding: 40 }}>
