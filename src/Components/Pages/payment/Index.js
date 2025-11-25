@@ -25,24 +25,7 @@ const Index = () => {
       }
     } catch (error) {
       toast.error("Payment failed, please try again");
-      // navigate(Routing.Initial);
-      navigate('/', { replace: true });
-    }
-  };
-
-  const verifyPayment = async (orderId) => {
-    try {
-      const body = {
-        user_id: user_details.id,
-        payment_id: orderId,
-      };
-      const result = await AddBallenceAPI(body, user_details?.token);
-      if (result.status === 200) {
-        toast.success(result?.message);
-        window.location = '/profile';
-      }
-    } catch (error) {
-      toast.error("Payment failed, please try again");
+      window.location = '/open';
     }
   };
 
@@ -56,12 +39,11 @@ const Index = () => {
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
-        verifyPayment(sessionId.order_id);
+        window.location = '/open';
       });
     } catch (error) {
       toast.error("Payment failed, please try again");
-      // navigate(Routing.Initial);
-      navigate('/', { replace: true });
+      window.location = '/open';
     }
   };
 
