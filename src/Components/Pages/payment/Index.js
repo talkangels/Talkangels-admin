@@ -25,7 +25,7 @@ const Index = () => {
       }
     } catch (error) {
       toast.error("Payment failed, please try again");
-      window.location = '/open';
+      window.location.href = 'https://www.talkangels.com/open';
     }
   };
 
@@ -39,11 +39,11 @@ const Index = () => {
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
-        window.location = '/open';
+        window.location.href = 'https://www.talkangels.com/open';
       });
     } catch (error) {
       toast.error("Payment failed, please try again");
-      window.location = '/open';
+      window.location = 'https://www.talkangels.com/open';
     }
   };
 
