@@ -24,7 +24,7 @@ export default function AppRedirect() {
 
     const allowedRoutes = ["open", "profile", "refer"];
 
-    handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, "is before")
+    handleClickLogs(ua, isAndroid, path, allowedRoutes, null, playStore, "is before")
 
     // Only redirect for these routes
     if (!allowedRoutes.includes(path)) return;
