@@ -4,14 +4,16 @@ import { Listbox, Transition } from '@headlessui/react';
 import Gender from "../../assets/StaffDetails/gender.png";
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { BiSolidPhoneCall } from "react-icons/bi";
-import { FaCalendarCheck } from 'react-icons/fa';
-import { FetchAllCallRecodes } from '../../services/dataReport';
+import { FaCalendarCheck, FaRupeeSign } from 'react-icons/fa';
+import { FetchAllCallRecodes, FetchAllCallRecodesSummary } from '../../services/dataReport';
 import toast from 'react-hot-toast';
 import dayjs from 'dayjs';
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowLeft, MdOutlineTimer } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Spinner from '../../layout/spinner';
 import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
+import { HiPhoneIncoming } from 'react-icons/hi';
+import { TbAlarmAverage } from 'react-icons/tb';
 
 const Genderoption = ["reject", "calling", "incoming"];
 function classNames(...classes) {
@@ -28,6 +30,10 @@ const CallingReport = () => {
   const [totalPage, settotalPage] = useState("");
   const [mobile_number, setmobile_number] = useState("");
   const [CallingRecods, setCallingRecods] = useState([])
+  const [totalHours, settotalHours] = useState({})
+  const [totalRevenue, settotalRevenue] = useState(0)
+  const [totalIncomings, settotalIncomings] = useState(0)
+  const [avgDuartion, setavgDuartion] = useState("00:00:00")
   const formRef = useRef(null);
   const toRef = useRef(null);
 
@@ -56,15 +62,34 @@ const CallingReport = () => {
       return console.log(error.message)
     }
   }
+  const HnadleFetchAllCallRecodesSummary = async () => {
+    try {
+      const result = await FetchAllCallRecodesSummary(mobile_number, selected, from, to)
+
+      if (result?.success) {
+        settotalHours(result?.data?.totalHours)
+        settotalRevenue(result?.data?.totalRevenue)
+        settotalIncomings(result?.data?.totalIncomings)
+        setavgDuartion(result?.data?.averageDuration)
+      } else {
+        toast.error(result?.message)
+      }
+    } catch (error) {
+      return console.log(error.message)
+    }
+  }
+
 
   useEffect(() => {
     if (!mobile_number && !selected && !from && !to) {
       handleFetchCallRecods();
+      HnadleFetchAllCallRecodesSummary()
       return;
     }
 
     const handler = setTimeout(() => {
       handleFetchCallRecods();
+      HnadleFetchAllCallRecodesSummary()
     }, 500);
 
     return () => clearTimeout(handler);
@@ -184,6 +209,52 @@ const CallingReport = () => {
             Clear
           </button>
         )}
+      </div>
+      <div className='grid grid-cols-4 gap-5 py-5'>
+        <div className='w-full py-6 px-6 bg-darkBlack rounded-md'>
+          <h2 className='text-white font-Popins flex items-center gap-2 text-[20px]'>
+            <MdOutlineTimer className='text-[20px]' />
+            Total Minutes
+          </h2>
+          <div className="flex items-center gap-x-5">
+            <h3 className="text-[40px] text-yellow font-semibold flex items-baseline gap-x-1">
+              {totalHours?.hours}{" "}
+              <span className="text-lg text-Gray">Hr</span>
+            </h3>
+            <h3 className="text-[40px] text-yellow font-semibold flex items-baseline gap-x-1">
+              {totalHours?.minutes}{" "}
+              <span className="text-lg text-Gray">Min</span>
+            </h3>
+          </div>
+        </div>
+        <div className='w-full py-6 px-6 bg-darkBlack rounded-md'>
+          <h2 className='text-white font-Popins flex items-center gap-2 text-[20px]'>
+            <FaRupeeSign className='text-[20px]' />
+            Total Revenue
+          </h2>
+          <h3 className="text-[40px] text-yellow font-semibold">
+            {parseFloat(totalRevenue).toFixed(2)}
+            <span className="text-lg text-Gray">rs</span>
+          </h3>
+        </div>
+        <div className='w-full py-6 px-6 bg-darkBlack rounded-md'>
+          <h2 className='text-white font-Popins flex items-center gap-2 text-[20px]'>
+            <HiPhoneIncoming className='text-[20px]' />
+            Total Calls
+          </h2>
+          <h3 className="text-[40px] text-yellow font-semibold">
+            {totalIncomings}
+          </h3>
+        </div>
+        <div className='w-full py-6 px-6 bg-darkBlack rounded-md'>
+          <h2 className='text-white font-Popins flex items-center gap-2 text-[20px]'>
+            <TbAlarmAverage className='text-[25px]' />
+            Average Call Duration
+          </h2>
+          <h3 className="text-[40px] text-yellow font-semibold">
+            {avgDuartion}
+          </h3>
+        </div>
       </div>
       <div className="w-full overflow-x-auto">
         {!loading && CallingRecods.length === 0 ? (

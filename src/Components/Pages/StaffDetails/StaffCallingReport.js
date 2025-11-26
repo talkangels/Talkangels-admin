@@ -12,10 +12,11 @@ import { MdOutlineKeyboardArrowLeft, MdOutlineTimer } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Spinner from '../../layout/spinner';
 import nodatagif from "../../assets/StaffDetails/Animation - 1703588368832.gif";
-import { HiPhoneIncoming, HiPhoneOutgoing } from "react-icons/hi";
+import { HiPhoneIncoming } from "react-icons/hi";
 import { Route, useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Routing } from '../../../utils/routing';
+import { TbAlarmAverage } from "react-icons/tb";
 
 const Genderoption = ["reject", "calling", "incoming"];
 function classNames(...classes) {
@@ -37,7 +38,7 @@ const StaffCallingReport = () => {
     const [totalHours, settotalHours] = useState({})
     const [totalRevenue, settotalRevenue] = useState(0)
     const [totalIncomings, settotalIncomings] = useState(0)
-    const [totalOutgoings, settotalOutgoings] = useState(0)
+    const [avgDuartion, setavgDuartion] = useState("00:00:00")
     const formRef = useRef(null);
     const toRef = useRef(null);
 
@@ -75,7 +76,7 @@ const StaffCallingReport = () => {
                 settotalHours(result?.data?.totalHours)
                 settotalRevenue(result?.data?.totalRevenue)
                 settotalIncomings(result?.data?.totalIncomings)
-                settotalOutgoings(result?.data?.totalOutgoings)
+                setavgDuartion(result?.data?.averageDuration)
             } else {
                 toast.error(result?.message)
             }
@@ -245,7 +246,7 @@ const StaffCallingReport = () => {
                 <div className='w-full py-6 px-6 bg-darkBlack rounded-md'>
                     <h2 className='text-white font-Popins flex items-center gap-2 text-[20px]'>
                         <HiPhoneIncoming className='text-[20px]' />
-                        Total Incoming Calls
+                        Total Calls
                     </h2>
                     <h3 className="text-[40px] text-yellow font-semibold">
                         {totalIncomings}
@@ -253,11 +254,11 @@ const StaffCallingReport = () => {
                 </div>
                 <div className='w-full py-6 px-6 bg-darkBlack rounded-md'>
                     <h2 className='text-white font-Popins flex items-center gap-2 text-[20px]'>
-                        <HiPhoneOutgoing className='text-[20px]' />
-                        Total Outgoing Calls
+                        <TbAlarmAverage className='text-[25px]' />
+                        Average Call Duration
                     </h2>
                     <h3 className="text-[40px] text-yellow font-semibold">
-                        {totalOutgoings}
+                        {avgDuartion}
                     </h3>
                 </div>
             </div>

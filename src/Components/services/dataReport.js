@@ -38,3 +38,15 @@ export const FetchAllStaffCallRecodesSummary = async (staffId, mobile_number, ca
         return error?.response?.data;
     }
 };
+
+export const FetchAllCallRecodesSummary = async (mobile_number, call_type, startDate, endDate) => {
+    try {
+        let response = await axios({
+            method: "GET",
+            url: `${baseURL}admin/calling/report/summary?mobile_number=${mobile_number}&call_type=${call_type}&startDate=${startDate}&endDate=${endDate}`,
+        });
+        return response.data;
+    } catch (error) {
+        return error?.response?.data;
+    }
+};
