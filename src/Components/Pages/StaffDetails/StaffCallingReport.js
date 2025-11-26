@@ -238,7 +238,7 @@ const StaffCallingReport = () => {
                         Total Revenue
                     </h2>
                     <h3 className="text-[40px] text-yellow font-semibold">
-                        {totalRevenue}
+                        {parseFloat(totalRevenue).toFixed(2)}
                         <span className="text-lg text-Gray">rs</span>
                     </h3>
                 </div>
