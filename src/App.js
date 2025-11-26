@@ -25,6 +25,9 @@ const Dashboard = lazy(() => import("./Components/Pages/Dashboard/dashboard"));
 const StaffDetails = lazy(() =>
   import("./Components/Pages/StaffDetails/StaffDetails")
 );
+const StaffCallingReport = lazy(() =>
+  import("./Components/Pages/StaffDetails/StaffCallingReport")
+);
 const Staffpersonalditails = lazy(() =>
   import("./Components/Pages/StaffDetails/staffpersonalditails")
 );
@@ -149,6 +152,11 @@ const App = () => {
     {
       path: Routing.StaffDetails,
       component: StaffDetails,
+      isPrivateRoute: true,
+    },
+    {
+      path: Routing.StaffCallingReport,
+      component: StaffCallingReport,
       isPrivateRoute: true,
     },
     {

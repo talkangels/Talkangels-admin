@@ -192,7 +192,7 @@ const ListofStaff = () => {
                       <td className="text-red text-base">
                         <p
                           className="cursor-pointer"
-                          onClick={() => Staffpersonal(user._id)}
+                          onClick={() => navigate(`/admin/staff-calling-report/${user._id}`)}
                         >
                           Report
                         </p>
