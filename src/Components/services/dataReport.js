@@ -50,3 +50,29 @@ export const FetchAllCallRecodesSummary = async (mobile_number, call_type, start
         return error?.response?.data;
     }
 };
+
+
+
+export const FetchAllTransctionReportSummary = async (Search, payment_type, payment_status, startDate, endDate) => {
+    try {
+        let response = await axios({
+            method: "GET",
+            url: `${baseURL}admin/transction/summary/report?Search=${Search}&payment_type=${payment_type}&payment_status=${payment_status}&startDate=${startDate}&endDate=${endDate}`,
+        });
+        return response.data;
+    } catch (error) {
+        return error?.response?.data;
+    }
+};
+
+export const FetchAllTransctionReport = async (Search, payment_type, payment_status, startDate, endDate, page, limit) => {
+    try {
+        let response = await axios({
+            method: "GET",
+            url: `${baseURL}admin/transction/report?Search=${Search}&payment_type=${payment_type}&payment_status=${payment_status}&startDate=${startDate}&endDate=${endDate}&page=${page}&limit=${limit}`,
+        });
+        return response.data;
+    } catch (error) {
+        return error?.response?.data;
+    }
+};
