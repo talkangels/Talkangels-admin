@@ -417,11 +417,11 @@ const TransactionReport = () => {
                                         <td className="text-white text-base pl-[27px]">
                                             {item?.payment_id}
                                         </td>
-                                        <td className={`${statuspaColors[item?.payment_type] || ''} text-base pl-[27px]`}>
+                                        <td className={`${statuspaColors[item?.payment_type] || 'text-white'} text-base pl-[27px]`}>
                                             {item?.payment_type}
                                         </td>
                                         <td
-                                            className={`${statusColors[item?.payment_status] || ''} text-base pl-[27px]`}
+                                            className={`${statusColors[item?.payment_status] || 'text-white'} text-base pl-[27px]`}
                                         >
                                             {item?.payment_status || "N/A"}
                                         </td>
