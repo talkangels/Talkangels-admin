@@ -34,7 +34,7 @@ const Index = () => {
       console.log("🚀 ~ handleClick ~ sessio̥nId:", sessionId)
       let checkoutOptions = {
         paymentSessionId: sessionId.payment_session_id,
-        redirectTarget: "_self",
+        redirectTarget: "_modal",
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
