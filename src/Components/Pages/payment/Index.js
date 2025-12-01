@@ -11,7 +11,7 @@ const Index = () => {
 
   let insitialzeSDK = async function () {
     cashfree = await load({
-      mode: "production",
+      mode: "sandbox",
     });
   };
   insitialzeSDK();
