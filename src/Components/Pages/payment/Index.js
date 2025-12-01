@@ -25,23 +25,6 @@ const Index = () => {
       }
     } catch (error) {
       toast.error("Payment failed, please try again");
-      window.location = `/profile?id=${user_details.id}`;
-    }
-  };
-
-  const verifyPayment = async (orderId) => {
-    try {
-      const body = {
-        user_id: user_details.id,
-        payment_id: orderId,
-      };
-      const result = await AddBallenceAPI(body, user_details?.token);
-      if (result.status === 200) {
-        toast.success(result?.message);
-        window.location = `/profile?id=${user_details.id}`;
-      }
-    } catch (error) {
-      toast.error("Payment failed, please try again");
     }
   };
 
@@ -51,15 +34,13 @@ const Index = () => {
       console.log("🚀 ~ handleClick ~ sessio̥nId:", sessionId)
       let checkoutOptions = {
         paymentSessionId: sessionId.payment_session_id,
-        redirectTarget: "_modal",
+        redirectTarget: "_self",
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
-        verifyPayment(sessionId.order_id);
       });
     } catch (error) {
       toast.error("Payment failed, please try again");
-      window.location = `/profile?id=${user_details.id}`;
     }
   };
 
