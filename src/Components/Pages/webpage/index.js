@@ -29,37 +29,6 @@ import { Logs } from "../../services/auth";
 
 const Index = () => {
 
-  useEffect(() => {
-    const packageName = "com.talkangels.pro";
-    const playStore = `https://play.google.com/store/apps/details?id=${packageName}`;
-    const ua = navigator.userAgent || navigator.vendor;
-    const isAndroid = /Android/i.test(ua);
-
-    const path = window.location.pathname.split("/")[1];
-    const allowedRoutes = ["open", "profile", "refer"];
-    if (!allowedRoutes.includes(path)) return;
-
-    const intentUrl =
-      `intent://${path}#Intent;scheme=talkangels;package=${packageName};` +
-      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
-
-    if (isAndroid) {
-      const start = Date.now();
-      window.location = `talkangels://${path}`; // try app link first
-
-      // Fallback to Play Store after 1.5 seconds if app not installed
-      setTimeout(() => {
-        if (Date.now() - start < 2000) {
-          window.location = playStore;
-        }
-      }, 1500);
-    } else {
-      // iOS fallback
-      window.location = playStore;
-    }
-  }, []);
-
-
   const settings = {
     dots: false,
     infinite: true,
