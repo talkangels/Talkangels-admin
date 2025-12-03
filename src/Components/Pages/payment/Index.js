@@ -56,6 +56,10 @@ const Index = () => {
 
       cashfree.checkout(checkoutOptions).then((res) => {
         verifyPayment(sessionId.order_id);
+
+        setTimeout(() => {
+          window.location.href = "https://www.talkangels.com/open";
+        }, 2000);
       });
     } catch (error) {
       toast.error("Payment failed, please try again");
