@@ -31,12 +31,15 @@ export default function AppRedirect() {
 
     const intentUrl =
       `intent://${path}` +
-      `#Intent;scheme=https;package=${packageName};`
+      `#Intent;scheme=https;package=${packageName};` +
+      `S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
 
     handleClickLogs(ua, isAndroid, path, allowedRoutes, intentUrl, playStore, "is after")
 
     if (isAndroid) {
       window.location.replace(intentUrl);
+    } else {
+      window.location.replace(playStore);
     }
   }, []);
 
