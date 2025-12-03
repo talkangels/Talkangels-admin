@@ -34,7 +34,7 @@ const Index = () => {
       console.log("🚀 ~ handleClick ~ sessio̥nId:", sessionId)
       let checkoutOptions = {
         paymentSessionId: sessionId.payment_session_id,
-        redirectTarget: "_self",
+        redirectTarget: "_model",
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
@@ -51,6 +51,8 @@ const Index = () => {
   return (
     <>
       <div className="card"></div>
+      <button className="bg-black py-1 px-2 rounded-md text-white" onClick={window.location.href = 'https://www.talkangels.com'}>WebSite</button>
+      <button className="bg-black py-1 px-2 rounded-md text-white" onClick={window.location.href = 'https://www.talkangels.com/open'}>Back To App</button>
     </>
   );
 };
