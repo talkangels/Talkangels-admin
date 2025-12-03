@@ -11,7 +11,7 @@ const Index = () => {
 
   let insitialzeSDK = async function () {
     cashfree = await load({
-      mode: "sandbox",
+      mode: "production",
     });
   };
   insitialzeSDK();
@@ -25,6 +25,23 @@ const Index = () => {
       }
     } catch (error) {
       toast.error("Payment failed, please try again");
+      // navigate(Routing.Initial);
+      navigate('/', { replace: true });
+    }
+  };
+
+  const verifyPayment = async (orderId) => {
+    try {
+      const body = {
+        user_id: user_details.id,
+        payment_id: orderId,
+      };
+      const result = await AddBallenceAPI(body, user_details?.token);
+      if (result.status === 200) {
+        toast.success(result?.message);
+      }
+    } catch (error) {
+      toast.error("Payment failed, please try again");
     }
   };
 
@@ -34,10 +51,11 @@ const Index = () => {
       console.log("🚀 ~ handleClick ~ sessio̥nId:", sessionId)
       let checkoutOptions = {
         paymentSessionId: sessionId.payment_session_id,
-        redirectTarget: "_model",
+        redirectTarget: "_modal",
       };
 
       cashfree.checkout(checkoutOptions).then((res) => {
+        verifyPayment(sessionId.order_id);
       });
     } catch (error) {
       toast.error("Payment failed, please try again");
@@ -47,7 +65,6 @@ const Index = () => {
   useEffect(() => {
     handleClick();
   }, []);
-
   return (
     <>
       <div className="card"></div>
