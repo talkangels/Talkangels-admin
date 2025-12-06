@@ -6,21 +6,6 @@
       "permanent": false
     },
     {
-      "source": "/profile/:path*",
-      "destination": "/profile/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/refer/:path*",
-      "destination": "/refer/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/open/:path*",
-      "destination": "/open/:path*",
-      "permanent": false
-    },
-    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "talkangels.com" }],
       "destination": "https://www.talkangels.com/:path*",
@@ -31,7 +16,7 @@
     {
       "source": "/.well-known/assetlinks.json",
       "headers": [
-        { "key": "Content-Type", "value": "application/json" },
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
         { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
     }
