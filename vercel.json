@@ -1,14 +1,28 @@
 {
   "redirects": [
     {
+      "source": "/.well-known/:path*",
+      "destination": "/.well-known/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/profile/:path*",
+      "destination": "/profile/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/refer/:path*",
+      "destination": "/refer/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/open/:path*",
+      "destination": "/open/:path*",
+      "permanent": false
+    },
+    {
       "source": "/:path*",
-      "has": [
-        { "type": "host", "value": "talkangels.com" },
-        { "type": "missing", "value": "profile" },
-        { "type": "missing", "value": "refer" },
-        { "type": "missing", "value": "open" },
-        { "type": "missing", "value": ".well-known" }
-      ],
+      "has": [{ "type": "host", "value": "talkangels.com" }],
       "destination": "https://www.talkangels.com/:path*",
       "permanent": true
     }
