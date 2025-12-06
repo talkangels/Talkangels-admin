@@ -34,6 +34,7 @@ const Staffpersonalditails = lazy(() =>
 const FeedbackList = lazy(() =>
   import("./Components/Pages/FeedbackList/feedbackList")
 );
+
 const Recharges = lazy(() => import("./Components/Pages/Recharge/Recharge"));
 const UserDetail = lazy(() => import("./Components/Pages/UserList/UserList"));
 const ReportAndProblem = lazy(() =>
