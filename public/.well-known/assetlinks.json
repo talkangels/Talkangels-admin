@@ -1,8 +1,6 @@
 [
   {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
+    "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
       "package_name": "com.talkangels.pro",
@@ -11,14 +9,6 @@
         "CA:95:3B:CD:66:E1:EB:7A:79:EB:78:99:AF:6D:2D:A1:D0:FA:BD:22:76:64:BA:84:6C:9A:4C:C8:AE:48:E0:DB"
       ]
     }
-  },
-  {
-    "relation": [
-      "delegate_permission/common.get_login_creds"
-    ],
-    "target": {
-      "namespace": "web",
-      "site": "https://www.talkangels.com"
-    }
   }
 ]
+ 
