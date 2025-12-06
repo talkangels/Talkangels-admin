@@ -1,8 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/((?!profile|refer|open|\\.well-known).*)",
-      "has": [{ "type": "host", "value": "talkangels.com" }],
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "talkangels.com" },
+        { "type": "missing", "value": "profile" },
+        { "type": "missing", "value": "refer" },
+        { "type": "missing", "value": "open" },
+        { "type": "missing", "value": ".well-known" }
+      ],
       "destination": "https://www.talkangels.com/:path*",
       "permanent": true
     }
@@ -17,4 +23,3 @@
     }
   ]
 }
- 
