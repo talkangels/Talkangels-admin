@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
     {
       title: "Introduction",
       body: [
-        "I, RAIYANI PIYUSH JINABHAI (“I”, “Me”, or “Owner”), have created the TalkAngels application (the “App”), which is provided to users (“User”) at no cost. This Privacy Policy explains how I collect, use, and disclose information from anyone using TalkAngels and its Services through the App.",
+        "I,  (“I”, “Me”, or “Owner”), have created the TalkAngels application (the “App”), which is provided to users (“User”) at no cost. This Privacy Policy explains how I collect, use, and disclose information from anyone using TalkAngels and its Services through the App.",
         "By using TalkAngels, you agree to the collection and use of your information as described in this Privacy Policy. I do not share your information with anyone except as described here.",
         "The terms used in this Privacy Policy have the same meanings as in my End User License Agreement (“EULA”), accessible through the App, unless otherwise defined here.",
         "This Privacy Policy applies to all Users using the App."
@@ -156,7 +156,7 @@ const PrivacyPolicy = () => {
       title2: "",
       body: [
         "If you have a grievance regarding this Privacy Policy, contact me at:",
-        "Name: RAIYANI PIYUSH JINABHAI",
+        "",
         "Email: support@talkangles.com",
         "I will acknowledge your complaint within 96 hours and attempt to resolve it promptly."
       ],

@@ -7,7 +7,7 @@ const ChildSafetyStandards = () => {
     {
       title: "Introduction",
       body: [
-        "I, RAIYANI PIYUSH JINABHAI (“I”, “Me”, or “Owner”), have created the TalkAngels application (the “App”), which is provided to users (“User”) at no cost. This Privacy Policy explains how I collect, use, and disclose information from anyone using TalkAngels and its Services through the App.",
+        "I, (“I”, “Me”, or “Owner”), have created the TalkAngels application (the “App”), which is provided to users (“User”) at no cost. This Privacy Policy explains how I collect, use, and disclose information from anyone using TalkAngels and its Services through the App.",
         "At TalkAngels, we are committed to protecting children and young people from exploitation, abuse, and harmful content. Our app is designed with strict safeguards to ensure a safe and respectful community."
       ],
       isdot: false
@@ -51,7 +51,7 @@ const ChildSafetyStandards = () => {
       title2: "",
       body: [
         "If you have a grievance regarding this Child Safety Standards, contact me at:",
-        "Name: RAIYANI PIYUSH JINABHAI",
+        "",
         "Email: support@talkangles.com",
         "I will acknowledge your complaint within 96 hours and attempt to resolve it promptly."
       ],
