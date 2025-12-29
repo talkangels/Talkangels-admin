@@ -352,7 +352,7 @@ const CallingReport = () => {
                       {dayjs(item?.call_date).format('DD-MM-YYYY')}
                     </td>
                     <td className="text-white text-base pl-[27px]">
-                      {item?.call_time}
+                      {dayjs(item?.call_date).format('hh:mm:ss A')}
                     </td>
                     <td className="text-white text-base pl-[27px]">
                       {item?.call_duration}
